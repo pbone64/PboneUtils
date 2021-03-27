@@ -1,0 +1,3 @@
+displayName = pbone's Utilities
+author = pbone
+version = 0.1
