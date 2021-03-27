@@ -123,9 +123,11 @@ namespace PboneUtils.Projectiles.Storage
 
             if (projectile.ai[1] >= 90f)
                 projectile.ai[1] *= -1f;
+
+            TryInteractingWithStorageProj(projectile);
         }
 
-        public void TryInteractingWithMoneyTrough2(Projectile proj)
+        public void TryInteractingWithStorageProj(Projectile proj)
         {
             if (Main.gamePaused && !Main.gameMenu)
                 return;
@@ -145,11 +147,12 @@ namespace PboneUtils.Projectiles.Storage
                 return;
 
             localPlayer.noThrow = 2;
-            Main.HoverItem = ModContent.GetInstance<PetrifiedSafe>().item;
+            localPlayer.showItemIcon = true;
+            localPlayer.showItemIcon2 = ModContent.ItemType<PetrifiedSafe>();
             if (PlayerInput.UsingGamepad)
                 localPlayer.GamepadEnableGrappleCooldown();
 
-            if (Main.mouseRight && Main.mouseRightRelease)
+            if (Main.mouseRight && Main.mouseRightRelease && Player.StopMoneyTroughFromWorking == 0)
             {
                 Main.mouseRightRelease = false;
                 localPlayer.tileInteractAttempted = true;
@@ -159,6 +162,7 @@ namespace PboneUtils.Projectiles.Storage
                 {
                     Main.PlaySound(UseSound);
                     localPlayer.chest = -1;
+                    localPlayer.GetModPlayer<PbonePlayer>().SafeGargoyleChest = -1;
                     Recipe.FindRecipes();
                     return;
                 }
@@ -179,7 +183,6 @@ namespace PboneUtils.Projectiles.Storage
         {
             base.PostDraw(spriteBatch, lightColor);
 
-            TryInteractingWithMoneyTrough2(projectile);
             // Uhh is outline gamepad only? Gamepad players don't exist anyways
             //spriteBatch.Draw(Outline, projectile.position - Main.screenPosition - new Vector2(2f), null, lightColor, projectile.rotation, Vector2.Zero, projectile.scale, SpriteEffects.None, 0f);
         }
