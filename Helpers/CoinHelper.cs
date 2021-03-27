@@ -43,7 +43,7 @@ namespace PboneUtils.Helpers
             for (int i = 0; i < cInv.Length; i++)
             {
                 array2[i] = -1;
-                if (cInv[i].stack < 1 || cInv[i].type < 1)
+                if (cInv[i].stack < 1 || cInv[i].type <= ItemID.None)
                 {
                     list2.Add(i);
                     cInv[i] = new Item();
@@ -94,7 +94,7 @@ namespace PboneUtils.Helpers
 
             for (int l = 0; l < 40; l++)
             {
-                if (array2[l] < 0 || cInv[l].type != 0)
+                if (array2[l] < 0 || cInv[l].type != ItemID.None)
                     continue;
 
                 int num3 = l;
@@ -118,7 +118,7 @@ namespace PboneUtils.Helpers
 
             for (int m = 0; m < 40; m++)
             {
-                if (array2[m] < 0 || cInv[m].type != 0)
+                if (array2[m] < 0 || cInv[m].type != ItemID.None)
                     continue;
 
                 int num5 = m;
@@ -168,8 +168,8 @@ namespace PboneUtils.Helpers
                         num8--;
                 }
 
-                if (Main.netMode == 1 && Main.player[Main.myPlayer].chest > -1)
-                    NetMessage.SendData(32, -1, -1, null, Main.player[Main.myPlayer].chest, list2[0]);
+                if (Main.netMode == NetmodeID.MultiplayerClient && Main.player[Main.myPlayer].chest > -1)
+                    NetMessage.SendData(MessageID.SyncChestItem, -1, -1, null, Main.player[Main.myPlayer].chest, list2[0]);
 
                 list2.RemoveAt(0);
             }

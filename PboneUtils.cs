@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace PboneUtils
 {
-    public class PboneUtils : Mod
+    public partial class PboneUtils : Mod
     {
         public static PboneUtils Instance;
         public static bool TexturesLoaded = false;
