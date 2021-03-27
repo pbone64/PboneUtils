@@ -1,10 +1,6 @@
 using log4net;
-using Mono.Cecil;
-using Mono.Cecil.Cil;
 using MonoMod.Cil;
-using PboneUtils.Items;
 using System;
-using System.Linq;
 using Terraria;
 using Terraria.ModLoader;
 
