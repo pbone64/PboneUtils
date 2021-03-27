@@ -1,1 +1,3 @@
-pbone's Utilities is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Inspired by LuiAFK, pbone's Utilities adds many combined items to enhance the quality of life, some examples being...
+ - An item that automatically sends collected money to your piggy bank.
+ - An item to summon a portable safe, similar to the money trough.

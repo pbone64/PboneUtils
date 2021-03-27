@@ -1,9 +1,6 @@
 ﻿using PboneUtils.Helpers;
-using System;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.UI;
 
 namespace PboneUtils.Items
 {
