@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using PboneUtils.UI.RadialMenus;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.UI;
@@ -15,7 +14,7 @@ namespace PboneUtils
         public class RadialMenuContainer
         {
             public UserInterface RadialMenuInterface = new UserInterface();
-            public RadialMenu RadialMenu = new RadialMenu();
+            //public RadialMenu RadialMenu = new RadialMenu();
         }
 
         public void Initialize()
@@ -23,8 +22,8 @@ namespace PboneUtils
             if (!Main.dedServ)
             {
                 RadialMenus = new RadialMenuContainer();
-                RadialMenus.RadialMenu.Activate();
-                RadialMenus.RadialMenuInterface.SetState(RadialMenus.RadialMenu);
+                //RadialMenus.RadialMenu.Activate();
+                //RadialMenus.RadialMenuInterface.SetState(RadialMenus.RadialMenu);
             }
         }
 
@@ -36,7 +35,7 @@ namespace PboneUtils
                 RadialMenus.RadialMenuInterface.Update(gameTime);
         }
 
-        public void OpenRadialMenu(string name, bool onlyOne)
+        /*public void OpenRadialMenu(string name, bool onlyOne)
         {
             Player player = Main.LocalPlayer;
             PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
@@ -46,7 +45,7 @@ namespace PboneUtils
                 RadialMenus.RadialMenu.NeedsButtonRebuilding = true;
                 RadialMenus.RadialMenu.Enabled = true;
             }
-        }
+        }*/
 
         public void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
         {

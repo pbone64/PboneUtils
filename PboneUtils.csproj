@@ -14,7 +14,6 @@
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Items\Liquid\" />
     <Folder Include="Mounts\" />
   </ItemGroup>
 </Project>
