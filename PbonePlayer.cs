@@ -3,6 +3,9 @@ using Terraria.ModLoader;
 using PboneUtils.Projectiles.Storage;
 using PboneUtils.ID;
 using Terraria.ID;
+using System.Collections.Generic;
+using PboneUtils.DataStructures;
+using Terraria.ModLoader.IO;
 
 namespace PboneUtils
 {
@@ -13,6 +16,9 @@ namespace PboneUtils
         public bool VoidPig;
         public int SafeGargoyleChest;
         public bool SafeGargoyleOpen = false;
+
+        // UI
+        public Dictionary<string, ItemConfig> ItemConfigs;
         #endregion
 
         public override void Initialize()
@@ -21,6 +27,35 @@ namespace PboneUtils
             VoidPig = false;
             SafeGargoyleChest = -1;
             SafeGargoyleOpen = false;
+
+            ItemConfigs = ItemConfig.DefaultConfigs();
+        }
+
+        public override TagCompound Save()
+        {
+            base.Save();
+            TagCompound tag = new TagCompound();
+            foreach (KeyValuePair<string, ItemConfig> kvp in ItemConfigs)
+            {
+                tag.Add(kvp.Key, kvp.Value.Save());
+            }
+
+            return tag;
+        }
+
+        public override void Load(TagCompound tag)
+        {
+            base.Load(tag);
+            foreach (string s in ItemConfigs.Keys)
+            {
+                ItemConfigs[s].Load(tag, s);
+            }
+        }
+
+        public override void ResetEffects()
+        {
+            base.ResetEffects();
+            VoidPig = false;
         }
 
         public override void PreUpdateBuffs()
@@ -62,12 +97,6 @@ namespace PboneUtils
                     Recipe.FindRecipes();
                 }
             }
-        }
-
-        public override void ResetEffects()
-        {
-            base.ResetEffects();
-            VoidPig = false;
         }
     }
 }

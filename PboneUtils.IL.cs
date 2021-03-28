@@ -7,7 +7,7 @@ namespace PboneUtils
 {
     public partial class PboneUtils : Mod
     {
-        public void InitIL()
+        public void Load_IL()
         {
             IL.Terraria.Player.Update += Player_Update;
         }

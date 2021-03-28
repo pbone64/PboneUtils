@@ -1,5 +1,8 @@
 using log4net;
+using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria.ModLoader;
+using Terraria.UI;
 
 namespace PboneUtils
 {
@@ -9,25 +12,35 @@ namespace PboneUtils
         public static bool TexturesLoaded = false;
         public static ModTextureManager Textures => Instance.textures;
         public static ModRecipeManager Recipes => Instance.recipes;
+        public static ModUIManager UI => Instance.ui;
         public static ILog Log => Instance.Logger;
 
         public ModTextureManager textures;
         public ModRecipeManager recipes;
+        public ModUIManager ui;
 
         public override void Load()
         {
             base.Load();
-            InitIL();
             Instance = ModContent.GetInstance<PboneUtils>();
+            textures = new ModTextureManager();
             recipes = new ModRecipeManager();
+            ui = new ModUIManager();
+
+            Load_IL();
+            ui.Initialize();
         }
+
+        #region UI
+        public override void UpdateUI(GameTime gameTime) => ui.UpdateUI(gameTime);
+        public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers) => ui.ModifyInterfaceLayers(layers);
+        #endregion
 
         public override void PostAddRecipes()
         {
             base.PostAddRecipes();
-            TexturesLoaded = true;
-            textures = new ModTextureManager();
             textures.Initialize();
+            TexturesLoaded = true;
         }
 
         public override void AddRecipeGroups()
@@ -39,8 +52,8 @@ namespace PboneUtils
         public override void Unload()
         {
             base.Unload();
-            textures.Dispose();
-            textures = null;
+            if (textures != null)
+                textures.Dispose();
             Instance = null;
         }
     }
