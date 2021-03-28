@@ -8,13 +8,16 @@ namespace PboneUtils.DataStructures
         public Dictionary<string, bool> Data = new Dictionary<string, bool>();
         public bool RedMode;
         public int ToggleCount => Data.Count;
+        public bool OnlyOne;
 
         public static Dictionary<string, ItemConfig> DefaultConfigs() => new Dictionary<string, ItemConfig>() {
-            { "Liquid", new ItemConfig(("Water", true), ("Lava", false), ("Honey", false)) }
+            { "Liquid", new ItemConfig(true, ("Water", true), ("Lava", false), ("Honey", false)) }
         };
 
-        public ItemConfig(params (string key, bool def)[] args)
+        public ItemConfig(bool onlyOne, params (string key, bool def)[] args)
         {
+            OnlyOne = onlyOne;
+
             for (int i = 0; i < args.Length; i++)
             {
                 Data.Add(args[i].key, args[i].def);
@@ -42,6 +45,18 @@ namespace PboneUtils.DataStructures
             }
 
             Data = parsedData;
+        }
+
+        public void AllOff()
+        {
+            Dictionary<string, bool> newData = new Dictionary<string, bool>();
+
+            foreach (string s in Data.Keys)
+            {
+                newData[s] = false;
+            }
+
+            Data = newData;
         }
     }
 }

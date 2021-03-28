@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using PboneUtils.DataStructures;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
@@ -96,8 +97,14 @@ namespace PboneUtils.UI
 
                     if (Main.mouseLeft && Main.mouseLeftRelease)
                     {
+                        if (config.OnlyOne)
+                        {
+                            config.AllOff();
+                        }
+
                         string key = keys[i];
                         config.Data[key] = !config.Data[key];
+                        break;
                     }
                 }
             }
