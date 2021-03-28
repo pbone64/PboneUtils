@@ -21,7 +21,6 @@ namespace PboneUtils.UI
         public bool Active;
         public int ButtonAmount;
         public Vector2 Position;
-        public bool RedMode = false;
 
         public void Draw(SpriteBatch spriteBatch, GameTime lastUpdateUIGameTime)
         {
@@ -37,8 +36,8 @@ namespace PboneUtils.UI
 
             Vector2 position = positions.centerPosition - ButtonSize * 0.5f;
             bool hovered = hoveredButtons.centerHovered;
-            Texture2D buttonTexture = PboneUtils.Textures.UI.GetRadialButton(hovered, RedMode);
-            Texture2D iconTexture = PboneUtils.Textures.UI.RadialMenuIcons[Name + (RedMode ? "Red" : "")];
+            Texture2D buttonTexture = PboneUtils.Textures.UI.GetRadialButton(hovered, config.RedMode);
+            Texture2D iconTexture = PboneUtils.Textures.UI.RadialMenuIcons[Name + (config.RedMode ? "Red" : "")];
             Color buttonColor = Color.White;
             Color iconColor = Color.White;
 
@@ -54,7 +53,7 @@ namespace PboneUtils.UI
 
                 position = positions.buttonsPositions[i] - ButtonSize * 0.5f;
                 hovered = hoveredButtons.buttonsHovered[i];
-                buttonTexture = PboneUtils.Textures.UI.GetRadialButton(hovered, RedMode);
+                buttonTexture = PboneUtils.Textures.UI.GetRadialButton(hovered, config.RedMode);
                 iconTexture = PboneUtils.Textures.UI.RadialMenuIcons[configName];
                 buttonColor = config.Data[configName] ? Color.White : (hovered ? ButtonOn : ButtonOff);
                 iconColor = config.Data[configName] ? Color.White : (hovered ? IconOn : IconOff);
@@ -71,7 +70,7 @@ namespace PboneUtils.UI
             Player player = Main.LocalPlayer;
             PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
 
-            if (!ShouldStayOpen(player))
+            if (!ShouldStayOpen(player, true))
             {
                 Active = false;
                 return;
@@ -83,7 +82,8 @@ namespace PboneUtils.UI
             {
                 if (Main.mouseLeft && Main.mouseLeftRelease)
                 {
-                    RedMode = !RedMode;
+                    ItemConfig config = mPlayer.ItemConfigs[Name];
+                    config.RedMode = !config.RedMode;
                 }
             }
 
@@ -107,14 +107,13 @@ namespace PboneUtils.UI
         {
             Player player = Main.LocalPlayer;
 
-            if (!ShouldStayOpen(player))
+            if (!ShouldStayOpen(player, false))
                 return;
 
             Name = name;
             Active = true;
             ButtonAmount = player.GetModPlayer<PbonePlayer>().ItemConfigs[name].Data.Count;
             Position = Main.MouseScreen;
-            RedMode = false;
         }
 
         public (Vector2 centerPosition, Vector2[] buttonPositions) GetPositions()
@@ -148,9 +147,11 @@ namespace PboneUtils.UI
             return ret;
         }
 
-        public static bool ShouldStayOpen(Player player)
+        public static bool ShouldStayOpen(Player player, bool checkForRightClick)
         {
-            if ((player.mouseInterface || player.lastMouseInterface) || (player.dead || Main.mouseItem.type > ItemID.None))
+            if ((player.mouseInterface || player.lastMouseInterface) ||
+                (player.dead || Main.mouseItem.type > ItemID.None) ||
+                (checkForRightClick && Main.mouseRight && Main.mouseRightRelease))
                 return false;
 
             return true;
