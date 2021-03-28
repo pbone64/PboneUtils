@@ -6,6 +6,7 @@ namespace PboneUtils.DataStructures
     public class ItemConfig
     {
         public Dictionary<string, bool> Data = new Dictionary<string, bool>();
+        public bool RedMode;
         public int ToggleCount => Data.Count;
 
         public static Dictionary<string, ItemConfig> DefaultConfigs() => new Dictionary<string, ItemConfig>() {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using PboneUtils.UI;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.UI;
@@ -13,8 +14,7 @@ namespace PboneUtils
 
         public class ItemConfigurerContainer
         {
-            public UserInterface RadialMenuInterface = new UserInterface();
-            //public RadialMenu RadialMenu = new RadialMenu();
+            public RadialMenu RadialMenu = new RadialMenu();
         }
 
         public void Initialize()
@@ -22,43 +22,31 @@ namespace PboneUtils
             if (!Main.dedServ)
             {
                 ItemConfigurer = new ItemConfigurerContainer();
-                //RadialMenus.RadialMenu.Activate();
-                //RadialMenus.RadialMenuInterface.SetState(RadialMenus.RadialMenu);
             }
         }
 
         public void UpdateUI(GameTime gameTime)
         {
             _lastUpdateUIGameTime = gameTime;
-
-            if (ItemConfigurer.RadialMenuInterface?.CurrentState != null)
-                ItemConfigurer.RadialMenuInterface.Update(gameTime);
         }
 
-        /*public void OpenRadialMenu(string name, bool onlyOne)
+        public void OpenRadialMenu(string name)
         {
-            Player player = Main.LocalPlayer;
-            PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
-            if (mPlayer.ItemConfigs.ContainsKey(name))
-            {
-                RadialMenus.RadialMenu.Settings = new RadialMenu.RadialMenuSettings(name, onlyOne);
-                RadialMenus.RadialMenu.NeedsButtonRebuilding = true;
-                RadialMenus.RadialMenu.Enabled = true;
-            }
-        }*/
+            ItemConfigurer.RadialMenu.Open(name);
+        }
 
         public void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
         {
-            /*int index = layers.FindIndex((layer) => layer.Name == "Vanilla: Cursor");
+            int index = layers.FindIndex((layer) => layer.Name == "Vanilla: Cursor");
             if (index != -1)
             {
                 layers.Insert(index - 1, new LegacyGameInterfaceLayer("PboneUtils: Radial Menu", delegate
                 {
-                    if (_lastUpdateUIGameTime != null && RadialMenus.RadialMenuInterface?.CurrentState != null)
-                        RadialMenus.RadialMenuInterface.Draw(Main.spriteBatch, _lastUpdateUIGameTime);
+                    if (_lastUpdateUIGameTime != null)
+                        ItemConfigurer.RadialMenu.Draw(Main.spriteBatch, _lastUpdateUIGameTime);
                     return true;
                 }, InterfaceScaleType.UI));
-            }*/
+            }
         }
     }
 }

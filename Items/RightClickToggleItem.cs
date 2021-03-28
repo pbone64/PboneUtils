@@ -27,7 +27,7 @@ namespace PboneUtils.Items
         {
             base.PostDrawInInventory(spriteBatch, position, frame, drawColor, itemColor, origin, scale);
             if (!Enabled)
-                spriteBatch.Draw(Main.cdTexture, position - Main.cdTexture.Size() * 0.5f + Main.itemTexture[item.type].Size() * 0.5f, null, drawColor * 0.85f, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(Main.cdTexture, position - Main.cdTexture.Size() * 0.5f + Main.itemTexture[item.type].Size() * 0.5f, null, drawColor * 0.95f, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
         public override TagCompound Save()

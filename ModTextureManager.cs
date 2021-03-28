@@ -31,18 +31,20 @@ namespace PboneUtils
 
         public class UITextures : IDisposable
         {
-            public Texture2D RadialButton = ModContent.GetTexture("PboneUtils/Textures/UI/RadialButton");
-            public Texture2D RadialButtonRed = ModContent.GetTexture("PboneUtils/Textures/UI/RadialButtonRed");
-            public Texture2D RadialButtonHover = ModContent.GetTexture("PboneUtils/Textures/UI/RadialButtonHover");
-            public Texture2D RadialButtonRedHover = ModContent.GetTexture("PboneUtils/Textures/UI/RadialButtonRedHover");
+            public Texture2D RadialButton = ModContent.GetTexture("PboneUtils/Textures/UI/Radial/Button");
+            public Texture2D RadialButtonRed = ModContent.GetTexture("PboneUtils/Textures/UI/Radial/ButtonRed");
+            public Texture2D RadialButtonHover = ModContent.GetTexture("PboneUtils/Textures/UI/Radial/ButtonHover");
+            public Texture2D RadialButtonRedHover = ModContent.GetTexture("PboneUtils/Textures/UI/Radial/ButtonRedHover");
 
             public Dictionary<string, Texture2D> RadialMenuIcons = new Dictionary<string, Texture2D>() {
+                { "Liquid", getRadialIcon("Liquid") },
+                { "LiquidRed", getRadialIcon("LiquidRed") },
                 { "Water", getRadialIcon("Water") },
                 { "Lava", getRadialIcon("Lava") },
                 { "Honey", getRadialIcon("Honey") }
             };
 
-            private static Texture2D getRadialIcon(string name) => ModContent.GetTexture($"PboneUtils/Textures/UI/Radial{name}");
+            private static Texture2D getRadialIcon(string name) => ModContent.GetTexture($"PboneUtils/Textures/UI/Radial/Icon{name}");
 
             public Texture2D GetRadialButton(bool hover, bool red)
             {
