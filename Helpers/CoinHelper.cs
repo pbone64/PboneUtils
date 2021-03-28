@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Terraria;
 using Terraria.ID;
 
@@ -109,9 +108,6 @@ namespace PboneUtils.Helpers
                     coinsToAdd[num4] -= cInv[num3].stack;
                     array2[l] = -1;
                 }
-
-                if (Main.netMode == NetmodeID.MultiplayerClient && Main.player[Main.myPlayer].chest > -1)
-                    NetMessage.SendData(MessageID.SyncChestItem, -1, -1, null, Main.player[Main.myPlayer].chest, num3);
 
                 list2.Remove(num3);
             }

@@ -1,4 +1,4 @@
-﻿// ITEMs
+﻿// ITEMS
 ItemName.PetrifiedSafe=Petrified Safe
 ItemTooltip.PetrifiedSafe=Summons a flying safe to store your items
 
@@ -10,3 +10,11 @@ ItemTooltip.BottomlessHoneyBucket=Contains an endless amount of honey\nCan be po
 
 ItemName.SuperSweetSponge=Sponge Cake
 ItemTooltip.SuperSweetSponge=Capable of soaking up an endless amount of honey
+
+ItemName.DeluxeTreasureMagnet=Deluxe Treasure Magnet
+ItemTooltip.DeluxeTreasureMagnet=Massively increases pickup range for items\nWorks in your inventory\nRight click to toggle on and off
+
+
+// MISC
+Common.Enabled.True=Enabled
+Common.Enabled.False=Disabled

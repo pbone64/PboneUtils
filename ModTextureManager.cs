@@ -24,13 +24,8 @@ namespace PboneUtils
 
         public class ItemTextures : IDisposable
         {
-            public Texture2D VoidPigEnabled = ModContent.GetTexture("PboneUtils/Items/Storage/VoidPiggy");
-            public Texture2D VoidPigDisabled = ModContent.GetTexture("PboneUtils/Items/Storage/VoidPiggyOff");
-
             public void Dispose()
             {
-                VoidPigEnabled.Dispose();
-                VoidPigDisabled.Dispose();
             }
         }
 

@@ -17,7 +17,10 @@ namespace PboneUtils
         public int SafeGargoyleChest;
         public bool SafeGargoyleOpen = false;
 
-        // UI
+        // Tools
+        public bool DeluxeTreasureMagnet;
+
+        // Item Config
         public Dictionary<string, ItemConfig> ItemConfigs;
         #endregion
 
@@ -27,6 +30,7 @@ namespace PboneUtils
             VoidPig = false;
             SafeGargoyleChest = -1;
             SafeGargoyleOpen = false;
+            DeluxeTreasureMagnet = false;
 
             ItemConfigs = ItemConfig.DefaultConfigs();
         }
@@ -56,6 +60,7 @@ namespace PboneUtils
         {
             base.ResetEffects();
             VoidPig = false;
+            DeluxeTreasureMagnet = false;
         }
 
         public override void PreUpdateBuffs()

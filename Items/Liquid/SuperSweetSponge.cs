@@ -14,7 +14,6 @@ namespace PboneUtils.Items.Liquid
             item.useTime = 5;
             item.useTurn = true;
             item.autoReuse = true;
-            item.shootSpeed = 4;
             item.rare = ItemRarityID.Lime;
             item.value = Item.sellPrice(0, 10, 0, 0);
             item.tileBoost += 2;

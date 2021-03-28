@@ -16,5 +16,16 @@ namespace PboneUtils.Items
                 CoinHelper.VoidPig(player.inventory, player.bank.item);
             }
         }
+
+        public override void GrabRange(Item item, Player player, ref int grabRange)
+        {
+            base.GrabRange(item, player, ref grabRange);
+            PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
+
+            if (mPlayer.DeluxeTreasureMagnet)
+            {
+                grabRange += 640;
+            }
+        }
     }
 }
