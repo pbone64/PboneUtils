@@ -2,6 +2,7 @@
 using PboneUtils.ID;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Liquid
 {
@@ -54,6 +55,16 @@ namespace PboneUtils.Items.Liquid
                 player.showItemIcon = true;
                 player.showItemIcon2 = item.type;
             }
+        }
+
+        public override void AddRecipes()
+        {
+            base.AddRecipes();
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.HoneyBucket, 10);
+            recipe.AddTile(TileID.AlchemyTable);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }
