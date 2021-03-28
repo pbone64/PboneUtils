@@ -27,10 +27,11 @@ namespace PboneUtils.Items.Liquid
             {
                 if (player.IsTargetTileInItemRange(item))
                 {
-                    if (Main.tile[Player.tileTargetX, Player.tileTargetY].liquid == 0 || Main.tile[Player.tileTargetX, Player.tileTargetY].liquidType() == LiquidID.Honey)
+                    if (Main.tile[Player.tileTargetX, Player.tileTargetY].liquid == 0 || Main.tile[Player.tileTargetX, Player.tileTargetY].honey())
                     {
                         Main.PlaySound(SoundID.Splash, (int)player.position.X, (int)player.position.Y);
                         Main.tile[Player.tileTargetX, Player.tileTargetY].liquidType(LiquidID.Honey);
+                        Main.tile[Player.tileTargetX, Player.tileTargetY].honey(true);
                         Main.tile[Player.tileTargetX, Player.tileTargetY].liquid = byte.MaxValue;
                         WorldGen.SquareTileFrame(Player.tileTargetX, Player.tileTargetY);
 

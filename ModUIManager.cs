@@ -7,11 +7,11 @@ namespace PboneUtils
 {
     public class ModUIManager
     {
-        public RadialMenuContainer RadialMenus;
+        public ItemConfigurerContainer ItemConfigurer;
 
         private GameTime _lastUpdateUIGameTime;
 
-        public class RadialMenuContainer
+        public class ItemConfigurerContainer
         {
             public UserInterface RadialMenuInterface = new UserInterface();
             //public RadialMenu RadialMenu = new RadialMenu();
@@ -21,7 +21,7 @@ namespace PboneUtils
         {
             if (!Main.dedServ)
             {
-                RadialMenus = new RadialMenuContainer();
+                ItemConfigurer = new ItemConfigurerContainer();
                 //RadialMenus.RadialMenu.Activate();
                 //RadialMenus.RadialMenuInterface.SetState(RadialMenus.RadialMenu);
             }
@@ -31,8 +31,8 @@ namespace PboneUtils
         {
             _lastUpdateUIGameTime = gameTime;
 
-            if (RadialMenus.RadialMenuInterface?.CurrentState != null)
-                RadialMenus.RadialMenuInterface.Update(gameTime);
+            if (ItemConfigurer.RadialMenuInterface?.CurrentState != null)
+                ItemConfigurer.RadialMenuInterface.Update(gameTime);
         }
 
         /*public void OpenRadialMenu(string name, bool onlyOne)
@@ -49,7 +49,7 @@ namespace PboneUtils
 
         public void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
         {
-            int index = layers.FindIndex((layer) => layer.Name == "Vanilla: Cursor");
+            /*int index = layers.FindIndex((layer) => layer.Name == "Vanilla: Cursor");
             if (index != -1)
             {
                 layers.Insert(index - 1, new LegacyGameInterfaceLayer("PboneUtils: Radial Menu", delegate
@@ -58,7 +58,7 @@ namespace PboneUtils
                         RadialMenus.RadialMenuInterface.Draw(Main.spriteBatch, _lastUpdateUIGameTime);
                     return true;
                 }, InterfaceScaleType.UI));
-            }
+            }*/
         }
     }
 }

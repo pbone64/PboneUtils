@@ -4,3 +4,9 @@ ItemTooltip.PetrifiedSafe=Summons a flying safe to store your items
 
 ItemName.VoidPiggy=Void Piggy
 ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\n\nYou must have at least one coin in your piggy bank for it to function\nRight click to toggle on and off\n'An exotic import!'
+
+ItemName.BottomlessHoneyBucket=Bottomless Honey Bucket
+ItemTooltip.BottomlessHoneyBucket=Contains an endless amount of honey\nCan be poured out
+
+ItemName.SuperSweetSponge=Sponge Cake
+ItemTooltip.SuperSweetSponge=Capable of soaking up an endless amount of honey
