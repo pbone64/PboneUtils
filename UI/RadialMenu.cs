@@ -128,11 +128,11 @@ namespace PboneUtils.UI
             (Vector2 centerPosition, Vector2[] buttonsPositions) ret = (Vector2.Zero, new Vector2[ButtonAmount]);
             ret.centerPosition = Position;
 
-            for (int i = 0; i < ButtonAmount; i++)
+            for (int i = 1; i < ButtonAmount + 1; i++)
             {
                 float angle = (MathHelper.TwoPi / ButtonAmount) * i;
-                ret.buttonsPositions[i].X = (float)Math.Cos(angle) * 42 + ret.centerPosition.X;
-                ret.buttonsPositions[i].Y = (float)Math.Sin(angle) * 42 + ret.centerPosition.Y;
+                ret.buttonsPositions[i - 1].X = (float)Math.Cos(angle) * 42 + ret.centerPosition.X;
+                ret.buttonsPositions[i - 1].Y = (float)Math.Sin(angle) * 42 + ret.centerPosition.Y;
             }
 
             return ret;
