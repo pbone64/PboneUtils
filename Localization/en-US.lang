@@ -11,6 +11,12 @@ ItemTooltip.BottomlessHoneyBucket=Contains an endless amount of honey\nCan be po
 ItemName.SuperSweetSponge=Sponge Cake
 ItemTooltip.SuperSweetSponge=Capable of soaking up an endless amount of honey
 
+ItemName.BottomlessLavaBucket=Bottomless Lava Bucket
+ItemTooltip.BottomlessLavaBucket=Contains an endless amount of lava\nCan be poured out
+
+ItemName.HeatAbsorbantSponge=Heat Absorbant Sponge
+ItemTooltip.HeatAbsorbantSponge=Capable of soaking up an endless amount of lava
+
 ItemName.DeluxeTreasureMagnet=Deluxe Treasure Magnet
 ItemTooltip.DeluxeTreasureMagnet=Massively increases pickup range for items\nWorks in your inventory\nRight click to toggle on and off
 

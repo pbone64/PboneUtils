@@ -2,10 +2,11 @@
 using PboneUtils.ID;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Liquid
 {
-    public class SuperSweetSponge : PItem
+    public class BottomlessLavaBucket : PItem
     {
         public override bool ShowItemIconWhenInRange => true;
 
@@ -28,12 +29,25 @@ namespace PboneUtils.Items.Liquid
             {
                 if (player.IsTargetTileInItemRange(item))
                 {
-                    Main.PlaySound(SoundID.Splash, (int)player.position.X, (int)player.position.Y);
-                    LiquidHelper.DrainLiquid(Player.tileTargetX, Player.tileTargetY, LiquidID.Honey);
-				}
+                    if (LiquidHelper.PlaceLiquid(Player.tileTargetX, Player.tileTargetY, LiquidID.Lava))
+                    {
+                        Main.PlaySound(SoundID.Splash, (int)player.position.X, (int)player.position.Y);
+                        return true;
+                    }
+                }
             }
 
             return base.UseItem(player);
+        }
+
+        public override void AddRecipes()
+        {
+            base.AddRecipes();
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.LavaBucket, 10);
+            recipe.AddTile(TileID.AlchemyTable);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }
