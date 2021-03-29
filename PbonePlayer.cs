@@ -35,12 +35,6 @@ namespace PboneUtils
             ItemConfigs = ItemConfig.DefaultConfigs();
         }
 
-        public override void OnEnterWorld(Player player)
-        {
-            base.OnEnterWorld(player);
-            PboneUtils.UI.OpenRadialMenu("Liquid");
-        }
-
         public override TagCompound Save()
         {
             base.Save();

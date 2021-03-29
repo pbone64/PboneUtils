@@ -15,6 +15,14 @@ ItemName.DeluxeTreasureMagnet=Deluxe Treasure Magnet
 ItemTooltip.DeluxeTreasureMagnet=Massively increases pickup range for items\nWorks in your inventory\nRight click to toggle on and off
 
 
+// TILES
+MapObject.PetrifiedSafeTile=Petrified Safe
+
+
+// WORLDGEN
+WorldGen.PetrifiedSafes=Hiding safes...
+
+
 // MISC
 Common.Enabled.True=Enabled
 Common.Enabled.False=Disabled
