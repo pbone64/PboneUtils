@@ -1,10 +1,12 @@
 ﻿// ITEMS
+// Storage
 ItemName.PetrifiedSafe=Petrified Safe
 ItemTooltip.PetrifiedSafe=Summons a flying safe to store your items
 
 ItemName.VoidPiggy=Void Piggy
 ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\n\nYou must have at least one coin in your piggy bank for it to function\nRight click to toggle on and off\n'An exotic import!'
 
+// Liquid
 ItemName.BottomlessHoneyBucket=Bottomless Honey Bucket
 ItemTooltip.BottomlessHoneyBucket=Contains an endless amount of honey\nCan be poured out
 
@@ -17,6 +19,10 @@ ItemTooltip.BottomlessLavaBucket=Contains an endless amount of lava\nCan be pour
 ItemName.HeatAbsorbantSponge=Heat Absorbant Sponge
 ItemTooltip.HeatAbsorbantSponge=Capable of soaking up an endless amount of lava
 
+ItemName.LiquidCombo=The Master Plan
+ItemTooltip.LiquidCombo=Allows ultimate control over liquids!\nRight click while holding to edit settings
+
+// Tools
 ItemName.DeluxeTreasureMagnet=Deluxe Treasure Magnet
 ItemTooltip.DeluxeTreasureMagnet=Massively increases pickup range for items\nWorks in your inventory\nRight click to toggle on and off
 

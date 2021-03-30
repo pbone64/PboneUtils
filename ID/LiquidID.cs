@@ -2,9 +2,9 @@
 {
     public static class LiquidID
     {
-		public const int Water = 0;
-		public const int Lava = 1;
-		public const int Honey = 2;
-		public const int Count = 3;
+		public const byte Water = 0;
+		public const byte Lava = 1;
+		public const byte Honey = 2;
+		public const byte Count = 3;
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using PboneUtils.UI;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.UI;
 
@@ -15,6 +16,32 @@ namespace PboneUtils
         public class ItemConfigurerContainer
         {
             public RadialMenu RadialMenu = new RadialMenu();
+
+            public void Open(string name, int item)
+            {
+                RadialMenu.Open(name, item);
+            }
+
+            public void Close()
+            {
+                RadialMenu.Close();
+            }
+
+            public void Toggle(string name, int item)
+            {
+                if (!RadialMenu.Active)
+                    RadialMenu.Open(name, item);
+                else
+                    RadialMenu.Close();
+            }
+
+            public bool IsHovered()
+            {
+                (bool centerHovered, bool[] buttonsHovered) hoveredButtons = RadialMenu.GetHoveredButtons();
+                return (hoveredButtons.centerHovered) || (hoveredButtons.buttonsHovered.Count(b => b == true) > 0);
+            }
+
+            public bool IsOpen() => RadialMenu.Active;
         }
 
         public void Initialize()
@@ -28,11 +55,6 @@ namespace PboneUtils
         public void UpdateUI(GameTime gameTime)
         {
             _lastUpdateUIGameTime = gameTime;
-        }
-
-        public void OpenRadialMenu(string name)
-        {
-            ItemConfigurer.RadialMenu.Open(name);
         }
 
         public void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)

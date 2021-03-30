@@ -21,6 +21,8 @@ namespace PboneUtils.UI
         public bool Active;
         public int ButtonAmount;
         public Vector2 Position;
+        public int ItemType;
+        public bool CheckRC = true;
 
         public void Draw(SpriteBatch spriteBatch, GameTime lastUpdateUIGameTime)
         {
@@ -70,11 +72,12 @@ namespace PboneUtils.UI
             Player player = Main.LocalPlayer;
             PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
 
-            if (!ShouldStayOpen(player, true))
+            if (!ShouldStayOpen(player, CheckRC))
             {
-                Active = false;
+                Close();
                 return;
             }
+            CheckRC = true;
 
             (bool centerHovered, bool[] buttonsHovered) hoveredButtons = GetHoveredButtons();
 
@@ -109,17 +112,28 @@ namespace PboneUtils.UI
             }
         }
 
-        public void Open(string name)
+        public void Open(string name, int item)
         {
             Player player = Main.LocalPlayer;
+            ItemType = item;
 
             if (!ShouldStayOpen(player, false))
                 return;
 
+            CheckRC = false;
             Name = name;
             Active = true;
             ButtonAmount = player.GetModPlayer<PbonePlayer>().ItemConfigs[name].Data.Count;
             Position = Main.MouseScreen;
+        }
+
+        public void Close()
+        {
+            Name = "";
+            Active = false;
+            ButtonAmount = 0;
+            Position = Vector2.Zero;
+            ItemType = ItemID.None;
         }
 
         public (Vector2 centerPosition, Vector2[] buttonPositions) GetPositions()
@@ -129,7 +143,7 @@ namespace PboneUtils.UI
 
             for (int i = 1; i < ButtonAmount + 1; i++)
             {
-                float angle = (MathHelper.TwoPi / ButtonAmount) * i;
+                float angle = (MathHelper.TwoPi / ButtonAmount) * i - MathHelper.Pi;
                 ret.buttonsPositions[i - 1].X = (float)Math.Cos(angle) * 42 + ret.centerPosition.X;
                 ret.buttonsPositions[i - 1].Y = (float)Math.Sin(angle) * 42 + ret.centerPosition.Y;
             }
@@ -153,11 +167,12 @@ namespace PboneUtils.UI
             return ret;
         }
 
-        public static bool ShouldStayOpen(Player player, bool checkForRightClick)
+        public bool ShouldStayOpen(Player player, bool checkForRightClick)
         {
             if ((player.mouseInterface || player.lastMouseInterface) ||
-                (player.dead || Main.mouseItem.type > ItemID.None) ||
-                (checkForRightClick && Main.mouseRight && Main.mouseRightRelease))
+                (player.dead) ||
+                (checkForRightClick && Main.mouseRight && Main.mouseRightRelease) ||
+                (player.HeldItem.type != ItemType))
                 return false;
 
             return true;
