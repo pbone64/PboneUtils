@@ -9,6 +9,8 @@ namespace PboneUtils.Items.Liquid
 {
     public class LiquidCombo : PItem
     {
+        public override bool ShowItemIconWhenInRange => true;
+
         public override void SetDefaults()
         {
             base.SetDefaults();
@@ -66,12 +68,6 @@ namespace PboneUtils.Items.Liquid
             }
 
             return base.UseItem(player);
-        }
-
-        public override void UpdateInventory(Player player)
-        {
-            base.UpdateInventory(player);
-            Main.NewText(PboneUtils.UI.ItemConfigurer.RadialMenu.Active);
         }
 
         public override void AddRecipes()
