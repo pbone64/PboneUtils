@@ -64,6 +64,7 @@ namespace PboneUtils
         {
             base.ResetEffects();
             VoidPig = false;
+            PhilosophersStone = false;
             DeluxeTreasureMagnet = false;
         }
 
