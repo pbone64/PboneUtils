@@ -6,6 +6,8 @@ using Terraria.ID;
 using System.Collections.Generic;
 using PboneUtils.DataStructures;
 using Terraria.ModLoader.IO;
+using Terraria.Utilities;
+using PboneUtils.Items.Liquid;
 
 namespace PboneUtils
 {
@@ -104,6 +106,40 @@ namespace PboneUtils
                     Recipe.FindRecipes();
                 }
             }
+        }
+
+        public override void CatchFish(Item fishingRod, Item bait, int power, int liquidType, int poolSize, int worldLayer, int questFish, ref int caughtType, ref bool junk)
+        {
+            base.CatchFish(fishingRod, bait, power, liquidType, poolSize, worldLayer, questFish, ref caughtType, ref junk);
+
+            if (junk)
+                return;
+
+            FishingChances chances = new FishingChances(player);
+            WeightedRandom<int> random = new WeightedRandom<int>();
+            random.Add(caughtType);
+
+            switch (liquidType)
+            {
+                case LiquidID.Water:
+                    break;
+                case LiquidID.Lava:
+                    if (FishingChances.Check(chances.ExtremelyRare))
+                    {
+                        random.Add(ModContent.ItemType<BottomlessLavaBucket>());
+                        random.Add(ModContent.ItemType<HeatAbsorbantSponge>());
+                    }
+                    break;
+                case LiquidID.Honey:
+                    if (FishingChances.Check(chances.ExtremelyRare))
+                    {
+                        random.Add(ModContent.ItemType<BottomlessHoneyBucket>());
+                        random.Add(ModContent.ItemType<SuperSweetSponge>());
+                    }
+                    break;
+            }
+
+            caughtType = random.Get();
         }
     }
 }
