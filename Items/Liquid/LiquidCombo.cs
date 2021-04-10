@@ -14,14 +14,15 @@ namespace PboneUtils.Items.Liquid
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.useStyle = ItemUseStyleID.SwingThrow;
+            item.useStyle = ItemUseStyleID.HoldingOut;
             item.useAnimation = 10;
             item.useTime = 10;
             item.useTurn = true;
             item.autoReuse = true;
             item.rare = ItemRarityID.Yellow;
             item.value = Item.sellPrice(0, 60, 0, 0);
-            item.tileBoost += 4;
+            item.tileBoost += 20;
+            item.channel = true;
         }
 
         public override bool AltFunctionUse(Player player) => true;
@@ -29,6 +30,8 @@ namespace PboneUtils.Items.Liquid
         {
             if (Main.myPlayer == player.whoAmI)
             {
+                PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
+
                 if (player.altFunctionUse == 2)
                 {
                     PboneUtils.UI.ItemConfigurer.Toggle("Liquid", item.type);
@@ -38,11 +41,12 @@ namespace PboneUtils.Items.Liquid
                 {
                     if (player.IsTargetTileInItemRange(item))
                     {
-                        PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
                         ItemConfig config = mPlayer.ItemConfigs["Liquid"];
-                        int type = config.Data["Water"] ? LiquidID.Water :
+                        int type =
+                            (config.Data["Water"] ? LiquidID.Water :
                             (config.Data["Lava"] ? LiquidID.Lava :
-                            (config.Data["Honey"] ? LiquidID.Honey : -1));
+                            (config.Data["Honey"] ? LiquidID.Honey :
+                            -1)));
 
                         if (type == -1)
                             return false;

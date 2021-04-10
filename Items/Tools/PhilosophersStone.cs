@@ -1,7 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 
-namespace PboneUtils.Items.Storage
+namespace PboneUtils.Items.Tools
 {
     public class PhilosophersStone : RightClickToggleItem
     {
@@ -12,9 +12,9 @@ namespace PboneUtils.Items.Storage
             item.value = Item.buyPrice(0, 20, 0, 0);
         }
 
-        public override void UpdateInventory(Player player)
+        public override void HoldItem(Player player)
         {
-            base.UpdateInventory(player);
+            base.HoldItem(player);
             player.GetModPlayer<PbonePlayer>().PhilosophersStone = Enabled;
         }
     }

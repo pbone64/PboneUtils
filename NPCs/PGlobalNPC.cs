@@ -1,4 +1,4 @@
-﻿using PboneUtils.Items.Storage;
+﻿using PboneUtils.Items.Tools;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
