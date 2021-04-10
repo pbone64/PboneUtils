@@ -75,7 +75,7 @@ namespace PboneUtils
                 if (Main.projectile[SafeGargoyleChest].active && Main.projectile[SafeGargoyleChest].type == ModContent.ProjectileType<PetrifiedSafeProjectile>())
                 {
                     int oldChest = player.chest;
-                    player.chest = ChestID.Safe;
+                    player.chest = BankID.Safe;
                     SafeGargoyleOpen = true;
 
                     int num17 = (int)((player.position.X + player.width * 0.5) / 16.0);
@@ -102,7 +102,7 @@ namespace PboneUtils
                 {
                     Main.PlaySound(SoundID.Item37);
                     SafeGargoyleChest = -1;
-                    player.chest = ChestID.None;
+                    player.chest = BankID.None;
                     Recipe.FindRecipes();
                 }
             }

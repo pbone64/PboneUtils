@@ -8,7 +8,7 @@ namespace PboneUtils.Projectiles.Storage
 {
     public class PetrifiedSafeProjectile : StorageProjectile
     {
-        public override int ChestType => ChestID.Safe;
+        public override int ChestType => BankID.Safe;
         public override Texture2D Outline => PboneUtils.Textures.Extras.PetrifiedSafeOutline;
         public override bool Animate => false;
         public override LegacySoundStyle UseSound => SoundID.Item37;

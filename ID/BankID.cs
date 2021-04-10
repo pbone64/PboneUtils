@@ -1,6 +1,6 @@
 ﻿namespace PboneUtils.ID
 {
-    public static class ChestID
+    public static class BankID
     {
         public const int None = -1;
         public const int PiggyBank = -2;
