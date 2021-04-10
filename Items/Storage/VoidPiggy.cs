@@ -9,7 +9,6 @@ namespace PboneUtils.Items.Storage
         public override void SetDefaults()
         {
             base.SetDefaults();
-            //item.Size = new Vector2(24, 16);
             item.rare = ItemRarityID.Orange;
             item.value = Item.sellPrice(0, 1, 0, 0);
         }

@@ -6,7 +6,7 @@ namespace PboneUtils.Helpers
 {
     public static class CoinHelper
     {
-        public static List<int> CoinTypes = new List<int>() {
+        public static HashSet<int> CoinTypes = new HashSet<int>() {
             ItemID.CopperCoin, ItemID.SilverCoin, ItemID.GoldCoin, ItemID.PlatinumCoin
         };
 

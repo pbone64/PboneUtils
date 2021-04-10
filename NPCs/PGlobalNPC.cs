@@ -1,4 +1,5 @@
 ﻿using PboneUtils.Items.Liquid;
+using PboneUtils.Items.Storage;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -12,6 +13,11 @@ namespace PboneUtils.NPCs
             if (type == NPCID.PartyGirl)
             {
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<SuperSweetSponge>());
+                nextSlot++;
+            }
+            else if (type == NPCID.Wizard)
+            {
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<PhilosophersStone>());
                 nextSlot++;
             }
         }

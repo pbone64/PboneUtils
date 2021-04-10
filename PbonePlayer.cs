@@ -14,6 +14,7 @@ namespace PboneUtils
         #region Fields
         // Storage
         public bool VoidPig;
+        public bool PhilosophersStone;
         public int SafeGargoyleChest;
         public bool SafeGargoyleOpen = false;
 
@@ -28,6 +29,7 @@ namespace PboneUtils
         {
             base.Initialize();
             VoidPig = false;
+            PhilosophersStone = false;
             SafeGargoyleChest = -1;
             SafeGargoyleOpen = false;
             DeluxeTreasureMagnet = false;
