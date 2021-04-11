@@ -12,9 +12,9 @@ namespace PboneUtils.Items.Tools
             item.value = Item.buyPrice(0, 20, 0, 0);
         }
 
-        public override void HoldItem(Player player)
+        public override void UpdateInventory(Player player)
         {
-            base.HoldItem(player);
+            base.UpdateInventory(player);
             player.GetModPlayer<PbonePlayer>().PhilosophersStone = Enabled;
         }
     }

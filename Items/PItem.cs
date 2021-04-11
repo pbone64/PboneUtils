@@ -11,6 +11,8 @@ namespace PboneUtils.Items
     {
         public virtual bool Autosize => true;
         public virtual bool ShowItemIconWhenInRange => false;
+        public virtual bool DrawGlowmask => false;
+        public string GlowmaskTexture => Texture + "_Glow";
 
         public int UseTime { set => item.useTime = item.useAnimation = value; }
         public Texture2D ItemTexture => Main.itemTexture[item.type];
@@ -38,6 +40,29 @@ namespace PboneUtils.Items
             {
                 player.showItemIcon = true;
                 player.showItemIcon2 = item.type;
+            }
+        }
+
+        public override void PostDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
+        {
+            base.PostDrawInInventory(spriteBatch, position, frame, drawColor, itemColor, origin, scale);
+
+            if (DrawGlowmask)
+            {
+                Texture2D texture = ModContent.GetTexture(GlowmaskTexture);
+                spriteBatch.Draw(texture, position, frame, Color.White, 0f, origin, scale, SpriteEffects.None, 0f);
+            }
+        }
+
+        public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
+        {
+            base.PostDrawInWorld(spriteBatch, lightColor, alphaColor, rotation, scale, whoAmI);
+
+            if (DrawGlowmask)
+            {
+                Texture2D texture = ModContent.GetTexture(GlowmaskTexture);
+                Vector2 position = new Vector2(item.position.X - Main.screenPosition.X + item.width * 0.5f, item.position.Y - Main.screenPosition.Y + item.height - texture.Height * 0.5f + 2f);
+                spriteBatch.Draw(texture, position, null, Color.White, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
             }
         }
     }

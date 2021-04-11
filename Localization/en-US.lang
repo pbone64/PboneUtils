@@ -27,8 +27,13 @@ ItemTooltip.LiquidCombo=Allows ultimate control over liquids!\nRight click while
 
 // Tools
 ItemName.DeluxeTreasureMagnet=Deluxe Treasure Magnet
-ItemTooltip.DeluxeTreasureMagnet=Massively increases pickup range for items\nWorks in your inventory\nRight click to toggle on and off
+ItemTooltip.DeluxeTreasureMagnet=Vastly increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}
 
+ItemName.TerraTreasureMagnet=Terra Treasure Magnet
+ItemTooltip.TerraTreasureMagnet=Massively increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}
+
+ItemName.RunicTreasureMagnet=Runic Treasure Magnet
+ItemTooltip.RunicTreasureMagnet=Massively increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Won't attract the moon, probably'
 
 // TILES
 MapObject.PetrifiedSafeTile=Petrified Safe

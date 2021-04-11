@@ -25,6 +25,8 @@ namespace PboneUtils
 
         // Tools
         public bool DeluxeTreasureMagnet;
+        public bool TerraTreasureMagnet;
+        public bool RunicTreasureMagnet;
 
         // Item Config
         public Dictionary<string, ItemConfig> ItemConfigs;
@@ -35,9 +37,14 @@ namespace PboneUtils
             base.Initialize();
             VoidPig = false;
             PhilosophersStone = false;
+
             SafeGargoyleChest = -1;
             SafeGargoyleOpen = false;
+
+            PhilosophersStone = false;
             DeluxeTreasureMagnet = false;
+            TerraTreasureMagnet = false;
+            RunicTreasureMagnet = false;
 
             ItemConfigs = ItemConfig.DefaultConfigs();
         }
@@ -67,8 +74,11 @@ namespace PboneUtils
         {
             base.ResetEffects();
             VoidPig = false;
+
             PhilosophersStone = false;
             DeluxeTreasureMagnet = false;
+            TerraTreasureMagnet = false;
+            RunicTreasureMagnet = false;
         }
 
         public override void PreUpdateBuffs()
