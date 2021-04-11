@@ -18,15 +18,5 @@ namespace PboneUtils.Items.Tools
             base.UpdateInventory(player);
             player.GetModPlayer<PbonePlayer>().TerraTreasureMagnet = Enabled;
         }
-
-        public override void AddRecipes()
-        {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<DeluxeTreasureMagnet>());
-            recipe.AddTile(TileID.LunarCraftingStation);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
-        }
     }
 }
