@@ -9,6 +9,7 @@ namespace PboneUtils.Items.Liquid
 {
     public class LiquidCombo : PItem
     {
+        public override bool AutoloadCondition => PboneUtilsConfig.Instance.LiquidItemsToggle;
         public override bool ShowItemIconWhenInRange => true;
 
         public override void SetDefaults()

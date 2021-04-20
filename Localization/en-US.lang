@@ -3,12 +3,6 @@
 ItemName.PetrifiedSafe=Petrified Safe
 ItemTooltip.PetrifiedSafe=Summons a flying safe to store your items
 
-ItemName.VoidPiggy=Void Piggy
-ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\n\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'
-
-ItemName.PhilosophersStone=Philosopher's Stone
-ItemTooltip.PhilosophersStone=When held and enabled, picked up items are automatically sold\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Immortality not included'
-
 // Liquid
 ItemName.BottomlessHoneyBucket=Bottomless Honey Bucket
 ItemTooltip.BottomlessHoneyBucket=Contains an endless amount of honey\nCan be poured out
@@ -25,7 +19,7 @@ ItemTooltip.HeatAbsorbantSponge=Capable of soaking up an endless amount of lava
 ItemName.LiquidCombo=The Master Plan
 ItemTooltip.LiquidCombo=Allows ultimate control over liquids!\nRight click while holding to edit settings
 
-// Tools
+// MAGNETS
 ItemName.DeluxeTreasureMagnet=Deluxe Treasure Magnet
 ItemTooltip.DeluxeTreasureMagnet=Vastly increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}
 
@@ -35,12 +29,37 @@ ItemTooltip.TerraTreasureMagnet=Massively increases pickup range for items\nWork
 ItemName.RunicTreasureMagnet=Runic Treasure Magnet
 ItemTooltip.RunicTreasureMagnet=Massively increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Won't attract the moon, probably'
 
+// MISC
+ItemName.VoidPiggy=Void Piggy
+ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\n\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'
+
+ItemName.PhilosophersStone=Philosopher's Stone
+ItemTooltip.PhilosophersStone=When held and enabled, picked up items are automatically sold\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Immortality not included'
+
+
 // TILES
 MapObject.PetrifiedSafeTile=Petrified Safe
 
 
 // WORLDGEN
 WorldGen.PetrifiedSafes=Hiding safes...
+
+
+// CONFIG
+Config.Header.ItemToggles=Item Toggles
+Config.Header.MiscItemToggles=Misc Single Item Toggles
+
+Config.Label.StorageItemsToggle=Storage Items
+Config.Label.LiquidItemsToggle=Liquid Items
+Config.Label.MagnetItemsToggle=Magnet Items
+Config.Label.VoidPiggyToggle=Void Piggy
+Config.Label.PhilosophersStone=Philosopher's Stone
+
+Config.Tooltip.StorageItemsToggle=Enable or disable this mod's storage items, such as the Petrified Vault
+Config.Tooltip.LiquidItemsToggle=Enable or disable this mod's liquid items, such as the Bottomless Lava Bucket
+Config.Tooltip.MagnetItemsToggle=Enable or disable this mods magnet items, such as the Deluxe Treasure Magnet
+Config.Tooltip.VoidPiggyToggle=Enable or disable the Void Piggy item
+Config.Tooltip.PhilosophersStone=Enable or disable the Philosopher's Stone item
 
 
 // MISC

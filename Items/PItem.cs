@@ -12,15 +12,18 @@ namespace PboneUtils.Items
         public virtual bool Autosize => true;
         public virtual bool ShowItemIconWhenInRange => false;
         public virtual bool DrawGlowmask => false;
-        public string GlowmaskTexture => Texture + "_Glow";
+        public virtual bool AutoloadCondition => true;
 
+        public string GlowmaskTexture => Texture + "_Glow";
         public int UseTime { set => item.useTime = item.useAnimation = value; }
         public Texture2D ItemTexture => Main.itemTexture[item.type];
+
+        public override bool Autoload(ref string name) => AutoloadCondition;
 
         public override void SetDefaults()
         {
             // Autosize
-            if (Autosize && PboneUtils.TexturesLoaded)
+            if (Autosize && PboneUtils.TexturesLoaded && Main.itemTexture[item.type] != null)
             {
                 Vector2 texSize = Main.itemTexture[item.type].Size();
                 Vector2 correctedSize = texSize;

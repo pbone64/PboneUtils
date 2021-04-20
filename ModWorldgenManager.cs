@@ -15,9 +15,10 @@ namespace PboneUtils
             progress.Message = Language.GetTextValue("Mods.PboneUtils.WorldGen.PetrifiedSafes");
             progress.Value = 0;
 
+            const int amount = 15;
+            const int maxTries = 7500;
+
             int underworldHeight = Main.maxTilesY - 200;
-            int amount = 15;
-            int maxTries = 7500;
             Vector2[] existingPositions = new Vector2[amount];
 
             for (int attempts = 0; attempts < amount; attempts++)

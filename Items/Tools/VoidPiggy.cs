@@ -2,10 +2,12 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace PboneUtils.Items.Storage
+namespace PboneUtils.Items.Tools
 {
     public class VoidPiggy : RightClickToggleItem
     {
+        public override bool AutoloadCondition => PboneUtilsConfig.Instance.VoidPiggyToggle;
+
         public override void SetDefaults()
         {
             base.SetDefaults();

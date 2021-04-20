@@ -1,11 +1,12 @@
 ﻿using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 
-namespace PboneUtils.Items.Tools
+namespace PboneUtils.Items.Magnets
 {
     public class TerraTreasureMagnet : RightClickToggleItem
     {
+        public override bool AutoloadCondition => PboneUtilsConfig.Instance.MagnetItemsToggle;
+
         public override void SetDefaults()
         {
             base.SetDefaults();

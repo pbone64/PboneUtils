@@ -9,12 +9,14 @@ namespace PboneUtils
     public partial class PboneUtils : Mod
     {
         public static PboneUtils Instance;
-        public static bool TexturesLoaded = false;
+        public static ILog Log => Instance.Logger;
+
+        public static bool TexturesLoaded => Instance.texturesLoaded;
         public static ModTextureManager Textures => Instance.textures;
         public static ModRecipeManager Recipes => Instance.recipes;
         public static ModUIManager UI => Instance.ui;
-        public static ILog Log => Instance.Logger;
 
+        public bool texturesLoaded = false;
         public ModTextureManager textures;
         public ModRecipeManager recipes;
         public ModUIManager ui;
@@ -40,13 +42,15 @@ namespace PboneUtils
         {
             base.PostAddRecipes();
             textures.Initialize();
-            TexturesLoaded = true;
+
+            texturesLoaded = true;
         }
 
         public override void AddRecipeGroups()
         {
             base.AddRecipeGroups();
             recipes.AddRecipeGroups();
+
         }
 
         public override void Unload()
@@ -54,7 +58,12 @@ namespace PboneUtils
             base.Unload();
             if (textures != null)
                 textures.Dispose();
+
             Instance = null;
+
+            textures = null;
+            recipes = null;
+            ui = null;
         }
     }
 }

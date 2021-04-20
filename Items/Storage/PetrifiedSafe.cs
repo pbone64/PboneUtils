@@ -8,6 +8,8 @@ namespace PboneUtils.Items.Storage
 {
     public class PetrifiedSafe : PItem
     {
+        public override bool AutoloadCondition => PboneUtilsConfig.Instance.StorageItemsToggle;
+
         public override void SetDefaults()
         {
             base.SetDefaults();
