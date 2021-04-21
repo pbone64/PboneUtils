@@ -29,9 +29,18 @@ namespace PboneUtils.Items
                         if (itemDefinition.Type == item.type)
                         {
                             item.autoReuse = AutoswingOrig;
-                            return base.UseItem(item, player);
+                            return true;
                         }
                     }
+                }
+
+                // Check for spears (at least vanilla ones)
+                Projectile projectile = new Projectile();
+                projectile.SetDefaults(item.shoot);
+                if (projectile.aiStyle == 19)
+                {
+                    item.autoReuse = AutoswingOrig;
+                    return true;
                 }
 
                 item.autoReuse = true;
