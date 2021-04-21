@@ -1,7 +1,8 @@
-Inspired by LuiAFK, pbone's Utilities adds many combined items to enhance the quality of life, some examples being...
+Adds many features and items to increase the quality of life, including
  - An item that automatically sends collected money to your piggy bank.
  - An item to summon a portable safe, similar to the money trough.
  - Bottomless buckets and sponges for lava and honey, as well as a combination item.
  - Magnets to increase your grab range.
  - And item to automatically sell picked up items.
-...and more! Details can be found on the mod's homepage.
+ - Global, configurable autoswing.
+...and more! All features/items can be enabled and disabled to prevent content overlap.
