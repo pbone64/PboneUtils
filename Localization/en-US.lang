@@ -46,15 +46,18 @@ WorldGen.PetrifiedSafes=Hiding safes...
 
 
 // CONFIG
+Config.Header.MiscFeatures=Misc Features
 Config.Header.ItemToggles=Item Toggles
 Config.Header.MiscItemToggles=Misc Single Item Toggles
 
+Config.Label.AutoswingOnEverything=Global Autoswing
 Config.Label.StorageItemsToggle=Storage Items
 Config.Label.LiquidItemsToggle=Liquid Items
 Config.Label.MagnetItemsToggle=Magnet Items
 Config.Label.VoidPiggyToggle=Void Piggy
 Config.Label.PhilosophersStone=Philosopher's Stone
 
+Config.Tooltip.AutoswingOnEverything=Enable or disable global autoswing (aka autoshoot, autoreuse etc.)
 Config.Tooltip.StorageItemsToggle=Enable or disable this mod's storage items, such as the Petrified Vault
 Config.Tooltip.LiquidItemsToggle=Enable or disable this mod's liquid items, such as the Bottomless Lava Bucket
 Config.Tooltip.MagnetItemsToggle=Enable or disable this mods magnet items, such as the Deluxe Treasure Magnet
