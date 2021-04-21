@@ -17,7 +17,7 @@ namespace PboneUtils.Items
             AutoswingOrig = item.autoReuse;
         }
 
-        public override bool UseItem(Item item, Player player)
+        public override bool CanUseItem(Item item, Player player)
         {
             if (PboneUtilsConfig.Instance.AutoswingOnEverything)
             {
@@ -36,11 +36,15 @@ namespace PboneUtils.Items
 
                 item.autoReuse = true;
                 ChangedAutoswing = true;
+
+                return true;
             }
             else if (!PboneUtilsConfig.Instance.AutoswingOnEverything && ChangedAutoswing)
             {
                 item.autoReuse = AutoswingOrig;
                 ChangedAutoswing = false;
+
+                return true;
             }
             return base.UseItem(item, player);
         }

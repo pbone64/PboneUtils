@@ -19,7 +19,7 @@ ItemTooltip.HeatAbsorbantSponge=Capable of soaking up an endless amount of lava
 ItemName.LiquidCombo=The Master Plan
 ItemTooltip.LiquidCombo=Allows ultimate control over liquids!\nRight click while holding to edit settings
 
-// MAGNETS
+// Magnets
 ItemName.DeluxeTreasureMagnet=Deluxe Treasure Magnet
 ItemTooltip.DeluxeTreasureMagnet=Vastly increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}
 
@@ -28,6 +28,20 @@ ItemTooltip.TerraTreasureMagnet=Massively increases pickup range for items\nWork
 
 ItemName.RunicTreasureMagnet=Runic Treasure Magnet
 ItemTooltip.RunicTreasureMagnet=Massively increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Won't attract the moon, probably'
+
+// Ammo
+ItemName.EndlessFlamingArrow=Endless Flaming Quiver
+ItemName.EndlessUnholyArrow=Endless Unholy Quiver
+ItemName.EndlessJesterArrow=Endless Jester's Quiver
+ItemName.EndlessHellfireArrow=Endless Hellfire Quiver
+ItemName.EndlessHolyArrow=Endless Holy Quiver
+ItemName.EndlessCursedArrow=Endless Cursed Quiver
+ItemName.EndlessFrostburnArrow=Endless Frostburn Quiver
+ItemName.EndlessChlorophyteArrow=Endless Chlorophyte Quiver
+ItemName.EndlessIchorArrow=Endless Ichor Quiver
+ItemName.EndlessVenomArrow=Endless Venom Quiver
+ItemName.EndlessBoneArrow=Endless Bone Quiver
+ItemName.EndlessLuminiteArrow=Endless Luminite Quiver
 
 // MISC
 ItemName.VoidPiggy=Void Piggy
@@ -52,17 +66,22 @@ Config.Header.MiscItemToggles=Misc Single Item Toggles
 
 Config.Label.AutoswingOnEverything=Global Autoswing
 Config.Label.AutoswingOnEverythingBlacklist=Global Autoswing Blacklist
+
 Config.Label.StorageItemsToggle=Storage Items
 Config.Label.LiquidItemsToggle=Liquid Items
 Config.Label.MagnetItemsToggle=Magnet Items
+Config.Label.AmmoItemsToggle=Ammo Items
+
 Config.Label.VoidPiggyToggle=Void Piggy
 Config.Label.PhilosophersStone=Philosopher's Stone
 
 Config.Tooltip.AutoswingOnEverything=Enable or disable global autoswing (aka autoshoot, autoreuse etc.)
 Config.Tooltip.AutoswingOnEverythingBlacklist=Items to be ignored by Global Autoswing (if enabled)
+
 Config.Tooltip.StorageItemsToggle=Enable or disable this mod's storage items, such as the Petrified Vault
 Config.Tooltip.LiquidItemsToggle=Enable or disable this mod's liquid items, such as the Bottomless Lava Bucket
-Config.Tooltip.MagnetItemsToggle=Enable or disable this mods magnet items, such as the Deluxe Treasure Magnet
+Config.Tooltip.MagnetItemsToggle=Enable or disable this mod's magnet items, such as the Deluxe Treasure Magnet
+Config.Tooltip.AmmoItemsToggle=Enable or disable this mod's ammo items, such as the Endless Flaming Quiver
 Config.Tooltip.VoidPiggyToggle=Enable or disable the Void Piggy item
 Config.Tooltip.PhilosophersStone=Enable or disable the Philosopher's Stone item
 
@@ -71,3 +90,5 @@ Config.Tooltip.PhilosophersStone=Enable or disable the Philosopher's Stone item
 Common.Enabled.True=Enabled
 Common.Enabled.False=Disabled
 Common.CanBeToggled=Right click to toggle on and off
+Common.EndlessArrow=Endless {0} Quiver
+Common.EndlessBullet=Endless {0} Pouch

@@ -34,6 +34,12 @@ namespace PboneUtils
         [ReloadRequired]
         public bool LiquidItemsToggle;
 
+        [Label("$Mods.PboneUtils.Config.Label.AmmoItemsToggle")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.AmmoItemsToggle")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool AmmoItemsToggle;
+
         [Label("$Mods.PboneUtils.Config.Label.MagnetItemsToggle")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.MagnetItemsToggle")]
         [DefaultValue(true)]
