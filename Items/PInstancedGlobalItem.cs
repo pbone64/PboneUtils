@@ -1,5 +1,6 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
+using Terraria.ModLoader.Config;
 
 namespace PboneUtils.Items
 {
@@ -20,6 +21,19 @@ namespace PboneUtils.Items
         {
             if (PboneUtilsConfig.Instance.AutoswingOnEverything)
             {
+                // Don't autoswing blacklisted items
+                if (PboneUtilsConfig.Instance.AutoswingOnEverythingBlacklist != null)
+                {
+                    foreach (ItemDefinition itemDefinition in PboneUtilsConfig.Instance.AutoswingOnEverythingBlacklist)
+                    {
+                        if (itemDefinition.Type == item.type)
+                        {
+                            item.autoReuse = AutoswingOrig;
+                            return base.UseItem(item, player);
+                        }
+                    }
+                }
+
                 item.autoReuse = true;
                 ChangedAutoswing = true;
             }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Collections.Generic;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 
@@ -15,6 +16,10 @@ namespace PboneUtils
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.AutoswingOnEverything")]
         [DefaultValue(false)]
         public bool AutoswingOnEverything;
+
+        [Label("$Mods.PboneUtils.Config.Label.AutoswingOnEverythingBlacklist")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.AutoswingOnEverythingBlacklist")]
+        public List<ItemDefinition> AutoswingOnEverythingBlacklist;
 
         [Header("$Mods.PboneUtils.Config.Header.ItemToggles")]
         [Label("$Mods.PboneUtils.Config.Label.StorageItemsToggle")]
