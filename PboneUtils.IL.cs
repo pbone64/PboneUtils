@@ -18,7 +18,7 @@ namespace PboneUtils
 
             if (!c.TryGotoNext(instr => instr.MatchLdcR4(1f) && instr.Next.Next.Next.Next.Next.Next.MatchStfld(typeof(Player).GetField("chest"))))
             {
-                throw new Exception("Unable to match IL to patch Terraria.Player::Update");
+                throw new Exception("Unable to patch Terraria.Player.Update: couldn't match IL");
             }
 
             c.FindNext(out ILCursor[] cursors, instr => instr.MatchLdcR4(1f));

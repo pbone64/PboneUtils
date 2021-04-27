@@ -11,12 +11,10 @@ namespace PboneUtils
         public static PboneUtils Instance;
         public static ILog Log => Instance.Logger;
 
-        public static bool TexturesLoaded => Instance.texturesLoaded;
         public static ModTextureManager Textures => Instance.textures;
         public static ModRecipeManager Recipes => Instance.recipes;
         public static ModUIManager UI => Instance.ui;
 
-        public bool texturesLoaded = false;
         public ModTextureManager textures;
         public ModRecipeManager recipes;
         public ModUIManager ui;
@@ -42,8 +40,6 @@ namespace PboneUtils
         {
             base.PostAddRecipes();
             textures.Initialize();
-
-            texturesLoaded = true;
         }
 
         public override void AddRecipeGroups()

@@ -23,7 +23,7 @@ namespace PboneUtils.Items
         public override void SetDefaults()
         {
             // Autosize
-            if (Autosize && PboneUtils.TexturesLoaded && Main.itemTexture[item.type] != null)
+            if (Autosize && Main.itemTexture[item.type] != null)
             {
                 Vector2 texSize = Main.itemTexture[item.type].Size();
                 Vector2 correctedSize = texSize;
