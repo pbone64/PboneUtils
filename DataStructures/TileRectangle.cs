@@ -3,6 +3,7 @@ using System;
 
 namespace PboneUtils.DataStructures
 {
+    // Ended up not using this, oh well
     public struct TileRectangle : IEquatable<TileRectangle>
     {
         public Point StartPosition;
@@ -32,7 +33,7 @@ namespace PboneUtils.DataStructures
         }
 
         public Rectangle GetRectangle() => new Rectangle(StartPosition.X, StartPosition.Y,
-    EndPosition.X - StartPosition.X, EndPosition.Y - StartPosition.Y);
+            EndPosition.X - StartPosition.X, EndPosition.Y - StartPosition.Y);
 
         public override int GetHashCode() => Tuple.Create(StartPosition.X ^ EndPosition.X, StartPosition.Y ^ EndPosition.Y).GetHashCode();
         public override bool Equals(object obj) => obj is TileRectangle rect && Equals(rect);

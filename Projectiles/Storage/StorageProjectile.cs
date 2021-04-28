@@ -20,7 +20,6 @@ namespace PboneUtils.Projectiles.Storage
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-
         }
 
         public override void AI()

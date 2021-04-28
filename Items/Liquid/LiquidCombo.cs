@@ -1,6 +1,5 @@
-﻿using PboneUtils.DataStructures;
-using PboneUtils.Helpers;
-using PboneUtils.ID;
+﻿using Microsoft.Xna.Framework;
+using PboneUtils.Projectiles.Selection;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,61 +17,24 @@ namespace PboneUtils.Items.Liquid
             item.useStyle = ItemUseStyleID.HoldingOut;
             item.useAnimation = 10;
             item.useTime = 10;
-            item.useTurn = true;
-            item.autoReuse = true;
+            item.shoot = ModContent.ProjectileType<LiquidComboPro>();
+            item.channel = true;
             item.rare = ItemRarityID.Yellow;
             item.value = Item.sellPrice(0, 60, 0, 0);
             item.tileBoost += 20;
-            item.channel = true;
+            item.UseSound = SoundID.Item64;
         }
 
         public override bool AltFunctionUse(Player player) => true;
-        public override bool UseItem(Player player)
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-            if (Main.myPlayer == player.whoAmI)
+            if (player.altFunctionUse == 2)
             {
-                PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
-
-                if (player.altFunctionUse == 2)
-                {
-                    PboneUtils.UI.ItemConfigurer.Toggle("Liquid", item.type);
-                    return true;
-                }
-                else if (!PboneUtils.UI.ItemConfigurer.IsHovered())
-                {
-                    if (player.IsTargetTileInItemRange(item))
-                    {
-                        ItemConfig config = mPlayer.ItemConfigs["Liquid"];
-                        int type =
-                            (config.Data["Water"] ? LiquidID.Water :
-                            (config.Data["Lava"] ? LiquidID.Lava :
-                            (config.Data["Honey"] ? LiquidID.Honey :
-                            -1)));
-
-                        if (type == -1)
-                            return false;
-
-                        if (!config.RedMode)
-                        {
-                            if (LiquidHelper.PlaceLiquid(Player.tileTargetX, Player.tileTargetY, (byte)type))
-                            {
-                                Main.PlaySound(SoundID.Splash, (int)player.position.X, (int)player.position.Y);
-                                return true;
-                            }
-                        }
-                        else
-                        {
-                            if (LiquidHelper.DrainLiquid(Player.tileTargetX, Player.tileTargetY, (byte)type))
-                            {
-                                Main.PlaySound(SoundID.Splash, (int)player.position.X, (int)player.position.Y);
-                                return true;
-                            }
-                        }
-                    }
-                }
+                PboneUtils.UI.ItemConfigurer.Toggle("Liquid", item.type);
+                return false;
             }
 
-            return base.UseItem(player);
+            return true;
         }
 
         public override void AddRecipes()

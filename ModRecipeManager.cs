@@ -8,6 +8,11 @@ namespace PboneUtils
     {
         public string AnyShadowScale = "PboneUtils:AnyShadowScale";
 
+        public void AddRecipes()
+        {
+
+        }
+
         public void AddRecipeGroups()
         {
             RecipeGroup group = new RecipeGroup(() => $"{Language.GetTextValue("ItemName.ShadowScale")}/{Language.GetTextValue("ItemName.TissueSample")}", new int[2] {

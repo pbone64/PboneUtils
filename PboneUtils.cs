@@ -36,6 +36,12 @@ namespace PboneUtils
         public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers) => ui.ModifyInterfaceLayers(layers);
         #endregion
 
+        public override void AddRecipes()
+        {
+            base.AddRecipes();
+            recipes.AddRecipes();
+        }
+
         public override void PostAddRecipes()
         {
             base.PostAddRecipes();
@@ -46,7 +52,6 @@ namespace PboneUtils
         {
             base.AddRecipeGroups();
             recipes.AddRecipeGroups();
-
         }
 
         public override void Unload()

@@ -20,9 +20,6 @@ namespace PboneUtils
         public int SafeGargoyleChest;
         public bool SafeGargoyleOpen = false;
 
-        // Liquid
-        public TileRectangle LiquidComboRectangle;
-
         // Tools
         public bool DeluxeTreasureMagnet;
         public bool TerraTreasureMagnet;
