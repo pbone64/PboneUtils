@@ -3,6 +3,7 @@ using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 
 namespace PboneUtils.Projectiles.Selection
 {
@@ -104,14 +105,19 @@ namespace PboneUtils.Projectiles.Selection
             }
         }
 
+        public override void DrawBehind(int index, List<int> drawCacheProjsBehindNPCsAndTiles, List<int> drawCacheProjsBehindNPCs, List<int> drawCacheProjsBehindProjectiles, List<int> drawCacheProjsOverWiresUI)
+        {
+            drawCacheProjsOverWiresUI.Add(projectile.whoAmI);
+        }
+
         public override void PostDraw(SpriteBatch spriteBatch, Color lightColor)
         {
             base.PostDraw(spriteBatch, lightColor);
 
             if (Owner.whoAmI == Main.myPlayer && !PboneUtils.UI.ItemConfigurer.IsHovered()) // Only draw on owner's client
             {
-                float fade = MathHelper.Lerp(0.1f, 0.75f, (float)(Math.Sin(Main.GameUpdateCount / 10f) + 1f) / 2f);
-                Color color = Color.White * fade;
+                float fade = MathHelper.Lerp(0.1f, 0.3f, (float)(Math.Sin(Main.GameUpdateCount / 10f) + 1f) / 2f);
+                Color color = Color.Lerp(Color.Transparent, Color.White, fade);
 
                 Rectangle destination = GetRectangle();
                 destination.X -= (int)Main.screenPosition.X;

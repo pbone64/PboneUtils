@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PboneUtils.DataStructures;
-using System;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
@@ -143,9 +142,11 @@ namespace PboneUtils.UI
 
             for (int i = 1; i < ButtonAmount + 1; i++)
             {
-                float angle = (MathHelper.TwoPi / ButtonAmount) * i - MathHelper.Pi;
-                ret.buttonsPositions[i - 1].X = (float)Math.Cos(angle) * 42 + ret.centerPosition.X;
-                ret.buttonsPositions[i - 1].Y = (float)Math.Sin(angle) * 42 + ret.centerPosition.Y;
+                float angle = (MathHelper.TwoPi / ButtonAmount) * (i + 0.5f);
+                ret.buttonsPositions[i - 1] = new Vector2(ret.centerPosition.X, ret.centerPosition.Y + 45).RotatedBy(angle, ret.centerPosition);
+                //ret.buttonsPositions[i - 1] = ret.centerPosition + Vector2.UnitX.RotatedBy(i * ((float)Math.PI * 2f) / ButtonAmount - (float)Math.PI / 11f) * 45f;
+                //ret.buttonsPositions[i - 1].X = (float)Math.Cos(angle) * 42 + ret.centerPosition.X;
+                //ret.buttonsPositions[i - 1].Y = (float)Math.Sin(angle) * 42 + ret.centerPosition.Y;
             }
 
             return ret;

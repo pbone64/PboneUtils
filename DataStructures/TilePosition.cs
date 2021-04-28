@@ -2,6 +2,7 @@
 
 namespace PboneUtils.DataStructures
 {
+    // Ended up not using this, oh well
     public struct TilePosition
     {
         public Tile Tile => Framing.GetTileSafely(X, Y);
