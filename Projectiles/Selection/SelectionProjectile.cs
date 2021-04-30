@@ -40,6 +40,7 @@ namespace PboneUtils.Projectiles.Selection
 
             if (Owner.whoAmI == projectile.owner) // Only run on the owners client
             {
+                // TODO ui oddities: placing liquids when pressing ui buttons, ui spam opening (i hate you terraria)
                 // Kill if owner can't use items, is CCed (frozen, webbed, stoned), dead
                 if (Owner.noItems || Owner.CCed || Owner.dead)
                 {
@@ -49,7 +50,6 @@ namespace PboneUtils.Projectiles.Selection
                 // If they aren't channeling, then do stuff before killing yourself
                 if (!Owner.channel)
                 {
-                    // TODO make this work
                     Rectangle rect = GetRectangle();
                     if (PreAction(rect))
                     {
@@ -136,7 +136,6 @@ namespace PboneUtils.Projectiles.Selection
                 (int)((CurrentPosition.Y - (int)StartY) * 16f)
             );
 
-            // TODO this isn't working anymore? In draw
             if (rect.Width >= 0 && rect.Width < 16)
             {
                 rect.Width = 16;

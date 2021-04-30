@@ -9,7 +9,7 @@ namespace PboneUtils.NPCs
     {
         public override void SetupShop(int type, Chest shop, ref int nextSlot)
         {
-            if (type == NPCID.Wizard)
+            if (type == NPCID.Wizard && PboneUtilsConfig.Instance.PhilosophersStone)
             {
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<PhilosophersStone>());
                 nextSlot++;
