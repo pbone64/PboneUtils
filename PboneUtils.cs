@@ -8,6 +8,8 @@ namespace PboneUtils
 {
     public partial class PboneUtils : Mod
     {
+        public override uint ExtraPlayerBuffSlots => (uint)PboneUtilsConfig.Instance.ExtraBuffSlots;
+
         public static PboneUtils Instance;
         public static ILog Log => Instance.Logger;
 

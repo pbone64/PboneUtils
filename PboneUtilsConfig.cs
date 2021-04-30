@@ -12,6 +12,15 @@ namespace PboneUtils
         public static PboneUtilsConfig Instance => ModContent.GetInstance<PboneUtilsConfig>();
 
         [Header("$Mods.PboneUtils.Config.Header.MiscFeatures")]
+        [Label("$Mods.PboneUtils.Config.Label.ExtraBuffSlots")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.ExtraBuffSlots")]
+        [Slider]
+        [Range(0, 66)]
+        [Increment(11)]
+        [DefaultValue(22)]
+        [ReloadRequired]
+        public int ExtraBuffSlots;
+
         [Label("$Mods.PboneUtils.Config.Label.AutoswingOnEverything")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.AutoswingOnEverything")]
         [DefaultValue(false)]
@@ -53,7 +62,6 @@ namespace PboneUtils
         [ReloadRequired]
         public bool VoidPiggyToggle;
 
-        [Header("$Mods.PboneUtils.Config.Header.PhilosophersStone")]
         [Label("$Mods.PboneUtils.Config.Label.PhilosophersStone")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.PhilosophersStone")]
         [DefaultValue(true)]
