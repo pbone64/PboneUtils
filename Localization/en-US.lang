@@ -43,7 +43,11 @@ ItemName.EndlessVenomArrow=Endless Venom Quiver
 ItemName.EndlessBoneArrow=Endless Bone Quiver
 ItemName.EndlessLuminiteArrow=Endless Luminite Quiver
 
-// MISC
+// Arena
+ItemName.AsphaltPlatform=Asphalt Platform
+ItemTooltip.AsphaltPlatform=Increases running speed
+
+// Misc
 ItemName.VoidPiggy=Void Piggy
 ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\n\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'
 
@@ -53,6 +57,7 @@ ItemTooltip.PhilosophersStone=When held and enabled, picked up items are automat
 
 // TILES
 MapObject.PetrifiedSafeTile=Petrified Safe
+MapObject.AsphaltPlatform=Asphalt Platform
 
 
 // WORLDGEN
@@ -83,8 +88,9 @@ Config.Tooltip.AutoswingOnEverythingBlacklist=Items to be ignored by Global Auto
 
 Config.Tooltip.StorageItemsToggle=Enable or disable this mod's storage items, such as the Petrified Vault
 Config.Tooltip.LiquidItemsToggle=Enable or disable this mod's liquid items, such as the Bottomless Lava Bucket
-Config.Tooltip.MagnetItemsToggle=Enable or disable this mod's magnet items, such as the Deluxe Treasure Magnet
 Config.Tooltip.AmmoItemsToggle=Enable or disable this mod's ammo items, such as the Endless Flaming Quiver
+Config.Tooltip.ArenaItemsToggle=Enable or disable this mod's arena blocks, such as asphalt platforms
+Config.Tooltip.MagnetItemsToggle=Enable or disable this mod's magnet items, such as the Deluxe Treasure Magnet
 Config.Tooltip.VoidPiggyToggle=Enable or disable the Void Piggy item
 Config.Tooltip.PhilosophersStone=Enable or disable the Philosopher's Stone item
 
