@@ -13,7 +13,10 @@ namespace PboneUtils.Projectiles.Storage
     public abstract class StorageProjectile : PProjectile
     {
         public abstract int ChestType { get; }
+        public abstract int ItemType { get; }
         public abstract Texture2D Outline { get; }
+        public abstract Ref<int> GetWhoAmIVariable(PbonePlayer player);
+        public abstract Ref<bool> GetToggleVariable(PbonePlayer player);
         public virtual bool Animate => true;
         public abstract LegacySoundStyle UseSound { get; }
 
@@ -147,7 +150,7 @@ namespace PboneUtils.Projectiles.Storage
 
             localPlayer.noThrow = 2;
             localPlayer.showItemIcon = true;
-            localPlayer.showItemIcon2 = ModContent.ItemType<PetrifiedSafe>();
+            localPlayer.showItemIcon2 = ItemType;
             if (PlayerInput.UsingGamepad)
                 localPlayer.GamepadEnableGrappleCooldown();
 
@@ -161,12 +164,12 @@ namespace PboneUtils.Projectiles.Storage
                 {
                     Main.PlaySound(UseSound);
                     localPlayer.chest = -1;
-                    localPlayer.GetModPlayer<PbonePlayer>().SafeGargoyleChest = -1;
+                    GetWhoAmIVariable(localPlayer.GetModPlayer<PbonePlayer>()).Value = -1;
                     Recipe.FindRecipes();
                     return;
                 }
 
-                localPlayer.GetModPlayer<PbonePlayer>().SafeGargoyleChest = proj.whoAmI;
+                GetWhoAmIVariable(localPlayer.GetModPlayer<PbonePlayer>()).Value = proj.whoAmI;
                 localPlayer.chest = ChestType;
                 localPlayer.chestX = (int)(proj.Center.X / 16f);
                 localPlayer.chestY = (int)(proj.Center.Y / 16f);

@@ -26,7 +26,8 @@ namespace PboneUtils
 
             c.Index++;
             c.EmitDelegate<Func<float, float>>((volume) => {
-                if (Main.LocalPlayer.GetModPlayer<PbonePlayer>().SafeGargoyleOpen)
+                if (Main.LocalPlayer.GetModPlayer<PbonePlayer>().SafeGargoyleOpen.Value
+                || Main.LocalPlayer.GetModPlayer<PbonePlayer>().DefendersCrystalOpen.Value)
                 {
                     return 0f;
                 }

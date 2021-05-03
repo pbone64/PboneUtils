@@ -15,10 +15,14 @@ namespace PboneUtils
         public class ExtraTextures : IDisposable
         {
             public Texture2D PetrifiedSafeOutline = ModContent.GetTexture("PboneUtils/Textures/Extras/PetrifiedSafeOutline");
+            public Texture2D DefendersCrystalOutline = ModContent.GetTexture("PboneUtils/Textures/Extras/DefendersCrystalOutline");
+            public Texture2D DefendersCrystalGlowyThing = ModContent.GetTexture("PboneUtils/Textures/Extras/DefendersCrystalProjectileGlowyThing");
 
             public void Dispose()
             {
                 PetrifiedSafeOutline.Dispose();
+                DefendersCrystalOutline.Dispose();
+                DefendersCrystalGlowyThing.Dispose();
             }
         }
 

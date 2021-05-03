@@ -99,5 +99,3 @@ Config.Tooltip.PhilosophersStone=Enable or disable the Philosopher's Stone item
 Common.Enabled.True=Enabled
 Common.Enabled.False=Disabled
 Common.CanBeToggled=Right click to toggle on and off
-Common.EndlessArrow=Endless {0} Quiver
-Common.EndlessBullet=Endless {0} Pouch

@@ -2,12 +2,12 @@
 using Terraria.ModLoader;
 using PboneUtils.Projectiles.Storage;
 using PboneUtils.ID;
-using Terraria.ID;
 using System.Collections.Generic;
 using PboneUtils.DataStructures;
 using Terraria.ModLoader.IO;
 using Terraria.Utilities;
 using PboneUtils.Items.Liquid;
+using Terraria.Audio;
 
 namespace PboneUtils
 {
@@ -17,8 +17,10 @@ namespace PboneUtils
         // Storage
         public bool VoidPig;
         public bool PhilosophersStone;
-        public int SafeGargoyleChest;
-        public bool SafeGargoyleOpen = false;
+        public Ref<int> SafeGargoyleChest = new Ref<int>();
+        public Ref<bool> SafeGargoyleOpen = new Ref<bool>(false);
+        public Ref<int> DefendersCrystalChest = new Ref<int>();
+        public Ref<bool> DefendersCrystalOpen = new Ref<bool>(false);
 
         // Tools
         public bool DeluxeTreasureMagnet;
@@ -35,8 +37,10 @@ namespace PboneUtils
             VoidPig = false;
             PhilosophersStone = false;
 
-            SafeGargoyleChest = -1;
-            SafeGargoyleOpen = false;
+            SafeGargoyleChest.Value = -1;
+            SafeGargoyleOpen.Value = false;
+            DefendersCrystalChest.Value = -1;
+            DefendersCrystalOpen.Value = false;
 
             PhilosophersStone = false;
             DeluxeTreasureMagnet = false;
@@ -81,41 +85,52 @@ namespace PboneUtils
         public override void PreUpdateBuffs()
         {
             base.PreUpdateBuffs();
-            if (SafeGargoyleChest >= 0)
+            if (SafeGargoyleChest.Value >= 0)
+                DoPortableChest<PetrifiedSafeProjectile>(ref SafeGargoyleChest, ref SafeGargoyleOpen);
+            if (DefendersCrystalChest.Value >= 0)
+                DoPortableChest<DefendersCrystalProjectile>(ref DefendersCrystalChest, ref DefendersCrystalOpen);
+        }
+
+        public void DoPortableChest<T>(ref Ref<int> whoAmI, ref Ref<bool> toggle) where T : StorageProjectile, new()
+        {
+            int projectileType = ModContent.ProjectileType<T>();
+            T instance = new T();
+            int bankID = instance.ChestType;
+            LegacySoundStyle useSound = instance.UseSound;
+
+            if (Main.projectile[whoAmI.Value].active && Main.projectile[whoAmI.Value].type == projectileType)
             {
-                if (Main.projectile[SafeGargoyleChest].active && Main.projectile[SafeGargoyleChest].type == ModContent.ProjectileType<PetrifiedSafeProjectile>())
-                {
-                    int oldChest = player.chest;
-                    player.chest = BankID.Safe;
-                    SafeGargoyleOpen = true;
+                int oldChest = player.chest;
+                player.chest = bankID;
+                toggle.Value = true;
 
-                    int num17 = (int)((player.position.X + player.width * 0.5) / 16.0);
-                    int num18 = (int)((player.position.Y + player.height * 0.5) / 16.0);
-                    player.chestX = (int)Main.projectile[SafeGargoyleChest].Center.X / 16;
-                    player.chestY = (int)Main.projectile[SafeGargoyleChest].Center.Y / 16;
-                    if ((oldChest != -3 && oldChest != -1) || num17 < player.chestX - Player.tileRangeX || num17 > player.chestX + Player.tileRangeX + 1 || num18 < player.chestY - Player.tileRangeY || num18 > player.chestY + Player.tileRangeY + 1)
+                int num17 = (int)((player.position.X + player.width * 0.5) / 16.0);
+                int num18 = (int)((player.position.Y + player.height * 0.5) / 16.0);
+                player.chestX = (int)Main.projectile[whoAmI.Value].Center.X / 16;
+                player.chestY = (int)Main.projectile[whoAmI.Value].Center.Y / 16;
+                if ((oldChest != -3 && oldChest != -1) || num17 < player.chestX - Player.tileRangeX || num17 > player.chestX + Player.tileRangeX + 1 || num18 < player.chestY - Player.tileRangeY || num18 > player.chestY + Player.tileRangeY + 1)
+                {
+                    whoAmI.Value = -1;
+                    if (player.chest != -1)
                     {
-                        SafeGargoyleChest = -1;
-                        if (player.chest != -1)
-                        {
-                            Main.PlaySound(SoundID.Item37);
-                        }
-
-                        if (oldChest != -3)
-                            player.chest = oldChest;
-                        else
-                            player.chest = -1;
-
-                        Recipe.FindRecipes();
+                        Main.PlaySound(useSound);
                     }
-                }
-                else
-                {
-                    Main.PlaySound(SoundID.Item37);
-                    SafeGargoyleChest = -1;
-                    player.chest = BankID.None;
+
+                    if (oldChest != -3)
+                        player.chest = oldChest;
+                    else
+                        player.chest = -1;
+
                     Recipe.FindRecipes();
                 }
+            }
+            else
+            {
+                Main.PlaySound(useSound);
+
+                whoAmI.Value = -1;
+                player.chest = BankID.None;
+                Recipe.FindRecipes();
             }
         }
 
