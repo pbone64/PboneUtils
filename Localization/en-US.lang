@@ -2,6 +2,8 @@
 // Storage
 ItemName.PetrifiedSafe=Petrified Safe
 ItemTooltip.PetrifiedSafe=Summons a flying safe to store your items
+ItemName.DefendersCrystal=Defender's Crystal
+ItemTooltip.DefendersCrystal=Summons a connection to your defenders forge
 
 // Liquid
 ItemName.BottomlessHoneyBucket=Bottomless Honey Bucket
