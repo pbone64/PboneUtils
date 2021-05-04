@@ -29,16 +29,27 @@ namespace PboneUtils.Projectiles.Storage
             projectile.timeLeft = 10800;
         }
 
+        public override void AI()
+        {
+            base.AI();
+            float timer = (float)((Math.Sin(Main.GameUpdateCount / 20f) + 1f) / 2f);
+            Lighting.AddLight(projectile.Center, (Color.CornflowerBlue * timer).ToVector3());
+        }
+
         public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
         {
             spriteBatch.End();
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.Additive, Main.DefaultSamplerState, DepthStencilState.None, RasterizerState.CullCounterClockwise, null, Main.GameViewMatrix.TransformationMatrix);
             
+            float timer = (float)((Math.Sin(Main.GameUpdateCount / 20f) + 1f) / 2f);
             Texture2D texture = PboneUtils.Textures.Extras.DefendersCrystalGlowyThing;
-            Color color = Color.White * (float)((Math.Sin(Main.GameUpdateCount / 10f) + 1f) / 2f);
+            Color color = Color.White * timer;
 
             for (int i = 0; i < 4; i++)
-                spriteBatch.Draw(texture, projectile.Center - Main.screenPosition + new Vector2(0, 2f).RotatedBy(MathHelper.PiOver2 * i) * 2, null, color, projectile.rotation, texture.Size() * 0.5f, 1f, SpriteEffects.None, 0f);
+            {
+                Vector2 position = projectile.Center - Main.screenPosition + new Vector2(0f, 2f).RotatedBy(MathHelper.PiOver2 * i) * 2;
+                spriteBatch.Draw(texture, position, null, color, projectile.rotation, texture.Size() * 0.5f, 1f, SpriteEffects.None, 0f);
+            }
 
             spriteBatch.End();
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, RasterizerState.CullCounterClockwise, null, Main.GameViewMatrix.ZoomMatrix);

@@ -5,11 +5,14 @@ using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
 using PboneUtils.Items.Storage;
+using Terraria.Localization;
 
 namespace PboneUtils.Tiles
 {
     public class PetrifiedSafeTile : ModTile
     {
+        public static bool MessageSent = false;
+
         public override void SetDefaults()
         {
             base.SetDefaults();
@@ -44,7 +47,14 @@ namespace PboneUtils.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<PetrifiedSafe>());
+            if (PboneUtilsConfig.Instance.StorageItemsToggle)
+                Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<PetrifiedSafe>());
+            else if (!MessageSent)
+            {
+                Main.NewText(Language.GetTextValue("Mods.PboneUtils.Message.PetrifiedSafeDisabled1"), Main.OurFavoriteColor);
+                Main.NewText(Language.GetTextValue("Mods.PboneUtils.Message.PetrifiedSafeDisabled2"), Main.OurFavoriteColor);
+                MessageSent = true;
+            }
         }
     }
 }

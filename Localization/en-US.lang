@@ -76,6 +76,7 @@ Config.Label.AutoswingOnEverythingBlacklist=Global Autoswing Blacklist
 
 Config.Label.StorageItemsToggle=Storage Items
 Config.Label.LiquidItemsToggle=Liquid Items
+Config.Label.ArenaItemsToggle=Arena Items
 Config.Label.MagnetItemsToggle=Magnet Items
 Config.Label.AmmoItemsToggle=Ammo Items
 
@@ -93,6 +94,11 @@ Config.Tooltip.ArenaItemsToggle=Enable or disable this mod's arena blocks, such 
 Config.Tooltip.MagnetItemsToggle=Enable or disable this mod's magnet items, such as the Deluxe Treasure Magnet
 Config.Tooltip.VoidPiggyToggle=Enable or disable the Void Piggy item
 Config.Tooltip.PhilosophersStone=Enable or disable the Philosopher's Stone item
+
+
+// MESSAGES
+Message.PetrifiedSafeDisabled1=Storage items have been disabled in the config!
+Message.PetrifiedSafeDisabled2=If you want a portable safe, enable storage items in the mod config.
 
 
 // MISC
