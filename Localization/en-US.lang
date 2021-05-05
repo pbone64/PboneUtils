@@ -53,6 +53,12 @@ ItemName.EndlessCursedBullet=Endless Cursed Pouch
 ItemName.EndlessChlorophyteBullet=Endless Chlorophyte Pouch
 ItemName.EndlessHighVelocityBullet=Endless High Velocity Pouch
 ItemName.EndlessIchorBullet=Endless Ichor Pouch
+ItemName.EndlessVenomBullet=Endless Venom Pouch
+ItemName.EndlessPartyBullet=Endless Party Pouch
+ItemName.EndlessNanoBullet=Endless Nano Pouch
+ItemName.EndlessExplodingBullet=Endless Exploding Pouch
+ItemName.EndlessGoldenBullet=Endless Golden Pouch
+ItemName.EndlessLuminiteBullet=Endless Luminite Pouch
 
 // Arena
 ItemName.AsphaltPlatform=Asphalt Platform
