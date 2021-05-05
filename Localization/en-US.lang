@@ -2,8 +2,9 @@
 // Storage
 ItemName.PetrifiedSafe=Petrified Safe
 ItemTooltip.PetrifiedSafe=Summons a flying safe to store your items
+
 ItemName.DefendersCrystal=Defender's Crystal
-ItemTooltip.DefendersCrystal=Summons a connection to your defenders forge
+ItemTooltip.DefendersCrystal=Summons a crystal that lets you access your defender's forge
 
 // Liquid
 ItemName.BottomlessHoneyBucket=Bottomless Honey Bucket
@@ -44,6 +45,14 @@ ItemName.EndlessIchorArrow=Endless Ichor Quiver
 ItemName.EndlessVenomArrow=Endless Venom Quiver
 ItemName.EndlessBoneArrow=Endless Bone Quiver
 ItemName.EndlessLuminiteArrow=Endless Luminite Quiver
+
+ItemName.EndlessMeteorShot=Endless Meteor Pouch
+ItemName.EndlessSilverBullet=Endless Silver Pouch
+ItemName.EndlessCrystalBullet=Endless Crystal Pouch
+ItemName.EndlessCursedBullet=Endless Cursed Pouch
+ItemName.EndlessChlorophyteBullet=Endless Chlorophyte Pouch
+ItemName.EndlessHighVelocityBullet=Endless High Velocity Pouch
+ItemName.EndlessIchorBullet=Endless Ichor Pouch
 
 // Arena
 ItemName.AsphaltPlatform=Asphalt Platform

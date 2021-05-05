@@ -11,12 +11,12 @@ namespace PboneUtils.Items.Ammo
 
         public override void SetDefaults()
         {
-            base.SetDefaults();
-
             item.CloneDefaults(BaseAmmo);
             item.maxStack = 1;
             item.consumable = false;
             item.rare += 2;
+
+            base.SetDefaults();
         }
 
         public override void AddRecipes()

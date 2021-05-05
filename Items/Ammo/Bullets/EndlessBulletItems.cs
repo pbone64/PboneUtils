@@ -36,4 +36,14 @@ namespace PboneUtils.Items.Ammo.Bullets
     {
         public override int BaseAmmo => ItemID.IchorBullet;
     }
+
+    public class EndlessVenomBullet : EndlessAmmoItem
+    {
+        public override int BaseAmmo => ItemID.VenomBullet;
+    }
+
+    public class EndlessPartyBullet : EndlessAmmoItem
+    {
+        public override int BaseAmmo => ItemID.PartyBullet;
+    }
 }
