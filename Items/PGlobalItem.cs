@@ -68,5 +68,15 @@ namespace PboneUtils.Items
                 grabRange += DeluxeTreasureMagnetRange;
             }
         }
+
+        public override bool ConsumeItem(Item item, Player player)
+        {
+            if (item.healLife > 0 && PboneUtilsConfig.Instance.EndlessPotions && item.stack >= PboneUtilsConfig.Instance.EndlessPotionsSlider)
+            {
+                return false;
+            }
+
+            return base.ConsumeItem(item, player);
+        }
     }
 }
