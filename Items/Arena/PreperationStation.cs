@@ -4,14 +4,15 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Arena
 {
-    public class AsphaltPlatform : PItem
+    public class PreperationStation : PItem
     {
         public override bool AutoloadCondition => PboneUtilsConfig.Instance.ArenaItemsToggle;
 
         public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.WoodPlatform);
-            item.createTile = ModContent.TileType<AsphaltPlatformTile>();
+            item.CloneDefaults(ItemID.AmmoBox);
+            item.consumable = false;
+            item.createTile = ModContent.TileType<PreperationStationTile>();
 
             base.SetDefaults();
         }
@@ -20,13 +21,11 @@ namespace PboneUtils.Items.Arena
         {
             base.AddRecipes();
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.AsphaltBlock);
-            recipe.SetResult(this, 2);
-            recipe.AddRecipe();
-
-            recipe = new ModRecipe(mod);
-            recipe.AddIngredient(this, 2);
-            recipe.SetResult(ItemID.AsphaltBlock);
+            recipe.AddIngredient(ItemID.SharpeningStation, 5);
+            recipe.AddIngredient(ItemID.AmmoBox, 5);
+            recipe.AddIngredient(ItemID.CrystalBall, 5);
+            recipe.AddIngredient(ItemID.BewitchingTable, 5);
+            recipe.SetResult(this);
             recipe.AddRecipe();
         }
     }

@@ -64,6 +64,9 @@ ItemName.EndlessLuminiteBullet=Endless Luminite Pouch
 ItemName.AsphaltPlatform=Asphalt Platform
 ItemTooltip.AsphaltPlatform=Increases running speed
 
+ItemName.PreperationStation=Preperation Station
+ItemTooltip.PreperationStation=Right click to increase armor penetration for melee weapons, reduce ammo usage, increase magic powers, and have more minions\nIsn't consumed upon being placed\n'Also makes Julienne Fries!'
+
 // Misc
 ItemName.VoidPiggy=Void Piggy
 ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\n\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'
@@ -72,9 +75,15 @@ ItemName.PhilosophersStone=Philosopher's Stone
 ItemTooltip.PhilosophersStone=When held and enabled, picked up items are automatically sold\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Immortality not included'
 
 
+// BUFFS
+BuffName.PreperationStationBuff=Prepared
+BuffTooltip.PreperationStationBuff=Effects of the Sharpening Station, Ammo Box, Crystal Ball, and Bewitching Table\nDisables the seperate station buffs
+
+
 // TILES
 MapObject.PetrifiedSafeTile=Petrified Safe
 MapObject.AsphaltPlatform=Asphalt Platform
+MapObject.PreperationStation=Preperation Station
 
 
 // WORLDGEN
