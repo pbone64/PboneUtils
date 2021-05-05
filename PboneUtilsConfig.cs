@@ -11,6 +11,8 @@ namespace PboneUtils
 
         public static PboneUtilsConfig Instance => ModContent.GetInstance<PboneUtilsConfig>();
 
+        // MISC FEATURES
+
         [Header("$Mods.PboneUtils.Config.Header.MiscFeatures")]
         [Label("$Mods.PboneUtils.Config.Label.ExtraBuffSlots")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.ExtraBuffSlots")]
@@ -21,6 +23,19 @@ namespace PboneUtils
         [ReloadRequired]
         public int ExtraBuffSlots;
 
+        [Label("$Mods.PboneUtils.Config.Label.EndlessPotions")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.EndlessPotions")]
+        [DefaultValue(false)]
+        public bool EndlessPotions;
+
+        [Label("$Mods.PboneUtils.Config.Label.EndlessPotionsSlider")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.EndlessPotionsSlider")]
+        [Slider]
+        [Range(1, 30)]
+        [Increment(1)]
+        [DefaultValue(30)]
+        public int EndlessPotionsSlider;
+
         [Label("$Mods.PboneUtils.Config.Label.AutoswingOnEverything")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.AutoswingOnEverything")]
         [DefaultValue(false)]
@@ -29,6 +44,9 @@ namespace PboneUtils
         [Label("$Mods.PboneUtils.Config.Label.AutoswingOnEverythingBlacklist")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.AutoswingOnEverythingBlacklist")]
         public List<ItemDefinition> AutoswingOnEverythingBlacklist;
+
+
+        // ITEMS
 
         [Header("$Mods.PboneUtils.Config.Header.ItemToggles")]
         [Label("$Mods.PboneUtils.Config.Label.StorageItemsToggle")]
@@ -60,6 +78,9 @@ namespace PboneUtils
         [DefaultValue(true)]
         [ReloadRequired]
         public bool MagnetItemsToggle;
+
+
+        // MISC SINGLE ITEMS
 
         [Header("$Mods.PboneUtils.Config.Header.MiscItemToggles")]
         [Label("$Mods.PboneUtils.Config.Label.VoidPiggyToggle")]

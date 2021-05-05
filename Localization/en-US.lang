@@ -82,12 +82,13 @@ WorldGen.PetrifiedSafes=Hiding safes...
 
 
 // CONFIG
-Config.Header.MiscFeatures=Misc Features
+Config.Header.MiscFeatures=QoL Features
 Config.Header.ItemToggles=Item Toggles
 Config.Header.MiscItemToggles=Misc Single Item Toggles
 
 Config.Label.ExtraBuffSlots=Extra Buff Slots
-
+Config.Label.EndlessPotions=Infinite Potions
+Config.Label.EndlessPotionsSlider=Infinite Potion Amount
 Config.Label.AutoswingOnEverything=Global Autoswing
 Config.Label.AutoswingOnEverythingBlacklist=Global Autoswing Blacklist
 
@@ -101,6 +102,8 @@ Config.Label.VoidPiggyToggle=Void Piggy
 Config.Label.PhilosophersStone=Philosopher's Stone
 
 Config.Tooltip.ExtraBuffSlots=The amount of buff slots to add on to the default 22 (there's 11 buff slots per line)
+Config.Tooltip.EndlessPotions=If enabled, having the specified amount of potions in your inventory or personal storage item will give you the buff infinitely
+Config.Tooltip.EndlessPotionsSlider=The amount of potions needed for infinite buffs
 Config.Tooltip.AutoswingOnEverything=Enable or disable global autoswing (aka autoshoot, autoreuse etc.)
 Config.Tooltip.AutoswingOnEverythingBlacklist=Items to be ignored by Global Autoswing (if enabled)
 
