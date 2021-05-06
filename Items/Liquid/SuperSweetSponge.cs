@@ -31,7 +31,7 @@ namespace PboneUtils.Items.Liquid
                 {
                     Main.PlaySound(SoundID.Splash, (int)player.position.X, (int)player.position.Y);
                     LiquidHelper.DrainLiquid(Player.tileTargetX, Player.tileTargetY, LiquidID.Honey);
-				}
+                }
             }
 
             return base.UseItem(player);

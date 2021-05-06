@@ -44,67 +44,67 @@ namespace PboneUtils.Helpers
 
         public static bool DrainLiquid(int x, int y, byte type)
         {
-			int targettedLiquid = Main.tile[x, y].liquidType();
-			int nearbyLiquid = 0;
-			for (int i = x - 1; i <= x + 1; i++)
-			{
-				for (int j = y - 1; j <= y + 1; j++)
-				{
-					if (Main.tile[i, j].liquidType() == targettedLiquid)
-						nearbyLiquid += Main.tile[i, j].liquid;
-				}
-			}
+            int targettedLiquid = Main.tile[x, y].liquidType();
+            int nearbyLiquid = 0;
+            for (int i = x - 1; i <= x + 1; i++)
+            {
+                for (int j = y - 1; j <= y + 1; j++)
+                {
+                    if (Main.tile[i, j].liquidType() == targettedLiquid)
+                        nearbyLiquid += Main.tile[i, j].liquid;
+                }
+            }
 
-			if (Main.tile[x, y].liquid <= 0)
-				return false;
+            if (Main.tile[x, y].liquid <= 0)
+                return false;
 
-			int liquidType = Main.tile[x, y].liquidType();
-			int liquidAmount = Main.tile[x, y].liquid;
+            int liquidType = Main.tile[x, y].liquidType();
+            int liquidAmount = Main.tile[x, y].liquid;
 
-			if (liquidType != type)
-				return false;
+            if (liquidType != type)
+                return false;
 
-			Main.tile[x, y].liquid = 0;
+            Main.tile[x, y].liquid = 0;
 
-			Main.tile[x, y].lava(lava: false);
-			Main.tile[x, y].honey(honey: false);
+            Main.tile[x, y].lava(lava: false);
+            Main.tile[x, y].honey(honey: false);
 
-			WorldGen.SquareTileFrame(x, y, resetFrame: false);
+            WorldGen.SquareTileFrame(x, y, resetFrame: false);
 
-			if (Main.netMode == NetmodeID.MultiplayerClient)
-				NetMessage.sendWater(x, y);
-			else
-				Liquid.AddWater(x, y);
+            if (Main.netMode == NetmodeID.MultiplayerClient)
+                NetMessage.sendWater(x, y);
+            else
+                Liquid.AddWater(x, y);
 
-			for (int k = x - 1; k <= x + 1; k++)
-			{
-				for (int l = y - 1; l <= y + 1; l++)
-				{
-					if (liquidAmount < 256 && Main.tile[k, l].liquidType() == targettedLiquid)
-					{
-						int removeAmount = Main.tile[k, l].liquid;
-						if (removeAmount + liquidAmount > 255)
-							removeAmount = 255 - liquidAmount;
+            for (int k = x - 1; k <= x + 1; k++)
+            {
+                for (int l = y - 1; l <= y + 1; l++)
+                {
+                    if (liquidAmount < 256 && Main.tile[k, l].liquidType() == targettedLiquid)
+                    {
+                        int removeAmount = Main.tile[k, l].liquid;
+                        if (removeAmount + liquidAmount > 255)
+                            removeAmount = 255 - liquidAmount;
 
-						liquidAmount += removeAmount;
-						Main.tile[k, l].liquid -= (byte)removeAmount;
-						Main.tile[k, l].liquidType(liquidType);
-						if (Main.tile[k, l].liquid == 0)
-						{
-							Main.tile[k, l].lava(lava: false);
-							Main.tile[k, l].honey(honey: false);
-						}
+                        liquidAmount += removeAmount;
+                        Main.tile[k, l].liquid -= (byte)removeAmount;
+                        Main.tile[k, l].liquidType(liquidType);
+                        if (Main.tile[k, l].liquid == 0)
+                        {
+                            Main.tile[k, l].lava(lava: false);
+                            Main.tile[k, l].honey(honey: false);
+                        }
 
-						WorldGen.SquareTileFrame(k, l, resetFrame: false);
-						if (Main.netMode == NetmodeID.MultiplayerClient)
-							NetMessage.sendWater(k, l);
-						else
-							Liquid.AddWater(k, l);
-					}
-				}
-			}
+                        WorldGen.SquareTileFrame(k, l, resetFrame: false);
+                        if (Main.netMode == NetmodeID.MultiplayerClient)
+                            NetMessage.sendWater(k, l);
+                        else
+                            Liquid.AddWater(k, l);
+                    }
+                }
+            }
 
-			return true;
-		}
+            return true;
+        }
     }
 }

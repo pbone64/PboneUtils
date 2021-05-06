@@ -5,7 +5,9 @@ Adds many features and items to increase the quality of life, including
  - Magnets to increase your grab range.
  - An item to automatically sell picked up items.
  - Global, configurable autoswing.
+ - Endless buffs.
+ - Increased buff slots.
 ...and more! All features/items can be enabled and disabled to prevent content overlap.
 
 Credits:
- - pbone: I literally made everything so far lol.
+ - pbone: I've made everything so far.
