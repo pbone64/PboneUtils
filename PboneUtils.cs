@@ -30,6 +30,7 @@ namespace PboneUtils
             ui = new ModUIManager();
 
             Load_IL();
+            textures.Initialize();
             ui.Initialize();
         }
 

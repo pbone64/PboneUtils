@@ -9,6 +9,7 @@ namespace PboneUtils
     {
         public ExtraTextures Extras;
         public ItemTextures Items;
+        public MountTextures Mounts;
         public UITextures UI;
 
         #region Texture Containers
@@ -30,6 +31,18 @@ namespace PboneUtils
         {
             public void Dispose()
             {
+            }
+        }
+
+        public class MountTextures : IDisposable
+        {
+            public Texture2D SuperDrillMountBackTexture = ModContent.GetTexture("PboneUtils/Mounts/SuperDrillMount_Back");
+            public Texture2D SuperDrillMountFrontTexture = ModContent.GetTexture("PboneUtils/Mounts/SuperDrillMount_Front");
+
+            public void Dispose()
+            {
+                SuperDrillMountBackTexture.Dispose();
+                SuperDrillMountFrontTexture.Dispose();
             }
         }
 
@@ -77,6 +90,7 @@ namespace PboneUtils
         {
             Extras = new ExtraTextures();
             Items = new ItemTextures();
+            Mounts = new MountTextures();
             UI = new UITextures();
         }
 
@@ -84,6 +98,7 @@ namespace PboneUtils
         {
             Extras.Dispose();
             Items.Dispose();
+            Mounts.Dispose();
             UI.Dispose();
         }
     }
