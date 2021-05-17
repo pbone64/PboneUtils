@@ -67,6 +67,9 @@ ItemTooltip.AsphaltPlatform=Increases running speed
 ItemName.PreperationStation=Preperation Station
 ItemTooltip.PreperationStation=Right click to increase armor penetration for melee weapons, reduce ammo usage, increase magic powers, and have more minions\nIsn't consumed upon being placed\n'Also makes Julienne Fries!'
 
+ItemName.BuffBrazier=Buff Brazier
+ItemTooltip.BuffBrazier=Increases your life regen, mana regen, movement speed, and reduces enemy spawnrates when nearby\nProvides a decent amount of light\nIsn't consumed upon being placed
+
 // Misc
 ItemName.VoidPiggy=Void Piggy
 ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\n\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'
@@ -77,13 +80,17 @@ ItemTooltip.PhilosophersStone=When held and enabled, picked up items are automat
 
 // BUFFS
 BuffName.PreperationStationBuff=Prepared
-BuffTooltip.PreperationStationBuff=Effects of the Sharpening Station, Ammo Box, Crystal Ball, and Bewitching Table\nDisables the seperate station buffs
+BuffDescription.PreperationStationBuff=Effects of the Sharpening Station, Ammo Box, Crystal Ball, and Bewitching Table\nDisables the individual station buffs
+
+BuffName.BuffBrazierBuff=Empowered
+BuffDescription.BuffBrazierBuff=Effects of Campfire, Heart Lantern, Star in a Bottle, Sunflower, and Honey\nDisables the individual buffs
 
 
 // TILES
 MapObject.PetrifiedSafeTile=Petrified Safe
-MapObject.AsphaltPlatform=Asphalt Platform
-MapObject.PreperationStation=Preperation Station
+MapObject.AsphaltPlatformTile=Asphalt Platform
+MapObject.PreperationStationTile=Preperation Station
+MapObject.BuffBrazierTile=Buff Brazier
 
 
 // WORLDGEN
