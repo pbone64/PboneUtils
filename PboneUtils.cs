@@ -16,22 +16,36 @@ namespace PboneUtils
         public static ModTextureManager Textures => Instance.textures;
         public static ModRecipeManager Recipes => Instance.recipes;
         public static ModUIManager UI => Instance.ui;
+        public static TreasureBagValueCalculator BagValues => Instance.bagValues;
 
         public ModTextureManager textures;
         public ModRecipeManager recipes;
         public ModUIManager ui;
+        public TreasureBagValueCalculator bagValues;
 
         public override void Load()
         {
             base.Load();
+            LoadingHelper.Load();
+
             Instance = ModContent.GetInstance<PboneUtils>();
             textures = new ModTextureManager();
             recipes = new ModRecipeManager();
             ui = new ModUIManager();
+            bagValues = new TreasureBagValueCalculator();
 
             Load_IL();
+            Load_On();
             textures.Initialize();
             ui.Initialize();
+        }
+
+        public override void PostSetupContent()
+        {
+            base.PostSetupContent();
+
+            if (PboneUtilsConfig.Instance.AverageBossBags)
+                bagValues.Load();
         }
 
         #region UI
@@ -62,12 +76,15 @@ namespace PboneUtils
             base.Unload();
             if (textures != null)
                 textures.Dispose();
+            if (bagValues != null)
+                bagValues.Unload();
 
             Instance = null;
 
             textures = null;
             recipes = null;
             ui = null;
+            bagValues = null;
         }
     }
 }

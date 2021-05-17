@@ -12,6 +12,15 @@ namespace PboneUtils.Items
         public const int TerraTreasureMagnetRange = 560;
         public const int DeluxeTreasureMagnetRange = 320;
 
+        public override void SetDefaults(Item item)
+        {
+            base.SetDefaults(item);
+            if (TreasureBagValueCalculator.Loaded && PboneUtilsConfig.Instance.AverageBossBags && item.value == 0 && PboneUtils.BagValues.AveragedValues.ContainsKey(item.type))
+            {
+                item.value = PboneUtils.BagValues.AveragedValues[item.type];
+            }
+        }
+
         public override void UpdateInventory(Item item, Player player)
         {
             base.UpdateInventory(item, player);

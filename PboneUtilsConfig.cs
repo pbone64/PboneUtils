@@ -13,6 +13,11 @@ namespace PboneUtils
 
         // MISC FEATURES
 
+        [Label("$Mods.PboneUtils.Config.Label.AverageBossBags")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.AverageBossBags")]
+        [DefaultValue(true)]
+        public bool AverageBossBags;
+
         [Header("$Mods.PboneUtils.Config.Header.MiscFeatures")]
         [Label("$Mods.PboneUtils.Config.Label.ExtraBuffSlots")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.ExtraBuffSlots")]
@@ -25,7 +30,7 @@ namespace PboneUtils
 
         [Label("$Mods.PboneUtils.Config.Label.EndlessPotions")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.EndlessPotions")]
-        [DefaultValue(false)]
+        [DefaultValue(true)]
         public bool EndlessPotions;
 
         [Label("$Mods.PboneUtils.Config.Label.EndlessPotionsSlider")]
@@ -38,7 +43,7 @@ namespace PboneUtils
 
         [Label("$Mods.PboneUtils.Config.Label.AutoswingOnEverything")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.AutoswingOnEverything")]
-        [DefaultValue(false)]
+        [DefaultValue(true)]
         public bool AutoswingOnEverything;
 
         [Label("$Mods.PboneUtils.Config.Label.AutoswingOnEverythingBlacklist")]
