@@ -36,7 +36,8 @@ namespace PboneUtils
 
         public static HashSet<int> VanillaBossBags = new HashSet<int>() {
             ItemID.KingSlimeBossBag, ItemID.EyeOfCthulhuBossBag, ItemID.EaterOfWorldsBossBag, ItemID.BrainOfCthulhuBossBag, ItemID.QueenBeeBossBag, ItemID.SkeletronBossBag, ItemID.WallOfFleshBossBag,
-            ItemID.DestroyerBossBag, ItemID.TwinsBossBag, ItemID.SkeletronPrimeBossBag, ItemID.PlanteraBossBag, ItemID.GolemBossBag, ItemID.FishronBossBag, ItemID.MoonLordBossBag, ItemID.BossBagBetsy
+            ItemID.DestroyerBossBag, ItemID.TwinsBossBag, ItemID.SkeletronPrimeBossBag, ItemID.PlanteraBossBag, ItemID.GolemBossBag, ItemID.FishronBossBag, ItemID.MoonLordBossBag, ItemID.BossBagBetsy,
+            ItemID.CultistBossBag, ItemID.BossBagDarkMage, ItemID.BossBagOgre
         };
 
         public static bool Loading;
@@ -51,13 +52,6 @@ namespace PboneUtils
             instance.SetDefaults(item);
 
             int realValue = instance.value * stack;
-
-            // I need a hardcoded case for this because vanilla is dumb and doesn't give coins value
-            // Cry about it
-            if (CoinHelper.CoinTypes.Contains(item))
-            {
-                realValue = CoinHelper.CoinValues[CoinHelper.CoinType(item)];
-            }
 
             TempInfo.RealValues.Add(realValue);
         }
