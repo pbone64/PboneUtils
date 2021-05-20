@@ -34,6 +34,7 @@ namespace PboneUtils.Projectiles.Selection
         public Point StartPosition => new Vector2(projectile.ai[0], projectile.ai[1]).ToPoint();
         public Point CurrentPosition => projectile.Center.ToTileCoordinates();
 
+        public override bool? CanCutTiles() => false;
         public override void AI()
         {
             base.AI();
@@ -51,7 +52,7 @@ namespace PboneUtils.Projectiles.Selection
                 if (!Owner.channel)
                 {
                     Rectangle rect = GetRectangle();
-                    if (PreAction(rect))
+                    if (PreAction != null && PreAction(rect))
                     {
                         for (int i = 0; i < rect.Width / 16; i++)
                         {

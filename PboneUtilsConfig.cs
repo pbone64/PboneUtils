@@ -104,5 +104,11 @@ namespace PboneUtils
         [DefaultValue(true)]
         [ReloadRequired]
         public bool SpawnRateItems;
+
+        [Label("$Mods.PboneUtils.Config.Label.GreaterStaffOfRegrowth")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.GreaterStaffOfRegrowth")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool GreaterStaffOfRegrowth;
     }
 }
