@@ -64,7 +64,7 @@ ItemName.EndlessLuminiteBullet=Endless Luminite Pouch
 ItemName.AsphaltPlatform=Asphalt Platform
 ItemTooltip.AsphaltPlatform=Increases running speed
 
-ItemName.PreperationStation=Preperation Station
+ItemName.PreperationStation=Prima Materia
 ItemTooltip.PreperationStation=Right click to increase armor penetration for melee weapons, reduce ammo usage, increase magic powers, and have more minions\nIsn't consumed upon being placed\n'Also makes Julienne Fries!'
 
 ItemName.BuffBrazier=Buff Brazier
@@ -74,7 +74,7 @@ ItemTooltip.BuffBrazier=Increases your life regen, mana regen, movement speed, a
 ItemName.VoidPiggy=Void Piggy
 ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'
 
-ItemName.PhilosophersStone=Philosopher's Stone
+ItemName.PhilosophersStone=Prima Materia
 ItemTooltip.PhilosophersStone=When held in your hand and enabled, picked up items are automatically sold\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Immortality not included'
 
 ItemName.FlameOfBattle=Flame of Battle
@@ -136,7 +136,7 @@ Config.Label.MagnetItemsToggle=Magnet Items
 Config.Label.AmmoItemsToggle=Ammo Items
 
 Config.Label.VoidPiggyToggle=Void Piggy
-Config.Label.PhilosophersStone=Philosopher's Stone
+Config.Label.PhilosophersStone=Prima Materia
 Config.Label.SpawnRateItems=Spawn Rate Items
 
 Config.Tooltip.AverageBossBags=If enabled, treasure bags will sell for the average of their drops. Note: this may change between reloads because of how it's calculcated
@@ -152,7 +152,7 @@ Config.Tooltip.AmmoItemsToggle=Enable or disable this mod's ammo items, such as 
 Config.Tooltip.ArenaItemsToggle=Enable or disable this mod's arena blocks, such as asphalt platforms
 Config.Tooltip.MagnetItemsToggle=Enable or disable this mod's magnet items, such as the Deluxe Treasure Magnet
 Config.Tooltip.VoidPiggyToggle=Enable or disable the Void Piggy item
-Config.Tooltip.PhilosophersStone=Enable or disable the Philosopher's Stone item
+Config.Tooltip.PhilosophersStone=Enable or disable the Prima Materia item
 Config.Tooltip.SpawnRateItems=Enable or disable the Flame of Battle and Flame of Peace, items which increase or decrease the spawn rate respectively
 
 
