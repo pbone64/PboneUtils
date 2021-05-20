@@ -32,5 +32,13 @@ namespace PboneUtils.NPCs
                     break;
             }
         }
+
+        public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
+        {
+            base.EditSpawnRate(player, ref spawnRate, ref maxSpawns);
+            PbonePlayer modPlayer = player.GetModPlayer<PbonePlayer>();
+            spawnRate = (int)(spawnRate * modPlayer.SpawnRateMultiplier);
+            maxSpawns = (int)(maxSpawns * modPlayer.MaxSpawnsMultiplier);
+        }
     }
 }

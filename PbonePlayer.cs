@@ -16,16 +16,18 @@ namespace PboneUtils
         #region Fields
         // Storage
         public bool VoidPig;
-        public bool PhilosophersStone;
         public Ref<int> SafeGargoyleChest = new Ref<int>();
         public Ref<bool> SafeGargoyleOpen = new Ref<bool>(false);
         public Ref<int> DefendersCrystalChest = new Ref<int>();
         public Ref<bool> DefendersCrystalOpen = new Ref<bool>(false);
 
         // Tools
+        public bool PhilosophersStone;
         public bool DeluxeTreasureMagnet;
         public bool TerraTreasureMagnet;
         public bool RunicTreasureMagnet;
+        public float SpawnRateMultiplier;
+        public float MaxSpawnsMultiplier;
 
         // Item Config
         public Dictionary<string, ItemConfig> ItemConfigs;
@@ -35,7 +37,6 @@ namespace PboneUtils
         {
             base.Initialize();
             VoidPig = false;
-            PhilosophersStone = false;
 
             SafeGargoyleChest.Value = -1;
             SafeGargoyleOpen.Value = false;
@@ -47,6 +48,8 @@ namespace PboneUtils
             TerraTreasureMagnet = false;
             RunicTreasureMagnet = false;
 
+            SpawnRateMultiplier = 1f;
+            MaxSpawnsMultiplier = 1f;
             ItemConfigs = ItemConfig.DefaultConfigs();
         }
 

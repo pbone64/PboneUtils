@@ -99,5 +99,11 @@ namespace PboneUtils
         [DefaultValue(true)]
         [ReloadRequired]
         public bool PhilosophersStone;
+
+        [Label("$Mods.PboneUtils.Config.Label.SpawnRateItems")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.SpawnRateItems")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool SpawnRateItems;
     }
 }

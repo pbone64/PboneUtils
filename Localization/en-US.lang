@@ -72,10 +72,16 @@ ItemTooltip.BuffBrazier=Increases your life regen, mana regen, movement speed, a
 
 // Misc
 ItemName.VoidPiggy=Void Piggy
-ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\n\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'
+ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'
 
 ItemName.PhilosophersStone=Philosopher's Stone
 ItemTooltip.PhilosophersStone=When held and enabled, picked up items are automatically sold\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Immortality not included'
+
+ItemName.FlameOfBattle=Flame of Battle
+ItemTooltip.FlameOfBattle=Greatly increases spawn rates and spawn cap\n{$Mods.PboneUtils.Common.CanBeToggled}
+
+ItemName.FlameOfPeace=Flame of Peace
+ItemTooltip.FlameOfPeace=Greatly decreases spawn rates and spawn cap\n{$Mods.PboneUtils.Common.CanBeToggled}
 
 
 // BUFFS
@@ -103,6 +109,7 @@ UI.EndlessBuffToggler.DescriptionPlaceholder=Click on a buff to see info about i
 UI.EndlessBuffToggler.DescriptionName=Name
 UI.EndlessBuffToggler.DescriptionSource=Source
 UI.EndlessBuffToggler.DescriptionDescription=Tooltip
+UI.EndlessBuffToggler.DescriptionHowToDisable=(right click buff icon while selected to toggle)
 
 UI.EndlessBuffSource.Inventory=Inventory
 UI.EndlessBuffSource.PiggyBank=Piggy Bank
@@ -130,6 +137,7 @@ Config.Label.AmmoItemsToggle=Ammo Items
 
 Config.Label.VoidPiggyToggle=Void Piggy
 Config.Label.PhilosophersStone=Philosopher's Stone
+Config.Label.SpawnRateItems=Spawn Rate Items
 
 Config.Tooltip.AverageBossBags=If enabled, treasure bags will sell for the average of their drops. Note: this may change between reloads because of how it's calculcated
 Config.Tooltip.ExtraBuffSlots=The amount of buff slots to add on to the default 22 (there's 11 buff slots per line)
@@ -145,6 +153,7 @@ Config.Tooltip.ArenaItemsToggle=Enable or disable this mod's arena blocks, such 
 Config.Tooltip.MagnetItemsToggle=Enable or disable this mod's magnet items, such as the Deluxe Treasure Magnet
 Config.Tooltip.VoidPiggyToggle=Enable or disable the Void Piggy item
 Config.Tooltip.PhilosophersStone=Enable or disable the Philosopher's Stone item
+Config.Tooltip.SpawnRateItems=Enable or disable the Flame of Battle and Flame of Peace, items which increase or decrease the spawn rate respectively
 
 
 // MESSAGES

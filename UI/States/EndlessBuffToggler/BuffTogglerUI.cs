@@ -96,7 +96,7 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
              $"{Language.GetTextValue("Mods.PboneUtils.UI.EndlessBuffToggler.DescriptionName")}: {Lang.GetBuffName(SelectedBuffInfo.buff)}\n" +
              $"{Language.GetTextValue("Mods.PboneUtils.UI.EndlessBuffToggler.DescriptionSource")}: {Language.GetTextValue($"Mods.PboneUtils.UI.EndlessBuffSource.{SelectedBuffInfo.source.Key}")}\n" +
              $"{Language.GetTextValue("Mods.PboneUtils.UI.EndlessBuffToggler.DescriptionDescription")}: {Lang.GetBuffDescription(SelectedBuffInfo.buff)}\n" +
-             $"{(Main.LocalPlayer.GetModPlayer<EndlessPotionPlayer>().DisabledBuffs.Contains(SelectedBuffInfo.buff) ? $"[c/ff0000:{Language.GetTextValue("Mods.PboneUtils.Common.Enabled.False")}]" : $"[c/00ff00:{Language.GetTextValue("Mods.PboneUtils.Common.Enabled.True")}]")}";
+             $"{(Main.LocalPlayer.GetModPlayer<EndlessPotionPlayer>().DisabledBuffs.Contains(SelectedBuffInfo.buff) ? $"[c/ff0000:{Language.GetTextValue("Mods.PboneUtils.Common.Enabled.False")}]" : $"[c/00ff00:{Language.GetTextValue("Mods.PboneUtils.Common.Enabled.True")}]")} {Language.GetTextValue("Mods.PboneUtils.UI.EndlessBuffToggler.DescriptionHowToDisable")}";
 
                 color = Color.White;
             }
