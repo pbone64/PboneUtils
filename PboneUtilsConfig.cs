@@ -13,11 +13,6 @@ namespace PboneUtils
 
         // MISC FEATURES
 
-        [Label("$Mods.PboneUtils.Config.Label.AverageBossBags")]
-        [Tooltip("$Mods.PboneUtils.Config.Tooltip.AverageBossBags")]
-        [DefaultValue(true)]
-        public bool AverageBossBags;
-
         [Header("$Mods.PboneUtils.Config.Header.MiscFeatures")]
         [Label("$Mods.PboneUtils.Config.Label.ExtraBuffSlots")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.ExtraBuffSlots")]
@@ -50,6 +45,10 @@ namespace PboneUtils
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.AutoswingOnEverythingBlacklist")]
         public List<ItemDefinition> AutoswingOnEverythingBlacklist;
 
+        [Label("$Mods.PboneUtils.Config.Label.AverageBossBags")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.AverageBossBags")]
+        [DefaultValue(true)]
+        public bool AverageBossBags;
 
         // ITEMS
 
