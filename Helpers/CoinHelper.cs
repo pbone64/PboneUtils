@@ -10,6 +10,14 @@ namespace PboneUtils.Helpers
             ItemID.CopperCoin, ItemID.SilverCoin, ItemID.GoldCoin, ItemID.PlatinumCoin
         };
 
+        public static List<int> CoinValues = new List<int>() {
+            0,
+            Copper,
+            Silver,
+            Gold,
+            Platinum
+        };
+
         public const int Copper = 1;
         public const int Silver = 100;
         public const int Gold = 10000;

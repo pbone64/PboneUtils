@@ -51,6 +51,14 @@ namespace PboneUtils
             instance.SetDefaults(item);
 
             int realValue = instance.value * stack;
+
+            // I need a hardcoded case for this because vanilla is dumb and doesn't give coins value
+            // Cry about it
+            if (CoinHelper.CoinTypes.Contains(item))
+            {
+                realValue = CoinHelper.CoinValues[CoinHelper.CoinType(item)];
+            }
+
             TempInfo.RealValues.Add(realValue);
         }
 
