@@ -64,7 +64,7 @@ ItemName.EndlessLuminiteBullet=Endless Luminite Pouch
 ItemName.AsphaltPlatform=Asphalt Platform
 ItemTooltip.AsphaltPlatform=Increases running speed
 
-ItemName.PreperationStation=Prima Materia
+ItemName.PreperationStation=Preperation Station
 ItemTooltip.PreperationStation=Right click to increase armor penetration for melee weapons, reduce ammo usage, increase magic powers, and have more minions\nIsn't consumed upon being placed\n'Also makes Julienne Fries!'
 
 ItemName.BuffBrazier=Buff Brazier
