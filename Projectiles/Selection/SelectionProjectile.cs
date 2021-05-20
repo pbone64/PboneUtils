@@ -31,7 +31,7 @@ namespace PboneUtils.Projectiles.Selection
         public float StartX { get => projectile.ai[0]; set => projectile.ai[0] = value; }
         public float StartY { get => projectile.ai[1]; set => projectile.ai[1] = value; }
 
-        public Point StartPosition => new Vector2(projectile.ai[0], projectile.ai[1]).ToPoint();
+        public Point StartPosition => new Vector2(StartX, StartY).ToPoint();
         public Point CurrentPosition => projectile.Center.ToTileCoordinates();
 
         public override bool? CanCutTiles() => false;
