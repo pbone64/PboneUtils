@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using PboneUtils.DataStructures;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -6,7 +7,14 @@ namespace PboneUtils
 {
     public class EndlessPotionPlayer : ModPlayer
     {
-        public List<Item> buffItems = new List<Item>();
+        public Dictionary<int, EndlessBuffSource> EndlessBuffSources = new Dictionary<int, EndlessBuffSource>();
+        public HashSet<int> DisabledBuffs = new HashSet<int>();
+        public List<Item> ItemsToCountForEndlessBuffs = new List<Item>();
+
+        public int InventoryItemsStart = 0;
+        public int PiggyBankItemsStart = 0;
+        public int SafeItemsStart = 0;
+        public int DefendersForgeItemStart = 0;
 
         public override void PreUpdateBuffs()
         {
@@ -15,19 +23,38 @@ namespace PboneUtils
             {
                 if (Main.GameUpdateCount % 2 == 0) // 30 times a second
                 {
-                    buffItems.Clear();
-                    buffItems.AddRange(player.inventory);
-                    buffItems.AddRange(player.bank.item);
-                    buffItems.AddRange(player.bank2.item);
-                    buffItems.AddRange(player.bank3.item);
+                    ItemsToCountForEndlessBuffs.Clear();
+
+                    ItemsToCountForEndlessBuffs.AddRange(player.inventory);
+                    InventoryItemsStart = ItemsToCountForEndlessBuffs.Count - 1;
+
+                    ItemsToCountForEndlessBuffs.AddRange(player.bank.item);
+                    PiggyBankItemsStart = ItemsToCountForEndlessBuffs.Count - 1;
+
+                    ItemsToCountForEndlessBuffs.AddRange(player.bank2.item);
+                    SafeItemsStart = ItemsToCountForEndlessBuffs.Count - 1;
+
+                    ItemsToCountForEndlessBuffs.AddRange(player.bank3.item);
+                    DefendersForgeItemStart = ItemsToCountForEndlessBuffs.Count - 1;
                 }
 
-                foreach (Item item in buffItems)
+                EndlessBuffSources.Clear();
+                for (int i = 0; i < ItemsToCountForEndlessBuffs.Count; i++)
                 {
+                    Item item = ItemsToCountForEndlessBuffs[i];
+
                     if (item.buffType > 0) // The first buff, obsidian skin, is 1
                     {
-                        if (item.stack >= PboneUtilsConfig.Instance.EndlessPotionsSlider)
+                        if (item.stack >= PboneUtilsConfig.Instance.EndlessPotionsSlider && !DisabledBuffs.Contains(item.buffType) && !EndlessBuffSources.ContainsKey(item.buffType))
                         {
+                            string key =
+                                (i <= DefendersForgeItemStart ?
+                                    (i <= SafeItemsStart ?
+                                        (i <= PiggyBankItemsStart ? "Inventory" : "PiggyBank")
+                                    : "Safe")
+                                : "DefendersForge");
+
+                            EndlessBuffSources.Add(item.buffType, new EndlessBuffSource(item, key));
                             player.AddBuff(item.buffType, 2);
                         }
                     }

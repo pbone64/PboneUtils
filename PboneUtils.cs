@@ -18,10 +18,14 @@ namespace PboneUtils
         public static ModUIManager UI => Instance.ui;
         public static TreasureBagValueCalculator BagValues => Instance.bagValues;
 
-        public ModTextureManager textures;
-        public ModRecipeManager recipes;
-        public ModUIManager ui;
-        public TreasureBagValueCalculator bagValues;
+        public static bool FargowiltasLoaded => Instance.fargowiltasLoaded;
+
+        private ModTextureManager textures;
+        private ModRecipeManager recipes;
+        private ModUIManager ui;
+        private TreasureBagValueCalculator bagValues;
+
+        private bool fargowiltasLoaded;
 
         public override void Load()
         {
@@ -33,6 +37,8 @@ namespace PboneUtils
             recipes = new ModRecipeManager();
             ui = new ModUIManager();
             bagValues = new TreasureBagValueCalculator();
+
+            fargowiltasLoaded = ModLoader.GetMod("Fargowiltas") != null;
 
             Load_IL();
             Load_On();

@@ -1,3 +1,4 @@
 displayName = pbone's Utilities
 author = pbone
 version = 1.0.0
+weakReferences = Fargowiltas

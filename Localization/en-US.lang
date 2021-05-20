@@ -97,6 +97,19 @@ MapObject.BuffBrazierTile=Buff Brazier
 WorldGen.PetrifiedSafes=Hiding safes...
 
 
+// UI
+UI.EndlessBuffTogglerInventoryButton.MouseOver=Endless Buff Toggler
+UI.EndlessBuffToggler.DescriptionPlaceholder=Click on a buff to see info about it.
+UI.EndlessBuffToggler.DescriptionName=Name
+UI.EndlessBuffToggler.DescriptionSource=Source
+UI.EndlessBuffToggler.DescriptionDescription=Tooltip
+
+UI.EndlessBuffSource.Inventory=Inventory
+UI.EndlessBuffSource.PiggyBank=Piggy Bank
+UI.EndlessBuffSource.Safe=Safe
+UI.EndlessBuffSource.DefendersForge=Defender's Forge
+
+
 // CONFIG
 Config.Header.MiscFeatures=QoL Features
 Config.Header.ItemToggles=Item Toggles

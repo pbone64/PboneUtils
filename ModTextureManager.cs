@@ -52,7 +52,6 @@ namespace PboneUtils
             public Texture2D RadialButtonRed = ModContent.GetTexture("PboneUtils/Textures/UI/Radial/ButtonRed");
             public Texture2D RadialButtonHover = ModContent.GetTexture("PboneUtils/Textures/UI/Radial/ButtonHover");
             public Texture2D RadialButtonRedHover = ModContent.GetTexture("PboneUtils/Textures/UI/Radial/ButtonRedHover");
-
             public Dictionary<string, Texture2D> RadialMenuIcons = new Dictionary<string, Texture2D>() {
                 { "Liquid", getRadialIcon("Liquid") },
                 { "LiquidRed", getRadialIcon("LiquidRed") },
@@ -60,6 +59,9 @@ namespace PboneUtils
                 { "Lava", getRadialIcon("Lava") },
                 { "Honey", getRadialIcon("Honey") }
             };
+
+            public Texture2D BuffTogglerInventoryButton = ModContent.GetTexture("PboneUtils/Textures/UI/BuffToggler/InventoryButton");
+            public Texture2D BuffTogglerInventoryButton_MouseOver = ModContent.GetTexture("PboneUtils/Textures/UI/BuffToggler/InventoryButton_MouseOver");
 
             private static Texture2D getRadialIcon(string name) => ModContent.GetTexture($"PboneUtils/Textures/UI/Radial/Icon{name}");
 
@@ -77,11 +79,12 @@ namespace PboneUtils
                 RadialButtonRed.Dispose();
                 RadialButtonHover.Dispose();
                 RadialButtonRedHover.Dispose();
-
                 foreach (KeyValuePair<string, Texture2D> kvp in RadialMenuIcons)
                 {
                     kvp.Value.Dispose();
                 }
+
+                BuffTogglerInventoryButton.Dispose();
             }
         }
         #endregion

@@ -105,7 +105,8 @@ namespace PboneUtils
 
         public void Unload()
         {
-            AveragedValues.Clear();
+            if (AveragedValues != null)
+                AveragedValues.Clear();
             AveragedValues = null;
             Loaded = false;
         }
