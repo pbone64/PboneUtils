@@ -83,7 +83,8 @@ namespace PboneUtils
                 BuffTogglerMenu.Activate();
 
                 // TogglerButtonUserInterface should always be set to the BuffTogglerInventoryButton state
-                TogglerButtonUserInterface.SetState(BuffTogglerInventoryButton);
+                if (PboneUtilsConfig.Instance.EndlessPotions)
+                    TogglerButtonUserInterface.SetState(BuffTogglerInventoryButton);
             }
 
             public void UpdateUI(GameTime gameTime)
