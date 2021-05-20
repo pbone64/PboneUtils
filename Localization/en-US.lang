@@ -75,7 +75,7 @@ ItemName.VoidPiggy=Void Piggy
 ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'
 
 ItemName.PhilosophersStone=Philosopher's Stone
-ItemTooltip.PhilosophersStone=When held and enabled, picked up items are automatically sold\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Immortality not included'
+ItemTooltip.PhilosophersStone=When held in your hand and enabled, picked up items are automatically sold\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Immortality not included'
 
 ItemName.FlameOfBattle=Flame of Battle
 ItemTooltip.FlameOfBattle=Greatly increases spawn rates and spawn cap\n{$Mods.PboneUtils.Common.CanBeToggled}

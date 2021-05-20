@@ -22,6 +22,8 @@ namespace PboneUtils.Items
 
         public override void SetDefaults()
         {
+            base.SetDefaults();
+
             // Autosize
             if (Autosize && Main.itemTexture[item.type] != null)
             {
