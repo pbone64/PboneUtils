@@ -145,7 +145,7 @@ Config.Label.AmmoItemsToggle=Ammo Items
 Config.Label.VoidPiggyToggle=Void Piggy
 Config.Label.PhilosophersStoneToggle=Prima Materia
 Config.Label.SpawnRateItemsToggle=Spawn Rate Items
-Config.Label.GreaterStaffOfRegrowthToggle=Green Sheme
+Config.Label.GreaterStaffOfRegrowthToggle=Green Scheme
 Config.Label.ShadowPearlToggle=Shadow Pearl
 
 Config.Tooltip.AverageBossBags=If enabled, treasure bags will sell for the average of their drops. Note: this may change between reloads because of how it's calculcated
