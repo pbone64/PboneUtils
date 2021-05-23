@@ -1,4 +1,5 @@
 ﻿using PboneUtils.Helpers;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -82,14 +83,22 @@ namespace PboneUtils
                 TempInfo = new TreasureBagOpeningInfo(1); // I need this one because otherwise it calls the default paramless ctor
                 for (int j = 0; j < Attempts; j++)
                 {
-                    if (item.IsVanilla())
+                    try
                     {
-                        dummy.OpenBossBag(item.type);
-                        ItemLoader.OpenVanillaBag("bossBag", dummy, item.type);
+                        if (item.IsVanilla())
+                        {
+                            dummy.OpenBossBag(item.type);
+                            ItemLoader.OpenVanillaBag("bossBag", dummy, item.type);
+                        }
+                        else // Modded
+                        {
+                            item.modItem.OpenBossBag(dummy);
+                        }
                     }
-                    else // Modded
+                    catch (Exception e)
                     {
-                        item.modItem.OpenBossBag(dummy);
+                        PboneUtils.Log.Debug($"Non-fatal error '{e}' encountered while averaging treasure bag (ID: {item.type}, Name: {item.Name})");
+                        PboneUtils.Log.Debug("Skipping bag...");
                     }
                 }
 
