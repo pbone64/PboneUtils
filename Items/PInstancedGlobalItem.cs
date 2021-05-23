@@ -56,7 +56,7 @@ namespace PboneUtils.Items
                 return true;
             }
 
-            return base.UseItem(item, player);
+            return true;
         }
 
         public override GlobalItem NewInstance(Item item) =>
