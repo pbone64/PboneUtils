@@ -45,6 +45,9 @@ namespace PboneUtils.UI.Elements.EndlessBuffToggler
                     element.Left.Set(nextPosition.X, 0f);
                     element.Top.Set(nextPosition.Y, 0f);
 
+                    if (player.DisabledBuffs.Contains(kvp.Key))
+                        element.Disabled = true;
+
                     nextPosition.X += 2 + 32; // 2 = padding, 32 = buff texture size
                     if (counter > 0 && counter % rowAmount == 0)
                     {
