@@ -36,6 +36,20 @@ namespace PboneUtils
         public override void Initialize()
         {
             base.Initialize();
+
+            ResetVariables();
+            ItemConfigs = ItemConfig.DefaultConfigs();
+        }
+
+        public override void ResetEffects()
+        {
+            base.ResetEffects();
+
+            ResetVariables();
+        }
+
+        public void ResetVariables()
+        {
             VoidPig = false;
 
             SafeGargoyleChest.Value = -1;
@@ -50,7 +64,6 @@ namespace PboneUtils
 
             SpawnRateMultiplier = 1f;
             MaxSpawnsMultiplier = 1f;
-            ItemConfigs = ItemConfig.DefaultConfigs();
         }
 
         public override TagCompound Save()
@@ -72,17 +85,6 @@ namespace PboneUtils
             {
                 ItemConfigs[s].Load(tag, s);
             }
-        }
-
-        public override void ResetEffects()
-        {
-            base.ResetEffects();
-            VoidPig = false;
-
-            PhilosophersStone = false;
-            DeluxeTreasureMagnet = false;
-            TerraTreasureMagnet = false;
-            RunicTreasureMagnet = false;
         }
 
         public override void PreUpdateBuffs()

@@ -21,7 +21,7 @@ namespace PboneUtils
             base.PreUpdateBuffs();
             if (PboneUtilsConfig.Instance.EndlessPotions)
             {
-                if (Main.GameUpdateCount % 2 == 0) // 30 times a second
+                if (Main.GameUpdateCount % 3 == 0) // 20 times a second
                 {
                     ItemsToCountForEndlessBuffs.Clear();
 
@@ -45,7 +45,7 @@ namespace PboneUtils
 
                     if (item.buffType > 0) // The first buff, obsidian skin, is 1
                     {
-                        if (item.stack >= PboneUtilsConfig.Instance.EndlessPotionsSlider && !DisabledBuffs.Contains(item.buffType) && !EndlessBuffSources.ContainsKey(item.buffType))
+                        if (item.stack >= PboneUtilsConfig.Instance.EndlessPotionsSlider && !EndlessBuffSources.ContainsKey(item.buffType))
                         {
                             string key =
                                 (i <= DefendersForgeItemStart ?
@@ -55,7 +55,9 @@ namespace PboneUtils
                                 : "DefendersForge");
 
                             EndlessBuffSources.Add(item.buffType, new EndlessBuffSource(item, key));
-                            player.AddBuff(item.buffType, 2);
+
+                            if (!DisabledBuffs.Contains(item.buffType))
+                                player.AddBuff(item.buffType, 2);
                         }
                     }
                 }
