@@ -1,12 +1,12 @@
 ﻿using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
 
 namespace PboneUtils
 {
     public class ModRecipeManager
     {
         public string AnyShadowScale = "PboneUtils:AnyShadowScale";
+        public string AnyDemoniteBar = "PboneUtils:AnyDemoniteBar";
 
         public void AddRecipes()
         {
@@ -15,11 +15,17 @@ namespace PboneUtils
 
         public void AddRecipeGroups()
         {
-            RecipeGroup group = new RecipeGroup(() => $"{Language.GetTextValue("ItemName.ShadowScale")}/{Language.GetTextValue("ItemName.TissueSample")}", new int[2] {
+            RecipeGroup group = new RecipeGroup(() => $"{Lang.GetItemName(ItemID.ShadowScale)}/{Lang.GetItemName(ItemID.TissueSample)}", new int[2] {
                 ItemID.ShadowScale,
                 ItemID.TissueSample
             });
             RecipeGroup.RegisterGroup(AnyShadowScale, group);
+
+            group = new RecipeGroup(() => $"{Lang.GetItemName(ItemID.DemoniteBar)}/{Lang.GetItemName(ItemID.CrimtaneBar)}", new int[2] {
+                ItemID.DemoniteBar,
+                ItemID.CrimtaneBar
+            });
+            RecipeGroup.RegisterGroup(AnyDemoniteBar, group);
         }
     }
 }

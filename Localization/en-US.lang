@@ -86,6 +86,9 @@ ItemTooltip.FlameOfPeace=Greatly decreases spawn rates and spawn cap\n{$Mods.Pbo
 ItemName.GreaterStaffOfRegrowth=Green Scheme
 ItemTooltip.GreaterStaffOfRegrowth=Left click and drag to harvest herbs in an area
 
+ItemName.ShadowPearl=Shadow Pearl
+ItemTooltip.ShadowPearl=Works as a demon altar for crafting
+
 
 // BUFFS
 BuffName.PreperationStationBuff=Prepared
@@ -100,6 +103,7 @@ MapObject.PetrifiedSafeTile=Petrified Safe
 MapObject.AsphaltPlatformTile=Asphalt Platform
 MapObject.PreperationStationTile=Preperation Station
 MapObject.BuffBrazierTile=Buff Brazier
+MapObject.ShadowPearlTile=Shadow Pearl
 
 
 // WORLDGEN
@@ -139,15 +143,16 @@ Config.Label.MagnetItemsToggle=Magnet Items
 Config.Label.AmmoItemsToggle=Ammo Items
 
 Config.Label.VoidPiggyToggle=Void Piggy
-Config.Label.PhilosophersStone=Prima Materia
-Config.Label.SpawnRateItems=Spawn Rate Items
-Config.Label.GreaterStaffOfRegrowth=Greater Staff of Regrowth
+Config.Label.PhilosophersStoneToggle=Prima Materia
+Config.Label.SpawnRateItemsToggle=Spawn Rate Items
+Config.Label.GreaterStaffOfRegrowthToggle=Green Sheme
+Config.Label.ShadowPearlToggle=Shadow Pearl
 
 Config.Tooltip.AverageBossBags=If enabled, treasure bags will sell for the average of their drops. Note: this may change between reloads because of how it's calculcated
 Config.Tooltip.ExtraBuffSlots=The amount of buff slots to add on to the default 22 (there's 11 buff slots per line)
 Config.Tooltip.EndlessPotions=If enabled, having the specified amount of potions in your inventory or personal storage item will give you the buff infinitely (or, in the case of healing potions, not be consumed)
 Config.Tooltip.EndlessPotionsSlider=The amount of potions needed for infinite buffs (or healing)
-Config.Tooltip.AutoswingOnEverything=Enable or disable global autoswing (aka autoshoot, autoreuse etc.)
+Config.Tooltip.AutoswingOnEverything=Enable or disable global autoswing (aka autoshoot, autoreusShadoe etc.)
 Config.Tooltip.AutoswingOnEverythingBlacklist=Items to be ignored by Global Autoswing (if enabled)
 
 Config.Tooltip.StorageItemsToggle=Enable or disable this mod's storage items, such as the Petrified Vault
@@ -156,9 +161,10 @@ Config.Tooltip.AmmoItemsToggle=Enable or disable this mod's ammo items, such as 
 Config.Tooltip.ArenaItemsToggle=Enable or disable this mod's arena blocks, such as asphalt platforms
 Config.Tooltip.MagnetItemsToggle=Enable or disable this mod's magnet items, such as the Deluxe Treasure Magnet
 Config.Tooltip.VoidPiggyToggle=Enable or disable the Void Piggy item
-Config.Tooltip.PhilosophersStone=Enable or disable the Prima Materia item
-Config.Tooltip.SpawnRateItems=Enable or disable the Flame of Battle and Flame of Peace, items which increase or decrease the spawn rate respectively
-Config.Tooltip.GreaterStaffOfRegrowth=Enable or disable the Greater Staff of Regrowth
+Config.Tooltip.PhilosophersStoneToggle=Enable or disable the Prima Materia item
+Config.Tooltip.SpawnRateItemsToggle=Enable or disable the Flame of Battle and Flame of Peace, items which increase or decrease the spawn rate respectively
+Config.Tooltip.GreaterStaffOfRegrowthToggle=Enable or disable the Green Scheme item
+Config.Tooltip.ShadowPearlToggle=Enabled or disbale the Shadow Pearl item
 
 
 // MESSAGES

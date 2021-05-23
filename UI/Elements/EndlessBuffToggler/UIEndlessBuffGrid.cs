@@ -10,7 +10,7 @@ namespace PboneUtils.UI.Elements.EndlessBuffToggler
 {
     public class UIEndlessBuffGrid : UIElement, IEndlessBuffGridHolder
     {
-        public IEndlessBuffGridHolder ParentUIStateEndlessBuffGridHolder;
+        public IEndlessBuffGridHolder ParentEndlessBuffGridHolder;
 
         public UIEndlessBuffGrid(IEndlessBuffGridHolder uiState)
         {
@@ -18,7 +18,7 @@ namespace PboneUtils.UI.Elements.EndlessBuffToggler
             Height.Set(0, 1f);
             SetPadding(0f);
 
-            ParentUIStateEndlessBuffGridHolder = uiState;
+            ParentEndlessBuffGridHolder = uiState;
         }
 
         public void Rebuild(UISearchBar mySearchBar, int rowAmount)
@@ -63,8 +63,8 @@ namespace PboneUtils.UI.Elements.EndlessBuffToggler
             }
         }
 
-        public bool HandleBuffEntryClick(UIEndlessBuffEntry entry) => ParentUIStateEndlessBuffGridHolder.HandleBuffEntryClick(entry);
-        public UIEndlessBuffEntry GetSelectedBuffHolder() => ParentUIStateEndlessBuffGridHolder.GetSelectedBuffHolder();
-        public void RebuildGrid() => ParentUIStateEndlessBuffGridHolder.RebuildGrid();
+        public bool HandleBuffEntryClick(UIEndlessBuffEntry entry) => ParentEndlessBuffGridHolder.HandleBuffEntryClick(entry);
+        public UIEndlessBuffEntry GetSelectedBuffHolder() => ParentEndlessBuffGridHolder.GetSelectedBuffHolder();
+        public void RebuildGrid() => ParentEndlessBuffGridHolder.RebuildGrid();
     }
 }

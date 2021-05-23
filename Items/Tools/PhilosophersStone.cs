@@ -5,7 +5,7 @@ namespace PboneUtils.Items.Tools
 {
     public class PhilosophersStone : RightClickToggleItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.PhilosophersStone;
+        public override bool AutoloadCondition => PboneUtilsConfig.Instance.PhilosophersStoneToggle;
 
         public override void SetDefaults()
         {

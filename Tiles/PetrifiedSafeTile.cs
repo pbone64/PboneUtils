@@ -6,9 +6,11 @@ using Microsoft.Xna.Framework;
 using Terraria.ID;
 using PboneUtils.Items.Storage;
 using Terraria.Localization;
+using System;
 
 namespace PboneUtils.Tiles
 {
+    [Obsolete("Petrified Safe is now crafted.")]
     public class PetrifiedSafeTile : ModTile
     {
         public static bool MessageSent = false;

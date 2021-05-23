@@ -93,22 +93,28 @@ namespace PboneUtils
         [ReloadRequired]
         public bool VoidPiggyToggle;
 
-        [Label("$Mods.PboneUtils.Config.Label.PhilosophersStone")]
+        [Label("$Mods.PboneUtils.Config.Label.PhilosophersStoneToggle")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.PhilosophersStone")]
         [DefaultValue(true)]
         [ReloadRequired]
-        public bool PhilosophersStone;
+        public bool PhilosophersStoneToggle;
 
-        [Label("$Mods.PboneUtils.Config.Label.SpawnRateItems")]
+        [Label("$Mods.PboneUtils.Config.Label.SpawnRateItemsToggle")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.SpawnRateItems")]
         [DefaultValue(true)]
         [ReloadRequired]
-        public bool SpawnRateItems;
+        public bool SpawnRateItemsToggle;
 
-        [Label("$Mods.PboneUtils.Config.Label.GreaterStaffOfRegrowth")]
+        [Label("$Mods.PboneUtils.Config.Label.GreaterStaffOfRegrowthToggle")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.GreaterStaffOfRegrowth")]
         [DefaultValue(true)]
         [ReloadRequired]
-        public bool GreaterStaffOfRegrowth;
+        public bool GreaterStaffOfRegrowthToggle;
+
+        [Label("$Mods.PboneUtils.Config.Label.ShadowPearlToggle")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.ShadowPearlToggle")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool ShadowPearlToggle;
     }
 }

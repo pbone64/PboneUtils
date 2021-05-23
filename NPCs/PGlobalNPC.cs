@@ -24,7 +24,7 @@ namespace PboneUtils.NPCs
             switch (type)
             {
                 case NPCID.Wizard:
-                    if (PboneUtilsConfig.Instance.PhilosophersStone)
+                    if (PboneUtilsConfig.Instance.PhilosophersStoneToggle)
                     {
                         shop.item[nextSlot].SetDefaults(ModContent.ItemType<PhilosophersStone>());
                         nextSlot++;
