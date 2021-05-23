@@ -3,3 +3,5 @@ author = pbone
 version = 1.0.2
 homepage = https://forums.terraria.org/index.php?threads/pbones-utilities.105537/
 weakReferences = Fargowiltas
+includePDB = true
+includeSource = true
