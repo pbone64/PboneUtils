@@ -27,5 +27,17 @@ namespace PboneUtils.Items.Storage
             position -= new Vector2(0, 12);
             return base.Shoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
         }
+
+        public override void AddRecipes()
+        {
+            base.AddRecipes();
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.Safe);
+            recipe.AddIngredient(ItemID.StoneBlock, 99);
+            recipe.AddIngredient(ItemID.Bone, 10);
+            recipe.AddTile(TileID.Hellforge);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
     }
 }
