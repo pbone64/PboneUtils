@@ -94,19 +94,19 @@ namespace PboneUtils
         public bool VoidPiggyToggle;
 
         [Label("$Mods.PboneUtils.Config.Label.PhilosophersStoneToggle")]
-        [Tooltip("$Mods.PboneUtils.Config.Tooltip.PhilosophersStone")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.PhilosophersStoneToggle")]
         [DefaultValue(true)]
         [ReloadRequired]
         public bool PhilosophersStoneToggle;
 
         [Label("$Mods.PboneUtils.Config.Label.SpawnRateItemsToggle")]
-        [Tooltip("$Mods.PboneUtils.Config.Tooltip.SpawnRateItems")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.SpawnRateItemsToggle")]
         [DefaultValue(true)]
         [ReloadRequired]
         public bool SpawnRateItemsToggle;
 
         [Label("$Mods.PboneUtils.Config.Label.GreaterStaffOfRegrowthToggle")]
-        [Tooltip("$Mods.PboneUtils.Config.Tooltip.GreaterStaffOfRegrowth")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.GreaterStaffOfRegrowthToggle")]
         [DefaultValue(true)]
         [ReloadRequired]
         public bool GreaterStaffOfRegrowthToggle;
