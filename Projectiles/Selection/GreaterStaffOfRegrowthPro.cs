@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -28,6 +29,11 @@ namespace PboneUtils.Projectiles.Selection
                         WorldGen.KillTile(i, j, noItem: true);
                         Item.NewItem(i * 16, j * 16, 16, 16, seed, WorldGen.genRand.Next(1, 6));
                         Item.NewItem(i * 16, j * 16, 16, 16, herb, WorldGen.genRand.Next(1, 3));
+
+                        // Replant
+                        Item seedItem = new Item();
+                        seedItem.SetDefaults(seed);
+                        WorldGen.PlaceTile(i, j, seedItem.createTile, style: seedItem.placeStyle);
                     }
                     else
                     {

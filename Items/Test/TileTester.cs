@@ -13,7 +13,7 @@ namespace PboneUtils.Items.Test
             base.SetDefaults();
             UseTime = 30;
             item.useStyle = ItemUseStyleID.SwingThrow;
-            item.createTile = ModContent.TileType<PetrifiedSafeTile>();
+            item.createTile = TileID.BloomingHerbs;
         }
     }
 }

@@ -51,7 +51,7 @@ namespace PboneUtils.Projectiles.Selection
                 if (!Owner.channel)
                 {
                     Rectangle rect = GetRectangle();
-                    if (PreAction != null && PreAction(rect))
+                    if (PreAction == null || PreAction(rect))
                     {
                         for (int i = 0; i < rect.Width / 16; i++)
                         {

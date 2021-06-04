@@ -7,7 +7,7 @@ namespace PboneUtils.Items.Tools
 {
     public class GreaterStaffOfRegrowth : PItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.LiquidItemsToggle;
+        public override bool AutoloadCondition => PboneUtilsConfig.Instance.GreaterStaffOfRegrowthToggle;
         public override bool ShowItemIconWhenInRange => true;
 
         public override void SetDefaults()
@@ -19,7 +19,7 @@ namespace PboneUtils.Items.Tools
             item.shoot = ModContent.ProjectileType<GreaterStaffOfRegrowthPro>();
             item.channel = true;
             item.rare = ItemRarityID.Yellow;
-            item.value = Item.sellPrice(0, 60, 0, 0);
+            item.value = Item.sellPrice(0, 0, 10, 0);
             item.tileBoost += 20;
             item.UseSound = SoundID.Item64;
         }
