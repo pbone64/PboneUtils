@@ -135,6 +135,7 @@ Config.Label.EndlessPotions=Infinite Potions
 Config.Label.EndlessPotionsSlider=Infinite Potion Amount
 Config.Label.AutoswingOnEverything=Global Autoswing
 Config.Label.AutoswingOnEverythingBlacklist=Global Autoswing Blacklist
+Config.Label.MaxStackIncrease=Max Stack Size Increases
 
 Config.Label.StorageItemsToggle=Storage Items
 Config.Label.LiquidItemsToggle=Liquid Items
@@ -150,10 +151,11 @@ Config.Label.ShadowPearlToggle=Shadow Pearl
 
 Config.Tooltip.AverageBossBags=If enabled, treasure bags will sell for the average of their drops. Note: this may change between reloads because of how it's calculcated
 Config.Tooltip.ExtraBuffSlots=The amount of buff slots to add on to the default 22 (there's 11 buff slots per line)
-Config.Tooltip.EndlessPotions=If enabled, having the specified amount of potions in your inventory or personal storage item will give you the buff infinitely (or, in the case of healing potions, not be consumed)
+Config.Tooltip.EndlessPotions=If enabled, having the specified amount of potions in your inventory or personal storage item will give you the buff infinitely (or, in the case of healing potions, not be consumed)\nNOTE: Only increase above 30 if you have "Increase Max Stack Size" enabled
 Config.Tooltip.EndlessPotionsSlider=The amount of potions needed for infinite buffs (or healing)
 Config.Tooltip.AutoswingOnEverything=Enable or disable global autoswing (aka autoshoot, autoreusShadoe etc.)
 Config.Tooltip.AutoswingOnEverythingBlacklist=Items to be ignored by Global Autoswing (if enabled)
+Config.Tooltip.MaxStackIncrease=If enabled, most items will have their max stack size increased
 
 Config.Tooltip.StorageItemsToggle=Enable or disable this mod's storage items, such as the Petrified Vault
 Config.Tooltip.LiquidItemsToggle=Enable or disable this mod's liquid items, such as the Bottomless Lava Bucket

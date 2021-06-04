@@ -19,6 +19,16 @@ namespace PboneUtils.Items
             {
                 item.value = PboneUtils.BagValues.AveragedValues[item.type];
             }
+
+            if (PboneUtilsConfig.Instance.MaxStackIncrease)
+            {
+                // Any non-coin with a max stack greater than twenty
+                if (!CoinHelper.CoinTypes.Contains(item.type) && item.maxStack >= 20)
+                {
+                    // Increase to 9999 if it's below
+                    item.TryIncreaseMaxStack(9999);
+                }
+            }
         }
 
         public override void UpdateInventory(Item item, Player player)

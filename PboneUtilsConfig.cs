@@ -20,6 +20,7 @@ namespace PboneUtils
         [Range(0, 66)]
         [Increment(11)]
         [DefaultValue(22)]
+        [DrawTicks]
         [ReloadRequired]
         public int ExtraBuffSlots;
 
@@ -31,7 +32,7 @@ namespace PboneUtils
         [Label("$Mods.PboneUtils.Config.Label.EndlessPotionsSlider")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.EndlessPotionsSlider")]
         [Slider]
-        [Range(1, 30)]
+        [Range(1, 100)]
         [Increment(1)]
         [DefaultValue(30)]
         public int EndlessPotionsSlider;
@@ -49,6 +50,12 @@ namespace PboneUtils
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.AverageBossBags")]
         [DefaultValue(true)]
         public bool AverageBossBags;
+
+        [Label("$Mods.PboneUtils.Config.Label.MaxStackIncrease")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.MaxStackIncrease")]
+        [DefaultValue(true)]
+        public bool MaxStackIncrease;
+
 
         // ITEMS
 
