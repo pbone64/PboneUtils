@@ -39,7 +39,7 @@ namespace PboneUtils.Projectiles.Selection
         {
             base.AI();
 
-            if (Owner.whoAmI == projectile.owner) // Only run on the owners client
+            if (Owner.whoAmI == Main.myPlayer) // Only run on the owners client
             {
                 // TODO ui oddities: placing liquids when pressing ui buttons, ui spam opening (i hate you terraria)
                 // Kill if owner can't use items, is CCed (frozen, webbed, stoned), dead
@@ -49,7 +49,7 @@ namespace PboneUtils.Projectiles.Selection
                 }
 
                 // If they aren't channeling, then do stuff before killing yourself
-                if (!Owner.channel && Owner.whoAmI == Main.myPlayer)
+                if (!Owner.channel)
                 {
                     Rectangle rect = GetRectangle();
                     if (PreAction != null && PreAction(rect))
