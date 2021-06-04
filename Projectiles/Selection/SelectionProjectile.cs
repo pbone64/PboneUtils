@@ -49,7 +49,7 @@ namespace PboneUtils.Projectiles.Selection
                 }
 
                 // If they aren't channeling, then do stuff before killing yourself
-                if (!Owner.channel)
+                if (!Owner.channel && Owner.whoAmI == Main.myPlayer)
                 {
                     Rectangle rect = GetRectangle();
                     if (PreAction != null && PreAction(rect))
