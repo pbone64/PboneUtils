@@ -77,7 +77,6 @@ namespace PboneUtils.Projectiles.Selection
                 {
                     projectile.netUpdate = true;
                     projectile.Center = mouseWorld;
-                    projectile.netUpdate = true;
                     projectile.velocity = Vector2.Zero;
                 }
 
