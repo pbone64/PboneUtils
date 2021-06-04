@@ -54,6 +54,7 @@ namespace PboneUtils
         [Label("$Mods.PboneUtils.Config.Label.MaxStackIncrease")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.MaxStackIncrease")]
         [DefaultValue(true)]
+        [ReloadRequired]
         public bool MaxStackIncrease;
 
 
