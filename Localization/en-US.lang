@@ -128,6 +128,7 @@ UI.EndlessBuffSource.DefendersForge=Defender's Forge
 Config.Header.MiscFeatures=QoL Features
 Config.Header.ItemToggles=Item Toggles
 Config.Header.MiscItemToggles=Misc Single Item Toggles
+Config.Header.QolRecipes=QoL Recipes
 
 Config.Label.AverageBossBags=Average Treasure Bag Values
 Config.Label.ExtraBuffSlots=Extra Buff Slots
@@ -149,6 +150,8 @@ Config.Label.SpawnRateItemsToggle=Spawn Rate Items
 Config.Label.GreaterStaffOfRegrowthToggle=Green Scheme
 Config.Label.ShadowPearlToggle=Shadow Pearl
 
+Config.Label.RecipeEndlessWater=Endless Water Tool Recipes
+
 Config.Tooltip.AverageBossBags=If enabled, treasure bags will sell for the average of their drops. Note: this may change between reloads because of how it's calculcated
 Config.Tooltip.ExtraBuffSlots=The amount of buff slots to add on to the default 22 (there's 11 buff slots per line)
 Config.Tooltip.EndlessPotions=If enabled, having the specified amount of potions in your inventory or personal storage item will give you the buff infinitely (or, in the case of healing potions, not be consumed)\nNOTE: Only increase above 30 if you have "Increase Max Stack Size" enabled
@@ -167,6 +170,8 @@ Config.Tooltip.PhilosophersStoneToggle=Enable or disable the Prima Materia item
 Config.Tooltip.SpawnRateItemsToggle=Enable or disable the Flame of Battle and Flame of Peace, items which increase or decrease the spawn rate respectively
 Config.Tooltip.GreaterStaffOfRegrowthToggle=Enable or disable the Green Scheme item
 Config.Tooltip.ShadowPearlToggle=Enabled or disbale the Shadow Pearl item
+
+Config.Tooltip.RecipeEndlessWater=Enable or disable Endless Water Bucket and Super Absorbant Sponge recipes
 
 
 // MESSAGES

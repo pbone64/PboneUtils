@@ -124,5 +124,15 @@ namespace PboneUtils
         [DefaultValue(true)]
         [ReloadRequired]
         public bool ShadowPearlToggle;
+
+
+        // QOL RECIPES
+
+        [Header("$Mods.PboneUtils.Config.Header.QolRecipes")]
+        [Label("$Mods.PboneUtils.Config.Label.RecipeEndlessWater")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.RecipeEndlessWater")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool RecipeEndlessWater;
     }
 }

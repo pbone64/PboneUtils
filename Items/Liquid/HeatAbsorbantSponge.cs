@@ -2,6 +2,7 @@
 using PboneUtils.ID;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Liquid
 {
@@ -38,6 +39,17 @@ namespace PboneUtils.Items.Liquid
             }
 
             return base.UseItem(player);
+        }
+
+        public override void AddRecipes()
+        {
+            base.AddRecipes();
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.EmptyBucket, 5);
+            recipe.AddIngredient(ItemID.SoulofNight, 2);
+            recipe.AddTile(TileID.AlchemyTable);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

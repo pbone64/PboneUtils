@@ -62,7 +62,7 @@ namespace PboneUtils
         public override void AddRecipes()
         {
             base.AddRecipes();
-            recipes.AddRecipes();
+            recipes.AddRecipes(this);
         }
 
         public override void PostAddRecipes()

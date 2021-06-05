@@ -2,6 +2,7 @@
 using PboneUtils.ID;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Liquid
 {
@@ -29,12 +30,26 @@ namespace PboneUtils.Items.Liquid
             {
                 if (player.IsTargetTileInItemRange(item))
                 {
-                    Main.PlaySound(SoundID.Splash, (int)player.position.X, (int)player.position.Y);
-                    LiquidHelper.DrainLiquid(Player.tileTargetX, Player.tileTargetY, LiquidID.Honey);
+                    if (LiquidHelper.DrainLiquid(Player.tileTargetX, Player.tileTargetY, LiquidID.Honey))
+                    {
+                        Main.PlaySound(SoundID.Splash, (int)player.position.X, (int)player.position.Y);
+                        return true;
+                    }
                 }
             }
 
             return base.UseItem(player);
+        }
+
+        public override void AddRecipes()
+        {
+            base.AddRecipes();
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.EmptyBucket, 5);
+            recipe.AddIngredient(ItemID.SoulofLight, 2);
+            recipe.AddTile(TileID.AlchemyTable);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

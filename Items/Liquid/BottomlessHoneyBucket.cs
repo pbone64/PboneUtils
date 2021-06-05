@@ -45,7 +45,8 @@ namespace PboneUtils.Items.Liquid
         {
             base.AddRecipes();
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.HoneyBucket, 10);
+            recipe.AddIngredient(ItemID.HoneyBucket, 5);
+            recipe.AddIngredient(ItemID.SoulofLight, 2);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
