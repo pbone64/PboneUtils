@@ -2,7 +2,7 @@
 using System.Reflection;
 using Terraria.ModLoader;
 
-namespace PboneUtils
+namespace PboneUtils.Helpers
 {
     public static class LoadingHelper
     {

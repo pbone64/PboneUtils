@@ -130,6 +130,7 @@ Config.Header.ItemToggles=Item Toggles
 Config.Header.MiscItemToggles=Misc Single Item Toggles
 Config.Header.QolRecipes=QoL Recipes
 
+Config.Label.AverageBossBagsSlider=Treasure Bag Simulation Attempts
 Config.Label.AverageBossBags=Average Treasure Bag Values
 Config.Label.ExtraBuffSlots=Extra Buff Slots
 Config.Label.EndlessPotions=Infinite Potions
@@ -153,6 +154,7 @@ Config.Label.ShadowPearlToggle=Shadow Pearl
 Config.Label.RecipeEndlessWater=Endless Water Tool Recipes
 
 Config.Tooltip.AverageBossBags=If enabled, treasure bags will sell for the average of their drops. Note: this may change between reloads because of how it's calculcated
+Config.Tooltip.AverageBossBagsSlider=The amount of bag openings that should be simulated when averaging boss treasure bag values.\nHigher values produce more consistent results, but increase load time
 Config.Tooltip.ExtraBuffSlots=The amount of buff slots to add on to the default 22 (there's 11 buff slots per line)
 Config.Tooltip.EndlessPotions=If enabled, having the specified amount of potions in your inventory or personal storage item will give you the buff infinitely (or, in the case of healing potions, not be consumed)\nNOTE: Only increase above 30 if you have "Increase Max Stack Size" enabled
 Config.Tooltip.EndlessPotionsSlider=The amount of potions needed for infinite buffs (or healing)

@@ -49,7 +49,18 @@ namespace PboneUtils
         [Label("$Mods.PboneUtils.Config.Label.AverageBossBags")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.AverageBossBags")]
         [DefaultValue(true)]
+        [ReloadRequired]
         public bool AverageBossBags;
+
+        [Label("$Mods.PboneUtils.Config.Label.AverageBossBagsSlider")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.AverageBossBagsSlider")]
+        [Slider]
+        [Range(100, 500)]
+        [Increment(50)]
+        [DefaultValue(100)]
+        [DrawTicks]
+        [ReloadRequired]
+        public int AverageBossBagsSlider;
 
         [Label("$Mods.PboneUtils.Config.Label.MaxStackIncrease")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.MaxStackIncrease")]

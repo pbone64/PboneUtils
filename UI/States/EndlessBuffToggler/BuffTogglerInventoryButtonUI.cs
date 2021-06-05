@@ -17,10 +17,9 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
             base.OnInitialize();
 
             int left = 26;
-            // Uncomment this next fargo's update, so I don't overlap with my fargo's ui
             if (PboneUtils.FargowiltasLoaded)
             {
-                left += 60; // 58 (width of inventory slot) + 2 (distance between inventory slots)
+                left += 47;
             }
 
             Icon = new UIImage(PboneUtils.Textures.UI.BuffTogglerInventoryButton);

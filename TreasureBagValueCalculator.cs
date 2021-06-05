@@ -27,13 +27,11 @@ namespace PboneUtils
                     value += v;
                 }
 
-                value /= Attempts;
+                value /= PboneUtilsConfig.Instance.AverageBossBagsSlider;
 
                 return value;
             }
         }
-
-        public const int Attempts = 100;
 
         public static HashSet<int> VanillaBossBags = new HashSet<int>() {
             ItemID.KingSlimeBossBag, ItemID.EyeOfCthulhuBossBag, ItemID.EaterOfWorldsBossBag, ItemID.BrainOfCthulhuBossBag, ItemID.QueenBeeBossBag, ItemID.SkeletronBossBag, ItemID.WallOfFleshBossBag,
@@ -81,7 +79,7 @@ namespace PboneUtils
                 LoadingHelper.SetSubText(Lang.GetItemName(i).Value);
 
                 TempInfo = new TreasureBagOpeningInfo(1); // I need this one because otherwise it calls the default paramless ctor
-                for (int j = 0; j < Attempts; j++)
+                for (int j = 0; j < PboneUtilsConfig.Instance.AverageBossBagsSlider; j++)
                 {
                     try
                     {
