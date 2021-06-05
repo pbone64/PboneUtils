@@ -8,7 +8,7 @@ Adds many features and items to increase the quality of life, including
  - Endless buffs.
  - Increased buff slots.
 ...and more! All features/items can be enabled and disabled to prevent content overlap.
-See the homepage for more info.
+The homepage has all the info on current features, changelogs, and an invite to our discord server. Check it out!
 
 Credits:
  - pbone: I've made everything so far.
