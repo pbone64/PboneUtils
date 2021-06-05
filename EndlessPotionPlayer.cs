@@ -57,7 +57,7 @@ namespace PboneUtils
                             EndlessBuffSources.Add(item.buffType, new EndlessBuffSource(item, key));
 
                             if (!DisabledBuffs.Contains(item.buffType))
-                                player.AddBuff(item.buffType, 2);
+                                player.AddBuff(item.buffType, 600);
                         }
                     }
                 }
