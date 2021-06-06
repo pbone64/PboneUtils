@@ -21,7 +21,7 @@ namespace PboneUtils
             base.PreUpdateBuffs();
             if (PboneUtilsConfig.Instance.EndlessPotions)
             {
-                if (Main.GameUpdateCount % 3 == 0) // 20 times a second
+                if (Main.GameUpdateCount % 1.5 == 0) // 40 times a second
                 {
                     ItemsToCountForEndlessBuffs.Clear();
 
@@ -57,7 +57,7 @@ namespace PboneUtils
                             EndlessBuffSources.Add(item.buffType, new EndlessBuffSource(item, key));
 
                             if (!DisabledBuffs.Contains(item.buffType))
-                                player.AddBuff(item.buffType, 120);
+                                player.AddBuff(item.buffType, 2);
                         }
                     }
                 }
