@@ -20,6 +20,7 @@ namespace PboneUtils
         public static TreasureBagValueCalculator BagValues => Instance.bagValues;
 
         public static bool FargowiltasLoaded => Instance.fargowiltasLoaded;
+        public static bool FargowiltasSoulsLoaded => Instance.fargowiltasSoulsLoaded;
 
         private ModTextureManager textures;
         private ModRecipeManager recipes;
@@ -27,6 +28,7 @@ namespace PboneUtils
         private TreasureBagValueCalculator bagValues;
 
         private bool fargowiltasLoaded;
+        private bool fargowiltasSoulsLoaded;
 
         public override void Load()
         {
@@ -40,6 +42,7 @@ namespace PboneUtils
             bagValues = new TreasureBagValueCalculator();
 
             fargowiltasLoaded = ModLoader.GetMod("Fargowiltas") != null;
+            fargowiltasSoulsLoaded = ModLoader.GetMod("FargowiltasSouls") != null;
 
             Load_IL();
             Load_On();

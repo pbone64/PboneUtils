@@ -16,15 +16,20 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
         {
             base.OnInitialize();
 
-            int left = 26;
+            int top = 262;
             if (PboneUtils.FargowiltasLoaded)
             {
-                left += 47;
+                top += 28;
+            }
+
+            if (PboneUtils.FargowiltasSoulsLoaded)
+            {
+                top += 58;
             }
 
             Icon = new UIImage(PboneUtils.Textures.UI.BuffTogglerInventoryButton);
-            Icon.Left.Set(left, 0f);
-            Icon.Top.Set(262, 0f);
+            Icon.Left.Set(26, 0f);
+            Icon.Top.Set(top, 0f);
             Append(Icon);
 
             IconHighlight = new UIHoverTextImageButton(PboneUtils.Textures.UI.BuffTogglerInventoryButton_MouseOver, "dummy");

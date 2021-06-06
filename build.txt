@@ -2,6 +2,6 @@ displayName = pbone's Utilities
 author = pbone
 version = 1.0.4
 homepage = https://forums.terraria.org/index.php?threads/pbones-utilities.105537/
-weakReferences = Fargowiltas
+weakReferences = Fargowiltas, FargowiltasSouls
 includePDB = true
 includeSource = true

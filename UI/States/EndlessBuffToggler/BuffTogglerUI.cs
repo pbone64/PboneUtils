@@ -75,6 +75,15 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
             BackPanel.Append(BuffDescriptionPanel);
         }
 
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+            if (Main.GameUpdateCount % 60 == 0)
+            {
+                RebuildGrid();
+            }
+        }
+
         public void RebuildGrid()
         {
             BuffGrid.Rebuild(SearchBar, (int)BuffListPanel.Width.Pixels / 40);
