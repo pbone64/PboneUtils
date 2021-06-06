@@ -17,8 +17,7 @@ namespace PboneUtils.Projectiles.Storage
         public override bool Animate => false;
         public override LegacySoundStyle UseSound => SoundID.Item37;
 
-        public override Ref<int> GetWhoAmIVariable(PbonePlayer player) => player.SafeGargoyleChest;
-        public override Ref<bool> GetToggleVariable(PbonePlayer player) => player.SafeGargoyleOpen;
+        public override void SetWhoAmIVariable(PbonePlayer player, int value) => player.SafeGargoyleChest = value;
 
         public override void SetDefaults()
         {

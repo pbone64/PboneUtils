@@ -5,8 +5,6 @@ using PboneUtils.ID;
 using System.Collections.Generic;
 using PboneUtils.DataStructures;
 using Terraria.ModLoader.IO;
-using Terraria.Utilities;
-using PboneUtils.Items.Liquid;
 using Terraria.Audio;
 
 namespace PboneUtils
@@ -16,10 +14,10 @@ namespace PboneUtils
         #region Fields
         // Storage
         public bool VoidPig;
-        public Ref<int> SafeGargoyleChest = new Ref<int>();
-        public Ref<bool> SafeGargoyleOpen = new Ref<bool>(false);
-        public Ref<int> DefendersCrystalChest = new Ref<int>();
-        public Ref<bool> DefendersCrystalOpen = new Ref<bool>(false);
+        public int SafeGargoyleChest = -1;
+        public bool SafeGargoyleOpen = false;
+        public int DefendersCrystalChest = -1;
+        public bool DefendersCrystalOpen = false;
 
         // Tools
         public bool PhilosophersStone;
@@ -37,6 +35,11 @@ namespace PboneUtils
         {
             base.Initialize();
 
+            SafeGargoyleChest = -1;
+            SafeGargoyleOpen = false;
+            DefendersCrystalChest = -1;
+            DefendersCrystalOpen = false;
+
             ResetVariables();
             ItemConfigs = ItemConfig.DefaultConfigs();
         }
@@ -51,11 +54,6 @@ namespace PboneUtils
         public void ResetVariables()
         {
             VoidPig = false;
-
-            SafeGargoyleChest.Value = -1;
-            SafeGargoyleOpen.Value = false;
-            DefendersCrystalChest.Value = -1;
-            DefendersCrystalOpen.Value = false;
 
             PhilosophersStone = false;
             DeluxeTreasureMagnet = false;
@@ -90,38 +88,41 @@ namespace PboneUtils
         public override void PreUpdateBuffs()
         {
             base.PreUpdateBuffs();
-            if (SafeGargoyleChest.Value >= 0)
-                DoPortableChest<PetrifiedSafeProjectile>(ref SafeGargoyleChest, ref SafeGargoyleOpen);
-            if (DefendersCrystalChest.Value >= 0)
+
+            Main.NewText(SafeGargoyleChest);
+
+            if (SafeGargoyleChest >= 0)
+                DoPortableChest<PetrifiedSafeProjectile>(ref SafeGargoyleChest, ref DefendersCrystalOpen);
+            if (DefendersCrystalChest >= 0)
                 DoPortableChest<DefendersCrystalProjectile>(ref DefendersCrystalChest, ref DefendersCrystalOpen);
         }
 
-        public void DoPortableChest<T>(ref Ref<int> whoAmI, ref Ref<bool> toggle) where T : StorageProjectile, new()
+        public void DoPortableChest<T>(ref int whoAmI, ref bool toggle) where T : StorageProjectile, new()
         {
             int projectileType = ModContent.ProjectileType<T>();
             T instance = new T();
             int bankID = instance.ChestType;
             LegacySoundStyle useSound = instance.UseSound;
 
-            if (Main.projectile[whoAmI.Value].active && Main.projectile[whoAmI.Value].type == projectileType)
+            if (Main.projectile[whoAmI].active && Main.projectile[whoAmI].type == projectileType)
             {
                 int oldChest = player.chest;
                 player.chest = bankID;
-                toggle.Value = true;
+                toggle = true;
 
                 int num17 = (int)((player.position.X + player.width * 0.5) / 16.0);
                 int num18 = (int)((player.position.Y + player.height * 0.5) / 16.0);
-                player.chestX = (int)Main.projectile[whoAmI.Value].Center.X / 16;
-                player.chestY = (int)Main.projectile[whoAmI.Value].Center.Y / 16;
-                if ((oldChest != -3 && oldChest != -1) || num17 < player.chestX - Player.tileRangeX || num17 > player.chestX + Player.tileRangeX + 1 || num18 < player.chestY - Player.tileRangeY || num18 > player.chestY + Player.tileRangeY + 1)
+                player.chestX = (int)Main.projectile[whoAmI].Center.X / 16;
+                player.chestY = (int)Main.projectile[whoAmI].Center.Y / 16;
+                if ((oldChest != bankID && oldChest != -1) || num17 < player.chestX - Player.tileRangeX || num17 > player.chestX + Player.tileRangeX + 1 || num18 < player.chestY - Player.tileRangeY || num18 > player.chestY + Player.tileRangeY + 1)
                 {
-                    whoAmI.Value = -1;
+                    whoAmI = -1;
                     if (player.chest != -1)
                     {
                         Main.PlaySound(useSound);
                     }
 
-                    if (oldChest != -3)
+                    if (oldChest != bankID)
                         player.chest = oldChest;
                     else
                         player.chest = -1;
@@ -133,7 +134,7 @@ namespace PboneUtils
             {
                 Main.PlaySound(useSound);
 
-                whoAmI.Value = -1;
+                whoAmI = -1;
                 player.chest = BankID.None;
                 Recipe.FindRecipes();
             }
