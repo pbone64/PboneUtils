@@ -1,4 +1,5 @@
-﻿using MonoMod.Cil;
+﻿using Mono.Cecil.Cil;
+using MonoMod.Cil;
 using System;
 using Terraria;
 using Terraria.ModLoader;
@@ -10,6 +11,7 @@ namespace PboneUtils
         public void Load_IL()
         {
             IL.Terraria.Player.Update += Player_Update;
+            IL.Terraria.Main.DrawBuffIcon += Main_DrawBuffIcon;
         }
 
         private void Player_Update(ILContext il)
@@ -34,6 +36,19 @@ namespace PboneUtils
 
                 return volume;
             });
+        }
+
+        private void Main_DrawBuffIcon(ILContext il)
+        {
+            ILCursor c = new ILCursor(il);
+
+            if (!c.TryGotoNext(MoveType.Before, instr => instr.MatchLdcI4(2)))
+            {
+                throw new Exception("Unable to patch Terraria.Main.DrawBuffIcon: couldn't match IL");
+            }
+
+            c.Remove();
+            c.Emit(OpCodes.Ldc_I4, 20);
         }
     }
 }

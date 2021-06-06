@@ -89,8 +89,6 @@ namespace PboneUtils
         {
             base.PreUpdateBuffs();
 
-            Main.NewText(SafeGargoyleChest);
-
             if (SafeGargoyleChest >= 0)
                 DoPortableChest<PetrifiedSafeProjectile>(ref SafeGargoyleChest, ref DefendersCrystalOpen);
             if (DefendersCrystalChest >= 0)

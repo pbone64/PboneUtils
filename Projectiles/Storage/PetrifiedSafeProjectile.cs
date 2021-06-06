@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Graphics;
 using PboneUtils.ID;
 using PboneUtils.Items.Storage;
-using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;

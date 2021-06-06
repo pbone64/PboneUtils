@@ -1,12 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PboneUtils.ID;
-using PboneUtils.Items.Storage;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameInput;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace PboneUtils.Projectiles.Storage
 {
