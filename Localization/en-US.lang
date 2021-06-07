@@ -152,6 +152,7 @@ Config.Label.GreaterStaffOfRegrowthToggle=Green Scheme
 Config.Label.ShadowPearlToggle=Shadow Pearl
 
 Config.Label.RecipeEndlessWater=Endless Water Tool Recipes
+Config.Label.RecipePetrifiedSafe=Petrified Safe Recipes
 
 Config.Tooltip.AverageBossBags=If enabled, treasure bags will sell for the average of their drops. Note: this may change between reloads because of how it's calculcated
 Config.Tooltip.AverageBossBagsSlider=The amount of bag openings that should be simulated when averaging boss treasure bag values.\nHigher values produce more consistent results, but increase load time
@@ -174,6 +175,7 @@ Config.Tooltip.GreaterStaffOfRegrowthToggle=Enable or disable the Green Scheme i
 Config.Tooltip.ShadowPearlToggle=Enabled or disbale the Shadow Pearl item
 
 Config.Tooltip.RecipeEndlessWater=Enable or disable Endless Water Bucket and Super Absorbant Sponge recipes
+Config.Tooltip.RecipePetrifiedSafe=Enable or disable a simple recipe for the Petrified Safe
 
 
 // MESSAGES

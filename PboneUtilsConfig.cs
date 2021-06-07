@@ -145,5 +145,11 @@ namespace PboneUtils
         [DefaultValue(true)]
         [ReloadRequired]
         public bool RecipeEndlessWater;
+
+        [Label("$Mods.PboneUtils.Config.Label.RecipePetrifiedSafe")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.RecipePetrifiedSafe")]
+        [DefaultValue(false)]
+        [ReloadRequired]
+        public bool RecipePetrifiedSafe;
     }
 }

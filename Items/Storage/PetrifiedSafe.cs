@@ -31,13 +31,16 @@ namespace PboneUtils.Items.Storage
         public override void AddRecipes()
         {
             base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Safe);
-            recipe.AddIngredient(ItemID.StoneBlock, 99);
-            recipe.AddIngredient(ItemID.Bone, 10);
-            recipe.AddTile(TileID.Hellforge);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            if (PboneUtilsConfig.Instance.RecipePetrifiedSafe)
+            {
+                ModRecipe recipe = new ModRecipe(mod);
+                recipe.AddIngredient(ItemID.Safe);
+                recipe.AddIngredient(ItemID.StoneBlock, 99);
+                recipe.AddIngredient(ItemID.Bone, 10);
+                recipe.AddTile(TileID.Hellforge);
+                recipe.SetResult(this);
+                recipe.AddRecipe();
+            }
         }
     }
 }

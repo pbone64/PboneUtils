@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using PboneUtils.Helpers;
 using PboneUtils.Tiles;
-using System;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -11,7 +10,6 @@ namespace PboneUtils
 {
     public class ModWorldgenManager
     {
-        [Obsolete("Safes no longer generate during worldgen.")]
         public void GenPetrifiedSafes(GenerationProgress progress)
         {
             progress.Message = Language.GetTextValue("Mods.PboneUtils.WorldGen.PetrifiedSafes");

@@ -12,9 +12,9 @@ namespace PboneUtils
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
         {
             base.ModifyWorldGenTasks(tasks, ref totalWeight);
-            /*ModWorldGen = new ModWorldgenManager();
+            ModWorldGen = new ModWorldgenManager();
 
-            tasks.Add(new PassLegacy("pbone's Utilities Petrified Safes", ModWorldGen.GenPetrifiedSafes));*/
+            tasks.Add(new PassLegacy("pbone's Utilities: Petrified Safes", ModWorldGen.GenPetrifiedSafes));
         }
     }
 }
