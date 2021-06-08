@@ -146,6 +146,7 @@ Config.Label.LiquidItemsToggle=Liquid Items
 Config.Label.ArenaItemsToggle=Arena Items
 Config.Label.MagnetItemsToggle=Magnet Items
 Config.Label.AmmoItemsToggle=Ammo Items
+Config.Label.WorldControlItemsToggle=World Control Items
 
 Config.Label.VoidPiggyToggle=Void Piggy
 Config.Label.PhilosophersStoneToggle=Prima Materia
@@ -167,11 +168,11 @@ Config.Tooltip.MaxStackIncrease=If enabled, most items will have their max stack
 Config.Tooltip.NoMoreGraves=If enabled, prevents graves from spawning
 Config.Tooltip.FastRespawn=If enabled, you respawn much quicker
 
-Config.Tooltip.StorageItemsToggle=Enable or disable this mod's storage items, such as the Petrified Vault
-Config.Tooltip.LiquidItemsToggle=Enable or disable this mod's liquid items, such as the Bottomless Lava Bucket
-Config.Tooltip.AmmoItemsToggle=Enable or disable this mod's ammo items, such as the Endless Flaming Quiver
-Config.Tooltip.ArenaItemsToggle=Enable or disable this mod's arena blocks, such as asphalt platforms
-Config.Tooltip.MagnetItemsToggle=Enable or disable this mod's magnet items, such as the Deluxe Treasure Magnet
+Config.Tooltip.StorageItemsToggle=Enable or disable this mod's storage items, which allow you to access personal storages on the go
+Config.Tooltip.LiquidItemsToggle=Enable or disable this mod's liquid items, which let you place and absorb infinite amounts of lava or honey
+Config.Tooltip.AmmoItemsToggle=Enable or disable this mod's endless ammo items
+Config.Tooltip.ArenaItemsToggle=Enable or disable this mod's arena blocks, which enhance and compact your arena
+Config.Tooltip.MagnetItemsToggle=Enable or disable this mod's magnet items, which increase your grab range
 Config.Tooltip.VoidPiggyToggle=Enable or disable the Void Piggy item
 Config.Tooltip.PhilosophersStoneToggle=Enable or disable the Prima Materia item
 Config.Tooltip.SpawnRateItemsToggle=Enable or disable the Flame of Battle and Flame of Peace, items which increase or decrease the spawn rate respectively

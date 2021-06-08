@@ -114,6 +114,12 @@ namespace PboneUtils
         [ReloadRequired]
         public bool MagnetItemsToggle;
 
+        [Label("$Mods.PboneUtils.Config.Label.WorldControlItemsToggle")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.WorldControlItemsToggle")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool WorldControlItemsToggle;
+
 
         // MISC SINGLE ITEMS
 
