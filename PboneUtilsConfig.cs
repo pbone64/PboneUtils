@@ -74,6 +74,12 @@ namespace PboneUtils
         [ReloadRequired]
         public bool NoMoreGraves;
 
+        [Label("$Mods.PboneUtils.Config.Label.FastRespawn")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.FastRespawn")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool FastRespawn;
+
 
         // ITEMS
 

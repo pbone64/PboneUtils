@@ -85,6 +85,15 @@ namespace PboneUtils
             }
         }
 
+        public override void UpdateDead()
+        {
+            base.UpdateDead();
+            if (PboneUtilsConfig.Instance.FastRespawn)
+            {
+                player.respawnTimer -= 2;
+            }
+        }
+
         public override void PreUpdateBuffs()
         {
             base.PreUpdateBuffs();

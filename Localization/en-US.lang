@@ -138,7 +138,8 @@ Config.Label.EndlessPotionsSlider=Infinite Potion Amount
 Config.Label.AutoswingOnEverything=Global Autoswing
 Config.Label.AutoswingOnEverythingBlacklist=Global Autoswing Blacklist
 Config.Label.MaxStackIncrease=Max Stack Size Increases
-Config.Label.NoMoreGraves=Remove Graves
+Config.Label.NoMoreGraves=No more graves
+Config.Label.FastRespawn=Fast Respawn
 
 Config.Label.StorageItemsToggle=Storage Items
 Config.Label.LiquidItemsToggle=Liquid Items
@@ -163,7 +164,8 @@ Config.Tooltip.EndlessPotionsSlider=The amount of potions needed for infinite bu
 Config.Tooltip.AutoswingOnEverything=Enable or disable global autoswing (aka autoshoot, autoreusShadoe etc.)
 Config.Tooltip.AutoswingOnEverythingBlacklist=Items to be ignored by Global Autoswing (if enabled)
 Config.Tooltip.MaxStackIncrease=If enabled, most items will have their max stack size increased
-Config.TOoltip.NoMoreGraves=If enabled, prevents graves from spawning
+Config.Tooltip.NoMoreGraves=If enabled, prevents graves from spawning
+Config.Tooltip.FastRespawn=If enabled, you respawn much quicker
 
 Config.Tooltip.StorageItemsToggle=Enable or disable this mod's storage items, such as the Petrified Vault
 Config.Tooltip.LiquidItemsToggle=Enable or disable this mod's liquid items, such as the Bottomless Lava Bucket
