@@ -32,6 +32,10 @@ ItemTooltip.TerraTreasureMagnet=Massively increases pickup range for items\nWork
 ItemName.RunicTreasureMagnet=Runic Treasure Magnet
 ItemTooltip.RunicTreasureMagnet=Massively increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Won't attract the moon, probably'
 
+// World control
+ItemName.FluxCapacitor=Flux Capacitor
+ItemTooltip.FluxCapacitor=Switches from night to day\nRight click to speed up time\n'It holds 1.21 gigawatts!""
+
 // Ammo
 ItemName.EndlessFlamingArrow=Endless Flaming Quiver
 ItemName.EndlessUnholyArrow=Endless Unholy Quiver
@@ -173,6 +177,8 @@ Config.Tooltip.LiquidItemsToggle=Enable or disable this mod's liquid items, whic
 Config.Tooltip.AmmoItemsToggle=Enable or disable this mod's endless ammo items
 Config.Tooltip.ArenaItemsToggle=Enable or disable this mod's arena blocks, which enhance and compact your arena
 Config.Tooltip.MagnetItemsToggle=Enable or disable this mod's magnet items, which increase your grab range
+Config.Tooltip.WorldControlItemsToggle=Enable or disable this mod's world control items, which can change the time, weather, and more
+
 Config.Tooltip.VoidPiggyToggle=Enable or disable the Void Piggy item
 Config.Tooltip.PhilosophersStoneToggle=Enable or disable the Prima Materia item
 Config.Tooltip.SpawnRateItemsToggle=Enable or disable the Flame of Battle and Flame of Peace, items which increase or decrease the spawn rate respectively
