@@ -25,7 +25,6 @@ namespace PboneUtils.UI.Elements.EndlessBuffToggler
         {
             RemoveAllChildren();
 
-            // todo position is weird
             EndlessPotionPlayer player = Main.LocalPlayer.GetModPlayer<EndlessPotionPlayer>();
             string searchText = mySearchBar.IsEmpty ? "" : mySearchBar.Text;
             int counter = 0;
@@ -33,8 +32,6 @@ namespace PboneUtils.UI.Elements.EndlessBuffToggler
 
             foreach (KeyValuePair<int, EndlessBuffSource> kvp in player.EndlessBuffSources)
             {
-                // During my testing, legacy lang arrays were occasionally not initialized
-                // This makes sure they are
                 string buffName = buffName = Lang.GetBuffName(kvp.Value.Item.buffType);
 
                 string[] words = buffName.Split(' ');
@@ -57,9 +54,8 @@ namespace PboneUtils.UI.Elements.EndlessBuffToggler
 
                     Append(element);
                     element.Parent = this; // Had to add this so the game doesn't bend over and die just because I ask it to properly work
+                    counter++;
                 }
-
-                counter++;
             }
         }
 

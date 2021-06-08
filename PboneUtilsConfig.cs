@@ -68,6 +68,12 @@ namespace PboneUtils
         [ReloadRequired]
         public bool MaxStackIncrease;
 
+        [Label("$Mods.PboneUtils.Config.Label.NoMoreGraves")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.NoMoreGraves")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool NoMoreGraves;
+
 
         // ITEMS
 
