@@ -24,6 +24,7 @@ namespace PboneUtils
         public bool DeluxeTreasureMagnet;
         public bool TerraTreasureMagnet;
         public bool RunicTreasureMagnet;
+
         public float SpawnRateMultiplier;
         public float MaxSpawnsMultiplier;
 
@@ -64,6 +65,7 @@ namespace PboneUtils
             MaxSpawnsMultiplier = 1f;
         }
 
+        #region I/O
         public override TagCompound Save()
         {
             base.Save();
@@ -84,6 +86,7 @@ namespace PboneUtils
                 ItemConfigs[s].Load(tag, s);
             }
         }
+        #endregion
 
         public override void UpdateDead()
         {

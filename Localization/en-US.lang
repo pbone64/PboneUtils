@@ -34,7 +34,7 @@ ItemTooltip.RunicTreasureMagnet=Massively increases pickup range for items\nWork
 
 // World control
 ItemName.FluxCapacitor=Flux Capacitor
-ItemTooltip.FluxCapacitor=Switches from night to day\nRight click to speed up time\n'It holds 1.21 gigawatts!""
+ItemTooltip.FluxCapacitor=Switches from night to day\nRight click to toggle sped up time\n'It holds 1.21 gigawatts!""
 
 // Ammo
 ItemName.EndlessFlamingArrow=Endless Flaming Quiver
