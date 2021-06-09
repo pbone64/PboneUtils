@@ -85,6 +85,7 @@ namespace PboneUtils
                 }
 
                 BuffTogglerInventoryButton.Dispose();
+                BuffTogglerInventoryButton_MouseOver.Dispose();
             }
         }
         #endregion
