@@ -8,6 +8,7 @@ namespace PboneUtils
     {
         public string AnyShadowScale = "PboneUtils:AnyShadowScale";
         public string AnyDemoniteBar = "PboneUtils:AnyDemoniteBar";
+        public string AnyAdamantite = "PboneUtils:AnyAdamantite";
 
         public void AddRecipes(Mod mod)
         {
@@ -46,6 +47,12 @@ namespace PboneUtils
                 ItemID.CrimtaneBar
             });
             RecipeGroup.RegisterGroup(AnyDemoniteBar, group);
+
+            group = new RecipeGroup(() => $"{Lang.GetItemName(ItemID.AdamantiteBar)}/{Lang.GetItemName(ItemID.TitaniumBar)}", new int[2] {
+                ItemID.AdamantiteBar,
+                ItemID.TitaniumBar
+            });
+            RecipeGroup.RegisterGroup(AnyAdamantite, group);
         }
     }
 }

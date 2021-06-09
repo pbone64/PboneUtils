@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using Terraria;
+using Terraria.GameContent.Events;
 using Terraria.GameContent.Generation;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -21,10 +22,18 @@ namespace PboneUtils
         private static MethodInfo stopRainMethod;
         public static Action StopRain = new Action(() => stopRainMethod.Invoke(null, new object[] { }));
 
+        private static MethodInfo startSandstormMethod;
+        public static Action StartSandstorm = new Action(() => startSandstormMethod.Invoke(null, new object[] { }));
+        private static MethodInfo stopSandstormMethod;
+        public static Action StopStandstorm = new Action(() => stopSandstormMethod.Invoke(null, new object[] { }));
+
         public override bool Autoload(ref string name)
         {
             startRainMethod = typeof(Main).GetMethod("StartRain", BindingFlags.Static | BindingFlags.NonPublic);
             stopRainMethod = typeof(Main).GetMethod("StopRain", BindingFlags.Static | BindingFlags.NonPublic);
+
+            startSandstormMethod = typeof(Sandstorm).GetMethod("StartSandstorm", BindingFlags.Static | BindingFlags.NonPublic);
+            stopSandstormMethod = typeof(Sandstorm).GetMethod("StopSandstorm", BindingFlags.Static | BindingFlags.NonPublic);
             return base.Autoload(ref name);
         }
 

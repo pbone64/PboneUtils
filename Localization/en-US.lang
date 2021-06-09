@@ -37,7 +37,10 @@ ItemName.FluxCapacitor=Flux Capacitor
 ItemTooltip.FluxCapacitor=Switches from night to day\nRight click to toggle sped up time\n'It holds 1.21 gigawatts!'
 
 ItemName.AmuletOfRain=Amulet of Rain
-ItemTooltip.AmuletOfRain=Toggles Rain\n'One way ticket to cloud nine'
+ItemTooltip.AmuletOfRain=Starts or stops rain\n'One way ticket to cloud nine'
+
+ItemName.AmuletOfSandstorms=Amulet of Sandstorms
+ItemTooltip.AmuletOfSandstorms=Starts or stops sandstorms\n'It's course and rough'
 
 // Ammo
 ItemName.EndlessFlamingArrow=Endless Flaming Quiver

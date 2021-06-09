@@ -1,10 +1,11 @@
 ﻿using Terraria;
+using Terraria.GameContent.Events;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace PboneUtils.Items.WorldControl
 {
-    public class AmuletOfRain : PItem
+    public class AmuletOfSandstorms : PItem
     {
         public override bool AutoloadCondition => PboneUtilsConfig.Instance.WorldControlItemsToggle;
 
@@ -23,20 +24,12 @@ namespace PboneUtils.Items.WorldControl
         {
             if (player.whoAmI == Main.myPlayer)
             {
-                if (Main.raining)
-                    PboneWorld.StopRain();
+                if (Sandstorm.Happening)
+                    PboneWorld.StopStandstorm();
                 else
-                    PboneWorld.StartRain();
+                    PboneWorld.StartSandstorm();
 
-                // Vanilla does some wacky syncing. I'm just calling SendData and hoping for the best
-                /*if (Main.maxRaining != Main.oldMaxRaining)
-                {
-                    if (Main.netMode == NetmodeID.MultiplayerClient)
-                    {
-                        NetMessage.SendData(MessageID.WorldData);
-                    }
-                    Main.oldMaxRaining = Main.maxRaining;
-                }*/
+                // Same case as amulet of rain syncing, just hope it works
                 if (Main.netMode == NetmodeID.MultiplayerClient)
                     NetMessage.SendData(MessageID.WorldData);
 
@@ -50,7 +43,7 @@ namespace PboneUtils.Items.WorldControl
         {
             base.AddRecipes();
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.FrostCore, 1);
+            recipe.AddIngredient(ItemID.AncientBattleArmorMaterial, 1); // AKA forbidden fragment
             recipe.AddRecipeGroup(PboneUtils.Recipes.AnyAdamantite, 3);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);
