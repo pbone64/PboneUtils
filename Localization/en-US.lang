@@ -36,6 +36,9 @@ ItemTooltip.RunicTreasureMagnet=Massively increases pickup range for items\nWork
 ItemName.FluxCapacitor=Flux Capacitor
 ItemTooltip.FluxCapacitor=Switches from night to day\nRight click to toggle sped up time\n'It holds 1.21 gigawatts!'
 
+ItemName.AmuletOfRain=Amulet of Rain
+ItemTooltip.AmuletOfRain=Toggles Rain\n'One way ticket to cloud nine'
+
 // Ammo
 ItemName.EndlessFlamingArrow=Endless Flaming Quiver
 ItemName.EndlessUnholyArrow=Endless Unholy Quiver

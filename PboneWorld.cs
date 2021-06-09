@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using Terraria;
 using Terraria.GameContent.Generation;
 using Terraria.ID;
@@ -13,6 +15,18 @@ namespace PboneUtils
         private ModWorldgenManager ModWorldGen;
 
         public static bool ForceFastForwardTime;
+
+        private static MethodInfo startRainMethod;
+        public static Action StartRain = new Action(() => startRainMethod.Invoke(null, new object[] { }));
+        private static MethodInfo stopRainMethod;
+        public static Action StopRain = new Action(() => stopRainMethod.Invoke(null, new object[] { }));
+
+        public override bool Autoload(ref string name)
+        {
+            startRainMethod = typeof(Main).GetMethod("StartRain", BindingFlags.Static | BindingFlags.NonPublic);
+            stopRainMethod = typeof(Main).GetMethod("StopRain", BindingFlags.Static | BindingFlags.NonPublic);
+            return base.Autoload(ref name);
+        }
 
         public override void Initialize()
         {
