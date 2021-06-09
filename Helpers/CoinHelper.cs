@@ -46,7 +46,7 @@ namespace PboneUtils.Helpers
             List<int> list = new List<int>();
             List<int> list2 = new List<int>();
             bool flag2 = false;
-            int[] array2 = new int[40];
+            int[] array2 = new int[40]; // TODO: Can I do cInv.Length?
             for (int i = 0; i < cInv.Length; i++)
             {
                 array2[i] = -1;
