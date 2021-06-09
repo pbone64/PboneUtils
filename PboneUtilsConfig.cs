@@ -154,6 +154,12 @@ namespace PboneUtils
         [ReloadRequired]
         public bool ShadowPearlToggle;
 
+        [Label("$Mods.PboneUtils.Config.Label.InfiniteManaToggle")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.InfiniteManaToggle")]
+        [DefaultValue(false)]
+        [ReloadRequired]
+        public bool InfiniteManaToggle;
+
 
         // QOL RECIPES
 

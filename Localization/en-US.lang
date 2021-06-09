@@ -96,6 +96,9 @@ ItemTooltip.GreaterStaffOfRegrowth=Left click and drag to harvest herbs in an ar
 ItemName.ShadowPearl=Shadow Pearl
 ItemTooltip.ShadowPearl=Works as a demon altar for crafting
 
+ItemName.InfiniteMana=Infinite Mana
+ItemTooltip.InfiniteMana=35% decreased damage\nSets your minion slots to one\nAll items take 0 mana
+
 
 // BUFFS
 BuffName.PreperationStationBuff=Prepared
@@ -160,6 +163,7 @@ Config.Label.PhilosophersStoneToggle=Prima Materia
 Config.Label.SpawnRateItemsToggle=Spawn Rate Items
 Config.Label.GreaterStaffOfRegrowthToggle=Green Scheme
 Config.Label.ShadowPearlToggle=Shadow Pearl
+Config.Label.InfiniteManaToggle=Infinite Mana
 
 Config.Label.RecipeEndlessWater=Endless Water Tool Recipes
 Config.Label.RecipePetrifiedSafe=Petrified Safe Recipes
@@ -182,11 +186,12 @@ Config.Tooltip.ArenaItemsToggle=Enable or disable this mod's arena blocks, which
 Config.Tooltip.MagnetItemsToggle=Enable or disable this mod's magnet items, which increase your grab range
 Config.Tooltip.WorldControlItemsToggle=Enable or disable this mod's world control items, which can change the time, weather, and more
 
-Config.Tooltip.VoidPiggyToggle=Enable or disable the Void Piggy item
-Config.Tooltip.PhilosophersStoneToggle=Enable or disable the Prima Materia item
+Config.Tooltip.VoidPiggyToggle=Enable or disable the Void Piggy item, which sends collected coins to your piggy bank
+Config.Tooltip.PhilosophersStoneToggle=Enable or disable the Prima Materia item, which sells picked up items
 Config.Tooltip.SpawnRateItemsToggle=Enable or disable the Flame of Battle and Flame of Peace, items which increase or decrease the spawn rate respectively
-Config.Tooltip.GreaterStaffOfRegrowthToggle=Enable or disable the Green Scheme item
-Config.Tooltip.ShadowPearlToggle=Enabled or disbale the Shadow Pearl item
+Config.Tooltip.GreaterStaffOfRegrowthToggle=Enable or disable the Green Scheme item, which helps with harvesting plants
+Config.Tooltip.ShadowPearlToggle=Enable or disbale the Shadow Pearl item, which functions as a demon altar crafting station
+Config.Tooltip.InfiniteManaToggle=Enable or disable the Infinite Mana accessory, which gives you infinite mana
 
 Config.Tooltip.RecipeEndlessWater=Enable or disable Endless Water Bucket and Super Absorbant Sponge recipes
 Config.Tooltip.RecipePetrifiedSafe=Enable or disable a simple recipe for the Petrified Safe\n(By default, Petrified Safes generate in the underworld during world generation)

@@ -24,6 +24,7 @@ namespace PboneUtils
         public bool DeluxeTreasureMagnet;
         public bool TerraTreasureMagnet;
         public bool RunicTreasureMagnet;
+        public bool InfiniteMana;
 
         public float SpawnRateMultiplier;
         public float MaxSpawnsMultiplier;
@@ -60,6 +61,7 @@ namespace PboneUtils
             DeluxeTreasureMagnet = false;
             TerraTreasureMagnet = false;
             RunicTreasureMagnet = false;
+            InfiniteMana = false;
 
             SpawnRateMultiplier = 1f;
             MaxSpawnsMultiplier = 1f;
@@ -87,6 +89,26 @@ namespace PboneUtils
             }
         }
         #endregion
+
+        public override void PostUpdateEquips()
+        {
+            base.PostUpdateEquips();
+
+            if (InfiniteMana)
+            {
+                player.maxMinions = 1;
+            }
+        }
+
+        public override void ModifyManaCost(Item item, ref float reduce, ref float mult)
+        {
+            base.ModifyManaCost(item, ref reduce, ref mult);
+
+            if (InfiniteMana)
+            {
+                reduce -= item.mana;
+            }
+        }
 
         public override void UpdateDead()
         {
