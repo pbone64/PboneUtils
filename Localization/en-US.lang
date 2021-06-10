@@ -151,7 +151,7 @@ Config.Label.EndlessPotionsSlider=Infinite Potion Amount
 Config.Label.AutoswingOnEverything=Global Autoswing
 Config.Label.AutoswingOnEverythingBlacklist=Global Autoswing Blacklist
 Config.Label.MaxStackIncrease=Max Stack Size Increases
-Config.Label.NoMoreGraves=No more graves
+Config.Label.NoMoreGraves=No More Graves
 Config.Label.FastRespawn=Fast Respawn
 
 Config.Label.StorageItemsToggle=Storage Items
