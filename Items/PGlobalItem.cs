@@ -1,4 +1,5 @@
-﻿using PboneUtils.Helpers;
+﻿using Microsoft.Xna.Framework;
+using PboneUtils.Helpers;
 using PboneUtils.Items.Tools;
 using Terraria;
 using Terraria.ID;
@@ -8,8 +9,7 @@ namespace PboneUtils.Items
 {
     public class PGlobalItem : GlobalItem
     {
-        public const int RunicTreasureMagnetRange = 560;
-        public const int TerraTreasureMagnetRange = 560;
+        public const int HallowedTreasureManget = 640;
         public const int DeluxeTreasureMagnetRange = 320;
 
         public override void SetDefaults(Item item)
@@ -74,17 +74,63 @@ namespace PboneUtils.Items
             base.GrabRange(item, player, ref grabRange);
             PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
 
-            if (mPlayer.RunicTreasureMagnet)
+            // Range increases
+            if (mPlayer.HallowedTreasureMagnet)
             {
-                grabRange += RunicTreasureMagnetRange;
-            }
-            else if (mPlayer.TerraTreasureMagnet)
-            {
-                grabRange += TerraTreasureMagnetRange;
+                grabRange += HallowedTreasureManget;
             }
             else if (mPlayer.DeluxeTreasureMagnet)
             {
                 grabRange += DeluxeTreasureMagnetRange;
+            }
+        }
+
+        public override void Update(Item item, ref float gravity, ref float maxFallSpeed)
+        {
+            // MP TODO: is this run on all clients?
+            base.Update(item, ref gravity, ref maxFallSpeed);
+            PbonePlayer mPlayer = Main.LocalPlayer.GetModPlayer<PbonePlayer>();
+
+            // Super grabs
+            int superGrabCooldownMax = -1;
+            int superGrabRange = -1;
+            int superGrabDust = -1;
+
+            if (mPlayer.RunicTreasureMagnet)
+            {
+                superGrabCooldownMax = 10;
+                superGrabRange = 2560;
+                superGrabDust = 169;
+            }
+            else if (mPlayer.SpectreTreasureMagnet)
+            {
+                superGrabCooldownMax = 15;
+                superGrabRange = 1280;
+                superGrabDust = 15;
+            }
+
+            if (superGrabCooldownMax != -1 && superGrabRange != -1)
+            {
+                if (Main.LocalPlayer.Distance(item.Center) <= superGrabRange)
+                {
+                    if (mPlayer.SuperGrabCooldown-- <= 0)
+                    {
+                        const int numDust = 20;
+                        for (int i = 0; i < numDust; i++)
+                        {
+                            Dust d = Dust.NewDustDirect(Vector2.Lerp(item.Center, Main.LocalPlayer.Center, (float)i / (float)numDust), 1, 1, superGrabDust, 0, 0);
+                            d.noGravity = true;
+                            d.alpha = 200;
+                        }
+
+                        item.noGrabDelay = 0;
+                        item.Center = Main.LocalPlayer.Center;
+                        mPlayer.SuperGrabCooldown = superGrabCooldownMax;
+
+                        if (Main.netMode != NetmodeID.SinglePlayer)
+                            NetMessage.SendData(MessageID.SyncItem, -1, -1, null, item.whoAmI);
+                    }
+                }
             }
         }
 

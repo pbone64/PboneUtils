@@ -13,20 +13,24 @@ namespace PboneUtils.Items.Magnets
         {
             base.SetDefaults();
             item.rare = ItemRarityID.Red;
-            item.value = Item.sellPrice(0, 15, 0, 0);
+            item.value = Item.sellPrice(0, 30, 0, 0);
         }
 
         public override void UpdateInventory(Player player)
         {
             base.UpdateInventory(player);
-            player.GetModPlayer<PbonePlayer>().TerraTreasureMagnet = Enabled;
+            player.GetModPlayer<PbonePlayer>().RunicTreasureMagnet = Enabled;
         }
 
         public override void AddRecipes()
         {
             base.AddRecipes();
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<DeluxeTreasureMagnet>());
+            recipe.AddIngredient(ModContent.ItemType<SpectreTreasureMagnet>());
+            recipe.AddIngredient(ItemID.FragmentSolar, 2);
+            recipe.AddIngredient(ItemID.FragmentVortex, 2);
+            recipe.AddIngredient(ItemID.FragmentNebula, 2);
+            recipe.AddIngredient(ItemID.FragmentStardust, 2);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();

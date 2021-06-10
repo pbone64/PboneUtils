@@ -19,11 +19,15 @@ namespace PboneUtils
         public int DefendersCrystalChest = -1;
         public bool DefendersCrystalOpen = false;
 
+        // Magnets
+        public bool DeluxeTreasureMagnet;
+        public bool HallowedTreasureMagnet;
+        public bool SpectreTreasureMagnet;
+        public bool RunicTreasureMagnet;
+        public int SuperGrabCooldown;
+
         // Tools
         public bool PhilosophersStone;
-        public bool DeluxeTreasureMagnet;
-        public bool TerraTreasureMagnet;
-        public bool RunicTreasureMagnet;
         public bool InfiniteMana;
 
         public float SpawnRateMultiplier;
@@ -42,9 +46,12 @@ namespace PboneUtils
             DefendersCrystalChest = -1;
             DefendersCrystalOpen = false;
 
+            SuperGrabCooldown = 0;
+
             ResetVariables();
             ItemConfigs = ItemConfig.DefaultConfigs();
         }
+        
 
         public override void ResetEffects()
         {
@@ -57,10 +64,12 @@ namespace PboneUtils
         {
             VoidPig = false;
 
-            PhilosophersStone = false;
             DeluxeTreasureMagnet = false;
-            TerraTreasureMagnet = false;
+            HallowedTreasureMagnet = false;
+            SpectreTreasureMagnet = false;
             RunicTreasureMagnet = false;
+
+            PhilosophersStone = false;
             InfiniteMana = false;
 
             SpawnRateMultiplier = 1f;

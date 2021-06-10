@@ -26,11 +26,14 @@ ItemTooltip.LiquidCombo=Allows ultimate control over liquids!\nRight click while
 ItemName.DeluxeTreasureMagnet=Deluxe Treasure Magnet
 ItemTooltip.DeluxeTreasureMagnet=Vastly increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}
 
-ItemName.TerraTreasureMagnet=Terra Treasure Magnet
-ItemTooltip.TerraTreasureMagnet=Massively increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}
+ItemName.HallowedMagnet=Hallowed Treasure Magnet
+ItemTooltip.HallowedMagnet=Massively increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}
+
+ItemName.SpectreTreasureMagnet=SPectre Treasure Magnet
+ItemTooltip.SpectreTreasureMagnet=Teleports nearby items into your inventory\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}
 
 ItemName.RunicTreasureMagnet=Runic Treasure Magnet
-ItemTooltip.RunicTreasureMagnet=Massively increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Won't attract the moon, probably'
+ItemTooltip.RunicTreasureMagnet=Quickly teleports nearby items into your inventory\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Won't attract the moon, probably'
 
 // World control
 ItemName.FluxCapacitor=Flux Capacitor
