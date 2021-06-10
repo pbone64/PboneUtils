@@ -71,6 +71,7 @@ namespace PboneUtils.Items
 
         public override void GrabRange(Item item, Player player, ref int grabRange)
         {
+            // MP TODO: see how this works in mp
             base.GrabRange(item, player, ref grabRange);
             PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
 
