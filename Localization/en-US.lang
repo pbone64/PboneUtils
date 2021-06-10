@@ -74,7 +74,7 @@ ItemName.EndlessLuminiteBullet=Endless Luminite Pouch
 ItemName.AsphaltPlatform=Asphalt Platform
 ItemTooltip.AsphaltPlatform=Increases running speed
 
-ItemName.PreperationStation=Preperation Station
+ItemName.PreperationStation=Preparation Station
 ItemTooltip.PreperationStation=Right click to increase armor penetration for melee weapons, reduce ammo usage, increase magic powers, and have more minions\nIsn't consumed upon being placed\n'Also makes Julienne Fries!'
 
 ItemName.BuffBrazier=Buff Brazier
@@ -114,7 +114,7 @@ BuffDescription.BuffBrazierBuff=Effects of Campfire, Heart Lantern, Star in a Bo
 // TILES
 MapObject.PetrifiedSafeTile=Petrified Safe
 MapObject.AsphaltPlatformTile=Asphalt Platform
-MapObject.PreperationStationTile=Preperation Station
+MapObject.PreperationStationTile=Preparation Station
 MapObject.BuffBrazierTile=Buff Brazier
 MapObject.ShadowPearlTile=Shadow Pearl
 
