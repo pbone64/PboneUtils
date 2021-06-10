@@ -119,6 +119,28 @@ namespace PboneUtils
             }
         }
 
+        public override void OnMissingMana(Item item, int neededMana)
+        {
+            base.OnMissingMana(item, neededMana);
+
+            if (InfiniteMana && neededMana > 0)
+            {
+                player.statMana += neededMana;
+                player.ManaEffect(neededMana);
+            }
+        }
+
+        public override void OnConsumeMana(Item item, int manaConsumed)
+        {
+            base.OnConsumeMana(item, manaConsumed);
+
+            if (InfiniteMana && manaConsumed > 0)
+            {
+                player.statMana += manaConsumed;
+                player.ManaEffect(manaConsumed);
+            }
+        }
+
         public override void UpdateDead()
         {
             base.UpdateDead();
