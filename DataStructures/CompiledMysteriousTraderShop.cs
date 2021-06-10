@@ -54,6 +54,18 @@ namespace PboneUtils.DataStructures
                 GiveShopRandomItem(shop, ref nextSlot, MysteriousTraderItemRarity.NonUnique, false);
             }
             GiveShopRandomItem(shop, ref nextSlot, MysteriousTraderItemRarity.NonUnique, true);
+
+            for (int i = 0; i < numCommon; i++)
+            {
+                GiveShopRandomItem(shop, ref nextSlot, MysteriousTraderItemRarity.Common, false);
+            }
+            GiveShopRandomItem(shop, ref nextSlot, MysteriousTraderItemRarity.Common, true);
+
+            for (int i = 0; i < numRare; i++)
+            {
+                GiveShopRandomItem(shop, ref nextSlot, MysteriousTraderItemRarity.Common, false);
+            }
+            GiveShopRandomItem(shop, ref nextSlot, MysteriousTraderItemRarity.Common, true);
         }
 
         private void GiveShopRandomItem(Chest shop, ref int nextSlot, MysteriousTraderItemRarity rare, bool call)

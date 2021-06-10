@@ -62,7 +62,6 @@ namespace PboneUtils.NPCs.Town
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
             base.SetupShop(shop, ref nextSlot);
-			shop.
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
