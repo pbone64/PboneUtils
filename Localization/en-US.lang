@@ -29,7 +29,7 @@ ItemTooltip.DeluxeTreasureMagnet=Vastly increases pickup range for items\nWorks 
 ItemName.HallowedMagnet=Hallowed Treasure Magnet
 ItemTooltip.HallowedMagnet=Massively increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}
 
-ItemName.SpectreTreasureMagnet=SPectre Treasure Magnet
+ItemName.SpectreTreasureMagnet=Spectre Treasure Magnet
 ItemTooltip.SpectreTreasureMagnet=Teleports nearby items into your inventory\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}
 
 ItemName.RunicTreasureMagnet=Runic Treasure Magnet
