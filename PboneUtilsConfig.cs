@@ -161,6 +161,16 @@ namespace PboneUtils
         public bool InfiniteManaToggle;
 
 
+        // NPCS
+
+        [Header("$Mods.PboneUtils.Config.Header.MiscItemToggles")]
+        [Label("$Mods.PboneUtils.Config.Label.InfiniteManaToggle")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.InfiniteManaToggle")]
+        [DefaultValue(false)]
+        [ReloadRequired]
+        public bool MysteriousTrader;
+
+
         // QOL RECIPES
 
         [Header("$Mods.PboneUtils.Config.Header.QolRecipes")]

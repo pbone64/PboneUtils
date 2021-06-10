@@ -106,6 +106,17 @@ ItemName.InfiniteMana=Infinite Mana
 ItemTooltip.InfiniteMana=35% decreased damage\nSets your minion slots to one\nAll items take 0 mana
 
 
+// NPCS
+TownChat.MysteriousTrader.1=What do you mean, I'm a mutant?
+TownChat.MysteriousTrader.2=Have you ever seen an angel statue fly? Unfortunately, I have.
+TownChat.MysteriousTrader.3=I walk on a fine line between selling junk and scamming.
+TownChat.MysteriousTrader.4=Say, you don't think I could move in? I'm in a club that won't stop talking about houses.
+TownChat.MysteriousTrader.5=Mum says I should learn about something other than structural supports. She's wrong.
+TownChat.MysteriousTrader.6=I sell wares from my basement. Don't ask.
+TownChat.MysteriousTrader.7=Hurry up and buy something, these robes don't sew themself!
+TownChat.MysteriousTrader.8=How many cultists does it take to summon Cthulhu? No wait, you didn't hear me say that.
+
+
 // BUFFS
 BuffName.PreperationStationBuff=Prepared
 BuffDescription.PreperationStationBuff=Effects of the Sharpening Station, Ammo Box, Crystal Ball, and Bewitching Table\nDisables the individual station buffs

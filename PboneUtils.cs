@@ -1,6 +1,8 @@
 using log4net;
 using Microsoft.Xna.Framework;
+using PboneUtils.CrossMod;
 using PboneUtils.Helpers;
+using System;
 using System.Collections.Generic;
 using Terraria.ModLoader;
 using Terraria.UI;
@@ -26,6 +28,7 @@ namespace PboneUtils
         private ModRecipeManager recipes;
         private ModUIManager ui;
         private TreasureBagValueCalculator bagValues;
+        private ModCallManager modCallManager;
 
         private bool fargowiltasLoaded;
         private bool fargowiltasSoulsLoaded;
@@ -50,6 +53,17 @@ namespace PboneUtils
             ui.Initialize();
         }
 
+        public override object Call(params object[] args)
+        {
+            if (modCallManager == null)
+            {
+                modCallManager = new ModCallManager();
+                modCallManager.Load();
+            }
+
+            return modCallManager.HandleCall(args);
+        }
+
         public override void PostSetupContent()
         {
             base.PostSetupContent();
@@ -68,17 +82,15 @@ namespace PboneUtils
             base.AddRecipes();
             recipes.AddRecipes(this);
         }
-
-        public override void PostAddRecipes()
-        {
-            base.PostAddRecipes();
-            textures.Initialize();
-        }
-
         public override void AddRecipeGroups()
         {
             base.AddRecipeGroups();
             recipes.AddRecipeGroups();
+        }
+        public override void PostAddRecipes()
+        {
+            base.PostAddRecipes();
+            textures.Initialize();
         }
 
         public override void Unload()
@@ -95,6 +107,8 @@ namespace PboneUtils
             recipes = null;
             ui = null;
             bagValues = null;
+
+            modCallManager = null;
         }
     }
 }
