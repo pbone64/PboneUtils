@@ -15,5 +15,11 @@ namespace PboneUtils.Helpers
                 item.maxStack = newStack;
             }
         }
+
+        public static void AddShopItem(this Chest shop, int item, ref int nextSlot)
+        {
+            shop.item[nextSlot].SetDefaults(item);
+            nextSlot++;
+        }
     }
 }

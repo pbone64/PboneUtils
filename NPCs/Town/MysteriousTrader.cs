@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using PboneUtils.Helpers;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -10,7 +11,9 @@ namespace PboneUtils.NPCs.Town
     [AutoloadHead]
     public class MysteriousTrader : PNPC
     {
-		private readonly List<string> Names = new List<string>() {
+		public override bool AutoloadCondition => PboneUtilsConfig.Instance.MysteriousTrader;
+
+        private readonly List<string> Names = new List<string>() {
 			"Verboten", "Thooloo", "Uri", "Sellatron", "Indigo", "Steve"
 		};
 
@@ -71,15 +74,12 @@ namespace PboneUtils.NPCs.Town
 
 			foreach (int i in PboneWorld.MysteriousTraderShop)
             {
-				shop.item[nextSlot].SetDefaults(i);
-				nextSlot++;
+				shop.AddShopItem(i, ref nextSlot);
             }
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
         {
-            base.TownNPCAttackStrength(ref damage, ref knockback);
-
 			if (NPC.downedMoonlord)
 				damage = 65;
 			else if (Main.hardMode)

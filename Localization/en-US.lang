@@ -117,6 +117,14 @@ TownChat.MysteriousTrader.7=Hurry up and buy something, these robes don't sew th
 TownChat.MysteriousTrader.8=How many cultists does it take to summon Cthulhu? No wait, you didn't hear me say that.
 TownChat.MysteriousTrader.9=I sell many rare items.... of Cthulhu!
 
+TownChat.Miner.1=Ooo, shiny!
+TownChat.Miner.2=Why don't I mine with explosives? It ruins the ore, of course!
+TownChat.Miner.3=My pickaxe is the oldest and best in the land!
+TownChat.Miner.4=You know, I could just be turning this gold into coins.
+TownChat.Miner.5=Where do I get my ores if I'm never mining? I Keep them all in my backpack.
+TownChat.Miner.6=I hear there's a planet made of solid metal you can grow under the right conditions!
+TownChat.Miner.HardmodeOnly=Check out my cobalt ore; it is extra shiny.
+
 
 // BUFFS
 BuffName.PreperationStationBuff=Prepared
@@ -156,6 +164,7 @@ UI.EndlessBuffSource.DefendersForge=Defender's Forge
 Config.Header.MiscFeatures=QoL Features
 Config.Header.ItemToggles=Item Toggles
 Config.Header.MiscItemToggles=Misc Single Item Toggles
+Config.Header.NPCs=Helpful NPCs
 Config.Header.QolRecipes=QoL Recipes
 
 Config.Label.AverageBossBagsSlider=Treasure Bag Simulation Attempts
@@ -182,6 +191,9 @@ Config.Label.SpawnRateItemsToggle=Spawn Rate Items
 Config.Label.GreaterStaffOfRegrowthToggle=Green Scheme
 Config.Label.ShadowPearlToggle=Shadow Pearl
 Config.Label.InfiniteManaToggle=Infinite Mana
+
+Config.Label.MysteriousTrader=Mysterious Trader
+Config.Label.Miner=Miner
 
 Config.Label.RecipeEndlessWater=Endless Water Tool Recipes
 Config.Label.RecipePetrifiedSafe=Petrified Safe Recipes
@@ -210,6 +222,9 @@ Config.Tooltip.SpawnRateItemsToggle=Enable or disable the Flame of Battle and Fl
 Config.Tooltip.GreaterStaffOfRegrowthToggle=Enable or disable the Green Scheme item, which helps with harvesting plants
 Config.Tooltip.ShadowPearlToggle=Enable or disbale the Shadow Pearl item, which functions as a demon altar crafting station
 Config.Tooltip.InfiniteManaToggle=Enable or disable the Infinite Mana accessory, which gives you infinite mana
+
+Config.Tooltip.MysteriousTrader=Enable or disable the Mysterious Trader, an NPC that will occasionally show up to sell rare items
+Config.Tooltip.Miner=Enable or disable the Miner, an NPC that sells ores and gems
 
 Config.Tooltip.RecipeEndlessWater=Enable or disable Endless Water Bucket and Super Absorbant Sponge recipes
 Config.Tooltip.RecipePetrifiedSafe=Enable or disable a simple recipe for the Petrified Safe\n(By default, Petrified Safes generate in the underworld during world generation)

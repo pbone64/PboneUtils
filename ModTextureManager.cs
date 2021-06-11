@@ -11,6 +11,7 @@ namespace PboneUtils
         public ItemTextures Items;
         public MountTextures Mounts;
         public UITextures UI;
+        public NPCTextures NPCs;
 
         #region Texture Containers
         public class ExtraTextures : IDisposable
@@ -43,6 +44,16 @@ namespace PboneUtils
             {
                 SuperDrillMountBackTexture.Dispose();
                 SuperDrillMountFrontTexture.Dispose();
+            }
+        }
+
+        public class NPCTextures : IDisposable
+        {
+            public Texture2D MinerAttack = ModContent.GetTexture("PboneUtils/NPCs/Town/Miner_Attack");
+
+            public void Dispose()
+            {
+                MinerAttack.Dispose();
             }
         }
 
@@ -96,6 +107,7 @@ namespace PboneUtils
             Items = new ItemTextures();
             Mounts = new MountTextures();
             UI = new UITextures();
+            NPCs = new NPCTextures();
         }
 
         public void Dispose()
@@ -104,6 +116,7 @@ namespace PboneUtils
             Items.Dispose();
             Mounts.Dispose();
             UI.Dispose();
+            NPCs.Dispose();
         }
     }
 }
