@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PboneUtils.DataStructures;
+using PboneUtils.ID;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -7,6 +9,7 @@ using Terraria.GameContent.Events;
 using Terraria.GameContent.Generation;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 using Terraria.World.Generation;
 
 namespace PboneUtils
@@ -27,6 +30,8 @@ namespace PboneUtils
         private static MethodInfo stopSandstormMethod;
         public static Action StopStandstorm = new Action(() => stopSandstormMethod.Invoke(null, new object[] { }));
 
+        public static List<int> MysteriousTraderShop;
+
         public override bool Autoload(ref string name)
         {
             startRainMethod = typeof(Main).GetMethod("StartRain", BindingFlags.Static | BindingFlags.NonPublic);
@@ -41,6 +46,7 @@ namespace PboneUtils
         {
             base.Initialize();
             ForceFastForwardTime = false;
+            MysteriousTraderShop = new List<int>();
         }
 
         public override void PostUpdate()
@@ -52,6 +58,62 @@ namespace PboneUtils
 
                 if (Main.netMode == NetmodeID.MultiplayerClient)
                     NetMessage.SendData(MessageID.Assorted1, -1, -1, null, Main.myPlayer, 3f);
+            }
+
+            if (Main.time == 1 && Main.dayTime || MysteriousTraderShop.Count == 0) // Should happen once in the morning or if it hasn't been initialized ever
+            {
+                MysteriousTraderShop.Clear();
+                CompiledMysteriousTraderShop.Instance.FillShop(MysteriousTraderShop);
+
+                if (Main.netMode == NetmodeID.Server) // PostUpdate is only run on the server in mp, whee
+                {
+                    ModPacket packet = mod.GetPacket();
+                    packet.Write(PacketID.SyncMysteriousTraderShop);
+                    packet.Write((byte)MysteriousTraderShop.Count);
+
+                    foreach (int i in MysteriousTraderShop)
+                    {
+                        packet.Write(i);
+                    }
+
+                    packet.Send();
+                }
+            }
+        }
+
+        public override TagCompound Save()
+        {
+            TagCompound tag = new TagCompound();
+            tag.Add("MysteriousTraderCount", MysteriousTraderShop.Count);
+            for (int i = 0; i < MysteriousTraderShop.Count; i++)
+            {
+                Item item = new Item();
+                item.SetDefaults(MysteriousTraderShop[i]);
+                tag.Add("ModMysteriousTraderItem" + i, item.modItem == null ? "TERRARIA" : item.modItem.mod.Name);
+                tag.Add("MysteriousTraderItem" + i, MysteriousTraderShop[i]);
+            }
+
+            return tag;
+        }
+
+        public override void Load(TagCompound tag)
+        {
+            MysteriousTraderShop = new List<int>();
+            int count = tag.GetInt("MysteriousTraderCount");
+
+            for (int i = 0; i < count; i++)
+            {
+                string key = "MysteriousTraderItem" + i;
+                string itemMod = tag.Get<string>("Mod" + key);
+
+                // Unloaded item, remove
+                if (itemMod != "TERRARIA" && ModLoader.GetMod(itemMod) == null)
+                    continue;
+
+                MysteriousTraderShop.Add(tag.GetInt(key));
+
+                tag.Remove(key);
+                tag.Remove("Mod" + key);
             }
         }
 
@@ -71,6 +133,17 @@ namespace PboneUtils
         {
             base.NetSend(writer);
             writer.Write(ForceFastForwardTime);
+
+            ModPacket packet = mod.GetPacket();
+            packet.Write(PacketID.SyncMysteriousTraderShop);
+            packet.Write((byte)MysteriousTraderShop.Count);
+
+            foreach (int i in MysteriousTraderShop)
+            {
+                packet.Write(i);
+            }
+
+            packet.Send();
         }
 
         public override void NetReceive(BinaryReader reader)

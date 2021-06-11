@@ -21,7 +21,7 @@ namespace PboneUtils.CrossMod
 
         private void LoadHandlers()
         {
-            ModCallHandlersByType.Add(typeof(MysteriousTraderShopInterface), new MysteriousTraderShopInterface());
+            ModCallHandlersByType.Add(typeof(MysteriousTraderShopManager), new MysteriousTraderShopManager());
         }
 
         private void LoadHandlersByMessage()

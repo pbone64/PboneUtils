@@ -8,6 +8,11 @@ namespace PboneUtils.CrossMod
     {
         protected Dictionary<string, Func<List<object>, object>> CallFunctions;
 
+        protected SimpleModCallHandler()
+        {
+            CallFunctions = new Dictionary<string, Func<List<object>, object>>();
+        }
+
         public string[] GetMessagesICanHandle() => CallFunctions.Keys.ToArray();
 
         public object Call(string message, List<object> args) => CallFunctions[message](args);

@@ -53,15 +53,27 @@ namespace PboneUtils.NPCs.Town
 			const int count = 8;
 			for (int i = 1; i < count + 1; i++)
             {
-				chats.Add(Language.GetTextValue("Mods.PboneUtils.TownChat." + i));
+				chats.Add(Language.GetTextValue("Mods.PboneUtils.TownChat.MysteriousTrader." + i));
 			}
 
 			return chats.Get();
         }
 
-        public override void SetupShop(Chest shop, ref int nextSlot)
+		public override void OnChatButtonClicked(bool firstButton, ref bool shop) => shop = true;
+		public override void SetChatButtons(ref string button, ref string button2)
+		{
+			button = Language.GetTextValue("LegacyInterface.28");
+		}
+
+		public override void SetupShop(Chest shop, ref int nextSlot)
         {
             base.SetupShop(shop, ref nextSlot);
+
+			foreach (int i in PboneWorld.MysteriousTraderShop)
+            {
+				shop.item[nextSlot].SetDefaults(i);
+				nextSlot++;
+            }
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -83,12 +95,10 @@ namespace PboneUtils.NPCs.Town
 			base.TownNPCAttackProj(ref projType, ref attackDelay);
 			attackDelay = 1;
 
-			if (NPC.downedMoonlord)
+			if (Main.hardMode)
 				projType = ProjectileID.NebulaBlaze2;
-			else if (Main.hardMode)
-				projType = ProjectileID.NebulaBlaze1;
 			else
-				projType = ProjectileID.NebulaArcanumSubshot;
+				projType = ProjectileID.NebulaBlaze1;
         }
 
 
