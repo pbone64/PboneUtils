@@ -18,18 +18,23 @@ namespace PboneUtils
         {
             ILCursor c = new ILCursor(il);
 
-            if (!c.TryGotoNext(instr => instr.MatchLdcR4(1f) && instr.Next.Next.Next.Next.Next.Next.MatchStfld(typeof(Player).GetField("chest"))))
+            if (!c.TryGotoNext(instr =>
+                instr.MatchLdcR4(1f) &&
+                instr.Next.Next.Next.Next.Next.Next.MatchStfld(typeof(Player).GetField("chest"))))
             {
-                throw new Exception("Unable to patch Terraria.Player.Update: couldn't match IL");
+                /*throw new Exception*/
+                Log.Warn("Unable to patch Terraria.Player.Update: couldn't match IL");
+                return;
             }
 
             c.FindNext(out ILCursor[] cursors, instr => instr.MatchLdcR4(1f));
             c = cursors[0];
 
             c.Index++;
-            c.EmitDelegate<Func<float, float>>((volume) => {
+            c.EmitDelegate<Func<float, float>>((volume) =>
+            {
                 if (Main.LocalPlayer.GetModPlayer<PbonePlayer>().SafeGargoyleOpen
-                || Main.LocalPlayer.GetModPlayer<PbonePlayer>().DefendersCrystalOpen)
+                    || Main.LocalPlayer.GetModPlayer<PbonePlayer>().DefendersCrystalOpen)
                 {
                     return 0f;
                 }
@@ -44,7 +49,9 @@ namespace PboneUtils
 
             if (!c.TryGotoNext(MoveType.Before, instr => instr.MatchLdcI4(2)))
             {
-                throw new Exception("Unable to patch Terraria.Main.DrawBuffIcon: couldn't match IL");
+                /*throw new Exception*/
+                Log.Warn("Unable to patch Terraria.Main.DrawBuffIcon: couldn't match IL");
+                return;
             }
 
             c.Remove();
