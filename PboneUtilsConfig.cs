@@ -166,13 +166,13 @@ namespace PboneUtils
         [Header("$Mods.PboneUtils.Config.Header.NPCs")]
         [Label("$Mods.PboneUtils.Config.Label.MysteriousTrader")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.MysteriousTrader")]
-        [DefaultValue(false)]
+        [DefaultValue(true)]
         [ReloadRequired]
         public bool MysteriousTrader;
 
         [Label("$Mods.PboneUtils.Config.Label.Miner")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.Miner")]
-        [DefaultValue(false)]
+        [DefaultValue(true)]
         [ReloadRequired]
         public bool Miner;
 
