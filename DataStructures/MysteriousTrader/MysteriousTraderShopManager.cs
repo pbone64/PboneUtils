@@ -25,6 +25,10 @@ namespace PboneUtils.DataStructures.MysteriousTrader
             MyRegisterItem(ItemID.CelestialMagnet, MysteriousTraderItemRarity.Rare);
             MyRegisterItem(ItemID.MagicHat, MysteriousTraderItemRarity.Rare);
             MyRegisterItem(ItemID.StaffofRegrowth, MysteriousTraderItemRarity.Rare);
+            MyRegisterItem(ItemID.BlizzardinaBalloon, MysteriousTraderItemRarity.Rare);
+            MyRegisterItem(ItemID.SandstorminaBalloon, MysteriousTraderItemRarity.Rare);
+            MyRegisterItem(ItemID.CloudinaBalloon, MysteriousTraderItemRarity.Rare);
+            MyRegisterItem(ItemID.WhoopieCushion, MysteriousTraderItemRarity.Rare);
 
             MyRegisterItem(ItemID.BandofRegeneration, MysteriousTraderItemRarity.Common);
             MyRegisterItem(ItemID.Aglet, MysteriousTraderItemRarity.Common);
