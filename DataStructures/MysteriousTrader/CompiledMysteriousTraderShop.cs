@@ -11,7 +11,7 @@ namespace PboneUtils.DataStructures.MysteriousTrader
         public bool AnyCall;
 
         public Dictionary<MysteriousTraderItemRarity, List<MysteriousTraderItem>> ItemCollections = new Dictionary<MysteriousTraderItemRarity, List<MysteriousTraderItem>>() {
-            { MysteriousTraderItemRarity.NonUnique, new List<MysteriousTraderItem>() },
+            //{ MysteriousTraderItemRarity.NonUnique, new List<MysteriousTraderItem>() },
             { MysteriousTraderItemRarity.Common, new List<MysteriousTraderItem>() },
             { MysteriousTraderItemRarity.Rare, new List<MysteriousTraderItem>() },
             { MysteriousTraderItemRarity.Legendary, new List<MysteriousTraderItem>() }
@@ -19,7 +19,7 @@ namespace PboneUtils.DataStructures.MysteriousTrader
 
         public CompiledMysteriousTraderShop(MysteriousTraderShopManager shopBuilder)
         {
-            FillRarity(MysteriousTraderItemRarity.NonUnique, shopBuilder);
+            //FillRarity(MysteriousTraderItemRarity.NonUnique, shopBuilder);
             FillRarity(MysteriousTraderItemRarity.Common, shopBuilder);
             FillRarity(MysteriousTraderItemRarity.Rare, shopBuilder);
             FillRarity(MysteriousTraderItemRarity.Legendary, shopBuilder);
@@ -37,14 +37,14 @@ namespace PboneUtils.DataStructures.MysteriousTrader
 
         public void FillShop(List<int> shop)
         {
-            const int NonUniqueMin = 2;
-            const int NonUniqueMax = 4;
-            const int CommonMin = 2;
-            const int CommonMax = 3;
-            const int Rare = 1;
+            //const int NonUniqueMin = 2;
+            //const int NonUniqueMax = 4;
+            const int CommonMin = 3;
+            const int CommonMax = 5;
+            const int Rare = 2;
             const float LegendaryChance = 0.1f;
 
-            int numNonUnique = Main.rand.Next(NonUniqueMin, NonUniqueMax + 1);
+            //int numNonUnique = Main.rand.Next(NonUniqueMin, NonUniqueMax + 1);
             int numCommon = Main.rand.Next(CommonMin, CommonMax + 1);
             int numRare = Rare;
             bool legendary = Main.rand.NextFloat() < LegendaryChance;
@@ -53,7 +53,7 @@ namespace PboneUtils.DataStructures.MysteriousTrader
 
             cache = (MysteriousTraderItemRarity.Invalid, null);
 
-            DoGiveItems(shop, MysteriousTraderItemRarity.NonUnique, numNonUnique, ref extraChancesInCaseOfFaliure);
+            //DoGiveItems(shop, MysteriousTraderItemRarity.NonUnique, numNonUnique, ref extraChancesInCaseOfFaliure);
             DoGiveItems(shop, MysteriousTraderItemRarity.Common, numCommon, ref extraChancesInCaseOfFaliure);
             DoGiveItems(shop, MysteriousTraderItemRarity.Rare, numRare, ref extraChancesInCaseOfFaliure);
 
@@ -124,7 +124,7 @@ namespace PboneUtils.DataStructures.MysteriousTrader
     public enum MysteriousTraderItemRarity
     {
         Invalid = -1,
-        NonUnique,
+        //NonUnique,
         Common,
         Rare,
         Legendary
