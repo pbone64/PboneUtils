@@ -16,12 +16,12 @@ namespace PboneUtils.NPCs.Town
 
 		public override void SetStaticDefaults()
 		{
-			Main.npcFrameCount[npc.type] = 25;
+			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Dryad];
 			NPCID.Sets.ExtraFramesCount[npc.type] = 9;
 			NPCID.Sets.AttackFrameCount[npc.type] = 4;
 			NPCID.Sets.DangerDetectRange[npc.type] = 700;
 			NPCID.Sets.AttackType[npc.type] = 2;
-			NPCID.Sets.AttackTime[npc.type] = 90;
+			NPCID.Sets.AttackTime[npc.type] = 45;
 			NPCID.Sets.AttackAverageChance[npc.type] = 30;
 			NPCID.Sets.HatOffsetY[npc.type] = 4;
 		}
@@ -39,7 +39,7 @@ namespace PboneUtils.NPCs.Town
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.knockBackResist = 0.5f;
-			animationType = NPCID.Guide;
+			animationType = NPCID.Dryad;
 		}
 
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money) => false;
@@ -81,11 +81,11 @@ namespace PboneUtils.NPCs.Town
             base.TownNPCAttackStrength(ref damage, ref knockback);
 
 			if (NPC.downedMoonlord)
-				damage = 100;
+				damage = 65;
 			else if (Main.hardMode)
-				damage = 45;
+				damage = 35;
 			else
-				damage = 25;
+				damage = 15;
 
 			knockback = 6f;
 		}
