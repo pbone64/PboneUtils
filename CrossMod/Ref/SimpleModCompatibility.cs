@@ -7,8 +7,8 @@ namespace PboneUtils.CrossMod.Ref
     public abstract class SimpleModCompatibility : IModCompatibility
     {
         private bool IsModLoaded => Mod != null;
-        private Mod Mod;
-        private string ModName;
+        private readonly Mod Mod;
+        private readonly string ModName;
 
         protected SimpleModCompatibility()
         {

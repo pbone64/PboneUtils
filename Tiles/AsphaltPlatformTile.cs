@@ -33,7 +33,9 @@ namespace PboneUtils.Tiles
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
             AddMapEntry(Color.Black);
 
+#pragma warning disable ChangeMagicNumberToID // Change magic numbers into appropriate ID values
             dustType = 109; // DustID.Asphalt, compiling doesn't work with DustID.Asphalt for whatever reason
+#pragma warning restore ChangeMagicNumberToID // Change magic numbers into appropriate ID values
             drop = ModContent.ItemType<AsphaltPlatform>();
             
             disableSmartCursor = true;

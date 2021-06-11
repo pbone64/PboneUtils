@@ -1,10 +1,9 @@
-﻿using PboneUtils.CrossMod.Call.Content;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 
-namespace PboneUtils.DataStructures
+namespace PboneUtils.DataStructures.MysteriousTrader
 {
     public class CompiledMysteriousTraderShop
     {
@@ -80,13 +79,13 @@ namespace PboneUtils.DataStructures
             GiveShopRandomItem(shop, rare, true);
         }
 
-        private (MysteriousTraderItemRarity cachedRare, MysteriousTraderItem[] items) cache;
+        private (MysteriousTraderItemRarity rarity, MysteriousTraderItem[] items) cache;
         private bool? GiveShopRandomItem(List<int> shop, MysteriousTraderItemRarity rare, bool call)
         {
             if (call && !AnyCall)
                 return null;
 
-            if (cache.cachedRare != rare)
+            if (cache.rarity != rare)
                 cache = (rare, ItemCollections[rare].Where(
                     i => i.Source == (call ? MysteriousTraderItemSource.Call : MysteriousTraderItemSource.Base)).ToArray());
 

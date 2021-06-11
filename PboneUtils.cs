@@ -1,15 +1,11 @@
 using log4net;
 using Microsoft.Xna.Framework;
 using PboneUtils.CrossMod;
-using PboneUtils.CrossMod.Call.Content;
-using PboneUtils.DataStructures;
+using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
 using PboneUtils.Net;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
 
@@ -71,13 +67,6 @@ namespace PboneUtils
 
             if (PboneUtilsConfig.Instance.AverageBossBags)
                 bagValues.Load();
-
-            // Mod.Call Key, mod, itemID, rarity, condition
-            MysteriousTraderShopManager manager = MysteriousTraderShopManager.Instance;
-            manager.RegisterItem(this, ItemID.RodofDiscord, MysteriousTraderItemRarity.Legendary, new Func<bool>(() => NPC.downedMechBossAny));
-            manager.RegisterItem(this, ItemID.SittingDucksFishingRod, MysteriousTraderItemRarity.Rare, new Func<bool>(() => NPC.downedBoss3));
-            manager.RegisterItem(this, ItemID.BandofRegeneration, MysteriousTraderItemRarity.Common, new Func<bool>(() => true));
-            manager.RegisterItem(this, ItemID.LesserHealingPotion, MysteriousTraderItemRarity.NonUnique, new Func<bool>(() => true));
 
             // This gets assinged to something by the ctor, don't worry
             new CompiledMysteriousTraderShop(MysteriousTraderShopManager.Instance);

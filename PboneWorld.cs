@@ -1,4 +1,4 @@
-﻿using PboneUtils.DataStructures;
+﻿using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.ID;
 using System;
 using System.Collections.Generic;
@@ -85,6 +85,7 @@ namespace PboneUtils
         {
             TagCompound tag = new TagCompound();
             tag.Add("MysteriousTraderCount", MysteriousTraderShop.Count);
+
             for (int i = 0; i < MysteriousTraderShop.Count; i++)
             {
                 Item item = new Item();

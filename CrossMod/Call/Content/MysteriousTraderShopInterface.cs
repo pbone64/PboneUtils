@@ -1,4 +1,4 @@
-﻿using PboneUtils.DataStructures;
+﻿using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
 using System;
 using System.Collections.Generic;
