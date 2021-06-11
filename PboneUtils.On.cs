@@ -1,8 +1,6 @@
-﻿using Terraria.ModLoader;
-
-namespace PboneUtils
+﻿namespace PboneUtils
 {
-    public partial class PboneUtils : Mod
+    public partial class PboneUtils
     {
         public static void Load_On()
         {
