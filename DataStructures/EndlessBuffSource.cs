@@ -13,5 +13,4 @@ namespace PboneUtils.DataStructures
             Key = key;
         }
     }
-
 }
