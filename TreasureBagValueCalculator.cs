@@ -45,8 +45,14 @@ namespace PboneUtils
 
         public Dictionary<int, int> AveragedValues;
 
-        public static void HandleQuickSpawnItem(Player self, int item, int stack)
+        public static void HandleQuickSpawnItem(On.Terraria.Player.orig_QuickSpawnItem_int_int origQuickSpawn, Player self, int item, int stack)
         {
+            if (!Loading)
+            {
+                origQuickSpawn(self, item, stack);
+                return;
+            }
+
             Item instance = new Item();
             instance.SetDefaults(item);
 

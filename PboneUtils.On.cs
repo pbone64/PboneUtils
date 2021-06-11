@@ -20,10 +20,7 @@ namespace PboneUtils
         private static void Player_QuickSpawnItem_int_int(On.Terraria.Player.orig_QuickSpawnItem_int_int orig,
             Terraria.Player self, int item, int stack)
         {
-            if (!TreasureBagValueCalculator.Loading)
-                orig(self, item, stack);
-            else
-                TreasureBagValueCalculator.HandleQuickSpawnItem(self, item, stack);
+            TreasureBagValueCalculator.HandleQuickSpawnItem(orig, self, item, stack);
         }
     }
 }
