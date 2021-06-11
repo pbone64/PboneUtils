@@ -8,13 +8,13 @@ namespace PboneUtils
 {
     public partial class PboneUtils : Mod
     {
-        public void Load_IL()
+        public static void Load_IL()
         {
             IL.Terraria.Player.Update += Player_Update;
             IL.Terraria.Main.DrawBuffIcon += Main_DrawBuffIcon;
         }
 
-        private void Player_Update(ILContext il)
+        private static void Player_Update(ILContext il)
         {
             ILCursor c = new ILCursor(il);
 
@@ -43,7 +43,7 @@ namespace PboneUtils
             });
         }
 
-        private void Main_DrawBuffIcon(ILContext il)
+        private static void Main_DrawBuffIcon(ILContext il)
         {
             ILCursor c = new ILCursor(il);
 
