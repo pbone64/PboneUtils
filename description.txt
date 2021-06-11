@@ -11,4 +11,5 @@ Adds many features and items to increase the quality of life, including
 The homepage has all the info on current features, changelogs, and an invite to our discord server. Check it out!
 
 Credits:
- - pbone: I've made everything so far.
+ - pbone: Main Developer.
+ - convicted tomatophile: Developer, fixer of spritesheets.
