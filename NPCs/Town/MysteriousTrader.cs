@@ -11,7 +11,7 @@ namespace PboneUtils.NPCs.Town
     public class MysteriousTrader : PNPC
     {
 		private readonly List<string> Names = new List<string>() {
-			"Exploder"
+			"Verboten", "Thooloo", "Uri", "Sellatron", "Indigo", "Steve"
 		};
 
 		public override void SetStaticDefaults()
@@ -50,7 +50,7 @@ namespace PboneUtils.NPCs.Town
         {
 			WeightedRandom<string> chats = new WeightedRandom<string>();
 
-			const int count = 8;
+			const int count = 9;
 			for (int i = 1; i < count + 1; i++)
             {
 				chats.Add(Language.GetTextValue("Mods.PboneUtils.TownChat.MysteriousTrader." + i));
