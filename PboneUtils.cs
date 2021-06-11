@@ -1,7 +1,7 @@
 using log4net;
 using Microsoft.Xna.Framework;
 using PboneUtils.CrossMod;
-using PboneUtils.CrossMod.Content;
+using PboneUtils.CrossMod.Call.Content;
 using PboneUtils.DataStructures;
 using PboneUtils.Helpers;
 using PboneUtils.Net;
@@ -26,19 +26,15 @@ namespace PboneUtils
         public static ModRecipeManager Recipes => Instance.recipes;
         public static ModUIManager UI => Instance.ui;
         public static TreasureBagValueCalculator BagValues => Instance.bagValues;
-
-        public static bool FargowiltasLoaded => Instance.fargowiltasLoaded;
-        public static bool FargowiltasSoulsLoaded => Instance.fargowiltasSoulsLoaded;
+        public static CrossModManager CrossMod => Instance.crossModManager;
+        public static ModPacketManager ModPacket => Instance.modPacketManager;
 
         private ModTextureManager textures;
         private ModRecipeManager recipes;
         private ModUIManager ui;
         private TreasureBagValueCalculator bagValues;
-        private ModCallManager modCallManager;
+        private CrossModManager crossModManager;
         private ModPacketManager modPacketManager;
-
-        private bool fargowiltasLoaded;
-        private bool fargowiltasSoulsLoaded;
 
         public override void Load()
         {
@@ -51,12 +47,9 @@ namespace PboneUtils
             ui = new ModUIManager();
             bagValues = new TreasureBagValueCalculator();
 
-            fargowiltasLoaded = ModLoader.GetMod("Fargowiltas") != null;
-            fargowiltasSoulsLoaded = ModLoader.GetMod("FargowiltasSouls") != null;
-
             modPacketManager = new ModPacketManager(this);
-            modCallManager = new ModCallManager();
-            modCallManager.Load();
+            crossModManager = new CrossModManager();
+            crossModManager.Load();
 
             Load_IL();
             Load_On();
@@ -64,7 +57,7 @@ namespace PboneUtils
             ui.Initialize();
         }
 
-        public override object Call(params object[] args) => modCallManager.HandleCall(args);
+        public override object Call(params object[] args) => crossModManager.CallManager.HandleCall(args);
 
         public override void HandlePacket(BinaryReader reader, int whoAmI)
         {
@@ -80,14 +73,14 @@ namespace PboneUtils
                 bagValues.Load();
 
             // Mod.Call Key, mod, itemID, rarity, condition
-            MysteriousTraderShopManager manager = modCallManager.GetCallHandlerFromType(typeof(MysteriousTraderShopManager)) as MysteriousTraderShopManager;
-            manager.Inner_RegisterItem(this, ItemID.RodofDiscord, MysteriousTraderItemRarity.Legendary, new Func<bool>(() => NPC.downedMechBossAny));
-            manager.Inner_RegisterItem(this, ItemID.SittingDucksFishingRod, MysteriousTraderItemRarity.Rare, new Func<bool>(() => NPC.downedBoss3));
-            manager.Inner_RegisterItem(this, ItemID.BandofRegeneration, MysteriousTraderItemRarity.Common, new Func<bool>(() => true));
-            manager.Inner_RegisterItem(this, ItemID.LesserHealingPotion, MysteriousTraderItemRarity.NonUnique, new Func<bool>(() => true));
+            MysteriousTraderShopManager manager = MysteriousTraderShopManager.Instance;
+            manager.RegisterItem(this, ItemID.RodofDiscord, MysteriousTraderItemRarity.Legendary, new Func<bool>(() => NPC.downedMechBossAny));
+            manager.RegisterItem(this, ItemID.SittingDucksFishingRod, MysteriousTraderItemRarity.Rare, new Func<bool>(() => NPC.downedBoss3));
+            manager.RegisterItem(this, ItemID.BandofRegeneration, MysteriousTraderItemRarity.Common, new Func<bool>(() => true));
+            manager.RegisterItem(this, ItemID.LesserHealingPotion, MysteriousTraderItemRarity.NonUnique, new Func<bool>(() => true));
 
             // This gets assinged to something by the ctor, don't worry
-            new CompiledMysteriousTraderShop(modCallManager.GetCallHandlerFromType(typeof(MysteriousTraderShopManager)) as MysteriousTraderShopManager);
+            new CompiledMysteriousTraderShop(MysteriousTraderShopManager.Instance);
         }
 
         #region UI
@@ -125,7 +118,7 @@ namespace PboneUtils
             recipes = null;
             ui = null;
             bagValues = null;
-            modCallManager = null;
+            crossModManager = null;
             modPacketManager = null;
         }
     }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PboneUtils.CrossMod
+namespace PboneUtils.CrossMod.Call
 {
     internal interface IModCallable
     {

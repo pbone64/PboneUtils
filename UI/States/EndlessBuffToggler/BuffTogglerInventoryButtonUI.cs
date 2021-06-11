@@ -17,12 +17,12 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
             base.OnInitialize();
 
             int top = 262;
-            if (PboneUtils.FargowiltasLoaded)
+            if (PboneUtils.CrossMod.IsModLoaded("Fargowiltas"))
             {
                 top += 28;
             }
 
-            if (PboneUtils.FargowiltasSoulsLoaded)
+            if (PboneUtils.CrossMod.IsModLoaded("FargowiltasSouls"))
             {
                 top += 58;
             }

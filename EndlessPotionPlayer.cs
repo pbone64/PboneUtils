@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections;
-using PboneUtils.DataStructures;
+﻿using PboneUtils.DataStructures;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using PboneUtils.Helpers;
 using Terraria;
 using Terraria.ModLoader;
+using PboneUtils.CrossMod.Ref.Content;
 
 namespace PboneUtils
 {
@@ -22,29 +19,6 @@ namespace PboneUtils
         public int DefendersForgeItemsStart;
         public int ExtensibleInventoryItemsStart;
 
-        private static Mod ExtInv => ModLoader.GetMod("ExtensibleInventory");
-
-        private static Assembly ExtInvAsm => ExtInv.Code;
-
-        private static Type ExtInvPlayerType => ExtInvAsm.GetType("ExtensibleInventory.ExtensibleInventoryPlayer");
-
-        private static Type LibraryType => ExtInvAsm.GetType("ExtensibleInventory.Inventory.InventoryLibrary");
-
-        private static Type BookType => ExtInvAsm.GetType("ExtensibleInventory.Inventory.InventoryBook");
-
-        private static Type PageType => ExtInvAsm.GetType("ExtensibleInventory.Inventory.InventoryPage");
-
-        private static FieldInfo BooksField => LibraryType.GetField("Books", ReflectionHelper.AccessFlags);
-
-        private static FieldInfo PagesField => BookType.GetField("Pages", ReflectionHelper.AccessFlags);
-
-        private static FieldInfo ItemsField => PageType.GetField("Items", ReflectionHelper.AccessFlags);
-
-        private object Library => ExtInvPlayerType.GetField("Library", ReflectionHelper.AccessFlags)
-            ?.GetValue(player.GetModPlayer(ExtInv, "ExtensibleInventoryPlayer"));
-
-        public static List<(Item, string)> FromArray(Item[] items, string key) => items.Select(t => (t, key)).ToList();
-
         public override void PreUpdateBuffs()
         {
             base.PreUpdateBuffs();
@@ -56,48 +30,20 @@ namespace PboneUtils
             {
                 ItemsToCountForEndlessBuffs.Clear();
 
-                ItemsToCountForEndlessBuffs.AddRange(FromArray(player.inventory, "Inventory"));
+                ItemsToCountForEndlessBuffs.AddRange(CollectionHelper.FromArray(player.inventory, "Inventory"));
                 InventoryItemsStart = ItemsToCountForEndlessBuffs.Count - 1;
 
-                ItemsToCountForEndlessBuffs.AddRange(FromArray(player.bank.item, "PiggyBank"));
+                ItemsToCountForEndlessBuffs.AddRange(CollectionHelper.FromArray(player.bank.item, "PiggyBank"));
                 PiggyBankItemsStart = ItemsToCountForEndlessBuffs.Count - 1;
 
-                ItemsToCountForEndlessBuffs.AddRange(FromArray(player.bank2.item, "Safe"));
+                ItemsToCountForEndlessBuffs.AddRange(CollectionHelper.FromArray(player.bank2.item, "Safe"));
                 SafeItemsStart = ItemsToCountForEndlessBuffs.Count - 1;
 
-                ItemsToCountForEndlessBuffs.AddRange(FromArray(player.bank3.item, "DefendersForge"));
+                ItemsToCountForEndlessBuffs.AddRange(CollectionHelper.FromArray(player.bank3.item, "DefendersForge"));
                 DefendersForgeItemsStart = ItemsToCountForEndlessBuffs.Count - 1;
 
-                if (ModLoader.GetMod("ExtensibleInventory") != null)
-                {
-                    IEnumerable<DictionaryEntry> CastDict(IDictionary dictionary)
-                    {
-                        foreach (DictionaryEntry entry in dictionary)
-                            yield return entry;
-                    }
-
-                    IEnumerable<object> CastList(IList list)
-                    {
-                        foreach (object item in list)
-                            yield return item;
-                    }
-
-                    if (Library != null)
-                    {
-                        Dictionary<string, object> books = CastDict((IDictionary) BooksField.GetValue(Library))
-                            .ToDictionary(x => (string) x.Key, x => x.Value);
-
-                        foreach (object page in books.Values
-                            .Select(book => CastList((IList) PagesField.GetValue(book)).ToList())
-                            .SelectMany(pages => pages))
-                        {
-                            if (ItemsField.GetValue(page) is Item[] items)
-                                ItemsToCountForEndlessBuffs.AddRange(FromArray(items, "Inventory"));
-                        }
-                    }
-
-                    ExtensibleInventoryItemsStart = ItemsToCountForEndlessBuffs.Count - 1;
-                }
+                if (PboneUtils.CrossMod.IsModLoaded("ExtensibleInventory"))
+                    PboneUtils.CrossMod.GetModCompatibility<ExtensibleInventoryCompatibility>("ExtensibleInventory").DoEndlessBuffs(player);
             }
 
             EndlessBuffSources.Clear();

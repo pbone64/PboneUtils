@@ -10,7 +10,7 @@ namespace PboneUtils.NPCs.Town
     [AutoloadHead]
     public class MysteriousTrader : PNPC
     {
-		private List<string> Names = new List<string>() {
+		private readonly List<string> Names = new List<string>() {
 			"Exploder"
 		};
 

@@ -1,9 +1,9 @@
-﻿using PboneUtils.CrossMod.Content;
+﻿using PboneUtils.CrossMod.Call.Content;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PboneUtils.CrossMod
+namespace PboneUtils.CrossMod.Call
 {
     internal class ModCallManager
     {
@@ -21,8 +21,10 @@ namespace PboneUtils.CrossMod
 
         private void LoadHandlers()
         {
-            ModCallHandlersByType.Add(typeof(MysteriousTraderShopManager), new MysteriousTraderShopManager());
+            RegisterHandler<MysteriousTraderShopInterface>();
         }
+
+        private void RegisterHandler<T>() where T : IModCallable, new() => ModCallHandlersByType.Add(typeof(T), new T());
 
         private void LoadHandlersByMessage()
         {
