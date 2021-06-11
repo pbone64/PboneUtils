@@ -16,9 +16,9 @@ namespace PboneUtils.NPCs.Town
 
 		public override void SetStaticDefaults()
 		{
-			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Dryad];
-			NPCID.Sets.ExtraFramesCount[npc.type] = 9;
-			NPCID.Sets.AttackFrameCount[npc.type] = 4;
+			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Merchant];
+			NPCID.Sets.ExtraFramesCount[npc.type] = NPCID.Sets.ExtraFramesCount[NPCID.Merchant];
+			NPCID.Sets.AttackFrameCount[npc.type] = NPCID.Sets.AttackFrameCount[NPCID.Merchant];
 			NPCID.Sets.DangerDetectRange[npc.type] = 700;
 			NPCID.Sets.AttackType[npc.type] = 2;
 			NPCID.Sets.AttackTime[npc.type] = 45;
@@ -39,7 +39,7 @@ namespace PboneUtils.NPCs.Town
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.knockBackResist = 0.5f;
-			animationType = NPCID.Dryad;
+			animationType = NPCID.Merchant;
 		}
 
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money) => false;
