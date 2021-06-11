@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using PboneUtils.Helpers;
+using PboneUtils.Items.Magnets;
 using PboneUtils.Items.Tools;
 using Terraria;
 using Terraria.ID;
@@ -73,7 +74,7 @@ namespace PboneUtils.Items
         {
             // MP TODO: see how this works in mp
             base.GrabRange(item, player, ref grabRange);
-            PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
+            MagnetPlayer mPlayer = player.GetModPlayer<MagnetPlayer>();
 
             // Range increases
             if (mPlayer.HallowedTreasureMagnet)
@@ -90,7 +91,7 @@ namespace PboneUtils.Items
         {
             // MP TODO: is this run on all clients?
             base.Update(item, ref gravity, ref maxFallSpeed);
-            PbonePlayer mPlayer = Main.LocalPlayer.GetModPlayer<PbonePlayer>();
+            MagnetPlayer mPlayer = Main.LocalPlayer.GetModPlayer<MagnetPlayer>();
 
             // Super grabs
             int superGrabCooldownMax = -1;

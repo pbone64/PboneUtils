@@ -19,13 +19,6 @@ namespace PboneUtils
         public int DefendersCrystalChest = -1;
         public bool DefendersCrystalOpen = false;
 
-        // Magnets
-        public bool DeluxeTreasureMagnet;
-        public bool HallowedTreasureMagnet;
-        public bool SpectreTreasureMagnet;
-        public bool RunicTreasureMagnet;
-        public int SuperGrabCooldown;
-
         // Tools
         public bool PhilosophersStone;
         public bool InfiniteMana;
@@ -46,8 +39,6 @@ namespace PboneUtils
             DefendersCrystalChest = -1;
             DefendersCrystalOpen = false;
 
-            SuperGrabCooldown = 0;
-
             ResetVariables();
             ItemConfigs = ItemConfig.DefaultConfigs();
         }
@@ -63,11 +54,6 @@ namespace PboneUtils
         public void ResetVariables()
         {
             VoidPig = false;
-
-            DeluxeTreasureMagnet = false;
-            HallowedTreasureMagnet = false;
-            SpectreTreasureMagnet = false;
-            RunicTreasureMagnet = false;
 
             PhilosophersStone = false;
             InfiniteMana = false;

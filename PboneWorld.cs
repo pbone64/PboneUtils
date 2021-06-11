@@ -83,7 +83,10 @@ namespace PboneUtils
 
         public override TagCompound Save()
         {
+#pragma warning disable IDE0028 // Simplify collection initialization
             TagCompound tag = new TagCompound();
+#pragma warning restore IDE0028 // Simplify collection initialization
+
             tag.Add("MysteriousTraderCount", MysteriousTraderShop.Count);
 
             for (int i = 0; i < MysteriousTraderShop.Count; i++)

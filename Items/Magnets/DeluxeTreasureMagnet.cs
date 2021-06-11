@@ -18,7 +18,7 @@ namespace PboneUtils.Items.Magnets
         public override void UpdateInventory(Player player)
         {
             base.UpdateInventory(player);
-            player.GetModPlayer<PbonePlayer>().DeluxeTreasureMagnet = Enabled;
+            player.GetModPlayer<MagnetPlayer>().DeluxeTreasureMagnet = Enabled;
         }
 
         public override void AddRecipes()
