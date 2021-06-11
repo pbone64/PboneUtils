@@ -49,7 +49,7 @@ namespace PboneUtils.DataStructures.MysteriousTrader
             int numRare = Rare;
             bool legendary = Main.rand.NextFloat() < LegendaryChance;
 
-            int extraChancesInCaseOfFaliure = 4;
+            int extraChancesInCaseOfFaliure = 8;
 
             cache = (MysteriousTraderItemRarity.Invalid, null);
 
@@ -92,7 +92,7 @@ namespace PboneUtils.DataStructures.MysteriousTrader
             MysteriousTraderItem item =
                 Main.rand.Next(cache.items);
 
-            if (!item.Condition())
+            if (!item.Condition() || shop.Contains(item.Type))
                 return false;
 
             shop.Add(item.Type);

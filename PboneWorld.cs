@@ -60,7 +60,7 @@ namespace PboneUtils
                     NetMessage.SendData(MessageID.Assorted1, -1, -1, null, Main.myPlayer, 3f);
             }
 
-            if (Main.time == 1 && Main.dayTime || MysteriousTraderShop.Count == 0) // Should happen once in the morning or if it hasn't been initialized ever
+            if (Main.time == 0 && Main.dayTime || MysteriousTraderShop.Count == 0) // Should happen once in the morning or if it hasn't been initialized ever
             {
                 MysteriousTraderShop.Clear();
                 CompiledMysteriousTraderShop.Instance.FillShop(MysteriousTraderShop);
