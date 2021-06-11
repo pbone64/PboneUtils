@@ -1,5 +1,6 @@
 ﻿using Mono.Cecil.Cil;
 using MonoMod.Cil;
+using PboneUtils.Items.Storage;
 using System;
 using Terraria;
 using Terraria.ModLoader;
@@ -28,8 +29,8 @@ namespace PboneUtils
 
             c.Index++;
             c.EmitDelegate<Func<float, float>>((volume) => {
-                if (Main.LocalPlayer.GetModPlayer<PbonePlayer>().SafeGargoyleOpen
-                || Main.LocalPlayer.GetModPlayer<PbonePlayer>().DefendersCrystalOpen)
+                if (Main.LocalPlayer.GetModPlayer<PortableStoragePlayer>().SafeGargoyleOpen
+                || Main.LocalPlayer.GetModPlayer<PortableStoragePlayer>().DefendersCrystalOpen)
                 {
                     return 0f;
                 }

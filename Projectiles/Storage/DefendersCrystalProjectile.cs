@@ -18,7 +18,7 @@ namespace PboneUtils.Projectiles.Storage
         public override bool Animate => false;
         public override LegacySoundStyle UseSound => SoundID.DD2_BookStaffCast;
 
-        public override void SetWhoAmIVariable(PbonePlayer player, int value) => player.DefendersCrystalChest = value;
+        public override void SetWhoAmIVariable(PortableStoragePlayer player, int value) => player.DefendersCrystalChest = value;
 
         public override void SetDefaults()
         {

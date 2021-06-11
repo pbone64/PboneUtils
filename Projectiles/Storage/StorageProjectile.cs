@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using PboneUtils.Items.Storage;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameInput;
@@ -11,7 +12,8 @@ namespace PboneUtils.Projectiles.Storage
         public abstract int ChestType { get; }
         public abstract int ItemType { get; }
         public abstract Texture2D Outline { get; }
-        public abstract void SetWhoAmIVariable(PbonePlayer player, int value);
+
+        public abstract void SetWhoAmIVariable(PortableStoragePlayer player, int value);
         public virtual bool Animate => true;
         public abstract LegacySoundStyle UseSound { get; }
 
@@ -159,12 +161,12 @@ namespace PboneUtils.Projectiles.Storage
                 {
                     Main.PlaySound(UseSound);
                     localPlayer.chest = -1;
-                    SetWhoAmIVariable(localPlayer.GetModPlayer<PbonePlayer>(), -1);
+                    SetWhoAmIVariable(localPlayer.GetModPlayer<PortableStoragePlayer>(), -1);
                     Recipe.FindRecipes();
                     return;
                 }
 
-                SetWhoAmIVariable(localPlayer.GetModPlayer<PbonePlayer>(), projectile.whoAmI);
+                SetWhoAmIVariable(localPlayer.GetModPlayer<PortableStoragePlayer>(), projectile.whoAmI);
 
                 localPlayer.chest = ChestType;
                 localPlayer.chestX = (int)(proj.Center.X / 16f);
