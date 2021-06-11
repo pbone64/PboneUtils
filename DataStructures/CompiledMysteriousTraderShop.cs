@@ -71,7 +71,7 @@ namespace PboneUtils.DataStructures
         {
             for (int i = 0; i < num; i++)
             {
-                if (GiveShopRandomItem(shop, rare, false) == false)
+                if (GiveShopRandomItem(shop, rare, false) == false && extraChances > 0)
                 {
                     i--;
                     extraChances--;
