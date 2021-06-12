@@ -1,5 +1,7 @@
-﻿using Terraria;
+﻿using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 
 namespace PboneUtils.Helpers
 {
@@ -13,10 +15,9 @@ namespace PboneUtils.Helpers
             return false;
         }
 
-        public static bool BetterPlaceObject(int x, int y, int type, bool mute = false, int style = 0, int alternate = 0, int random = -1, int direction = -1)
+        public static bool BetterPlaceObject(int x, int y, int type, bool mute = false, int style = 0, int random = -1, int direction = -1)
         {
-            TileObject objectData;
-            if (!TileObject.CanPlace(x, y, type, style, direction, out objectData, false, false))
+            if (!TileObject.CanPlace(x, y, type, style, direction, out TileObject objectData, false, false))
                 return false;
 
             objectData.random = random;
@@ -30,6 +31,14 @@ namespace PboneUtils.Helpers
                 return true;
             }
             return false;
+        }
+
+        public static void NewTextSynced(object text, Color color)
+        {
+            if (Main.netMode == NetmodeID.SinglePlayer)
+                Main.NewText(text, color);
+            else
+                NetMessage.BroadcastChatMessage(NetworkText.FromLiteral(text.ToString()), color);
         }
     }
 }

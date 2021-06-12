@@ -1,5 +1,7 @@
 ﻿using PboneUtils.DataStructures.MysteriousTrader;
+using PboneUtils.Helpers;
 using PboneUtils.ID;
+using PboneUtils.NPCs.Town;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -79,6 +81,8 @@ namespace PboneUtils
                     packet.Send();
                 }
             }
+
+            TravelingNPCHelper.DoTravellingMerchant(ModContent.NPCType<MysteriousTrader>(), 48600, () => (NPC.downedSlimeKing || NPC.downedBoss1) && Main.rand.NextBool(3));
         }
 
         public override TagCompound Save()

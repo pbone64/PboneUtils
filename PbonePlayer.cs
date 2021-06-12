@@ -1,5 +1,4 @@
-﻿using Terraria;
-using Terraria.ModLoader;
+﻿using Terraria.ModLoader;
 using System.Collections.Generic;
 using PboneUtils.DataStructures;
 using Terraria.ModLoader.IO;

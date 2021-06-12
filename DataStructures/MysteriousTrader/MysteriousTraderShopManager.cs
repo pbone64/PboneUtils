@@ -14,12 +14,12 @@ namespace PboneUtils.DataStructures.MysteriousTrader
         {
             Instance = new MysteriousTraderShopManager();
 
-            MyRegisterItem(ItemID.TruffleWorm, MysteriousTraderItemRarity.Legendary, new Func<bool>(() => NPC.downedPlantBoss && !NPC.downedFishron));
-            MyRegisterItem(ItemID.RodofDiscord, MysteriousTraderItemRarity.Legendary, new Func<bool>(() => NPC.downedMechBossAny));
-            MyRegisterItem(ItemID.Arkhalis, MysteriousTraderItemRarity.Legendary, new Func<bool>(() => NPC.downedBoss1));
+            MyRegisterItem(ItemID.TruffleWorm, MysteriousTraderItemRarity.Legendary, () => NPC.downedPlantBoss && !NPC.downedFishron);
+            MyRegisterItem(ItemID.RodofDiscord, MysteriousTraderItemRarity.Legendary, () => NPC.downedMechBossAny);
+            MyRegisterItem(ItemID.Arkhalis, MysteriousTraderItemRarity.Legendary, () => NPC.downedBoss1);
 
-            MyRegisterItem(ItemID.SittingDucksFishingRod, MysteriousTraderItemRarity.Rare, new Func<bool>(() => NPC.downedBoss3));
-            MyRegisterItem(ItemID.PulseBow, MysteriousTraderItemRarity.Rare, new Func<bool>(() => NPC.downedPlantBoss));
+            MyRegisterItem(ItemID.SittingDucksFishingRod, MysteriousTraderItemRarity.Rare, () => NPC.downedBoss3);
+            MyRegisterItem(ItemID.PulseBow, MysteriousTraderItemRarity.Rare, () => NPC.downedPlantBoss);
             MyRegisterItem(ItemID.AnkletoftheWind, MysteriousTraderItemRarity.Rare);
             MyRegisterItem(ItemID.AmmoBox, MysteriousTraderItemRarity.Rare);
             MyRegisterItem(ItemID.CelestialMagnet, MysteriousTraderItemRarity.Rare);
