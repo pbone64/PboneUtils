@@ -160,6 +160,12 @@ namespace PboneUtils
         [ReloadRequired]
         public bool InfiniteManaToggle;
 
+        [Label("$Mods.PboneUtils.Config.Label.StarMagnetToggle")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.StarMagnetToggle")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool StarMagnetToggle;
+
 
         // NPCS
 

@@ -58,8 +58,8 @@ namespace PboneUtils
             {
                 Main.fastForwardTime = true;
 
-                if (Main.netMode == NetmodeID.MultiplayerClient)
-                    NetMessage.SendData(MessageID.Assorted1, -1, -1, null, Main.myPlayer, 3f);
+                if (Main.netMode == NetmodeID.Server)
+                    NetMessage.SendData(MessageID.WorldData);
             }
 
             if (Main.time == 0 && Main.dayTime || MysteriousTraderShop.Count == 0) // Should happen once in the morning or if it hasn't been initialized ever
