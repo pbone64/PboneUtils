@@ -69,16 +69,6 @@ namespace PboneUtils
         }
         #endregion
 
-        public override void PostUpdateEquips()
-        {
-            base.PostUpdateEquips();
-
-            if (InfiniteMana)
-            {
-                player.maxMinions = 1;
-            }
-        }
-
         public override void UpdateDead()
         {
             base.UpdateDead();

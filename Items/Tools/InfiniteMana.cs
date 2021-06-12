@@ -83,5 +83,16 @@ namespace PboneUtils.Items.Tools
                 player.ManaEffect(manaConsumed);
             }
         }
+
+
+        public override void PostUpdateEquips()
+        {
+            base.PostUpdateEquips();
+
+            if (InfiniteMana)
+            {
+                player.maxMinions = 1;
+            }
+        }
     }
 }
