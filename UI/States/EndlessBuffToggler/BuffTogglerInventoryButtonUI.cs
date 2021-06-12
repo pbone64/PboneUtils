@@ -44,15 +44,18 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
 
         private void IconHighlight_OnClick(UIMouseEvent evt, UIElement listeningElement)
         {
-            PboneUtils.UI.BuffToggler.ToggleBuffTogglerMenu();
-            PboneUtils.UI.BuffToggler.BuffTogglerMenu.RebuildGrid();
+            if (Main.playerInventory && Main.LocalPlayer.talkNPC == -1)
+            {
+                PboneUtils.UI.BuffToggler.ToggleBuffTogglerMenu();
+                PboneUtils.UI.BuffToggler.BuffTogglerMenu.RebuildGrid();
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             IconHighlight.Text = Language.GetTextValue("Mods.PboneUtils.UI.EndlessBuffTogglerInventoryButton.MouseOver");
 
-            if (Main.playerInventory)
+            if (Main.playerInventory && Main.LocalPlayer.talkNPC == -1)
                 base.Draw(spriteBatch);
         }
     }
