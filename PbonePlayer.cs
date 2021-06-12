@@ -12,7 +12,6 @@ namespace PboneUtils
         // Tools
         public bool VoidPig;
         public bool PhilosophersStone;
-        public bool InfiniteMana;
 
         public float SpawnRateMultiplier;
         public float MaxSpawnsMultiplier;
@@ -42,7 +41,6 @@ namespace PboneUtils
             VoidPig = false;
 
             PhilosophersStone = false;
-            InfiniteMana = false;
 
             SpawnRateMultiplier = 1f;
             MaxSpawnsMultiplier = 1f;
@@ -78,38 +76,6 @@ namespace PboneUtils
             if (InfiniteMana)
             {
                 player.maxMinions = 1;
-            }
-        }
-
-        public override void ModifyManaCost(Item item, ref float reduce, ref float mult)
-        {
-            base.ModifyManaCost(item, ref reduce, ref mult);
-
-            if (InfiniteMana)
-            {
-                reduce -= item.mana;
-            }
-        }
-
-        public override void OnMissingMana(Item item, int neededMana)
-        {
-            base.OnMissingMana(item, neededMana);
-
-            if (InfiniteMana && neededMana > 0)
-            {
-                player.statMana += neededMana;
-                player.ManaEffect(neededMana);
-            }
-        }
-
-        public override void OnConsumeMana(Item item, int manaConsumed)
-        {
-            base.OnConsumeMana(item, manaConsumed);
-
-            if (InfiniteMana && manaConsumed > 0)
-            {
-                player.statMana += manaConsumed;
-                player.ManaEffect(manaConsumed);
             }
         }
 
