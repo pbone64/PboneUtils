@@ -27,11 +27,10 @@ namespace PboneUtils.Items.Tools
         {
             base.AddRecipes();
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.PiggyBank);
-            recipe.AddIngredient(ItemID.Bone, 10);
-            recipe.AddIngredient(ItemID.JungleSpores, 5);
+            recipe.AddIngredient(ItemID.FallenStar, 5);
+            recipe.AddRecipeGroup(PboneUtils.Recipes.AnyDemoniteBar, 7);
             recipe.AddRecipeGroup(PboneUtils.Recipes.AnyShadowScale, 10);
-            recipe.AddTile(TileID.DemonAltar);
+            recipe.AddTile(TileID.SkyMill);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
