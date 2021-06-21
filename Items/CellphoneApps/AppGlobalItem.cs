@@ -19,19 +19,15 @@ namespace PboneUtils.Items.CellphoneApps
             return base.NeedsSaving(item);
         }
 
-        public AppGlobalItem()
-        {
-            Apps = new List<(int item, string appId)>();
-        }
+        public List<(int item, string appId)> Apps = new List<(int, string)>();
 
         public override GlobalItem Clone(Item item, Item itemClone)
         {
-            AppGlobalItem clone = (AppGlobalItem)base.Clone(item, itemClone);
-            clone.Apps = new List<(int item, string appId)>();
-            return clone;
-        }
+            AppGlobalItem gItem = base.Clone(item, itemClone) as AppGlobalItem;
+            gItem.Apps = Apps;
 
-        public List<(int item, string appId)> Apps = new List<(int, string)>();
+            return gItem;
+        }
 
         public override TagCompound Save(Item item)
         {
