@@ -83,6 +83,10 @@ ItemTooltip.PreperationStation=Right click to increase armor penetration for mel
 ItemName.BuffBrazier=Buff Brazier
 ItemTooltip.BuffBrazier=Increases your life regen, mana regen, movement speed, and reduces enemy spawnrates when nearby\nProvides a decent amount of light\nIsn't consumed upon being placed
 
+// Apps
+ItemName.WormholeApp=Wormhole App
+ItemTooltip.WormholeApp=Provides an infinite wormhole effect when installed in a Cell Phone\n{$Mods.PboneUtils.Common.AppInfo}
+
 // Misc
 ItemName.VoidPiggy=Void Piggy
 ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'
@@ -125,7 +129,7 @@ TownChat.Miner.2=Why don't I mine with explosives? It ruins the ore, of course!
 TownChat.Miner.3=My pickaxe is the oldest and best in the land!
 TownChat.Miner.4=You know, I could just be turning this gold into coins.
 TownChat.Miner.5=Where do I get my ores if I'm never mining? I Keep them all in my backpack.
-TownChat.Miner.6=I hear there's a planet made of solid metal you can grow under the right conditions!
+TownChat.Miner.6=I hear there's a plant made of solid metal you can grow under the right conditions!
 TownChat.Miner.HardmodeOnly=Check out my cobalt ore; it is extra shiny.
 
 
@@ -244,3 +248,7 @@ Message.PetrifiedSafeDisabled2=If you want a portable safe, enable storage items
 Common.Enabled.True=Enabled
 Common.Enabled.False=Disabled
 Common.CanBeToggled=Right click to toggle on and off
+
+Common.AppInfo=Can be installed to a Cell Phone by holding this item and right clicking a Cell Phone in the inventory
+Common.CellPhoneInfo=Apps can be installed by holding them and right-clicking the Cell Phone in your inventory\nCurrently installed apps:
+Common.CellPhone.Wormhole= [i:2997] Wormhole App: Provides an infinite wormhole effect

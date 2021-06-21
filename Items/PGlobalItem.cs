@@ -138,10 +138,8 @@ namespace PboneUtils.Items
 
         public override bool ConsumeItem(Item item, Player player)
         {
-            if (item.healLife > 0 && PboneUtilsConfig.Instance.EndlessPotions && item.stack >= PboneUtilsConfig.Instance.EndlessPotionsSlider)
-            {
+            if ((item.healLife > 0 || item.healMana > 0) && PboneUtilsConfig.Instance.EndlessPotions && item.stack >= PboneUtilsConfig.Instance.EndlessPotionsSlider)
                 return false;
-            }
 
             return base.ConsumeItem(item, player);
         }

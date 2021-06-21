@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
@@ -10,8 +10,28 @@ namespace PboneUtils.Items.CellphoneApps
     public partial class AppGlobalItem : GlobalItem
     {
         public override bool InstancePerEntity => true;
+        public override bool CloneNewInstances => true;
+        public override bool NeedsSaving(Item item)
+        {
+            if (item.type == ItemID.CellPhone)
+                return true;
 
-        public HashSet<string> Apps;
+            return base.NeedsSaving(item);
+        }
+
+        public AppGlobalItem()
+        {
+            Apps = new List<(int item, string appId)>();
+        }
+
+        public override GlobalItem Clone(Item item, Item itemClone)
+        {
+            AppGlobalItem clone = (AppGlobalItem)base.Clone(item, itemClone);
+            clone.Apps = new List<(int item, string appId)>();
+            return clone;
+        }
+
+        public List<(int item, string appId)> Apps = new List<(int, string)>();
 
         public override TagCompound Save(Item item)
         {
@@ -20,9 +40,10 @@ namespace PboneUtils.Items.CellphoneApps
                 TagCompound tag = new TagCompound();
                 tag.Add("AppCount", Apps.Count);
 
-                foreach (string s in Apps)
+                for (int i = 0; i < Apps.Count; i++)
                 {
-                    tag.Add("App0", s);
+                    tag.Add("AppId" + i, Apps[i].appId);
+                    tag.Add("AppItem" + i, Apps[i].item);
                 }
 
                 return tag;
@@ -37,11 +58,65 @@ namespace PboneUtils.Items.CellphoneApps
 
             if (item.type == ItemID.CellPhone)
             {
+                Apps.Clear();
+
                 int count = tag.GetAsInt("AppCount");
 
                 for (int i = 0; i < count; i++)
                 {
-                    Apps.Add(tag.Get<string>("App" + i));
+                    Apps.Add(
+                        (tag.Get<int>("AppItem" + i),
+                        tag.Get<string>("AppId" + i))
+                        );
+                }
+            }
+        }
+
+        public override bool CanRightClick(Item item)
+        {
+            if (item.type == ItemID.CellPhone)
+                return true;
+
+            return base.CanRightClick(item);
+        }
+
+        public override void RightClick(Item item, Player player)
+        {
+            base.RightClick(item, player);
+
+            if (item.type == ItemID.CellPhone)
+            {
+                if (player.HeldItem.modItem is AppItem app)
+                {
+                    if (Apps.Contains((app.BaseID, app.AppName)))
+                        return;
+
+                    Apps.Add((app.BaseID, app.AppName));
+                    player.HeldItem.TurnToAir();
+                }
+            }
+        }
+
+        public override bool ConsumeItem(Item item, Player player)
+        {
+            if (item.type == ItemID.CellPhone)
+                return false;
+
+            return base.ConsumeItem(item, player);
+        }
+
+        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+        {
+            base.ModifyTooltips(item, tooltips);
+            if (item.type == ItemID.CellPhone)
+            {
+                tooltips.Add(new TooltipLine(mod, "PboneUtils:CellPhoneInfo", Language.GetTextValue("Mods.PboneUtils.Common.CellPhoneInfo")));
+
+                foreach ((int item, string appId) tuple in Apps)
+                {
+                    tooltips.Add(
+                        new TooltipLine(mod, "PboneUtils:CellPhoneAppDescription-" + tuple.appId.GetHashCode(),
+                        Language.GetTextValue("Mods.PboneUtils.Common.CellPhone." + tuple.appId)));
                 }
             }
         }
