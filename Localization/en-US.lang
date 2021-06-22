@@ -249,6 +249,6 @@ Common.Enabled.True=Enabled
 Common.Enabled.False=Disabled
 Common.CanBeToggled=Right click to toggle on and off
 
-Common.AppInfo=Can be installed to a Cell Phone by holding this item and right clicking a Cell Phone in the inventory
+Common.AppInfo=Can be installed to a Cell Phone by holding this item and right clicking a Cell Phone in your inventory
 Common.CellPhoneInfo=Apps can be installed by holding them and right-clicking the Cell Phone in your inventory\nCurrently installed apps:
 Common.CellPhone.Wormhole= [i:2997] Wormhole App: Provides an infinite wormhole effect

@@ -73,7 +73,7 @@ namespace PboneUtils.Items.Tools
                     num144 = 12f / num144;
                     num142 *= num144;
                     num143 *= num144;
-                    Projectile.NewProjectile(vector.X, vector.Y, num142, num143, 12, 1000, 10f, Main.myPlayer);
+                    Projectile.NewProjectile(vector.X, vector.Y, num142, num143, ProjectileID.FallingStar, 1000, 10f, Main.myPlayer);
                 }
             }
         }

@@ -29,6 +29,14 @@ namespace PboneUtils.Items.CellphoneApps
             return gItem;
         }
 
+        public override GlobalItem NewInstance(Item item)
+        {
+            AppGlobalItem gItem = base.NewInstance(item) as AppGlobalItem;
+            gItem.Apps = new List<(int item, string appId)>();
+
+            return gItem;
+        }
+
         public override TagCompound Save(Item item)
         {
             if (item.type == ItemID.CellPhone)
@@ -71,7 +79,7 @@ namespace PboneUtils.Items.CellphoneApps
         public override bool CanRightClick(Item item)
         {
             if (item.type == ItemID.CellPhone)
-                return true;
+                return Main.mouseItem.modItem is AppItem app && !Apps.Contains((app.BaseID, app.AppName));
 
             return base.CanRightClick(item);
         }
@@ -82,13 +90,13 @@ namespace PboneUtils.Items.CellphoneApps
 
             if (item.type == ItemID.CellPhone)
             {
-                if (player.HeldItem.modItem is AppItem app)
+                if (Main.mouseItem.modItem is AppItem app)
                 {
                     if (Apps.Contains((app.BaseID, app.AppName)))
                         return;
 
                     Apps.Add((app.BaseID, app.AppName));
-                    player.HeldItem.TurnToAir();
+                    Main.mouseItem.TurnToAir();
                 }
             }
         }
