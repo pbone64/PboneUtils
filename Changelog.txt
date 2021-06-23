@@ -1,0 +1,135 @@
+Version 1.1.2 Changes ------------------------------------------------------------------------------------------
+Items
+- Fixed Star Magnet recipe
+- Added cellphone apps, upgrades to your cellphone which provide it with more travel options
+
+Cross Mod
+- Added cross mod support for Census for my NPCs
+
+Bugs
+- Infinite potions now apply to mana potions
+- Fixed a typo in miner dialogue: "planet" => "plant"
+
+Version 1.1.1 Changes ------------------------------------------------------------------------------------------
+Items
+- Reworked magnets
+-- Deluxe treasure magnet is the same
+-- Hallowed treasure magnet added, craftable after one mechanical boss. Larger range than deluxe
+-- Spectre treasure magnet added, craftable after Plantera. Teleports nearby items into your inventory
+-- Runic magnet reworked, quickly teleports nearby items into your inventory
+- Added the Star Magnet, an item which greatly increases star fall rate
+
+Misc Features
+- Endless potions now take into account Extensible Inventory
+
+Misc
+- Improved and fixed some bugs with the buff toggler UI
+
+NPCs
+- Added the mysterious trader, a travelling npc that occasionally arrives to sell rare items after king slime or eye of cthulhu
+- Added the miner, an npc that arrives afer eater of worlds or brain of cthulhu, that sells an ever-increasing inventory of ores and gems
+
+Bugs
+- Fixed Preparation Station typo; preperation station => preparation station
+- Fixed config typo
+- Added three seperate infinite mana effects to ensure that it works
+- Added logic to sync magnets in mp
+
+API (for mod developers)
+- Added a Mod.Call message to add an item to the mysterious trader's pool. 
+
+Version 1.1.0 Changes ------------------------------------------------------------------------------------------
+Items
+- Petrified Safe now generates again
+- Added an infinte mana item
+- Added World Control Items:
+-- Flux Capacitor, to speed up time
+-- Amulet of Rain, to toggle rain
+-- Amulet of Sandstorms, to toggle sandstorms
+
+Misc Features
+- Added a Fast Respawn option
+- Added a "No More Graves" option
+
+QoL Recipes
+- Petrified Safe's recipe is now a toggleable QoL recipe
+
+Misc
+- Improved the buff toggler UI
+- Improved most config tooltips to be more descriptive and not written in five minutes before launch
+
+Bugs
+- Infinite buffs apply themself for 20 ticks to prevent mp issues, AND buff time is hidden for buffs under 20 ticks instead of buffs under 2 ticks to make this work
+- Fixed a bug that caused portable storages to straight up not work
+
+Version 1.0.4 Changes ------------------------------------------------------------------------------------------
+Items
+- Endless liquid tools are no longer fished, they're all crafted
+
+Misc Features
+- Added a slider to let you change how many treasure bags it should simulate opening when averaging prices. Higher values increase consistency as well as load times
+
+QoL Recipes
+- Added toggleable recipes for bottomless water bucket and super absorbant sponge
+
+Misc
+- Actually made the buff toggling UI move to the side if Fargos' is enabled
+
+Version 1.0.3 Changes ------------------------------------------------------------------------------------------
+Items
+- Green Scheme now sells for 10 silver, not 60 gold
+- Green Scheme now replants harvested herbs
+
+Misc Features
+- Max stack increase toggle added! Increases most items max stacks to 9999
+
+Misc
+- Buff toggling UI now moves to the side if Fargos' is enabled, so it doesn't overlap with the stat sheet
+- Added guide ticks to the endless potion amount slider
+
+Bugs
+- Green Scheme now works
+- Fixed typos in the config
+- Fixed errors that'd occure while averaging treasure bags from certain mods
+- Fixed a catastrophic Master Plan multiplayer bug
+- Green Scheme now checks the right config option
+
+Version 1.0.2 Changes ------------------------------------------------------------------------------------------
+Items
+- Added the Green Scheme, to help you with harvesting herbs
+- Added the Shadow Pearl, a crafting station which functions as a demon altar
+- Petrified safe is now crafted, not found during worldgen
+
+Misc Features
+- Boss Bag Averaging now affects the unobtainable Cultist, Dark Mage, and Ogre bossbags
+
+Localization
+- Renamed Philosopher's Stone to Prima Materia to avoid confusion with the vanilla item
+- Changed Philosopher's Stone's tooltip from "When held and enabled..." to "When held in your hand and enabled..."
+
+Bugs
+- The Master Plan no longer breaks pots, vines, and plants while selecting an area to liquid-ify
+- Fixed oddities with buff manager UI
+- Fixed issues with spawn rate flames
+- Not technically a bug, but lowered the amount of times a second that I check for infinite buffs (from 30 times a second to 20 a second)
+- Fixed and autoswing issues that would prevent you from enjoying the game (i.e., stop you from swinging after it's disabled)
+- Remembered to include source and PDB when compiling the mod, which basically gives more detailed error messages and lets you extract it's source code
+
+Version 1.0.1 Changes ------------------------------------------------------------------------------------------
+Misc
+- Linked to GitHub
+
+Version 1.0.0 Changes ------------------------------------------------------------------------------------------
+Items
+- Added Bottomless Honey and Lava bucket
+- Added Super Sweet sponge and Heat Absorbent Sponge
+- Added The Master Plan
+- Added Petrified Safe
+- Added Defender's Crystal
+- Added all vanilla endless bullets and arrows
+- Added Preparation Station, Asphalt Platform, and Buff Brazier
+- Added Deluxe Magnet and Runic Magnet
+- Added Philosophers Stone, Void Piggy, Flame of Battle, and Flame of Peace
+
+Misc Features
+- Added Extra Buff Slots option, Endless Potions option, Autoswing on Everything option, and Boss Bag averaging.

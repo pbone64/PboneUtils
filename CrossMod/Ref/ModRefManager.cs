@@ -23,6 +23,7 @@ namespace PboneUtils.CrossMod.Ref
             RegisterCompatibility<FargowiltasCompatibility>();
             RegisterCompatibility<FargowiltasSoulsCompatibility>();
             RegisterCompatibility<ExtensibleInventoryCompatibility>();
+            RegisterCompatibility<CensusCompatability>();
         }
 
         private void RegisterCompatibility<T>() where T : IModCompatibility, new()
