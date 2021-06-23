@@ -13,6 +13,7 @@ namespace PboneUtils
         {
             public List<int> RealValues;
 
+            [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "<Pending>")]
             public TreasureBagOpeningInfo(int whyCantStructsHaveParamlessCtors = 0)
             {
                 RealValues = new List<int>();
@@ -45,7 +46,7 @@ namespace PboneUtils
 
         public Dictionary<int, int> AveragedValues;
 
-        public static void HandleQuickSpawnItem(Player self, int item, int stack)
+        public static void HandleQuickSpawnItem(int item, int stack)
         {
             Item instance = new Item();
             instance.SetDefaults(item);

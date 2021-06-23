@@ -1,5 +1,7 @@
-﻿using Terraria;
+﻿using PboneUtils.Items.CellPhoneApps;
+using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Helpers
 {
@@ -20,6 +22,26 @@ namespace PboneUtils.Helpers
         {
             shop.item[nextSlot].SetDefaults(item);
             nextSlot++;
+        }
+
+        public static bool HasApp<T>(this Player self) where T : AppItem
+        {
+            bool hasApp = false;
+            T instance = ModContent.GetInstance<T>();
+
+            for (int i = 0; i < Main.maxInventory; i++)
+            {
+                Item query = self.inventory[i];
+
+                if (query.type == ItemID.CellPhone &&
+                    query.GetGlobalItem<AppGlobalItem>().Apps.Contains((instance.BaseID, instance.AppName)))
+                {
+                    hasApp = true;
+                    break;
+                }
+            }
+
+            return hasApp;
         }
     }
 }

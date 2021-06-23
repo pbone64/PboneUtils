@@ -5,7 +5,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace PboneUtils.Items.CellphoneApps
+namespace PboneUtils.Items.CellPhoneApps
 {
     public partial class AppGlobalItem : GlobalItem
     {
@@ -41,7 +41,9 @@ namespace PboneUtils.Items.CellphoneApps
         {
             if (item.type == ItemID.CellPhone)
             {
+#pragma warning disable IDE0028 // Simplify collection initialization
                 TagCompound tag = new TagCompound();
+#pragma warning restore IDE0028 // Simplify collection initialization
                 tag.Add("AppCount", Apps.Count);
 
                 for (int i = 0; i < Apps.Count; i++)
@@ -123,6 +125,25 @@ namespace PboneUtils.Items.CellphoneApps
                         Language.GetTextValue("Mods.PboneUtils.Common.CellPhone." + tuple.appId)));
                 }
             }
+        }
+
+        public override bool AltFunctionUse(Item item, Player player)
+        {
+            if (item.type == ItemID.CellPhone)
+                return Apps.Contains((ItemID.TeleportationPotion, "Teleportation"));
+
+            return base.AltFunctionUse(item, player);
+        }
+
+        public override bool UseItem(Item item, Player player)
+        {
+            if (item.type == ItemID.CellPhone && player.altFunctionUse == 2 && Apps.Contains((ItemID.TeleportationPotion, "Teleportation")))
+            {
+                player.TeleportationPotion();
+                return true;
+            }
+
+            return base.UseItem(item, player);
         }
     }
 }

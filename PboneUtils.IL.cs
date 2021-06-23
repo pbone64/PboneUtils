@@ -15,6 +15,7 @@ namespace PboneUtils
             IL.Terraria.Main.DrawBuffIcon += Main_DrawBuffIcon;
         }
 
+        // Make the chest close sound not play if a portable storage is open
         private void Player_Update(ILContext il)
         {
             ILCursor c = new ILCursor(il);
@@ -32,6 +33,7 @@ namespace PboneUtils
                 if (Main.LocalPlayer.GetModPlayer<PortableStoragePlayer>().SafeGargoyleOpen
                 || Main.LocalPlayer.GetModPlayer<PortableStoragePlayer>().DefendersCrystalOpen)
                 {
+                    // Return 0 volume if one is open so the sound is silent
                     return 0f;
                 }
 
@@ -39,6 +41,7 @@ namespace PboneUtils
             });
         }
 
+        // Make the buff time counter disappear under 20 ticks instead of 2 ticks
         private void Main_DrawBuffIcon(ILContext il)
         {
             ILCursor c = new ILCursor(il);

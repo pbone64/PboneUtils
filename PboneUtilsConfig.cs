@@ -120,6 +120,12 @@ namespace PboneUtils
         [ReloadRequired]
         public bool WorldControlItemsToggle;
 
+        [Label("$Mods.PboneUtils.Config.Label.CellPhoneAppsToggle")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.CellPhoneAppsToggle")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool CellPhoneAppsToggle;
+
 
         // MISC SINGLE ITEMS
 

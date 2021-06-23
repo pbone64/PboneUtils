@@ -1,6 +1,6 @@
 ﻿using Terraria.ID;
 
-namespace PboneUtils.Items.CellphoneApps
+namespace PboneUtils.Items.CellPhoneApps
 {
     public class WormholeApp : AppItem
     {

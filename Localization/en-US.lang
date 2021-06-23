@@ -87,6 +87,9 @@ ItemTooltip.BuffBrazier=Increases your life regen, mana regen, movement speed, a
 ItemName.WormholeApp=Wormhole App
 ItemTooltip.WormholeApp=Provides an infinite wormhole effect when installed in a Cell Phone\n{$Mods.PboneUtils.Common.AppInfo}
 
+ItemName.TeleportationApp=Teleporation App
+ItemTooltip.TeleportationApp=Allows you to teleport by holding the Cell Phone in your hand and right-clicking when installed in a Cell Phone\n{$Mods.PboneUtils.Common.AppInfo}
+
 // Misc
 ItemName.VoidPiggy=Void Piggy
 ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'
@@ -191,6 +194,7 @@ Config.Label.ArenaItemsToggle=Arena Items
 Config.Label.MagnetItemsToggle=Magnet Items
 Config.Label.AmmoItemsToggle=Ammo Items
 Config.Label.WorldControlItemsToggle=World Control Items
+Config.Label.CellPhoneAppsToggle=Cell Phone Apps
 
 Config.Label.VoidPiggyToggle=Void Piggy
 Config.Label.PhilosophersStoneToggle=Prima Materia
@@ -223,6 +227,7 @@ Config.Tooltip.AmmoItemsToggle=Enable or disable this mod's endless ammo items
 Config.Tooltip.ArenaItemsToggle=Enable or disable this mod's arena blocks, which enhance and compact your arena
 Config.Tooltip.MagnetItemsToggle=Enable or disable this mod's magnet items, which increase your grab range
 Config.Tooltip.WorldControlItemsToggle=Enable or disable this mod's world control items, which can change the time, weather, and more
+Config.Tooltip.CellPhoneAppsToggle=Enable or disable Cell Phone apps, upgrades to the Cell Phone which provide extra functionality
 
 Config.Tooltip.VoidPiggyToggle=Enable or disable the Void Piggy item, which sends collected coins to your piggy bank
 Config.Tooltip.PhilosophersStoneToggle=Enable or disable the Prima Materia item, which sells picked up items
@@ -252,3 +257,4 @@ Common.CanBeToggled=Right click to toggle on and off
 Common.AppInfo=Can be installed to a Cell Phone by holding this item and right clicking a Cell Phone in your inventory
 Common.CellPhoneInfo=Apps can be installed by holding them and right-clicking the Cell Phone in your inventory\nCurrently installed apps:
 Common.CellPhone.Wormhole= [i:2997] Wormhole App: Provides an infinite wormhole effect
+Common.CellPhone.Teleportation= [i:2351] Teleportation App: Allows you to teleport by holding the Cell Phone in your hand and right-clicking
