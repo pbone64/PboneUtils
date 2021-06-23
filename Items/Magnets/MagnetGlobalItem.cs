@@ -12,6 +12,7 @@ namespace PboneUtils.Items.Magnets
 
         public const int SpectreTreasureMagnetRange = 1280;
         public const int RunicTreasureMagnetRange = 1280;
+        public const int MoonLordTreasureMagnetRange = 2560;
 
         public override void GrabRange(Item item, Player player, ref int grabRange)
         {
@@ -41,7 +42,13 @@ namespace PboneUtils.Items.Magnets
             int superGrabRange = -1;
             int superGrabDust = -1;
 
-            if (mPlayer.RunicTreasureMagnet)
+            if (mPlayer.MoonLordTreasureMagnet)
+            {
+                superGrabCooldownMax = 5;
+                superGrabRange = MoonLordTreasureMagnetRange;
+                superGrabDust = 160;
+            }
+            else if (mPlayer.RunicTreasureMagnet)
             {
                 superGrabCooldownMax = 10;
                 superGrabRange = RunicTreasureMagnetRange;

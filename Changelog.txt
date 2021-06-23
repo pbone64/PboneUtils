@@ -2,9 +2,16 @@ Version 1.1.2 Changes ----------------------------------------------------------
 Items
 - Fixed Star Magnet recipe
 - Added cellphone apps, upgrades to your cellphone which provide it with more travel options
+- Technically added a WIP item, but you don't need to worry about that
+
+Misc Features
+- Added a config option to enable or disable fast respawn while bosses are alive
 
 Cross Mod
 - Added cross mod support for Census
+
+Misc
+- Reworded runic treasure magnet's tooltip: "attract" => "pull down"
 
 Bugs
 - Infinite potions now apply to mana potions

@@ -33,7 +33,10 @@ ItemName.SpectreTreasureMagnet=Spectre Treasure Magnet
 ItemTooltip.SpectreTreasureMagnet=Teleports nearby items into your inventory\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}
 
 ItemName.RunicTreasureMagnet=Runic Treasure Magnet
-ItemTooltip.RunicTreasureMagnet=Quickly teleports nearby items into your inventory\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Won't attract the moon, probably'
+ItemTooltip.RunicTreasureMagnet=Quickly teleports nearby items into your inventory\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Won't pull down the moon, probably'
+
+ItemName.MoonLordTreasureMagnet=Eldritch Treasure Magnet
+ItemTooltip.MoonLordTreasureMagnet=Teleports nearby items into your inventory at the speed of sound\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Okay, now THIS might pull down the moon'
 
 // World control
 ItemName.FluxCapacitor=Flux Capacitor
@@ -221,7 +224,7 @@ Config.Tooltip.AutoswingOnEverythingBlacklist=Items to be ignored by Global Auto
 Config.Tooltip.MaxStackIncrease=If enabled, most items will have their max stack size increased
 Config.Tooltip.NoMoreGraves=If enabled, prevents graves from spawning
 Config.Tooltip.FastRespawn=If enabled, you respawn much quicker
-Config.TOoltip.FastRespawnDuringBoss=If enabled, you respawn much quicker even during boss fights
+Config.Tooltip.FastRespawnDuringBoss=If enabled, you respawn much quicker even during boss fights
 
 Config.Tooltip.StorageItemsToggle=Enable or disable this mod's storage items, which allow you to access personal storages on the go
 Config.Tooltip.LiquidItemsToggle=Enable or disable this mod's liquid items, which let you place and absorb infinite amounts of lava or honey

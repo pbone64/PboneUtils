@@ -8,6 +8,8 @@ namespace PboneUtils.Items.Magnets
         public bool HallowedTreasureMagnet;
         public bool SpectreTreasureMagnet;
         public bool RunicTreasureMagnet;
+        public bool MoonLordTreasureMagnet;
+
         public int SuperGrabCooldown;
 
         public override void Initialize()
@@ -17,6 +19,7 @@ namespace PboneUtils.Items.Magnets
             HallowedTreasureMagnet = false;
             SpectreTreasureMagnet = false;
             RunicTreasureMagnet = false;
+            MoonLordTreasureMagnet = false;
 
             SuperGrabCooldown = 0;
         }
@@ -28,6 +31,7 @@ namespace PboneUtils.Items.Magnets
             HallowedTreasureMagnet = false;
             SpectreTreasureMagnet = false;
             RunicTreasureMagnet = false;
+            MoonLordTreasureMagnet = false;
         }
     }
 }
