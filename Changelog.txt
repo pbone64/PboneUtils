@@ -4,7 +4,7 @@ Items
 - Added cellphone apps, upgrades to your cellphone which provide it with more travel options
 
 Cross Mod
-- Added cross mod support for Census for my NPCs
+- Added cross mod support for Census
 
 Bugs
 - Infinite potions now apply to mana potions
