@@ -2,6 +2,8 @@ Version 1.1.2 Changes ----------------------------------------------------------
 Items
 - Fixed Star Magnet recipe
 - Added cellphone apps, upgrades to your cellphone which provide it with more travel options
+-- Wormhole app, an infinite wormhole potion
+-- Teleportation app, an infinite teleportation potion triggered with right-click
 - Technically added a WIP item, but you don't need to worry about that
 
 Misc Features

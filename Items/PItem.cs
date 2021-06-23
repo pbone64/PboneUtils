@@ -29,8 +29,8 @@ namespace PboneUtils.Items
             {
                 Vector2 texSize = Main.itemTexture[item.type].Size();
                 Vector2 correctedSize = texSize;
-                DrawAnimationVertical animation = Main.itemAnimations[item.type] as DrawAnimationVertical;
-                if (animation != null) // If it has a DrawAnimationVertical registered
+
+                if (Main.itemAnimations[item.type] is DrawAnimationVertical animation) // If it has a DrawAnimationVertical registered
                     correctedSize = new Vector2(texSize.X, (texSize.Y / animation.FrameCount) - animation.FrameCount * 2); // Account for the amount of frames and buffer between frames
 
                 item.Size = correctedSize;
