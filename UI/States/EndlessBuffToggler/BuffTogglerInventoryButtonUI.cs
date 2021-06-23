@@ -1,6 +1,8 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using MagicStorage;
+using Microsoft.Xna.Framework.Graphics;
 using PboneUtils.UI.Elements;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.GameContent.UI.Elements;
 using Terraria.Localization;
 using Terraria.UI;
@@ -44,7 +46,7 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
 
         private void IconHighlight_OnClick(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.playerInventory && Main.LocalPlayer.talkNPC == -1)
+            if (CanShow())
             {
                 PboneUtils.UI.BuffToggler.ToggleBuffTogglerMenu();
                 PboneUtils.UI.BuffToggler.BuffTogglerMenu.RebuildGrid();
@@ -55,8 +57,24 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
         {
             IconHighlight.Text = Language.GetTextValue("Mods.PboneUtils.UI.EndlessBuffTogglerInventoryButton.MouseOver");
 
-            if (Main.playerInventory && Main.LocalPlayer.talkNPC == -1)
+            if (CanShow())
                 base.Draw(spriteBatch);
+        }
+
+        // This nasty thing is required
+        // When excecuting a method, the clr tries to run everything in the method
+        // If it can't find the magic storage assembly it just crashes, even though it's not referenced unless magic storage it loaded
+        // To prevent this, it's in a property which the clr will only run if it needs to (ie, if MagicStorage is loaded)
+        private bool HackSoRuntimeDoesntCrash => Main.LocalPlayer.GetModPlayer<StoragePlayer>().ViewingStorage() != new Point16(-1, -1);
+        public bool CanShow()
+        {
+            if (!Main.playerInventory || Main.LocalPlayer.talkNPC != -1)
+                return false;
+
+            if (PboneUtils.CrossMod.IsModLoaded("MagicStorage") && HackSoRuntimeDoesntCrash)
+                return false;
+
+            return true;
         }
     }
 }
