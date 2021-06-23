@@ -9,6 +9,8 @@ Misc Features
 
 Cross Mod
 - Added cross mod support for Census
+- Buff toggler button now hides when magic storage is open
+- Buff toggler now closes itself if you close your inventory
 
 Misc
 - Reworded runic treasure magnet's tooltip: "attract" => "pull down"
