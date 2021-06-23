@@ -30,7 +30,6 @@ namespace PboneUtils.CrossMod.Ref
     {
         internal readonly string Mod;
 
-        // This is a positional argument
         internal ModRefAttribute(string mod)
         {
             Mod = mod;

@@ -100,7 +100,6 @@ namespace PboneUtils
                     }
                 }
 
-                // TODO values are still 0
                 AveragedValues.Add(item.type, (int)TempInfo.GetAverageValue());
             }
 

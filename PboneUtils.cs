@@ -38,6 +38,8 @@ namespace PboneUtils
             LoadingHelper.Load();
 
             Instance = ModContent.GetInstance<PboneUtils>();
+
+            // Instantiate managers
             textures = new ModTextureManager();
             recipes = new ModRecipeManager();
             ui = new ModUIManager();
@@ -45,12 +47,15 @@ namespace PboneUtils
 
             modPacketManager = new ModPacketManager(this);
             crossModManager = new CrossModManager();
-            crossModManager.Load();
 
+            // Load MonoMod hooks
             Load_IL();
             Load_On();
+
+            // Load managers that need it
             textures.Initialize();
             ui.Initialize();
+            crossModManager.Load();
         }
 
         public override object Call(params object[] args) => crossModManager.CallManager.HandleCall(args);
