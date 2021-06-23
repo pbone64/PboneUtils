@@ -9,6 +9,8 @@ Cross Mod
 Bugs
 - Infinite potions now apply to mana potions
 - Fixed a typo in miner dialogue: "planet" => "plant"
+- Fixed a silent error thrown during loading
+- Fixed a text oddity while loading when averaged treasure bag prices are enabled
 
 Version 1.1.1 Changes ------------------------------------------------------------------------------------------
 Items

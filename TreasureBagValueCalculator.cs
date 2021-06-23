@@ -62,7 +62,6 @@ namespace PboneUtils
 
             AveragedValues = new Dictionary<int, int>();
 
-            string origLoadStage = LoadingHelper.GetLoadStage();
             LoadingHelper.SetLoadStage("Averaging treasure bag prices...");
 
             for (int i = 0; i < ItemLoader.ItemCount; i++)
@@ -103,7 +102,7 @@ namespace PboneUtils
                 AveragedValues.Add(item.type, (int)TempInfo.GetAverageValue());
             }
 
-            LoadingHelper.SetLoadStage(origLoadStage);
+            LoadingHelper.SetLoadStage("");
             LoadingHelper.SetSubText("");
             LoadingHelper.SetProgress(0f);
 
