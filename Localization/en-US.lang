@@ -187,6 +187,7 @@ Config.Label.AutoswingOnEverythingBlacklist=Global Autoswing Blacklist
 Config.Label.MaxStackIncrease=Max Stack Size Increases
 Config.Label.NoMoreGraves=No More Graves
 Config.Label.FastRespawn=Fast Respawn
+Config.Label.FastRespawnDuringBoss=Fast Respawn during Bosses
 
 Config.Label.StorageItemsToggle=Storage Items
 Config.Label.LiquidItemsToggle=Liquid Items
@@ -220,6 +221,7 @@ Config.Tooltip.AutoswingOnEverythingBlacklist=Items to be ignored by Global Auto
 Config.Tooltip.MaxStackIncrease=If enabled, most items will have their max stack size increased
 Config.Tooltip.NoMoreGraves=If enabled, prevents graves from spawning
 Config.Tooltip.FastRespawn=If enabled, you respawn much quicker
+Config.TOoltip.FastRespawnDuringBoss=If enabled, you respawn much quicker even during boss fights
 
 Config.Tooltip.StorageItemsToggle=Enable or disable this mod's storage items, which allow you to access personal storages on the go
 Config.Tooltip.LiquidItemsToggle=Enable or disable this mod's liquid items, which let you place and absorb infinite amounts of lava or honey

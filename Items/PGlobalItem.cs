@@ -10,9 +10,6 @@ namespace PboneUtils.Items
 {
     public class PGlobalItem : GlobalItem
     {
-        public const int HallowedTreasureManget = 640;
-        public const int DeluxeTreasureMagnetRange = 320;
-
         public override void SetDefaults(Item item)
         {
             base.SetDefaults(item);
@@ -68,72 +65,6 @@ namespace PboneUtils.Items
             }
 
             return base.CanPickup(item, player);
-        }
-
-        public override void GrabRange(Item item, Player player, ref int grabRange)
-        {
-            // MP TODO: see how this works in mp
-            base.GrabRange(item, player, ref grabRange);
-            MagnetPlayer mPlayer = player.GetModPlayer<MagnetPlayer>();
-
-            // Range increases
-            if (mPlayer.HallowedTreasureMagnet)
-            {
-                grabRange += HallowedTreasureManget;
-            }
-            else if (mPlayer.DeluxeTreasureMagnet)
-            {
-                grabRange += DeluxeTreasureMagnetRange;
-            }
-        }
-
-        public override void Update(Item item, ref float gravity, ref float maxFallSpeed)
-        {
-            // MP TODO: is this run on all clients?
-            base.Update(item, ref gravity, ref maxFallSpeed);
-            MagnetPlayer mPlayer = Main.LocalPlayer.GetModPlayer<MagnetPlayer>();
-
-            // Super grabs
-            int superGrabCooldownMax = -1;
-            int superGrabRange = -1;
-            int superGrabDust = -1;
-
-            if (mPlayer.RunicTreasureMagnet)
-            {
-                superGrabCooldownMax = 10;
-                superGrabRange = 2560;
-                superGrabDust = 169;
-            }
-            else if (mPlayer.SpectreTreasureMagnet)
-            {
-                superGrabCooldownMax = 15;
-                superGrabRange = 1280;
-                superGrabDust = 15;
-            }
-
-            if (superGrabCooldownMax != -1 && superGrabRange != -1)
-            {
-                if (Main.LocalPlayer.Distance(item.Center) <= superGrabRange)
-                {
-                    if (mPlayer.SuperGrabCooldown-- <= 0)
-                    {
-                        const int numDust = 20;
-                        for (int i = 0; i < numDust; i++)
-                        {
-                            Dust d = Dust.NewDustDirect(Vector2.Lerp(item.Center, Main.LocalPlayer.Center, (float)i / (float)numDust), 1, 1, superGrabDust, 0, 0);
-                            d.noGravity = true;
-                            d.alpha = 200;
-                        }
-
-                        item.noGrabDelay = 0;
-                        item.Center = Main.LocalPlayer.Center;
-                        mPlayer.SuperGrabCooldown = superGrabCooldownMax;
-
-                        if (Main.netMode != NetmodeID.SinglePlayer)
-                            NetMessage.SendData(MessageID.SyncItem, -1, -1, null, item.whoAmI);
-                    }
-                }
-            }
         }
 
         public override bool ConsumeItem(Item item, Player player)

@@ -40,5 +40,18 @@ namespace PboneUtils.Helpers
             else
                 NetMessage.BroadcastChatMessage(NetworkText.FromLiteral(text.ToString()), color);
         }
+
+        public static bool AnyBoss()
+        {
+            for (int i = 0; i < Main.maxNPCs; i++)
+            {
+                if (Main.npc[i].active && (Main.npc[i].boss || NPCID.Sets.TechnicallyABoss[Main.npc[i].type]))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

@@ -80,6 +80,12 @@ namespace PboneUtils
         [ReloadRequired]
         public bool FastRespawn;
 
+        [Label("$Mods.PboneUtils.Config.Label.FastRespawnDuringBoss")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.FastRespawnDuringBoss")]
+        [DefaultValue(false)]
+        [ReloadRequired]
+        public bool FastRespawnDuringBoss;
+
 
         // ITEMS
 

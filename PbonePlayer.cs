@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using PboneUtils.DataStructures;
 using Terraria.ModLoader.IO;
+using PboneUtils.Helpers;
 
 namespace PboneUtils
 {
@@ -73,7 +74,8 @@ namespace PboneUtils
             base.UpdateDead();
             if (PboneUtilsConfig.Instance.FastRespawn)
             {
-                player.respawnTimer -= 2;
+                if (PboneUtilsConfig.Instance.FastRespawnDuringBoss || !MiscVanillaMethods.AnyBoss())
+                    player.respawnTimer -= 2;
             }
         }
     }
