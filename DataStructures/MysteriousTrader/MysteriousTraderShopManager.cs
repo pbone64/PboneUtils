@@ -10,9 +10,9 @@ namespace PboneUtils.DataStructures.MysteriousTrader
     {
         public static MysteriousTraderShopManager Instance;
 
-        static MysteriousTraderShopManager()
+        public MysteriousTraderShopManager()
         {
-            Instance = new MysteriousTraderShopManager();
+            Items = new Dictionary<MysteriousTraderItem, MysteriousTraderItemRarity>();
 
             MyRegisterItem(ItemID.TruffleWorm, MysteriousTraderItemRarity.Legendary, () => NPC.downedPlantBoss && !NPC.downedFishron);
             MyRegisterItem(ItemID.RodofDiscord, MysteriousTraderItemRarity.Legendary, () => NPC.downedMechBossAny);
@@ -45,20 +45,21 @@ namespace PboneUtils.DataStructures.MysteriousTrader
             MyRegisterItem(ItemID.MagicMirror, MysteriousTraderItemRarity.Common);
 
             MyRegisterItem(ItemID.ShinyRedBalloon, MysteriousTraderItemRarity.Common);
-            MyRegisterItem(ItemID.Aglet, MysteriousTraderItemRarity.Common);
+
+            Instance = this;
 
             //MyRegisterItem(ItemID.LesserHealingPotion, MysteriousTraderItemRarity.NonUnique, new Func<bool>(() => !Main.hardMode));
             //MyRegisterItem(ItemID.HealingPotion, MysteriousTraderItemRarity.NonUnique, new Func<bool>(() => Main.hardMode));
         }
 
-        internal Dictionary<MysteriousTraderItem, MysteriousTraderItemRarity> Items = new Dictionary<MysteriousTraderItem, MysteriousTraderItemRarity>();
+        internal Dictionary<MysteriousTraderItem, MysteriousTraderItemRarity> Items;
         internal bool AnyCall = false;
 
-        private static object MyRegisterItem(int item, MysteriousTraderItemRarity rare)
-            => Instance.RegisterItem(PboneUtils.Instance, item, rare, new Func<bool>(() => true));
+        private object MyRegisterItem(int item, MysteriousTraderItemRarity rare)
+            => RegisterItem(PboneUtils.Instance, item, rare, new Func<bool>(() => true));
 
-        private static object MyRegisterItem(int item, MysteriousTraderItemRarity rare, Func<bool> condition)
-            => Instance.RegisterItem(PboneUtils.Instance, item, rare, condition);
+        private object MyRegisterItem(int item, MysteriousTraderItemRarity rare, Func<bool> condition)
+            => RegisterItem(PboneUtils.Instance, item, rare, condition);
 
         internal object RegisterItem(Mod mod, int item, MysteriousTraderItemRarity rare, Func<bool> condition)
         {
@@ -76,6 +77,12 @@ namespace PboneUtils.DataStructures.MysteriousTrader
             {
                 return false;
             }
+        }
+
+        public static void Unload()
+        {
+            Instance.Items.Clear();
+            Instance = null;
         }
     }
 }

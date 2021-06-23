@@ -47,6 +47,7 @@ namespace PboneUtils
 
             modPacketManager = new ModPacketManager(this);
             crossModManager = new CrossModManager();
+            crossModManager.Load();
 
             // Load MonoMod hooks
             Load_IL();
@@ -55,7 +56,6 @@ namespace PboneUtils
             // Load managers that need it
             textures.Initialize();
             ui.Initialize();
-            crossModManager.Load();
         }
 
         public override object Call(params object[] args) => crossModManager.CallManager.HandleCall(args);
@@ -73,7 +73,8 @@ namespace PboneUtils
             if (PboneUtilsConfig.Instance.AverageBossBags)
                 bagValues.Load();
 
-            // This gets assinged to something by the ctor, don't worry
+            // These get assinged to something by their ctors, don't worry
+            new MysteriousTraderShopManager();
             new CompiledMysteriousTraderShop(MysteriousTraderShopManager.Instance);
         }
 
@@ -114,6 +115,8 @@ namespace PboneUtils
             bagValues = null;
             crossModManager = null;
             modPacketManager = null;
+
+            MysteriousTraderShopManager.Unload();
         }
     }
 }
