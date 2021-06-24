@@ -8,6 +8,10 @@ namespace PboneUtils.CrossMod.Ref.Content
     {
         public CensusCompatability() : base()
         {
+        }
+
+        public void Load()
+        {
             // string:"TownNPCCondition" - int:npcid - string:condition
 
             if (PboneUtilsConfig.Instance.Miner)

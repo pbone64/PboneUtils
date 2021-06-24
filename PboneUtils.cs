@@ -1,6 +1,7 @@
 using log4net;
 using Microsoft.Xna.Framework;
 using PboneUtils.CrossMod;
+using PboneUtils.CrossMod.Ref.Content;
 using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
 using PboneUtils.Net;
@@ -56,6 +57,9 @@ namespace PboneUtils
             // Load managers that need it
             textures.Initialize();
             ui.Initialize();
+
+            if (crossModManager.IsModLoaded("Census"))
+                crossModManager.GetModCompatibility<CensusCompatability>("Census").Load();
         }
 
         public override object Call(params object[] args) => crossModManager.CallManager.HandleCall(args);
