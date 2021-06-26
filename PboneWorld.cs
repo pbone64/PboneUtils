@@ -116,12 +116,13 @@ namespace PboneUtils
 
                 // Unloaded item, remove
                 if (itemMod != "TERRARIA" && ModLoader.GetMod(itemMod) == null)
+                {
+                    tag.Remove(key);
+                    tag.Remove("Mod" + key);
                     continue;
+                }
 
                 MysteriousTraderShop.Add(tag.GetInt(key));
-
-                tag.Remove(key);
-                tag.Remove("Mod" + key);
             }
         }
 

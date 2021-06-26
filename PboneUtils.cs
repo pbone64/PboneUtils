@@ -47,6 +47,7 @@ namespace PboneUtils
             bagValues = new TreasureBagValueCalculator();
 
             modPacketManager = new ModPacketManager(this);
+            modPacketManager.Load();
             crossModManager = new CrossModManager();
             crossModManager.Load();
 
@@ -64,11 +65,7 @@ namespace PboneUtils
 
         public override object Call(params object[] args) => crossModManager.CallManager.HandleCall(args);
 
-        public override void HandlePacket(BinaryReader reader, int whoAmI)
-        {
-            base.HandlePacket(reader, whoAmI);
-            modPacketManager.ReadPacket(reader, whoAmI);
-        }
+        public override void HandlePacket(BinaryReader reader, int whoAmI) => modPacketManager.ReadPacket(reader, whoAmI);
 
         public override void PostSetupContent()
         {
