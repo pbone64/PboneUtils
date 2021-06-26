@@ -98,36 +98,39 @@ namespace PboneUtils.NPCs.Town
                 shop.AddShopItem(ItemID.Hellstone, ref nextSlot);
             }
 
-            int downedMechBosses = 0;
-            if (NPC.downedMechBoss1) downedMechBosses++;
-            if (NPC.downedMechBoss2) downedMechBosses++;
-            if (NPC.downedMechBoss3) downedMechBosses++;
+            if (Main.hardMode)
+            {
+                int downedMechBosses = 0;
+                if (NPC.downedMechBoss1) downedMechBosses++;
+                if (NPC.downedMechBoss2) downedMechBosses++;
+                if (NPC.downedMechBoss3) downedMechBosses++;
 
-            if (downedMechBosses > -1)
-            {
-                shop.AddShopItem(ItemID.CobaltOre, ref nextSlot);
-                shop.AddShopItem(ItemID.PalladiumOre, ref nextSlot);
-            }
-            if (downedMechBosses > 0)
-            {
-                shop.AddShopItem(ItemID.MythrilOre, ref nextSlot);
-                shop.AddShopItem(ItemID.OrichalcumOre, ref nextSlot);
-            }
-            if (downedMechBosses > 1)
-            {
-                shop.AddShopItem(ItemID.AdamantiteOre, ref nextSlot);
-                shop.AddShopItem(ItemID.TitaniumOre, ref nextSlot);
-            }
-            if (downedMechBosses > 2)
-                shop.AddShopItem(ItemID.HallowedBar, ref nextSlot);
+                if (downedMechBosses > -1)
+                {
+                    shop.AddShopItem(ItemID.CobaltOre, ref nextSlot);
+                    shop.AddShopItem(ItemID.PalladiumOre, ref nextSlot);
+                }
+                if (downedMechBosses > 0)
+                {
+                    shop.AddShopItem(ItemID.MythrilOre, ref nextSlot);
+                    shop.AddShopItem(ItemID.OrichalcumOre, ref nextSlot);
+                }
+                if (downedMechBosses > 1)
+                {
+                    shop.AddShopItem(ItemID.AdamantiteOre, ref nextSlot);
+                    shop.AddShopItem(ItemID.TitaniumOre, ref nextSlot);
+                }
+                if (downedMechBosses > 2)
+                    shop.AddShopItem(ItemID.HallowedBar, ref nextSlot);
 
-            if (NPC.downedPlantBoss)
-                shop.AddShopItem(ItemID.ChlorophyteOre, ref nextSlot);
+                if (NPC.downedPlantBoss)
+                    shop.AddShopItem(ItemID.ChlorophyteOre, ref nextSlot);
 
-            if (NPC.downedGolemBoss)
-            {
-                shop.AddShopItem(ItemID.ShroomiteBar, ref nextSlot);
-                shop.AddShopItem(ItemID.SpectreBar, ref nextSlot);
+                if (NPC.downedGolemBoss)
+                {
+                    shop.AddShopItem(ItemID.ShroomiteBar, ref nextSlot);
+                    shop.AddShopItem(ItemID.SpectreBar, ref nextSlot);
+                }
             }
 
             shop.AddShopItem(ItemID.Amethyst, ref nextSlot);
