@@ -1,4 +1,7 @@
 Version 1.1.4 Changes ------------------------------------------------------------------------------------------
+Items
+- Clarified Cell Phone and App tooltips
+
 Bugs
 - Miner no longer sells paladium and cobalt ore in pre-hardmode
 - Fixed an issue with mysterious trader in multiplayer
