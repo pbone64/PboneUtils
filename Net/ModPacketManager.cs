@@ -1,6 +1,5 @@
 ﻿using PboneUtils.ID;
 using PboneUtils.Net.Content;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using Terraria.ModLoader;
