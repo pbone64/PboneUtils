@@ -1,13 +1,14 @@
 using log4net;
 using Microsoft.Xna.Framework;
 using PboneLib.Core.CrossMod;
+using PboneLib.Core.Net;
 using PboneLib.Core.UI;
-using PboneUtils.CrossMod;
 using PboneUtils.CrossMod.Call;
 using PboneUtils.CrossMod.Ref.Content;
 using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
-using PboneUtils.Net;
+using PboneUtils.ID;
+using PboneUtils.Packets;
 using PboneUtils.UI.States;
 using PboneUtils.UI.States.EndlessBuffToggler;
 using System;
@@ -31,14 +32,14 @@ namespace PboneUtils
         public static ModRecipeManager Recipes => Instance.recipes;
         public static TreasureBagValueCalculator BagValues => Instance.bagValues;
         public static CrossModManager CrossMod => Instance.crossModManager;
-        public static ModPacketManager ModPacket => Instance.modPacketManager;
+        public static PacketManager PacketManager => Instance.packetManager;
 
         private UIManager ui;
         private ModTextureManager textures;
         private ModRecipeManager recipes;
         private TreasureBagValueCalculator bagValues;
         private CrossModManager crossModManager;
-        private ModPacketManager modPacketManager;
+        private PacketManager packetManager;
 
         public Guid RadialMenuInterface;
         public Guid BuffTogglerInterface;
@@ -57,8 +58,8 @@ namespace PboneUtils
             recipes = new ModRecipeManager();
             bagValues = new TreasureBagValueCalculator();
 
-            modPacketManager = new ModPacketManager(this);
-            modPacketManager.Load();
+            packetManager = new PacketManager(this);
+            packetManager.RegisterPacketHandler<SyncMysteriousTraderShop>(PacketID.SyncMysteriousTraderShop);
 
             crossModManager = new CrossModManager(this);
             crossModManager.CallManager.RegisterHandler<MysteriousTraderShopInterface>();
@@ -97,7 +98,7 @@ namespace PboneUtils
 
         public override object Call(params object[] args) => crossModManager.CallManager.HandleCall(args);
 
-        public override void HandlePacket(BinaryReader reader, int whoAmI) => modPacketManager.ReadPacket(reader, whoAmI);
+        public override void HandlePacket(BinaryReader reader, int whoAmI) => PacketManager.HandlePacket(reader);
 
         public override void PostSetupContent()
         {
@@ -147,7 +148,7 @@ namespace PboneUtils
             ui = null;
             bagValues = null;
             crossModManager = null;
-            modPacketManager = null;
+            packetManager = null;
 
             if (MysteriousTraderShopManager.Instance != null)
                 MysteriousTraderShopManager.Unload();

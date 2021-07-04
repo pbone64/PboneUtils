@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using PboneLib.Core.Net;
+using System.Collections.Generic;
 using System.IO;
 
-namespace PboneUtils.Net.Content
+namespace PboneUtils.Packets
 {
     public class SyncMysteriousTraderShop : IPacketHandler
     {
-        public void ReadPacket(BinaryReader reader, int whoAmI)
+        public void ReadPacket(BinaryReader reader)
         {
             PboneWorld.MysteriousTraderShop = new List<int>();
             byte count = reader.ReadByte();
@@ -16,7 +17,7 @@ namespace PboneUtils.Net.Content
             }
         }
 
-        public void Write(BinaryWriter writer)
+        public void WritePacket(BinaryWriter writer)
         {
             writer.Write((byte)PboneWorld.MysteriousTraderShop.Count);
 

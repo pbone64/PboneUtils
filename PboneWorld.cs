@@ -2,6 +2,7 @@
 using PboneUtils.Helpers;
 using PboneUtils.ID;
 using PboneUtils.NPCs.Town;
+using PboneUtils.Packets;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -69,9 +70,7 @@ namespace PboneUtils
 
                 if (Main.netMode == NetmodeID.Server) // PostUpdate is only run on the server in mp, whee
                 {
-                    ModPacket packet = mod.GetPacket();
-                    PboneUtils.ModPacket.WritePacket(packet, PacketID.SyncMysteriousTraderShop);
-                    packet.Send();
+                    PboneUtils.PacketManager.WriteAndSendPacket<SyncMysteriousTraderShop>();
                 }
             }
 
@@ -136,7 +135,7 @@ namespace PboneUtils
             base.NetSend(writer);
             writer.Write(ForceFastForwardTime);
 
-            PboneUtils.ModPacket.WritePacket(writer, PacketID.SyncMysteriousTraderShop);
+            PboneUtils.PacketManager.WritePacket<SyncMysteriousTraderShop>(writer);
         }
 
         public override void NetReceive(BinaryReader reader)
@@ -144,7 +143,7 @@ namespace PboneUtils
             base.NetReceive(reader);
             ForceFastForwardTime = reader.ReadBoolean();
 
-            PboneUtils.ModPacket.ReadPacket(reader, -1);
+            PboneUtils.PacketManager.ReadPacket<SyncMysteriousTraderShop>(reader);
         }
 
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
