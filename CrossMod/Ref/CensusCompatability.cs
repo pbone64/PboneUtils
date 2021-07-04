@@ -1,4 +1,5 @@
-﻿using PboneUtils.NPCs.Town;
+﻿using PboneLib.Core.CrossMod.Ref;
+using PboneUtils.NPCs.Town;
 using Terraria.ModLoader;
 
 namespace PboneUtils.CrossMod.Ref.Content

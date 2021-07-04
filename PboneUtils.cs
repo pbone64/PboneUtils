@@ -1,7 +1,9 @@
 using log4net;
 using Microsoft.Xna.Framework;
+using PboneLib.Core.CrossMod;
 using PboneLib.Core.UI;
 using PboneUtils.CrossMod;
+using PboneUtils.CrossMod.Call;
 using PboneUtils.CrossMod.Ref.Content;
 using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
@@ -57,8 +59,16 @@ namespace PboneUtils
 
             modPacketManager = new ModPacketManager(this);
             modPacketManager.Load();
-            crossModManager = new CrossModManager();
-            crossModManager.Load();
+
+            crossModManager = new CrossModManager(this);
+            crossModManager.CallManager.RegisterHandler<MysteriousTraderShopInterface>();
+            crossModManager.CallManager.MapModCallHandlersToMessages();
+
+            crossModManager.RefManager.RegisterCompatibility<FargowiltasCompatibility>();
+            crossModManager.RefManager.RegisterCompatibility<FargowiltasSoulsCompatibility>();
+            crossModManager.RefManager.RegisterCompatibility<ExtensibleInventoryCompatibility>();
+            crossModManager.RefManager.RegisterCompatibility<CensusCompatability>();
+            crossModManager.RefManager.RegisterCompatibility<MagicStorageCompatability>();
 
             // Load MonoMod hooks
             Load_IL();

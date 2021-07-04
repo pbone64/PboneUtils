@@ -1,10 +1,11 @@
-﻿using PboneUtils.DataStructures.MysteriousTrader;
+﻿using PboneLib.Core.CrossMod.Call;
+using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
 using System;
 using System.Collections.Generic;
 using Terraria.ModLoader;
 
-namespace PboneUtils.CrossMod.Call.Content
+namespace PboneUtils.CrossMod.Call
 {
     public class MysteriousTraderShopInterface : SimpleModCallHandler
     {
