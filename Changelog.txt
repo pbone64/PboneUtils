@@ -1,3 +1,7 @@
+Version 1.1.5 Changes ------------------------------------------------------------------------------------------
+Misc
+- Many internals of this mod were moved to a new library mod, pbone Lib. For users, all this means is that you have to download pbone Lib to play pbone's Utilities
+
 Version 1.1.4 Changes ------------------------------------------------------------------------------------------
 Items
 - Clarified Cell Phone and App tooltips
