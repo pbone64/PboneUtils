@@ -17,5 +17,8 @@
     <Reference Include="MagicStorage">
       <HintPath>..\..\references\mods\MagicStorage_v0.4.3.5.dll</HintPath>
     </Reference>
+    <Reference Include="PboneLib">
+      <HintPath>..\..\references\mods\PboneLib_v0.1.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

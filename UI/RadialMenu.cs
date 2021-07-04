@@ -23,7 +23,28 @@ namespace PboneUtils.UI
         public int ItemType;
         public bool CheckRC = true;
 
-        public void Draw(SpriteBatch spriteBatch, GameTime lastUpdateUIGameTime)
+        public static RadialMenu OpenInfo;
+
+        public static bool SetInfo(string name, int item)
+        {
+            OpenInfo = new RadialMenu();
+
+            Player player = Main.LocalPlayer;
+            OpenInfo.ItemType = item;
+
+            if (!OpenInfo.ShouldStayOpen(player, false))
+                return false;
+
+            OpenInfo.CheckRC = false;
+            OpenInfo.Name = name;
+            OpenInfo.Active = true;
+            OpenInfo.ButtonAmount = player.GetModPlayer<PbonePlayer>().ItemConfigs[name].Data.Count;
+            OpenInfo.Position = Main.MouseScreen;
+
+            return true;
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
         {
             if (!Active)
                 return;
@@ -31,12 +52,12 @@ namespace PboneUtils.UI
             Player player = Main.LocalPlayer;
             PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
 
-            (Vector2 centerPosition, Vector2[] buttonsPositions) positions = GetPositions();
-            (bool centerHovered, bool[] buttonsHovered) hoveredButtons = GetHoveredButtons();
+            (Vector2 centerPosition, Vector2[] buttonsPositions) = GetPositions();
+            (bool centerHovered, bool[] buttonsHovered) = GetHoveredButtons();
             ItemConfig config = mPlayer.ItemConfigs[Name];
 
-            Vector2 position = positions.centerPosition - ButtonSize * 0.5f;
-            bool hovered = hoveredButtons.centerHovered;
+            Vector2 position = centerPosition - ButtonSize * 0.5f;
+            bool hovered = centerHovered;
             Texture2D buttonTexture = PboneUtils.Textures.UI.GetRadialButton(hovered, config.RedMode);
             Texture2D iconTexture = PboneUtils.Textures.UI.RadialMenuIcons[Name + (config.RedMode ? "Red" : "")];
             Color buttonColor = Color.White;
@@ -46,14 +67,14 @@ namespace PboneUtils.UI
             spriteBatch.Draw(iconTexture, position, null, iconColor, 0f, Vector2.Zero, Main.UIScale, SpriteEffects.None, 0f);
 
             string[] configNames = config.Data.Keys.ToArray();
-            string configName = "";
+            string configName;
 
             for (int i = 0; i < ButtonAmount; i++)
             {
                 configName = configNames[i];
 
-                position = positions.buttonsPositions[i] - ButtonSize * 0.5f;
-                hovered = hoveredButtons.buttonsHovered[i];
+                position = buttonsPositions[i] - ButtonSize * 0.5f;
+                hovered = buttonsHovered[i];
                 buttonTexture = PboneUtils.Textures.UI.GetRadialButton(hovered, config.RedMode);
                 iconTexture = PboneUtils.Textures.UI.RadialMenuIcons[configName];
                 buttonColor = config.Data[configName] ? Color.White : (hovered ? ButtonOn : ButtonOff);
@@ -78,9 +99,9 @@ namespace PboneUtils.UI
             }
             CheckRC = true;
 
-            (bool centerHovered, bool[] buttonsHovered) hoveredButtons = GetHoveredButtons();
+            (bool centerHovered, bool[] buttonsHovered) = GetHoveredButtons();
 
-            if (hoveredButtons.centerHovered)
+            if (centerHovered)
             {
                 if (Main.mouseLeft && Main.mouseLeftRelease)
                 {
@@ -91,7 +112,7 @@ namespace PboneUtils.UI
 
             for (int i = 0; i < ButtonAmount; i++)
             {
-                if (hoveredButtons.buttonsHovered[i])
+                if (buttonsHovered[i])
                 {
                     ItemConfig config = mPlayer.ItemConfigs[Name];
                     string[] keys = config.Data.Keys.ToArray();
@@ -109,21 +130,6 @@ namespace PboneUtils.UI
                     }
                 }
             }
-        }
-
-        public void Open(string name, int item)
-        {
-            Player player = Main.LocalPlayer;
-            ItemType = item;
-
-            if (!ShouldStayOpen(player, false))
-                return;
-
-            CheckRC = false;
-            Name = name;
-            Active = true;
-            ButtonAmount = player.GetModPlayer<PbonePlayer>().ItemConfigs[name].Data.Count;
-            Position = Main.MouseScreen;
         }
 
         public void Close()
@@ -155,14 +161,14 @@ namespace PboneUtils.UI
         public (bool centerHovered, bool[] buttonHovered) GetHoveredButtons()
         {
             (bool centerHovered, bool[] buttonHovered) ret = (false, new bool[ButtonAmount]);
-            (Vector2 centerPositions, Vector2[] buttonPositions) positions = GetPositions();
+            (Vector2 centerPositions, Vector2[] buttonPositions) = GetPositions();
 
             Vector2 mouse = Main.MouseScreen;
-            ret.centerHovered = Vector2.Distance(mouse, positions.centerPositions) < (ButtonSize.X / 2f * Main.UIScale);
+            ret.centerHovered = Vector2.Distance(mouse, centerPositions) < (ButtonSize.X / 2f * Main.UIScale);
 
             for (int i = 0; i < ButtonAmount; i++)
             {
-                ret.buttonHovered[i] = Vector2.Distance(mouse, positions.buttonPositions[i]) < (ButtonSize.X / 2f * Main.UIScale);
+                ret.buttonHovered[i] = Vector2.Distance(mouse, buttonPositions[i]) < (ButtonSize.X / 2f * Main.UIScale);
             }
 
             return ret;
@@ -177,6 +183,12 @@ namespace PboneUtils.UI
                 return false;
 
             return true;
+        }
+
+        public bool IsHovered()
+        {
+            (bool centerHovered, bool[] buttonsHovered) = GetHoveredButtons();
+            return (centerHovered) || (buttonsHovered.Count(b => b == true) > 0);
         }
     }
 }

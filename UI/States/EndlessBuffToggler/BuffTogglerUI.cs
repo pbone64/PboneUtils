@@ -84,7 +84,7 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
             }
 
             if (!Main.playerInventory)
-                PboneUtils.UI.BuffToggler.CloseBuffTogglerMenu();
+                PboneUtils.UI.CloseUI<BuffTogglerUI>();
         }
 
         public void RebuildGrid()

@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Terraria.ID;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
+using PboneUtils.UI.States;
 
 namespace PboneUtils.Projectiles.Selection
 {
@@ -113,7 +114,7 @@ namespace PboneUtils.Projectiles.Selection
         {
             base.PostDraw(spriteBatch, lightColor);
 
-            if (Owner.whoAmI == Main.myPlayer && !PboneUtils.UI.ItemConfigurer.IsHovered()) // Only draw on owner's client
+            if (Owner.whoAmI == Main.myPlayer && !PboneUtils.UI.GetUIState<RadialMenuContainer>().Internal.IsHovered()) // Only draw on owner's client
             {
                 float fade = MathHelper.Lerp(0.1f, 0.3f, (float)(Math.Sin(Main.GameUpdateCount / 10f) + 1f) / 2f);
                 Color color = Color.Lerp(Color.Transparent, Color.White, fade);

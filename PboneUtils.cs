@@ -1,12 +1,17 @@
 using log4net;
 using Microsoft.Xna.Framework;
+using PboneLib.Core.UI;
 using PboneUtils.CrossMod;
 using PboneUtils.CrossMod.Ref.Content;
 using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
 using PboneUtils.Net;
+using PboneUtils.UI.States;
+using PboneUtils.UI.States.EndlessBuffToggler;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
 
@@ -19,19 +24,23 @@ namespace PboneUtils
         public static PboneUtils Instance;
         public static ILog Log => Instance.Logger;
 
+        public static UIManager UI => Instance.ui;
         public static ModTextureManager Textures => Instance.textures;
         public static ModRecipeManager Recipes => Instance.recipes;
-        public static ModUIManager UI => Instance.ui;
         public static TreasureBagValueCalculator BagValues => Instance.bagValues;
         public static CrossModManager CrossMod => Instance.crossModManager;
         public static ModPacketManager ModPacket => Instance.modPacketManager;
 
+        private UIManager ui;
         private ModTextureManager textures;
         private ModRecipeManager recipes;
-        private ModUIManager ui;
         private TreasureBagValueCalculator bagValues;
         private CrossModManager crossModManager;
         private ModPacketManager modPacketManager;
+
+        public Guid RadialMenuInterface;
+        public Guid BuffTogglerInterface;
+        public Guid BuffTogglerButtonInterface;
 
         public override void Load()
         {
@@ -41,9 +50,9 @@ namespace PboneUtils
             Instance = ModContent.GetInstance<PboneUtils>();
 
             // Instantiate managers
+            ui = new UIManager(this);
             textures = new ModTextureManager();
             recipes = new ModRecipeManager();
-            ui = new ModUIManager();
             bagValues = new TreasureBagValueCalculator();
 
             modPacketManager = new ModPacketManager(this);
@@ -57,7 +66,20 @@ namespace PboneUtils
 
             // Load managers that need it
             textures.Initialize();
-            ui.Initialize();
+            if (!Main.dedServ)
+            {
+                RadialMenuInterface = ui.QuickCreateInterface("Vanilla: Cursor");
+                ui.RegisterUI<RadialMenuContainer>(RadialMenuInterface);
+
+                BuffTogglerInterface = ui.QuickCreateInterface("Vanilla: Inventory");
+                ui.RegisterUI<BuffTogglerUI>(BuffTogglerInterface);
+
+                BuffTogglerButtonInterface = ui.QuickCreateInterface("Vanilla: Mouse Text");
+                ui.RegisterUI<BuffTogglerInventoryButtonUI>(BuffTogglerButtonInterface);
+
+                if (PboneUtilsConfig.Instance.EndlessPotions)
+                    ui.OpenUI<BuffTogglerInventoryButtonUI>();
+            }
 
             if (crossModManager.IsModLoaded("Census"))
                 crossModManager.GetModCompatibility<CensusCompatability>("Census").Load();
@@ -117,7 +139,8 @@ namespace PboneUtils
             crossModManager = null;
             modPacketManager = null;
 
-            MysteriousTraderShopManager.Unload();
+            if (MysteriousTraderShopManager.Instance != null)
+                MysteriousTraderShopManager.Unload();
         }
     }
 }

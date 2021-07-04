@@ -48,8 +48,8 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
         {
             if (CanShow())
             {
-                PboneUtils.UI.BuffToggler.ToggleBuffTogglerMenu();
-                PboneUtils.UI.BuffToggler.BuffTogglerMenu.RebuildGrid();
+                PboneUtils.UI.ToggleUI<BuffTogglerUI>();
+                PboneUtils.UI.GetUIState<BuffTogglerUI>().RebuildGrid();
             }
         }
 

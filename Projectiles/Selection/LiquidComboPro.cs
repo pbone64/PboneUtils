@@ -2,6 +2,7 @@
 using PboneUtils.DataStructures;
 using PboneUtils.Helpers;
 using PboneUtils.ID;
+using PboneUtils.UI.States;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -22,7 +23,7 @@ namespace PboneUtils.Projectiles.Selection
                 (config.Data["Honey"] ? LiquidID.Honey :
                 -1)));
 
-            return Type > -1 && !PboneUtils.UI.ItemConfigurer.IsHovered();
+            return Type > -1 && !PboneUtils.UI.GetUIState<RadialMenuContainer>().Internal.IsHovered();
         };
 
         public override Action<int, int> TileAction => (i, j) => {

@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using PboneUtils.Projectiles.Selection;
+using PboneUtils.UI;
+using PboneUtils.UI.States;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,7 +32,8 @@ namespace PboneUtils.Items.Liquid
         {
             if (player.altFunctionUse == 2)
             {
-                PboneUtils.UI.ItemConfigurer.Toggle("Liquid", item.type);
+                RadialMenu.SetInfo("Liquid", item.type);
+                PboneUtils.UI.OpenUI<RadialMenuContainer>();
                 return false;
             }
 
