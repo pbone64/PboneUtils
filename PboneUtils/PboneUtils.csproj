@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\..\references\tModLoader.targets" />
+  <Import Project="..\..\..\references\tModLoader.targets" />
   <PropertyGroup>
     <AssemblyName>PboneUtils</AssemblyName>
     <TargetFramework>net45</TargetFramework>
@@ -14,11 +14,11 @@
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PboneLib\PboneLib.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="MagicStorage">
-      <HintPath>..\..\references\mods\MagicStorage_v0.4.3.5.dll</HintPath>
-    </Reference>
-    <Reference Include="PboneLib">
-      <HintPath>..\..\references\mods\PboneLib_v0.1.dll</HintPath>
+      <HintPath>..\..\..\references\mods\MagicStorage_v0.4.3.5.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
