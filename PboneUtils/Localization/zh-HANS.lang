@@ -116,7 +116,7 @@ ItemName.InfiniteMana=无限法力
 ItemTooltip.InfiniteMana=降低35%伤害\n将你的召唤栏降至1格\n无限法力
 
 ItemName.StarMagnet=吸星磁铁
-ItemTooltip.StarMagnet=启用时大幅增加落星出现的几率\n{$Mods.PboneUtils.Common.CanBeToggled}\n'小心流星'
+ItemTooltip.StarMagnet=大幅增加落星出现的几率\n{$Mods.PboneUtils.Common.CanBeToggled}\n'小心流星'
 
 
 // NPCS
@@ -214,14 +214,14 @@ Config.Label.Miner=矿工
 Config.Label.RecipeEndlessWater=无尽水工具合成
 Config.Label.RecipePetrifiedSafe=石化保险箱合成
 
-Config.Tooltip.AverageBossBags=启用后宝藏袋将以其掉落物的平均价格出售. 注意:由于计算方法的原因, Mod在重新加载后宝藏袋的价格可能会发生变化
+Config.Tooltip.AverageBossBags=启用后可以将宝藏袋以其掉落物的平均价格出售. 注意:由于计算方法的原因, Mod在重新加载后宝藏袋的价格可能会发生变化
 Config.Tooltip.AverageBossBagsSlider=平均宝藏袋价格时模拟的开袋次数\n较高的数值将产生更一致的结果, 但会延长Mod加载时间
 Config.Tooltip.ExtraBuffSlots=额外buff栏数量, 在默认22栏基础上增加(每行11格buff)
 Config.Tooltip.EndlessPotions=启用后拥有一定数量的药水时将使你获得对应的无尽增益(或者不会消耗治疗药水这种东西)
 Config.Tooltip.EndlessPotionsSlider=无尽药水增益生效所需的数量
 Config.Tooltip.AutoswingOnEverything=启用或禁用所有物品自动挥舞功能(或者远程武器自动连射, 自动调整阴影等等诸如此类的东西)
 Config.Tooltip.AutoswingOnEverythingBlacklist=无法自动挥舞的物品(如果启用)
-Config.Tooltip.MaxStackIncrease=启用后则会增加大多数物品的最大堆叠数量(9999)
+Config.Tooltip.MaxStackIncrease=启用后会增加大多数物品的最大堆叠数量(9999)
 Config.Tooltip.NoMoreGraves=启用后你和其他玩家死亡时不再掉落墓碑
 Config.Tooltip.FastRespawn=启用后加快你的重生速度
 Config.Tooltip.FastRespawnDuringBoss=启用后即使在Boss站期间, 也能加快重生速度
