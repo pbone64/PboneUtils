@@ -117,7 +117,8 @@ ItemTooltip.InfiniteMana=降低35%伤害\n将你的召唤栏降至1格\n无限�
 
 ItemName.StarMagnet=吸星磁铁
 ItemTooltip.StarMagnet=大幅增加落星出现的几率\n{$Mods.PboneUtils.Common.CanBeToggled}\n'小心流星'
-
+ItemName.GreedyChest=贪欲宝箱
+ItemTooltip.GreedyChest=敌人不再掉落钱币\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Om nom nom'
 
 // NPCS
 TownChat.MysteriousTrader.1=照你这意思...我是突变体?
@@ -207,6 +208,7 @@ Config.Label.GreaterStaffOfRegrowthToggle=绿色蓝图
 Config.Label.ShadowPearlToggle=暗影珍珠
 Config.Label.InfiniteManaToggle=无限法力
 Config.Label.StarMagnetToggle=吸星磁铁
+Config.Label.GreedyChestToggle=贪欲宝箱
 
 Config.Label.MysteriousTrader=神秘商人
 Config.Label.Miner=矿工
@@ -241,6 +243,7 @@ Config.Tooltip.GreaterStaffOfRegrowthToggle=启用或禁用用于收获药草绿
 Config.Tooltip.ShadowPearlToggle=启用或禁用效果等同于恶魔祭坛的暗影珍珠
 Config.Tooltip.InfiniteManaToggle=启用或禁用无限法力饰品
 Config.Tooltip.StarMagnetToggle=启用或禁用吸星磁铁, 吸星磁铁能增加落星出现的几率
+Config.Tooltip.GreedyChest=启用或禁用贪欲宝箱, 贪欲宝箱能阻止敌人掉落钱币
 
 Config.Tooltip.MysteriousTrader=启用或禁用神秘商人, 神秘商人是一位出售稀有物品的NPC
 Config.Tooltip.Miner=启用或禁用矿工, 矿工是一位出售矿石和宝石的NPC
