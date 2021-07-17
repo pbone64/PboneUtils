@@ -116,7 +116,10 @@ ItemName.InfiniteMana=Infinite Mana
 ItemTooltip.InfiniteMana=35% decreased damage\nSets your minion slots to one\nGrants infinite mana
 
 ItemName.StarMagnet=Star Magnet
-ItemTooltip.StarMagnet=Greatly increases star fall rate while enabled\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Watch for shooting stars'
+ItemTooltip.StarMagnet=Greatly increases star fall rate\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Watch for shooting stars'
+
+ItemName.GreedyChest=Greedy Chest
+ItemTooltip.GreedyChest=Stops enemies from dropping coins\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Om nom nom'
 
 
 // NPCS
@@ -207,6 +210,7 @@ Config.Label.GreaterStaffOfRegrowthToggle=Green Scheme
 Config.Label.ShadowPearlToggle=Shadow Pearl
 Config.Label.InfiniteManaToggle=Infinite Mana
 Config.Label.StarMagnetToggle=Star Magnet
+Config.Label.GreedyChestToggle=Greedy Chest
 
 Config.Label.MysteriousTrader=Mysterious Trader
 Config.Label.Miner=Miner
@@ -241,6 +245,7 @@ Config.Tooltip.GreaterStaffOfRegrowthToggle=Enable or disable the Green Scheme i
 Config.Tooltip.ShadowPearlToggle=Enable or disbale the Shadow Pearl item, which functions as a demon altar crafting station
 Config.Tooltip.InfiniteManaToggle=Enable or disable the Infinite Mana accessory, which gives you infinite mana
 Config.Tooltip.StarMagnetToggle=Enable or disable the Star Magnet item, which increases star fall rate
+Config.Tooltip.GreedyChest=Enable or disable the Greedy Chest item, which stops enemies from dropping coins
 
 Config.Tooltip.MysteriousTrader=Enable or disable the Mysterious Trader, an NPC that will occasionally show up to sell rare items
 Config.Tooltip.Miner=Enable or disable the Miner, an NPC that sells ores and gems

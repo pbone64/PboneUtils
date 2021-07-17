@@ -178,6 +178,11 @@ namespace PboneUtils
         [ReloadRequired]
         public bool StarMagnetToggle;
 
+        [Label("$Mods.PboneUtils.Config.Label.GreedyChestToggle")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.GreedyChestToggle")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool GreedyChestToggle;
 
         // NPCS
 

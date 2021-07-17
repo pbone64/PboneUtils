@@ -1,4 +1,11 @@
 Version 1.1.5 Changes ------------------------------------------------------------------------------------------
+Items
+- Added greedy chest, to stop coins from dropping
+- Removed redundant "while enabled" from star magnet tooltip
+
+NPCs
+- Fixed some issues with town NPC textures (Thanks @Rijam!)
+
 Misc
 - Many internals of this mod were moved to a new library mod, pbone Lib. For users, all this means is that you have to download pbone Lib to play pbone's Utilities
 

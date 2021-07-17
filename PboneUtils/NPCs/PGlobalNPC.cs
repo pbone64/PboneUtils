@@ -17,6 +17,11 @@ namespace PboneUtils.NPCs
                         Item.NewItem(npc.getRect(), ModContent.ItemType<DefendersCrystal>());
                     break;
             }
+
+            if (Main.player[npc.FindClosestPlayer()].GetModPlayer<PbonePlayer>().GreedyChest)
+            {
+                npc.extraValue = int.MinValue;
+            }
         }
 
         public override void SetupShop(int type, Chest shop, ref int nextSlot)

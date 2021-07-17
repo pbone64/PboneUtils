@@ -12,4 +12,5 @@ The homepage has all the info on current features, changelogs, and an invite to 
 
 Credits:
  - pbone: Main Developer.
- - convicted tomatophile: Developer, fixer of spritesheets.
+ - Tomat: Developer, fixer of spritesheets.
+ - Rijam: Additional fixer of spritesheets

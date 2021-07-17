@@ -12,6 +12,7 @@ namespace PboneUtils
         // Tools
         public bool VoidPig;
         public bool PhilosophersStone;
+        public bool GreedyChest;
 
         public float SpawnRateMultiplier;
         public float MaxSpawnsMultiplier;
@@ -39,6 +40,7 @@ namespace PboneUtils
         public void ResetVariables()
         {
             VoidPig = false;
+            GreedyChest = false;
 
             PhilosophersStone = false;
 
