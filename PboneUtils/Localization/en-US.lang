@@ -100,6 +100,10 @@ ItemTooltip.BagOfWorms=Not consumed when used as bait
 ItemName.Infiniworm=The Infiniworm
 ItemTooltip.Infiniworm=Not consumed when used as bait\n'Enlightenment'
 
+// Terraforming
+ItemName.Gigaxe=Gigaxe
+ItemTooltip.Gigaxe=Quickly chops down trees near the cursor
+
 // Misc
 ItemName.VoidPiggy=Void Piggy
 ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'
