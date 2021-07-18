@@ -93,6 +93,13 @@ ItemTooltip.WormholeApp=安装在手机中后使手机获得无尽虫洞药水�
 ItemName.TeleportationApp=随机传送程序
 ItemTooltip.TeleportationApp=安装在手机中后使手机获得无尽随机传送药水效果（手持手机时按右键传送）\n{$Mods.PboneUtils.Common.AppInfo}
 
+// Bait
+ItemName.BagOfWorms=蠕虫袋
+ItemTooltip.BagOfWorms=作为鱼饵使用时不会被消耗
+
+ItemName.Infiniworm=无尽蠕虫
+ItemTooltip.Infiniworm=作为鱼饵使用时不会被消耗\n'Enlightenment'
+
 // Misc
 ItemName.VoidPiggy=虚空猪猪
 ItemTooltip.VoidPiggy=放置在背包中时你获得的钱币都会自动存入你的猪猪存钱罐中\n猪猪存钱罐中至少有1枚钱币时才会生效\n{$Mods.PboneUtils.Common.CanBeToggled}\n'异界奇物!'
@@ -200,6 +207,7 @@ Config.Label.MagnetItemsToggle=磁铁类物品
 Config.Label.AmmoItemsToggle=弹药类物品
 Config.Label.WorldControlItemsToggle=世界控制类物品
 Config.Label.CellPhoneAppsToggle=手机程序
+Config.Label.EndlessBaitToggle=无尽鱼饵
 
 Config.Label.VoidPiggyToggle=虚空猪猪
 Config.Label.PhilosophersStoneToggle=原初物质
@@ -235,6 +243,7 @@ Config.Tooltip.ArenaItemsToggle=启用或禁用此Mod的战斗场地类物品, �
 Config.Tooltip.MagnetItemsToggle=启用或禁用此Mod的磁铁类物品, 磁铁类物品可以扩大你的拾取范围
 Config.Tooltip.WorldControlItemsToggle=启用或禁用此Mod的世界控制类物品, 世界控制类物品可以控制时间和天气等东西
 Config.Tooltip.CellPhoneAppsToggle=启用或禁用为手机提供额外功能的手机程序类物品, 比如虫洞和随机传送程序
+Config.Tooltip.EndlessBaitToggle=启用或禁用无尽鱼饵, 无尽鱼饵作用? 你说呢?
 
 Config.Tooltip.VoidPiggyToggle=启用或禁用虚空猪猪, 虚空猪猪能将你获得到的钱币自动存入猪猪存钱罐中
 Config.Tooltip.PhilosophersStoneToggle=启用或禁用原初物质, 原初物质能自动出售你拾取的物品
@@ -243,7 +252,7 @@ Config.Tooltip.GreaterStaffOfRegrowthToggle=启用或禁用用于收获药草绿
 Config.Tooltip.ShadowPearlToggle=启用或禁用效果等同于恶魔祭坛的暗影珍珠
 Config.Tooltip.InfiniteManaToggle=启用或禁用无限法力饰品
 Config.Tooltip.StarMagnetToggle=启用或禁用吸星磁铁, 吸星磁铁能增加落星出现的几率
-Config.Tooltip.GreedyChest=启用或禁用贪欲宝箱, 贪欲宝箱能阻止敌人掉落钱币
+Config.Tooltip.GreedyChestToggle=启用或禁用贪欲宝箱, 贪欲宝箱能阻止敌人掉落钱币
 
 Config.Tooltip.MysteriousTrader=启用或禁用神秘商人, 神秘商人是一位出售稀有物品的NPC
 Config.Tooltip.Miner=启用或禁用矿工, 矿工是一位出售矿石和宝石的NPC
