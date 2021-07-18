@@ -254,7 +254,7 @@ Config.Tooltip.GreaterStaffOfRegrowthToggle=Enable or disable the Green Scheme i
 Config.Tooltip.ShadowPearlToggle=Enable or disbale the Shadow Pearl item, which functions as a demon altar crafting station
 Config.Tooltip.InfiniteManaToggle=Enable or disable the Infinite Mana accessory, which gives you infinite mana
 Config.Tooltip.StarMagnetToggle=Enable or disable the Star Magnet item, which increases star fall rate
-Config.Tooltip.GreedyChest=Enable or disable the Greedy Chest item, which stops enemies from dropping coins
+Config.Tooltip.GreedyChestToggle=Enable or disable the Greedy Chest item, which stops enemies from dropping coins
 
 Config.Tooltip.MysteriousTrader=Enable or disable the Mysterious Trader, an NPC that will occasionally show up to sell rare items
 Config.Tooltip.Miner=Enable or disable the Miner, an NPC that sells ores and gems
