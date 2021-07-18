@@ -1,6 +1,7 @@
 Version 1.1.5 Changes ------------------------------------------------------------------------------------------
 Items
 - Added greedy chest, to stop coins from dropping
+- Added bag of worms and The Infiniworm, endless bait
 - Removed redundant "while enabled" from star magnet tooltip
 
 NPCs

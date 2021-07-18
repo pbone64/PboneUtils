@@ -132,6 +132,12 @@ namespace PboneUtils
         [ReloadRequired]
         public bool CellPhoneAppsToggle;
 
+        [Label("$Mods.PboneUtils.Config.Label.EndlessBaitToggle")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.EndlessBaitToggle")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool EndlessBaitToggle;
+
 
         // MISC SINGLE ITEMS
 

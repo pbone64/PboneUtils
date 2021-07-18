@@ -93,6 +93,13 @@ ItemTooltip.WormholeApp=Provides an infinite wormhole effect when installed in a
 ItemName.TeleportationApp=Teleporation App
 ItemTooltip.TeleportationApp=Allows you to teleport by holding the Cell Phone in your hand and right-clicking when installed in a Cell Phone\n{$Mods.PboneUtils.Common.AppInfo}
 
+// Bait
+ItemName.BagOfWorms=Bag of Worms
+ItemTooltip.BagOfWorms=Not consumed when used as bait
+
+ItemName.Infiniworm=The Infiniworm
+ItemTooltip.Infiniworm=Not consumed when used as bait\n'Enlightenment'
+
 // Misc
 ItemName.VoidPiggy=Void Piggy
 ItemTooltip.VoidPiggy=When carried, coins are automatically sent to your piggy bank\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'
@@ -202,6 +209,7 @@ Config.Label.MagnetItemsToggle=Magnet Items
 Config.Label.AmmoItemsToggle=Ammo Items
 Config.Label.WorldControlItemsToggle=World Control Items
 Config.Label.CellPhoneAppsToggle=Cell Phone Apps
+Config.Label.EndlessBaitToggle=Endless Bait
 
 Config.Label.VoidPiggyToggle=Void Piggy
 Config.Label.PhilosophersStoneToggle=Prima Materia
@@ -237,6 +245,7 @@ Config.Tooltip.ArenaItemsToggle=Enable or disable this mod's arena blocks, which
 Config.Tooltip.MagnetItemsToggle=Enable or disable this mod's magnet items, which increase your grab range
 Config.Tooltip.WorldControlItemsToggle=Enable or disable this mod's world control items, which can change the time, weather, and more
 Config.Tooltip.CellPhoneAppsToggle=Enable or disable Cell Phone apps, upgrades to the Cell Phone which provide extra functionality
+Config.Tooltip.EndlessBaitToggle=Enable or disable Endless Bait, which does what you think it does
 
 Config.Tooltip.VoidPiggyToggle=Enable or disable the Void Piggy item, which sends collected coins to your piggy bank
 Config.Tooltip.PhilosophersStoneToggle=Enable or disable the Prima Materia item, which sells picked up items
