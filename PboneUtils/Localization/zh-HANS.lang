@@ -265,6 +265,9 @@ Config.Tooltip.RecipePetrifiedSafe=启用或禁用石化保险箱的简易配方
 Message.PetrifiedSafeDisabled1=已禁用储存类物品!
 Message.PetrifiedSafeDisabled2=如果你想要使用便携式保险箱, 请在设置中开启储存类物品.
 
+// Terraforming
+ItemName.Gigaxe=超级伐木斧
+ItemTooltip.Gigaxe=迅速地砍伐光标附件的树木
 
 // MISC
 Common.Enabled.True=已开启
