@@ -267,7 +267,7 @@ Message.PetrifiedSafeDisabled2=如果你想要使用便携式保险箱, 请在�
 
 // Terraforming
 ItemName.Gigaxe=超级伐木斧
-ItemTooltip.Gigaxe=迅速地砍伐光标附件的树木
+ItemTooltip.Gigaxe=快速砍伐你光标周围的树木
 
 // MISC
 Common.Enabled.True=已开启
