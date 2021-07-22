@@ -114,7 +114,7 @@ ItemName.FlameOfPeace=和平之火
 ItemTooltip.FlameOfPeace=大幅减少刷怪率和刷怪上限\n{$Mods.PboneUtils.Common.CanBeToggled}
 
 ItemName.GreaterStaffOfRegrowth=草药蓝图
-ItemTooltip.GreaterStaffOfRegrowth=左键框选区域, 松开后收获被框选区域的所有草药
+ItemTooltip.GreaterStaffOfRegrowth=左键框选区域, 松开后会收获被框选区域内所有的草药
 
 ItemName.ShadowPearl=暗影珍珠
 ItemTooltip.ShadowPearl=效果等同于恶魔祭坛
@@ -267,7 +267,7 @@ Message.PetrifiedSafeDisabled2=如果你想要使用便携式保险箱, 请在�
 
 // Terraforming
 ItemName.Gigaxe=超级伐木斧
-ItemTooltip.Gigaxe=左键框选区域\n松开后砍伐框选区域内的所有树木
+ItemTooltip.Gigaxe=左键框选区域, 松开后会砍伐框选区域内所有的树木
 
 // MISC
 Common.Enabled.True=已开启
