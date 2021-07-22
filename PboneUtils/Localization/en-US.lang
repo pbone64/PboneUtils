@@ -102,7 +102,7 @@ ItemTooltip.Infiniworm=Not consumed when used as bait\n'Enlightenment'
 
 // Terraforming
 ItemName.Gigaxe=Gigaxe
-ItemTooltip.Gigaxe=Quickly chops down trees near the cursor
+ItemTooltip.Gigaxe=Click and drag to select an area\nAll trees in the selected area are instantly chopped
 
 // Misc
 ItemName.VoidPiggy=Void Piggy
