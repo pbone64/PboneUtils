@@ -1,0 +1,277 @@
+// ITEMS
+// Storage
+ItemName.PetrifiedSafe=石化保险箱
+ItemTooltip.PetrifiedSafe=召唤一个用于存放物品的浮空保险箱
+
+ItemName.DefendersCrystal=守御晶体
+ItemTooltip.DefendersCrystal=召唤一颗用于访问护卫熔炉的水晶
+
+// Liquid
+ItemName.BottomlessHoneyBucket=无底蜂蜜桶
+ItemTooltip.BottomlessHoneyBucket=含有无限多的蜂蜜
+
+ItemName.SuperSweetSponge=海綿蛋糕
+ItemTooltip.SuperSweetSponge=能够吸收无限多的蜂蜜
+
+ItemName.BottomlessLavaBucket=无底熔岩桶
+ItemTooltip.BottomlessLavaBucket=含有无限多的熔岩
+
+ItemName.HeatAbsorbantSponge=吸热海绵
+ItemTooltip.HeatAbsorbantSponge=能够吸收无限多的熔岩
+
+ItemName.LiquidCombo=液体蓝图
+ItemTooltip.LiquidCombo=使你获得对液体的最终控制权!\n右键打开设置面板
+
+// Magnets
+ItemName.DeluxeTreasureMagnet=豪华级宝藏磁铁
+ItemTooltip.DeluxeTreasureMagnet=扩大物品拾取范围\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}
+
+ItemName.HallowedMagnet=神圣级宝藏磁铁
+ItemTooltip.HallowedMagnet=扩大物品拾取范围\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}
+
+ItemName.SpectreTreasureMagnet=幽冥级宝藏磁铁
+ItemTooltip.SpectreTreasureMagnet=将附件的物品传送进你的背包\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}
+
+ItemName.RunicTreasureMagnet=符文级宝藏磁铁
+ItemTooltip.RunicTreasureMagnet=快速地将附件的物品传送进你的背包\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}\n'也许不会将月亮拉下来'
+
+ItemName.MoonLordTreasureMagnet=惊惧级宝藏磁铁
+ItemTooltip.MoonLordTreasureMagnet=将附件的物品以音速传送进你的背包\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}\n'好吧,现在这个东西可能会把月亮拉下来'
+
+// World control
+ItemName.FluxCapacitor=时光电容
+ItemTooltip.FluxCapacitor=昼夜互换\n右键加速时间流逝速度, 再次右键恢复时间流逝速度\n'含有1.21千兆瓦!'
+
+ItemName.AmuletOfRain=云雨之符
+ItemTooltip.AmuletOfRain=开始或停止下雨\n'通往九重天的单程票'
+
+ItemName.AmuletOfSandstorms=沙暴之符
+ItemTooltip.AmuletOfSandstorms=开始或停止沙尘暴\n'纹路粗糙'
+
+// Ammo
+ItemName.EndlessFlamingArrow=无尽烈焰箭袋
+ItemName.EndlessUnholyArrow=无尽邪箭袋
+ItemName.EndlessJesterArrow=无尽小丑之箭袋
+ItemName.EndlessHellfireArrow=无尽狱炎箭袋
+ItemName.EndlessHolyArrow=无尽圣箭袋
+ItemName.EndlessCursedArrow=无尽诅咒箭袋
+ItemName.EndlessFrostburnArrow=无尽霜冻箭袋
+ItemName.EndlessChlorophyteArrow=无尽叶绿箭袋
+ItemName.EndlessIchorArrow=无尽灵液箭袋
+ItemName.EndlessVenomArrow=无尽毒液箭袋
+ItemName.EndlessBoneArrow=无尽骨箭袋
+ItemName.EndlessLuminiteArrow=无尽夜明箭袋
+
+ItemName.EndlessMeteorShot=无尽流星子弹袋
+ItemName.EndlessSilverBullet=无尽银弹药袋
+ItemName.EndlessCrystalBullet=无尽水晶弹药袋
+ItemName.EndlessCursedBullet=无尽诅咒弹药袋
+ItemName.EndlessChlorophyteBullet=无尽叶绿子弹袋
+ItemName.EndlessHighVelocityBullet=无尽高射速弹药袋
+ItemName.EndlessIchorBullet=无尽灵液子弹袋
+ItemName.EndlessVenomBullet=无尽毒液子弹袋
+ItemName.EndlessPartyBullet=无尽派对子弹袋
+ItemName.EndlessNanoBullet=无尽纳米弹药袋
+ItemName.EndlessExplodingBullet=无尽爆破子弹袋
+ItemName.EndlessGoldenBullet=无尽金弹药袋
+ItemName.EndlessLuminiteBullet=无尽夜明子弹袋
+
+// Arena
+ItemName.AsphaltPlatform=沥青平台
+ItemTooltip.AsphaltPlatform=增加移动速度
+
+ItemName.PreperationStation=四合一站
+ItemTooltip.PreperationStation=右键增加近战武器的护甲穿透、减少弹药消耗率、增加法力并+1最大召唤栏\n放置时不会消耗此物品\n'同样可以制作切丝薯条!'
+
+ItemName.BuffBrazier=增益火炬
+ItemTooltip.BuffBrazier=当你在火炬附近时增加生命恢复速度、法力恢复速度、移动速度和刷怪率\n提供充足的照明\n放置时不会消耗此物品
+
+// Apps
+ItemName.WormholeApp=虫洞程序
+ItemTooltip.WormholeApp=安装在手机中后使手机获得无尽虫洞药水效果\n{$Mods.PboneUtils.Common.AppInfo}
+
+ItemName.TeleportationApp=随机传送程序
+ItemTooltip.TeleportationApp=安装在手机中后使手机获得无尽随机传送药水效果（手持手机时按右键传送）\n{$Mods.PboneUtils.Common.AppInfo}
+
+// Bait
+ItemName.BagOfWorms=蠕虫袋
+ItemTooltip.BagOfWorms=作为鱼饵使用时不会被消耗
+
+ItemName.Infiniworm=无尽蠕虫
+ItemTooltip.Infiniworm=作为鱼饵使用时不会被消耗\n'Enlightenment'
+
+// Misc
+ItemName.VoidPiggy=虚空猪猪
+ItemTooltip.VoidPiggy=放置在背包中时你获得的钱币都会自动存入你的猪猪存钱罐中\n猪猪存钱罐中至少有1枚钱币时才会生效\n{$Mods.PboneUtils.Common.CanBeToggled}\n'异界奇物!'
+
+ItemName.PhilosophersStone=原初物质
+ItemTooltip.PhilosophersStone=手持此物品时, 自动出售你拾取的物品\n{$Mods.PboneUtils.Common.CanBeToggled}\n'不包括不朽'
+
+ItemName.FlameOfBattle=战斗之火
+ItemTooltip.FlameOfBattle=大幅增加刷怪率和刷怪上限\n{$Mods.PboneUtils.Common.CanBeToggled}
+
+ItemName.FlameOfPeace=和平之火
+ItemTooltip.FlameOfPeace=大幅减少刷怪率和刷怪上限\n{$Mods.PboneUtils.Common.CanBeToggled}
+
+ItemName.GreaterStaffOfRegrowth=草药蓝图
+ItemTooltip.GreaterStaffOfRegrowth=左键框选区域, 松开后收获被框选区域的草药
+
+ItemName.ShadowPearl=暗影珍珠
+ItemTooltip.ShadowPearl=效果等同于恶魔祭坛
+
+ItemName.InfiniteMana=无限法力
+ItemTooltip.InfiniteMana=降低35%伤害\n将你的召唤栏降至1格\n无限法力
+
+ItemName.StarMagnet=吸星磁铁
+ItemTooltip.StarMagnet=大幅增加落星出现的几率\n{$Mods.PboneUtils.Common.CanBeToggled}\n'小心流星'
+ItemName.GreedyChest=贪欲宝箱
+ItemTooltip.GreedyChest=敌人不再掉落钱币\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Om nom nom'
+
+// NPCS
+TownChat.MysteriousTrader.1=照你这意思...我是突变体?
+TownChat.MysteriousTrader.2=你有见过一尊天使雕像在空中飞翔吗?不幸的是,我见过.
+TownChat.MysteriousTrader.3=我和卖垃圾的还有诈骗犯走的是同一条路.
+TownChat.MysteriousTrader.4=嘿,你是不是觉得我不会搬进去住?我所在的社团可一直在谈论关于房子的种种东西.
+TownChat.MysteriousTrader.5=我老妈常说我该学学架构支撑以外的东西,事实证明她错了.
+TownChat.MysteriousTrader.6=我卖的东西都是从我的地下室里翻出来的,别问了.
+TownChat.MysteriousTrader.7=快随便买点什么东西吧!这些长袍可不会自己把自己缝出来!
+TownChat.MysteriousTrader.8=召唤克苏鲁需要多少位教徒?不,你什么都没听见.
+TownChat.MysteriousTrader.9=我售卖许多稀有的物品...都是有关克苏鲁的!
+
+TownChat.Miner.1=哦哦哦,亮闪闪!
+TownChat.Miner.2=为啥我不用炸药挖矿?因为炸药会毁了那些矿石!
+TownChat.Miner.3=我的镐子是这片大地上最古老但也是最好的!
+TownChat.Miner.4=我能把这些金子变钱币,你懂我的意思吧.
+TownChat.Miner.5=如果我从不去挖矿,我从哪里得到的矿石?我把它们都放在我的包包里.
+TownChat.Miner.6=我听说有一种由固态金属制成的植物.它们能在合适的条件下生长.
+TownChat.Miner.HardmodeOnly=快来看我的钴矿,它是如此的闪亮
+
+
+// BUFFS
+BuffName.PreperationStationBuff=四合一增益
+BuffDescription.PreperationStationBuff=拥有利器站、弹药箱、水晶球和施法桌效果\n当你拥有此增益时禁用单独的增益
+
+BuffName.BuffBrazierBuff=恢复增益
+BuffDescription.BuffBrazierBuff=拥有篝火、心灯、星星瓶、向日葵和蜂蜜效果\n当你拥有此增益时禁用单独的增益
+
+
+// TILES
+MapObject.PetrifiedSafeTile=石化保险箱
+MapObject.AsphaltPlatformTile=沥青平台
+MapObject.PreperationStationTile=四合一站
+MapObject.BuffBrazierTile=增益火炬
+MapObject.ShadowPearlTile=暗影珍珠
+
+
+// WORLDGEN
+WorldGen.PetrifiedSafes=正在隐藏保险箱...
+
+
+// UI
+UI.EndlessBuffTogglerInventoryButton.MouseOver=无尽增益设置
+UI.EndlessBuffToggler.DescriptionPlaceholder=点击一个增益以查看相关讯息
+UI.EndlessBuffToggler.DescriptionName=名称
+UI.EndlessBuffToggler.DescriptionSource=来源
+UI.EndlessBuffToggler.DescriptionDescription=物品描述
+UI.EndlessBuffToggler.DescriptionHowToDisable=(选中时右键增益图标以开关其效果)
+
+UI.EndlessBuffSource.Inventory=背包
+UI.EndlessBuffSource.PiggyBank=猪猪存钱罐
+UI.EndlessBuffSource.Safe=保险箱
+UI.EndlessBuffSource.DefendersForge=护卫熔炉
+
+
+// CONFIG
+Config.Header.MiscFeatures=生活质量相关
+Config.Header.ItemToggles=物品设置
+Config.Header.MiscItemToggles=杂项物品设置
+Config.Header.NPCs=有用的NPC
+Config.Header.QolRecipes=生活质量合成
+
+Config.Label.AverageBossBagsSlider=宝藏袋开袋模拟
+Config.Label.AverageBossBags=宝藏袋价格
+Config.Label.ExtraBuffSlots=额外Buff栏
+Config.Label.EndlessPotions=无尽药水增益
+Config.Label.EndlessPotionsSlider=无尽药水生效数量
+Config.Label.AutoswingOnEverything=为所有物品启用自动挥舞
+Config.Label.AutoswingOnEverythingBlacklist=自动挥舞黑名单
+Config.Label.MaxStackIncrease=物品最大堆叠9999
+Config.Label.NoMoreGraves=不再生成墓碑
+Config.Label.FastRespawn=快速重生
+Config.Label.FastRespawnDuringBoss=Boss战期间快速重生
+
+Config.Label.StorageItemsToggle=储存类物品
+Config.Label.LiquidItemsToggle=液体类物品
+Config.Label.ArenaItemsToggle=战斗场地类物品
+Config.Label.MagnetItemsToggle=磁铁类物品
+Config.Label.AmmoItemsToggle=弹药类物品
+Config.Label.WorldControlItemsToggle=世界控制类物品
+Config.Label.CellPhoneAppsToggle=手机程序
+Config.Label.EndlessBaitToggle=无尽鱼饵
+
+Config.Label.VoidPiggyToggle=虚空猪猪
+Config.Label.PhilosophersStoneToggle=原初物质
+Config.Label.SpawnRateItemsToggle=生成稀有物品
+Config.Label.GreaterStaffOfRegrowthToggle=绿色蓝图
+Config.Label.ShadowPearlToggle=暗影珍珠
+Config.Label.InfiniteManaToggle=无限法力
+Config.Label.StarMagnetToggle=吸星磁铁
+Config.Label.GreedyChestToggle=贪欲宝箱
+
+Config.Label.MysteriousTrader=神秘商人
+Config.Label.Miner=矿工
+
+Config.Label.RecipeEndlessWater=无尽水工具合成
+Config.Label.RecipePetrifiedSafe=石化保险箱合成
+
+Config.Tooltip.AverageBossBags=启用后可以将宝藏袋以其掉落物的平均价格出售. 注意:由于计算方法的原因, Mod在重新加载后宝藏袋的价格可能会发生变化
+Config.Tooltip.AverageBossBagsSlider=平均宝藏袋价格时模拟的开袋次数\n较高的数值将产生更一致的结果, 但会延长Mod加载时间
+Config.Tooltip.ExtraBuffSlots=额外buff栏数量, 在默认22栏基础上增加(每行11格buff)
+Config.Tooltip.EndlessPotions=启用后拥有一定数量的药水时将使你获得对应的无尽增益(或者不会消耗治疗药水这种东西)
+Config.Tooltip.EndlessPotionsSlider=无尽药水增益生效所需的数量
+Config.Tooltip.AutoswingOnEverything=启用或禁用所有物品自动挥舞功能(或者远程武器自动连射, 自动调整阴影等等诸如此类的东西)
+Config.Tooltip.AutoswingOnEverythingBlacklist=无法自动挥舞的物品(如果启用)
+Config.Tooltip.MaxStackIncrease=启用后会增加大多数物品的最大堆叠数量(9999)
+Config.Tooltip.NoMoreGraves=启用后你和其他玩家死亡时不再掉落墓碑
+Config.Tooltip.FastRespawn=启用后加快你的重生速度
+Config.Tooltip.FastRespawnDuringBoss=启用后即使在Boss站期间, 也能加快重生速度
+
+Config.Tooltip.StorageItemsToggle=启用或禁用此Mod的储存类物品, 便携式保险箱能让你随时随地的访问私人仓库
+Config.Tooltip.LiquidItemsToggle=启用或禁用此Mod的液体类物品, 液体类物品能放置或吸收无限的熔岩或蜂蜜
+Config.Tooltip.AmmoItemsToggle=启用或禁用此Mod的无尽弹药类物品
+Config.Tooltip.ArenaItemsToggle=启用或禁用此Mod的战斗场地类物品, 战斗场地类物品可为你提供一些增益
+Config.Tooltip.MagnetItemsToggle=启用或禁用此Mod的磁铁类物品, 磁铁类物品可以扩大你的拾取范围
+Config.Tooltip.WorldControlItemsToggle=启用或禁用此Mod的世界控制类物品, 世界控制类物品可以控制时间和天气等东西
+Config.Tooltip.CellPhoneAppsToggle=启用或禁用为手机提供额外功能的手机程序类物品, 比如虫洞和随机传送程序
+Config.Tooltip.EndlessBaitToggle=启用或禁用无尽鱼饵, 无尽鱼饵作用? 你说呢?
+
+Config.Tooltip.VoidPiggyToggle=启用或禁用虚空猪猪, 虚空猪猪能将你获得到的钱币自动存入猪猪存钱罐中
+Config.Tooltip.PhilosophersStoneToggle=启用或禁用原初物质, 原初物质能自动出售你拾取的物品
+Config.Tooltip.SpawnRateItemsToggle=启用或禁用战斗之火和和平之火, 战斗之火和和平之火分别增加或减少刷怪率
+Config.Tooltip.GreaterStaffOfRegrowthToggle=启用或禁用用于收获药草绿色蓝图
+Config.Tooltip.ShadowPearlToggle=启用或禁用效果等同于恶魔祭坛的暗影珍珠
+Config.Tooltip.InfiniteManaToggle=启用或禁用无限法力饰品
+Config.Tooltip.StarMagnetToggle=启用或禁用吸星磁铁, 吸星磁铁能增加落星出现的几率
+Config.Tooltip.GreedyChestToggle=启用或禁用贪欲宝箱, 贪欲宝箱能阻止敌人掉落钱币
+
+Config.Tooltip.MysteriousTrader=启用或禁用神秘商人, 神秘商人是一位出售稀有物品的NPC
+Config.Tooltip.Miner=启用或禁用矿工, 矿工是一位出售矿石和宝石的NPC
+
+Config.Tooltip.RecipeEndlessWater=启用或禁用无底水桶和超级吸水海绵的配方
+Config.Tooltip.RecipePetrifiedSafe=启用或禁用石化保险箱的简易配方\n(一般情况下, 石化保险箱生成于地下)
+
+
+// MESSAGES
+Message.PetrifiedSafeDisabled1=已禁用储存类物品!
+Message.PetrifiedSafeDisabled2=如果你想要使用便携式保险箱, 请在设置中开启储存类物品.
+
+
+// MISC
+Common.Enabled.True=已开启
+Common.Enabled.False=已关闭
+Common.CanBeToggled=右键开启或关闭此物品的效果
+
+Common.AppInfo=你可以通过在背包中选取程序后右键手机来安装此程序
+Common.CellPhoneInfo=你可以通过背包中选取程序然后右键手机来安装程序\n已安装的程序:
+Common.CellPhone.Wormhole= [i:2997] 虫洞程序: 提供无尽虫洞药水效果
+Common.CellPhone.Teleportation= [i:2351] 随机传送程序: 提供无尽随机传送药水效果, 手持手机时右键进行随机传送
