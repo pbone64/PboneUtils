@@ -258,7 +258,7 @@ Config.Tooltip.ShadowPearlToggle=启用或禁用效果等同于恶魔祭坛的�
 Config.Tooltip.InfiniteManaToggle=启用或禁用无限法力饰品
 Config.Tooltip.StarMagnetToggle=启用或禁用吸星磁铁, 吸星磁铁能增加落星出现的几率
 Config.Tooltip.GreedyChestToggle=启用或禁用贪欲宝箱, 贪欲宝箱能阻止敌人掉落钱币
-Config.Tooltip.MagicLightToggle=启用或禁用魔法之光, 魔法之光能无限使用且可以切换多种颜色
+Config.Tooltip.MagicLightToggle=启用或禁用魔法之光, 魔法之光能提供光照且可以切换颜色
 
 Config.Tooltip.MysteriousTrader=启用或禁用神秘商人, 神秘商人是一位出售稀有物品的NPC
 Config.Tooltip.Miner=启用或禁用矿工, 矿工是一位出售矿石和宝石的NPC
