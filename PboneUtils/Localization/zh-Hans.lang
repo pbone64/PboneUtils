@@ -124,8 +124,12 @@ ItemTooltip.InfiniteMana=降低35%伤害\n将你的最大召唤栏降至1格\n�
 
 ItemName.StarMagnet=吸星磁铁
 ItemTooltip.StarMagnet=大幅增加落星出现的几率\n{$Mods.PboneUtils.Common.CanBeToggled}\n'小心流星'
+
 ItemName.GreedyChest=贪欲宝箱
 ItemTooltip.GreedyChest=敌人不再掉落钱币\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Om nom nom'
+
+ItemName.MagicLight=魔法之光
+ItemTooltip.MagicLight=放置时不会消耗此物品, 物块不可见\n右键更改光的颜色\n开启此物品的效果时可以看见光, 手持此物品时则可以一直看见光\n\n{$Mods.PboneUtils.Common.CanBeToggled}\n'一千个太阳的力量!...或者一颗电灯泡'
 
 // NPCS
 TownChat.MysteriousTrader.1=照你这意思...我是突变体?
@@ -217,6 +221,7 @@ Config.Label.ShadowPearlToggle=暗影珍珠
 Config.Label.InfiniteManaToggle=无限法力
 Config.Label.StarMagnetToggle=吸星磁铁
 Config.Label.GreedyChestToggle=贪欲宝箱
+Config.Label.MagicLightToggle=魔法之光
 
 Config.Label.MysteriousTrader=神秘商人
 Config.Label.Miner=矿工
@@ -253,6 +258,7 @@ Config.Tooltip.ShadowPearlToggle=启用或禁用效果等同于恶魔祭坛的�
 Config.Tooltip.InfiniteManaToggle=启用或禁用无限法力饰品
 Config.Tooltip.StarMagnetToggle=启用或禁用吸星磁铁, 吸星磁铁能增加落星出现的几率
 Config.Tooltip.GreedyChestToggle=启用或禁用贪欲宝箱, 贪欲宝箱能阻止敌人掉落钱币
+Config.Tooltip.MagicLightToggle=启用或禁用魔法之光, 魔法之光能无限使用且可以切换多种颜色
 
 Config.Tooltip.MysteriousTrader=启用或禁用神秘商人, 神秘商人是一位出售稀有物品的NPC
 Config.Tooltip.Miner=启用或禁用矿工, 矿工是一位出售矿石和宝石的NPC
@@ -272,7 +278,7 @@ ItemTooltip.Gigaxe=左键框选区域, 松开后会砍伐框选区域内所有�
 // MISC
 Common.Enabled.True=已开启
 Common.Enabled.False=已关闭
-Common.CanBeToggled=右键开启或关闭此物品的效果
+Common.CanBeToggled=在背包中右键此物品以开关其效果
 
 Common.AppInfo=你可以通过在背包中选取程序后右键手机来安装此程序
 Common.CellPhoneInfo=你可以通过背包中选取程序然后右键手机来安装程序\n已安装的程序:
