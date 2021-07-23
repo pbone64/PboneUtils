@@ -1,3 +1,11 @@
+Version 1.1.6 Changes ------------------------------------------------------------------------------------------
+Items
+- Added Terraforming tools, to help you with shaping your world
+- Added the Magic Light, which lets you place infinite, invisible lights of configurable colours
+
+Misc
+- Added Chinese localization, thanks to Lin-cat
+
 Version 1.1.5 Changes ------------------------------------------------------------------------------------------
 Items
 - Added greedy chest, to stop coins from dropping

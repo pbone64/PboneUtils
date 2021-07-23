@@ -33,7 +33,7 @@ namespace PboneUtils.Items.Liquid
             if (player.altFunctionUse == 2)
             {
                 RadialMenu.SetInfo("Liquid", item.type);
-                PboneUtils.UI.OpenUI<RadialMenuContainer>();
+                PboneUtils.UI.ToggleUI<RadialMenuContainer>();
                 return false;
             }
 

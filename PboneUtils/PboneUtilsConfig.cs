@@ -190,6 +190,12 @@ namespace PboneUtils
         [ReloadRequired]
         public bool GreedyChestToggle;
 
+        [Label("$Mods.PboneUtils.Config.Label.MagicLightToggle")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.MagicLightToggle")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool MagicLightToggle;
+
         // NPCS
 
         [Header("$Mods.PboneUtils.Config.Header.NPCs")]

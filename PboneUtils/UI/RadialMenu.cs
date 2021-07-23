@@ -106,7 +106,9 @@ namespace PboneUtils.UI
                 if (Main.mouseLeft && Main.mouseLeftRelease)
                 {
                     ItemConfig config = mPlayer.ItemConfigs[Name];
-                    config.RedMode = !config.RedMode;
+
+                    if (config.HasRedMode)
+                        config.RedMode = !config.RedMode;
                 }
             }
 

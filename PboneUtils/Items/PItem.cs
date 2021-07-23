@@ -12,6 +12,8 @@ namespace PboneUtils.Items
         public virtual bool Autosize => true;
         public virtual bool ShowItemIconWhenInRange => false;
         public virtual bool DrawGlowmask => false;
+        public virtual Color ModifyGlowmaskColor => Color.White;
+
         public virtual bool AutoloadCondition => true;
 
         public string GlowmaskTexture => Texture + "_Glow";
@@ -67,7 +69,7 @@ namespace PboneUtils.Items
             {
                 Texture2D texture = ModContent.GetTexture(GlowmaskTexture);
                 Vector2 position = new Vector2(item.position.X - Main.screenPosition.X + item.width * 0.5f, item.position.Y - Main.screenPosition.Y + item.height - texture.Height * 0.5f + 2f);
-                spriteBatch.Draw(texture, position, null, Color.White, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(texture, position, null, ModifyGlowmaskColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
             }
         }
     }

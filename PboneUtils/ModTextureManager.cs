@@ -68,7 +68,16 @@ namespace PboneUtils
                 { "LiquidRed", GetRadialIcon("LiquidRed") },
                 { "Water", GetRadialIcon("Water") },
                 { "Lava", GetRadialIcon("Lava") },
-                { "Honey", GetRadialIcon("Honey") }
+                { "Honey", GetRadialIcon("Honey") },
+
+                { "Light", GetRadialIcon("Light") },
+                { "White", GetRadialIcon("LightWhite") },
+                { "Red", GetRadialIcon("LightRed") },
+                { "Green", GetRadialIcon("LightGreen") },
+                { "Blue", GetRadialIcon("LightBlue") },
+                { "Yellow", GetRadialIcon("LightYellow") },
+                { "Orange", GetRadialIcon("LightOrange") },
+                { "Purple", GetRadialIcon("LightPurple") }
             };
 
             public Texture2D BuffTogglerInventoryButton = ModContent.GetTexture("PboneUtils/Textures/UI/BuffToggler/InventoryButton");

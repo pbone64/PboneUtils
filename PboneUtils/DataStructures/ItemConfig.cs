@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Terraria.ModLoader.IO;
 
 namespace PboneUtils.DataStructures
@@ -6,17 +7,34 @@ namespace PboneUtils.DataStructures
     public class ItemConfig
     {
         public Dictionary<string, bool> Data = new Dictionary<string, bool>();
-        public bool RedMode;
         public int ToggleCount => Data.Count;
+
+        public bool HasRedMode;
+        public bool RedMode;
+
         public bool OnlyOne;
+        public string OnlyOneValue => Data.FirstOrDefault(kvp => kvp.Value).Key;
 
         public static Dictionary<string, ItemConfig> DefaultConfigs() => new Dictionary<string, ItemConfig>() {
-            { "Liquid", new ItemConfig(true, ("Water", true), ("Lava", false), ("Honey", false)) }
+            { "Liquid", new ItemConfig(true, true,
+                ("Water", true),
+                ("Lava", false),
+                ("Honey", false)) },
+
+            { "Light", new ItemConfig(true, false,
+                ("White", true),
+                ("Red", false),
+                ("Orange", false),
+                ("Yellow", false),
+                ("Green", false),
+                ("Blue", false),
+                ("Purple", false)) }
         };
 
-        public ItemConfig(bool onlyOne, params (string key, bool def)[] args)
+        public ItemConfig(bool onlyOne, bool hasRedMode, params (string key, bool def)[] args)
         {
             OnlyOne = onlyOne;
+            HasRedMode = hasRedMode;
 
             for (int i = 0; i < args.Length; i++)
             {
