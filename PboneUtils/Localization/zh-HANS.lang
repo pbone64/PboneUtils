@@ -114,13 +114,13 @@ ItemName.FlameOfPeace=和平之火
 ItemTooltip.FlameOfPeace=大幅减少刷怪率和刷怪上限\n{$Mods.PboneUtils.Common.CanBeToggled}
 
 ItemName.GreaterStaffOfRegrowth=草药蓝图
-ItemTooltip.GreaterStaffOfRegrowth=左键框选区域, 松开后收获被框选区域的草药
+ItemTooltip.GreaterStaffOfRegrowth=左键框选区域, 松开后会收获被框选区域内所有的草药
 
 ItemName.ShadowPearl=暗影珍珠
 ItemTooltip.ShadowPearl=效果等同于恶魔祭坛
 
 ItemName.InfiniteMana=无限法力
-ItemTooltip.InfiniteMana=降低35%伤害\n将你的召唤栏降至1格\n无限法力
+ItemTooltip.InfiniteMana=降低35%伤害\n将你的最大召唤栏降至1格\n无限法力
 
 ItemName.StarMagnet=吸星磁铁
 ItemTooltip.StarMagnet=大幅增加落星出现的几率\n{$Mods.PboneUtils.Common.CanBeToggled}\n'小心流星'
@@ -265,6 +265,9 @@ Config.Tooltip.RecipePetrifiedSafe=启用或禁用石化保险箱的简易配方
 Message.PetrifiedSafeDisabled1=已禁用储存类物品!
 Message.PetrifiedSafeDisabled2=如果你想要使用便携式保险箱, 请在设置中开启储存类物品.
 
+// Terraforming
+ItemName.Gigaxe=超级伐木斧
+ItemTooltip.Gigaxe=左键框选区域, 松开后会砍伐框选区域内所有的树木
 
 // MISC
 Common.Enabled.True=已开启
