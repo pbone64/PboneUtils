@@ -36,9 +36,10 @@ namespace PboneUtils.Tiles.Lights
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
         {
             base.ModifyLight(i, j, ref r, ref g, ref b);
-            r = LightColor.R / 255;
-            g = LightColor.G / 255;
-            b = LightColor.B / 255;
+            Vector3 light = LightColor.ToVector3();
+            r = light.X;
+            g = light.Y;
+            b = light.Z;
         }
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)

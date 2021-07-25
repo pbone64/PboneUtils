@@ -133,7 +133,7 @@ ItemName.GreedyChest=Greedy Chest
 ItemTooltip.GreedyChest=Stops enemies from dropping coins\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Om nom nom'
 
 ItemName.MagicLight=Magic Light
-ItemTooltip.MagicLight=Places infinite, invisible lights\nRight click to change the light color\nLights can be seen while this item is enabled, and seen all the time while held\n\n{$Mods.PboneUtils.Common.CanBeToggled}\n"The power of a thousand suns!... or one light bulb"
+ItemTooltip.MagicLight=Places infinite, invisible lights\nRight click to change the light color\nLights can be seen while this item is enabled, and seen all the time while held\n\n{$Mods.PboneUtils.Common.CanBeToggled}\n"Let there be light!"
 
 
 // NPCS
