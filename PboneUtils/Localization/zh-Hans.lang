@@ -129,7 +129,7 @@ ItemName.GreedyChest=贪欲宝箱
 ItemTooltip.GreedyChest=敌人不再掉落钱币\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Om nom nom'
 
 ItemName.MagicLight=魔法之光
-ItemTooltip.MagicLight=放置时不会消耗此物品, 物块不可见\n右键更改光的颜色\n开启此物品的效果时可以看见光, 手持此物品时则可以一直看见光\n\n{$Mods.PboneUtils.Common.CanBeToggled}\n'一千个太阳的力量!...或者一颗电灯泡'
+ItemTooltip.MagicLight=放置时不会消耗此物品, 物块不可见\n右键更改光的颜色\n开启此物品的效果时可以看见光, 手持此物品时则可以一直看见光\n\n{$Mods.PboneUtils.Common.CanBeToggled}\n'要有光!'
 
 // NPCS
 TownChat.MysteriousTrader.1=照你这意思...我是突变体?
