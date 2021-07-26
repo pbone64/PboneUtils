@@ -25,7 +25,7 @@ namespace PboneUtils
                 self.HeldItem.type == ItemID.CellPhone && // If you're holding a cell phone
                 self.HasApp<TeleportationApp>() && // If you have a teleporation app
                 self.altFunctionUse == 2 && // If you're right-clicking
-                self.itemTime == PlayerHooks.TotalUseTime(self.HeldItem.useTime, self, self.HeldItem) / 2) // if it's the frame when cell phone is used
+                self.itemTime == PlayerHooks.TotalUseTime(self.HeldItem.useTime, self, self.HeldItem) / 2) // If it's the frame when cell phone is used
                 return;
 
             orig(self);

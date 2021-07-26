@@ -22,13 +22,13 @@ namespace PboneUtils.DataStructures
                 ("Honey", false)) },
 
             { "Light", new ItemConfig(true, false,
-                ("White", true),
                 ("Red", false),
                 ("Orange", false),
                 ("Yellow", false),
                 ("Green", false),
                 ("Blue", false),
-                ("Purple", false)) }
+                ("Purple", false),
+                ("White", true)) }
         };
 
         public ItemConfig(bool onlyOne, bool hasRedMode, params (string key, bool def)[] args)
