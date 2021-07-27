@@ -13,4 +13,8 @@ The homepage has all the info on current features, changelogs, and an invite to 
 Credits:
  - pbone: Main Developer.
  - Tomat: Developer, fixer of spritesheets.
- - Rijam: Additional fixer of spritesheets
+ - Lin-cat: Chinese translation.
+ - Rijam: Additional fixer of spritesheets.
+
+Additional thanks to many idea givers and bug reporters, including... (in no particular order)
+Davlos25, Aikkura, Pins30, CrimsonStorm404, Jerryhhnk, The_Idea, TechTato, Saint Sigma X, IDGCaptainRussia, Candiescence, Satansof2, Rune Zhevitz, ddrake88, BurntChow, Neko the Cat'nt, MassContent

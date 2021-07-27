@@ -3,6 +3,9 @@ Items
 - Added Terraforming tools, to help you with shaping your world
 - Added the Magic Light, which lets you place infinite, invisible lights of configurable colours
 
+Bugs
+- Fixed a crash upon bombing a Petrified Safe pre-Skeletron.
+
 Misc
 - Added Chinese localization, thanks to Lin-cat
 

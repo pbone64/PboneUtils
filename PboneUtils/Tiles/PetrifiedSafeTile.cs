@@ -12,6 +12,8 @@ namespace PboneUtils.Tiles
 {
     public class PetrifiedSafeTile : ModTile
     {
+        public static Func<bool> Predicate = () => NPC.downedBoss3;
+
         public static bool MessageSent = false;
 
         public override void SetDefaults()
@@ -36,15 +38,8 @@ namespace PboneUtils.Tiles
             dustType = DustID.Stone;
         }
 
-        public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
-        {
-            base.KillTile(i, j, ref fail, ref effectOnly, ref noItem);
-            Tile tile = Framing.GetTileSafely(i, j);
-            if (tile.type == Type)
-            {
-                fail = !NPC.downedBoss3;
-            }
-        }
+        public override bool CanKillTile(int i, int j, ref bool blockDamaged) => Predicate();
+        public override bool CanExplode(int i, int j) => Predicate();
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
