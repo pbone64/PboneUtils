@@ -271,6 +271,9 @@ Config.Tooltip.Miner=Enable or disable the Miner, an NPC that sells ores and gem
 Config.Tooltip.RecipeEndlessWater=Enable or disable Endless Water Bucket and Super Absorbant Sponge recipes
 Config.Tooltip.RecipePetrifiedSafe=Enable or disable a simple recipe for the Petrified Safe\n(By default, Petrified Safes generate in the underworld during world generation)
 
+Census.Description.Miner=Defeat Eater of Worlds/Brain of Cthulhu
+Census.Description.MysteriousTrader=Randomly arrives in the morning and leaves at night, after King Slime or Eye of Cthulhu
+
 
 // MESSAGES
 Message.PetrifiedSafeDisabled1=Storage items have been disabled in the config!
