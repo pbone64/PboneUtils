@@ -267,7 +267,7 @@ Config.Tooltip.RecipeEndlessWater=启用或禁用无底水桶和超级吸水海�
 Config.Tooltip.RecipePetrifiedSafe=启用或禁用石化保险箱的简易配方\n(一般情况下, 石化保险箱生成于地下)
 
 Census.Description.Miner=击败世界吞噬者或克苏鲁之脑
-Census.Description.MysteriousTrader=击败史莱姆王或克苏鲁之眼后, 在白天随机到达并在当天晚上离开
+Census.Description.MysteriousTrader=击败史莱姆王或克苏鲁之眼后, 在随机的某天早上到达并在当天晚上离开
 
 // MESSAGES
 Message.PetrifiedSafeDisabled1=已禁用储存类物品!
