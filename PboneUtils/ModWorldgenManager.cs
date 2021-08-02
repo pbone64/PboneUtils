@@ -4,7 +4,7 @@ using PboneUtils.Tiles;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.World.Generation;
+using Terraria.WorldBuilding;
 
 namespace PboneUtils
 {
