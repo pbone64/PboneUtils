@@ -13,15 +13,15 @@ using Terraria.GameContent.Generation;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Terraria.World.Generation;
+using Terraria.WorldBuilding;
 
 namespace PboneUtils
 {
-    public class PboneWorld : ModWorld
+    public class PboneWorld : ModSystem
     {
         private ModWorldgenManager ModWorldGen;
 
-        public static bool ForceFastForwardTime;
+        public static bool SuperFastTime;
 
         private static MethodInfo startRainMethod;
         public static Action StartRain = new Action(() => startRainMethod.Invoke(null, new object[] { }));
@@ -35,27 +35,26 @@ namespace PboneUtils
 
         public static List<int> MysteriousTraderShop;
 
-        public override bool Autoload(ref string name)
+        public override void Load()
         {
             startRainMethod = typeof(Main).GetMethod("StartRain", BindingFlags.Static | BindingFlags.NonPublic);
             stopRainMethod = typeof(Main).GetMethod("StopRain", BindingFlags.Static | BindingFlags.NonPublic);
 
             startSandstormMethod = typeof(Sandstorm).GetMethod("StartSandstorm", BindingFlags.Static | BindingFlags.NonPublic);
             stopSandstormMethod = typeof(Sandstorm).GetMethod("StopSandstorm", BindingFlags.Static | BindingFlags.NonPublic);
-            return base.Autoload(ref name);
         }
 
-        public override void Initialize()
+        public override void OnWorldLoad()
         {
-            base.Initialize();
-            ForceFastForwardTime = false;
+            base.OnWorldLoad();
+            SuperFastTime = false;
             MysteriousTraderShop = new List<int>();
         }
 
-        public override void PostUpdate()
+        public override void PostUpdateWorld()
         {
-            base.PostUpdate();
-            if (ForceFastForwardTime)
+            base.PostUpdateWorld();
+            if (SuperFastTime)
             {
                 Main.fastForwardTime = true;
 
@@ -77,7 +76,7 @@ namespace PboneUtils
             TravelingNPCHelper.DoTravellingMerchant(ModContent.NPCType<MysteriousTrader>(), 48600, () => (NPC.downedSlimeKing || NPC.downedBoss1) && Main.rand.NextBool(3));
         }
 
-        public override TagCompound Save()
+        public override TagCompound SaveWorldData()
         {
 #pragma warning disable IDE0028 // Simplify collection initialization
             TagCompound tag = new TagCompound();
@@ -89,14 +88,14 @@ namespace PboneUtils
             {
                 Item item = new Item();
                 item.SetDefaults(MysteriousTraderShop[i]);
-                tag.Add("ModMysteriousTraderItem" + i, item.modItem == null ? "TERRARIA" : item.modItem.mod.Name);
+                tag.Add("ModMysteriousTraderItem" + i, item.ModItem == null ? "TERRARIA" : item.ModItem.Mod.Name);
                 tag.Add("MysteriousTraderItem" + i, MysteriousTraderShop[i]);
             }
 
             return tag;
         }
 
-        public override void Load(TagCompound tag)
+        public override void LoadWorldData(TagCompound tag)
         {
             MysteriousTraderShop = new List<int>();
             int count = tag.GetInt("MysteriousTraderCount");
@@ -118,22 +117,22 @@ namespace PboneUtils
             }
         }
 
-        public static void ForceStopTimeFastForward()
+        public override void ModifyTimeRate(ref double timeRate, ref double tileUpdateRate, ref double eventUpdateRate)
         {
-            ForceFastForwardTime = false;
-            Main.fastForwardTime = false;
+            base.ModifyTimeRate(ref timeRate, ref tileUpdateRate, ref eventUpdateRate);
 
-            if (Main.netMode == NetmodeID.MultiplayerClient)
+            if (SuperFastTime)
             {
-                NetMessage.SendData(MessageID.WorldData);
-                NetMessage.SendData(MessageID.Assorted1, -1, -1, null, Main.myPlayer, 3f);
+                timeRate += 2f;
+                tileUpdateRate += 2f;
+                eventUpdateRate += 2f;
             }
         }
 
         public override void NetSend(BinaryWriter writer)
         {
             base.NetSend(writer);
-            writer.Write(ForceFastForwardTime);
+            writer.Write(SuperFastTime);
 
             PboneUtils.PacketManager.WritePacket<SyncMysteriousTraderShop>(writer);
         }
@@ -141,7 +140,7 @@ namespace PboneUtils
         public override void NetReceive(BinaryReader reader)
         {
             base.NetReceive(reader);
-            ForceFastForwardTime = reader.ReadBoolean();
+            SuperFastTime = reader.ReadBoolean();
 
             PboneUtils.PacketManager.ReadPacket<SyncMysteriousTraderShop>(reader);
         }
@@ -151,7 +150,7 @@ namespace PboneUtils
             base.ModifyWorldGenTasks(tasks, ref totalWeight);
             ModWorldGen = new ModWorldgenManager();
 
-            tasks.Add(new PassLegacy("pbone's Utilities: Petrified Safes", ModWorldGen.GenPetrifiedSafes));
+            tasks.Add(new PassLegacy("pbone's Utilities: Petrified Safes", new WorldGenLegacyMethod(ModWorldGen.GenPetrifiedSafes)));
         }
     }
 }

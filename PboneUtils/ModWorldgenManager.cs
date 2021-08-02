@@ -2,6 +2,7 @@
 using PboneUtils.Helpers;
 using PboneUtils.Tiles;
 using Terraria;
+using Terraria.IO;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.WorldBuilding;
@@ -10,7 +11,7 @@ namespace PboneUtils
 {
     public class ModWorldgenManager
     {
-        public void GenPetrifiedSafes(GenerationProgress progress)
+        public void GenPetrifiedSafes(GenerationProgress progress, GameConfiguration config)
         {
             progress.Message = Language.GetTextValue("Mods.PboneUtils.WorldGen.PetrifiedSafes");
             progress.Value = 0;
