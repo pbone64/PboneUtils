@@ -6,7 +6,7 @@ namespace PboneUtils.Items.Tools
 {
     public class VoidPiggy : RightClickToggleItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.VoidPiggyToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.VoidPiggyToggle;
 
         public override void SetDefaults()
         {

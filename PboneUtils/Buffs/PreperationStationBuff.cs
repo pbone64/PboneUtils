@@ -4,11 +4,11 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Buffs
 {
-    public class PreperationStationBuff : ModBuff
+    public class PreperationStationBuff : PboneUtilsBuff
     {
-        public override void SetDefaults()
+        public override void SetStaticDefaults()
         {
-            base.SetDefaults();
+            base.SetStaticDefaults();
         }
 
         public override void Update(Player player, ref int buffIndex)
@@ -21,9 +21,9 @@ namespace PboneUtils.Buffs
             // Ammobox
             player.ammoBox = true;
 
-            // Magix Ball
-            player.magicCrit += 2;
-            player.magicDamage += 0.05f;
+            // Magic Ball
+            player.GetCritChance(DamageClass.Magic) += 2;
+            player.GetDamage(DamageClass.Magic) += 0.05f;
             player.statManaMax2 += 20;
             player.manaCost -= 0.02f;
 

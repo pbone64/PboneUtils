@@ -8,7 +8,7 @@ using Terraria.ModLoader.IO;
 
 namespace PboneUtils.Items
 {
-    public abstract class RightClickToggleItem : PItem
+    public abstract class RightClickToggleItem : PboneUtilsItem
     {
         public bool Enabled = true;
 

@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.CellPhoneApps
 {
-    public abstract class AppItem : PItem
+    public abstract class AppItem : PboneUtilsItem
     {
         public abstract string AppName { get; }
         public abstract int BaseID { get; }
         public virtual int CraftAmount { get => 30; }
 
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.CellPhoneAppsToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.CellPhoneAppsToggle;
 
         public override void SetDefaults()
         {

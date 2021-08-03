@@ -5,9 +5,9 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.WorldControl
 {
-    public class AmuletOfSandstorms : PItem
+    public class AmuletOfSandstorms : PboneUtilsItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.WorldControlItemsToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.WorldControlItemsToggle;
 
         public override void SetDefaults()
         {

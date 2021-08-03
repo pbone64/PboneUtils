@@ -6,9 +6,9 @@ using PboneUtils.Projectiles.Storage;
 
 namespace PboneUtils.Items.Storage
 {
-    public class DefendersCrystal : PItem
+    public class DefendersCrystal : PboneUtilsItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.StorageItemsToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.StorageItemsToggle;
 
         public override void SetDefaults()
         {

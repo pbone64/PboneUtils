@@ -5,9 +5,9 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Tools
 {
-    public class GreaterStaffOfRegrowth : PItem
+    public class GreaterStaffOfRegrowth : PboneUtilsItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.GreaterStaffOfRegrowthToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.GreaterStaffOfRegrowthToggle;
         public override bool ShowItemIconWhenInRange => true;
 
         public override void SetDefaults()

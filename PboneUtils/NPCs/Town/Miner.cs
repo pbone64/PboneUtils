@@ -13,7 +13,7 @@ namespace PboneUtils.NPCs.Town
     [AutoloadHead]
     public class Miner : PNPC
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.Miner;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.Miner;
 
         private readonly List<string> Names = new List<string>() {
             "Durin", "Armok", "Tarn", "Asmel", "Doren", "Ber", "Datan"

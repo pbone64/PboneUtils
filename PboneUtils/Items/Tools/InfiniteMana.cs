@@ -4,9 +4,9 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Tools
 {
-    public class InfiniteMana : PItem
+    public class InfiniteMana : PboneUtilsItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.InfiniteManaToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.InfiniteManaToggle;
         public override bool DrawGlowmask => true;
 
         public override void SetDefaults()

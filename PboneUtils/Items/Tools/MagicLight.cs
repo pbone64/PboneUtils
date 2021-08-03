@@ -9,7 +9,7 @@ namespace PboneUtils.Items.Tools
 {
     public class MagicLight : RightClickToggleItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.MagicLightToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.MagicLightToggle;
 
         public override bool DrawGlowmask => true;
 

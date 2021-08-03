@@ -6,7 +6,7 @@ namespace PboneUtils.Items.Tools
 {
     public class FlameOfBattle : RightClickToggleItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.SpawnRateItemsToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.SpawnRateItemsToggle;
 
         public override void SetDefaults()
         {

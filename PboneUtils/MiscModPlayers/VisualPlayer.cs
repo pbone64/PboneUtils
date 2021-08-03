@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace PboneUtils
+namespace PboneUtils.MiscModsPlayers
 {
     public class VisualPlayer : ModPlayer
     {

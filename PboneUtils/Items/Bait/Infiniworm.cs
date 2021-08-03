@@ -4,9 +4,9 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Bait
 {
-    public class Infiniworm : PItem
+    public class Infiniworm : PboneUtilsItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.EndlessBaitToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.EndlessBaitToggle;
 
         public override void SetDefaults()
         {

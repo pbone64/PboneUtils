@@ -8,7 +8,7 @@ namespace PboneUtils.Items.Tools
 {
     public class StarMagnet : RightClickToggleItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.StarMagnetToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.StarMagnetToggle;
 
         public override void SetDefaults()
         {

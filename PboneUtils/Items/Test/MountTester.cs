@@ -1,10 +1,8 @@
-﻿using PboneUtils.Mounts;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.ID;
 
 namespace PboneUtils.Items.Test
 {
-    public class MountTester : PItem
+    public class MountTester : PboneUtilsItem
     {
         public override string Texture => "PboneUtils/Items/Test/TestItem";
 
@@ -12,8 +10,8 @@ namespace PboneUtils.Items.Test
         {
             base.SetDefaults();
             UseTime = 30;
-            item.useStyle = ItemUseStyleID.SwingThrow;
-            item.mountType = ModContent.MountType<SuperDrillMount>();
+            Item.useStyle = ItemUseStyleID.Swing;
+            //item.mountType = ModContent.MountType<SuperDrillMount>();
         }
     }
 }

@@ -6,9 +6,9 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Liquid
 {
-    public class BottomlessLavaBucket : PItem
+    public class BottomlessLavaBucket : PboneUtilsItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.LiquidItemsToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.LiquidItemsToggle;
         public override bool ShowItemIconWhenInRange => true;
 
         public override void SetDefaults()

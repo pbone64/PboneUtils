@@ -6,7 +6,7 @@ namespace PboneUtils.Items.Magnets
 {
     public class RunicTreasureMagnet : RightClickToggleItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.MagnetItemsToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.MagnetItemsToggle;
         public override bool DrawGlowmask => true;
 
         public override void SetDefaults()

@@ -6,9 +6,9 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Storage
 {
-    public class PetrifiedSafe : PItem
+    public class PetrifiedSafe : PboneUtilsItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.StorageItemsToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.StorageItemsToggle;
 
         public override void SetDefaults()
         {

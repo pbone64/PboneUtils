@@ -1,10 +1,11 @@
-﻿using Terraria.ModLoader;
+﻿using PboneLib.CustomLoading;
+using Terraria.ModLoader;
 
 namespace PboneUtils.NPCs
 {
-    public abstract class PNPC : ModNPC
+    public abstract class PNPC : ModNPC, IBetterLoadable
     {
-        public virtual bool AutoloadCondition => true;
-        public override bool Autoload(ref string name) => AutoloadCondition;
+        public bool AutoloadCondition => true;
+        public bool LoadCondition() => AutoloadCondition;
     }
 }

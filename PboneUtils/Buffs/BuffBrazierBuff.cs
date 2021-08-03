@@ -1,15 +1,14 @@
 ﻿using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace PboneUtils.Buffs
 {
-    public class BuffBrazierBuff : ModBuff
+    public class BuffBrazierBuff : PboneUtilsBuff
     {
-        public override void SetDefaults()
+        public override void SetStaticDefaults()
         {
+            base.SetStaticDefaults();
             Main.buffNoTimeDisplay[Type] = true;
-            base.SetDefaults();
         }
 
         public override void Update(Player player, ref int buffIndex)
@@ -17,16 +16,16 @@ namespace PboneUtils.Buffs
             base.Update(player, ref buffIndex);
 
             // Campfire
-            Main.campfire = true;
+            Main.SceneMetrics.HasCampfire = true;
 
             // Heart Lantern
-            Main.heartLantern = true;
+            Main.SceneMetrics.HasHeartLantern = true;
 
             // Star in a Bottle
-            Main.starInBottle = true;
+            Main.SceneMetrics.HasHeartLantern = true;
 
             // Sunflower
-            Main.sunflower = true;
+            Main.SceneMetrics.HasHeartLantern = true;
 
             // Honey
             player.honey = true;

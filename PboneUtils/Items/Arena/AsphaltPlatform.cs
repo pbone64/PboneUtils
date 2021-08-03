@@ -4,9 +4,9 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Arena
 {
-    public class AsphaltPlatform : PItem
+    public class AsphaltPlatform : PboneUtilsItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.ArenaItemsToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.ArenaItemsToggle;
 
         public override void SetDefaults()
         {

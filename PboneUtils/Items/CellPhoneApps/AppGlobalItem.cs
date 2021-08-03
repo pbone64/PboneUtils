@@ -19,6 +19,8 @@ namespace PboneUtils.Items.CellPhoneApps
             return base.NeedsSaving(item);
         }
 
+        public override bool AppliesToEntity(Item entity, bool lateInstantiation) => entity.type == ItemID.CellPhone;
+
         public List<(int item, string appId)> Apps = new List<(int, string)>();
 
         public override GlobalItem Clone(Item item, Item itemClone)

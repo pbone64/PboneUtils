@@ -8,9 +8,9 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Liquid
 {
-    public class LiquidCombo : PItem
+    public class LiquidCombo : PboneUtilsItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.LiquidItemsToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.LiquidItemsToggle;
         public override bool ShowItemIconWhenInRange => true;
 
         public override void SetDefaults()

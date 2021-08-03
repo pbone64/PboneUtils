@@ -11,7 +11,7 @@ namespace PboneUtils.NPCs.Town
     [AutoloadHead]
     public class MysteriousTrader : PNPC
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.MysteriousTrader;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.MysteriousTrader;
 
         private readonly List<string> Names = new List<string>() {
             "Verboten", "Thooloo", "Uri", "Sellatron", "Indigo", "Steve"

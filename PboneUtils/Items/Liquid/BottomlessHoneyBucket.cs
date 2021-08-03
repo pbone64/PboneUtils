@@ -6,9 +6,9 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Liquid
 {
-    public class BottomlessHoneyBucket : PItem
+    public class BottomlessHoneyBucket : PboneUtilsItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.LiquidItemsToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.LiquidItemsToggle;
         public override bool ShowItemIconWhenInRange => true;
 
         public override void SetDefaults()

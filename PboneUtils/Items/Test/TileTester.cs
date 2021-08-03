@@ -1,10 +1,8 @@
-﻿using PboneUtils.Tiles;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.ID;
 
 namespace PboneUtils.Items.Test
 {
-    public class TileTester : PItem
+    public class TileTester : PboneUtilsItem
     {
         public override string Texture => "PboneUtils/Items/Test/TestItem";
 
@@ -12,8 +10,8 @@ namespace PboneUtils.Items.Test
         {
             base.SetDefaults();
             UseTime = 30;
-            item.useStyle = ItemUseStyleID.SwingThrow;
-            item.createTile = TileID.BloomingHerbs;
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.createTile = TileID.BloomingHerbs;
         }
     }
 }

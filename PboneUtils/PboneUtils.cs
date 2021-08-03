@@ -1,4 +1,5 @@
 using log4net;
+using PboneLib.CustomLoading;
 using PboneLib.Services.CrossMod;
 using PboneLib.Services.Net;
 using PboneUtils.CrossMod.Call;
@@ -8,7 +9,6 @@ using PboneUtils.Helpers;
 using PboneUtils.ID;
 using PboneUtils.Packets;
 using System.IO;
-using Terraria;
 using Terraria.ModLoader;
 
 namespace PboneUtils
@@ -33,6 +33,13 @@ namespace PboneUtils
         private TreasureBagValueCalculator bagValues;
         private CrossModManager crossModManager;
         private PacketManager packetManager;
+
+        public PboneUtils()
+        {
+            Properties = new ModProperties() {
+                Autoload = false
+            };
+        }
 
         public override void Load()
         {
@@ -62,6 +69,13 @@ namespace PboneUtils
             // Load MonoMod hooks
             Load_IL();
             Load_On();
+
+            // Adding content
+            ContentLoader loader = new ContentLoader((compoundLoadable) => {
+                AddContent(compoundLoadable.AsLoadable);
+            });
+
+            loader.LoadFromTypes(Code.GetTypes());
         }
 
         public override object Call(params object[] args) => crossModManager.CallManager.HandleCall(args);

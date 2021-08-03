@@ -3,11 +3,12 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework.Graphics;
-using PboneUtils.Helpers;
+using Terraria.GameContent;
+using PboneLib.CustomLoading.Implementations;
 
 namespace PboneUtils.Items
 {
-    public abstract class PItem : ModItem
+    public abstract class PboneUtilsItem : PItem
     {
         public virtual bool Autosize => true;
         public virtual bool ShowItemIconWhenInRange => false;
@@ -17,25 +18,23 @@ namespace PboneUtils.Items
         public virtual bool AutoloadCondition => true;
 
         public string GlowmaskTexture => Texture + "_Glow";
-        public int UseTime { set => item.useTime = item.useAnimation = value; }
-        public Texture2D ItemTexture => Main.itemTexture[item.type];
-
-        public override bool Autoload(ref string name) => AutoloadCondition;
+        public int UseTime { set => Item.useTime = Item.useAnimation = value; }
+        public Texture2D ItemTexture => TextureAssets.Item[Item.type].Value;
 
         public override void SetDefaults()
         {
             base.SetDefaults();
 
             // Autosize
-            if (Autosize && Main.itemTexture[item.type] != null)
+            if (Autosize && TextureAssets.Item[Item.type].Value != null)
             {
-                Vector2 texSize = Main.itemTexture[item.type].Size();
+                Vector2 texSize = TextureAssets.Item[Item.type].Size();
                 Vector2 correctedSize = texSize;
 
-                if (Main.itemAnimations[item.type] is DrawAnimationVertical animation) // If it has a DrawAnimationVertical registered
+                if (Main.itemAnimations[Item.type] is DrawAnimationVertical animation) // If it has a DrawAnimationVertical registered
                     correctedSize = new Vector2(texSize.X, (texSize.Y / animation.FrameCount) - animation.FrameCount * 2); // Account for the amount of frames and buffer between frames
 
-                item.Size = correctedSize;
+                Item.Size = correctedSize;
             }
         }
 
@@ -43,10 +42,10 @@ namespace PboneUtils.Items
         {
             base.HoldItem(player);
 
-            if (ShowItemIconWhenInRange && player.IsTargetTileInItemRange(item))
+            if (ShowItemIconWhenInRange && player.IsTargetTileInItemRange(Item))
             {
-                player.showItemIcon = true;
-                player.showItemIcon2 = item.type;
+                player.cursorItemIconEnabled = true;
+                player.cursorItemIconID = Item.type;
             }
         }
 
@@ -56,7 +55,7 @@ namespace PboneUtils.Items
 
             if (DrawGlowmask)
             {
-                Texture2D texture = ModContent.GetTexture(GlowmaskTexture);
+                Texture2D texture = ModContent.Request<Texture2D>(GlowmaskTexture).Value;
                 spriteBatch.Draw(texture, position, frame, Color.White, 0f, origin, scale, SpriteEffects.None, 0f);
             }
         }
@@ -67,8 +66,8 @@ namespace PboneUtils.Items
 
             if (DrawGlowmask)
             {
-                Texture2D texture = ModContent.GetTexture(GlowmaskTexture);
-                Vector2 position = new Vector2(item.position.X - Main.screenPosition.X + item.width * 0.5f, item.position.Y - Main.screenPosition.Y + item.height - texture.Height * 0.5f + 2f);
+                Texture2D texture = ModContent.Request<Texture2D>(GlowmaskTexture).Value;
+                Vector2 position = new Vector2(Item.position.X - Main.screenPosition.X + Item.width * 0.5f, Item.position.Y - Main.screenPosition.Y + Item.height - texture.Height * 0.5f + 2f);
                 spriteBatch.Draw(texture, position, null, ModifyGlowmaskColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
             }
         }

@@ -3,9 +3,9 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Ammo
 {
-    public abstract class EndlessAmmoItem : PItem
+    public abstract class EndlessAmmoItem : PboneUtilsItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.AmmoItemsToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.AmmoItemsToggle;
 
         public abstract int BaseAmmo { get; }
 

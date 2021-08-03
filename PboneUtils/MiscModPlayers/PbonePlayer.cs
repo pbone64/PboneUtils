@@ -4,7 +4,7 @@ using PboneUtils.DataStructures;
 using Terraria.ModLoader.IO;
 using PboneUtils.Helpers;
 
-namespace PboneUtils
+namespace PboneUtils.MiscModsPlayers
 {
     public class PbonePlayer : ModPlayer
     {

@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Terraforming
 {
-    public class Gigaxe : PItem
+    public class Gigaxe : PboneUtilsItem
     {
         public override void SetDefaults()
         {

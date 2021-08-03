@@ -4,9 +4,9 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.WorldControl
 {
-    public class AmuletOfRain : PItem
+    public class AmuletOfRain : PboneUtilsItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.WorldControlItemsToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.WorldControlItemsToggle;
 
         public override void SetDefaults()
         {

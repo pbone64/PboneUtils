@@ -4,9 +4,9 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Tools
 {
-    public class ShadowPearl : PItem
+    public class ShadowPearl : PboneUtilsItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.ShadowPearlToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.ShadowPearlToggle;
 
         public override void SetDefaults()
         {

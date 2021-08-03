@@ -8,7 +8,7 @@ namespace PboneUtils.Items.Magnets
     // See you in a future versions, comrade
     public class MoonLordTreasureMagnet : RightClickToggleItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.MagnetItemsToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.MagnetItemsToggle;
         public override bool DrawGlowmask => true;
 
         public override void SetDefaults()

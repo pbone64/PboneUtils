@@ -6,7 +6,7 @@ namespace PboneUtils.Items.Tools
 {
     public class GreedyChest : RightClickToggleItem
     {
-        public override bool AutoloadCondition => PboneUtilsConfig.Instance.GreedyChestToggle;
+        public override bool LoadCondition() => PboneUtilsConfig.Instance.GreedyChestToggle;
 
         public override void SetDefaults()
         {
