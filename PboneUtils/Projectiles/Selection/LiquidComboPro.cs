@@ -1,10 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using PboneUtils.DataStructures;
 using PboneUtils.Helpers;
-using PboneUtils.ID;
 using PboneUtils.UI.States;
 using System;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 
 namespace PboneUtils.Projectiles.Selection
@@ -34,7 +34,7 @@ namespace PboneUtils.Projectiles.Selection
             {
                 if (LiquidHelper.PlaceLiquid(i, j, (byte)Type))
                 {
-                    Main.PlaySound(SoundID.Splash, (int)Owner.position.X, (int)Owner.position.Y);
+                    SoundEngine.PlaySound(SoundID.Splash, (int)Owner.position.X, (int)Owner.position.Y);
                     return;
                 }
             }
@@ -42,7 +42,7 @@ namespace PboneUtils.Projectiles.Selection
             {
                 if (LiquidHelper.DrainLiquid(i, j, (byte)Type))
                 {
-                    Main.PlaySound(SoundID.Splash, (int)Owner.position.X, (int)Owner.position.Y);
+                    SoundEngine.PlaySound(SoundID.Splash, (int)Owner.position.X, (int)Owner.position.Y);
                     return;
                 }
             }

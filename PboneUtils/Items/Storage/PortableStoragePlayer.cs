@@ -55,7 +55,7 @@ namespace PboneUtils.Items.Storage
                     whoAmI = -1;
                     if (player.chest != -1)
                     {
-                        Main.PlaySound(useSound);
+                        SoundEngine.PlaySound(useSound);
                     }
 
                     if (oldChest != bankID)
@@ -68,7 +68,7 @@ namespace PboneUtils.Items.Storage
             }
             else
             {
-                Main.PlaySound(useSound);
+                SoundEngine.PlaySound(useSound);
 
                 whoAmI = -1;
                 player.chest = BankID.None;

@@ -47,7 +47,7 @@ namespace PboneUtils.Items
             if (mPlayer.PhilosophersStone && player.HeldItem.type == ModContent.ItemType<PhilosophersStone>() && !CoinHelper.CoinTypes.Contains(item.type))
             {
                 int value = item.value;
-                Main.PlaySound(SoundID.CoinPickup);
+                SoundEngine.PlaySound(SoundID.CoinPickup);
                 player.SellItem(value, item.stack);
 
                 return false;

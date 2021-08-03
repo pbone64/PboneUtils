@@ -26,7 +26,7 @@ namespace PboneUtils.Helpers
                 WorldGen.SquareTileFrame(x, y, true);
 
                 if (!mute)
-                    Main.PlaySound(SoundID.Dig, x * 16, y * 16, 1, 1f, 0f);
+                    SoundEngine.PlaySound(SoundID.Dig, x * 16, y * 16, 1, 1f, 0f);
 
                 return true;
             }

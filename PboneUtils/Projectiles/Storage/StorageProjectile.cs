@@ -27,103 +27,103 @@ namespace PboneUtils.Projectiles.Storage
             base.AI();
             if (Animate)
             {
-                projectile.frameCounter++;
+                Projectile.frameCounter++;
                 float frameTime = 4f;
-                if (projectile.frameCounter < frameTime * 1f)
+                if (Projectile.frameCounter < frameTime * 1f)
                 {
-                    projectile.frame = 0;
+                    Projectile.frame = 0;
                 }
-                else if (projectile.frameCounter < frameTime * 2f)
+                else if (Projectile.frameCounter < frameTime * 2f)
                 {
-                    projectile.frame = 1;
+                    Projectile.frame = 1;
                 }
-                else if (projectile.frameCounter < frameTime * 3f)
+                else if (Projectile.frameCounter < frameTime * 3f)
                 {
-                    projectile.frame = 2;
+                    Projectile.frame = 2;
                 }
-                else if (projectile.frameCounter < frameTime * 4f)
+                else if (Projectile.frameCounter < frameTime * 4f)
                 {
-                    projectile.frame = 3;
+                    Projectile.frame = 3;
                 }
-                else if (projectile.frameCounter < frameTime * 5f)
+                else if (Projectile.frameCounter < frameTime * 5f)
                 {
-                    projectile.frame = 4;
+                    Projectile.frame = 4;
                 }
-                else if (projectile.frameCounter < frameTime * 6f)
+                else if (Projectile.frameCounter < frameTime * 6f)
                 {
-                    projectile.frame = 3;
+                    Projectile.frame = 3;
                 }
-                else if (projectile.frameCounter < frameTime * 7f)
+                else if (Projectile.frameCounter < frameTime * 7f)
                 {
-                    projectile.frame = 2;
+                    Projectile.frame = 2;
                 }
-                else if (projectile.frameCounter < frameTime * 8f)
+                else if (Projectile.frameCounter < frameTime * 8f)
                 {
-                    projectile.frame = 1;
+                    Projectile.frame = 1;
                 }
                 else
                 {
-                    projectile.frameCounter = 0;
-                    projectile.frame = 0;
+                    Projectile.frameCounter = 0;
+                    Projectile.frame = 0;
                 }
             }
 
             //Main.CurrentFrameFlags.HadAnActiveInteractibleProjectile = true;
-            if (projectile.owner == Main.myPlayer)
+            if (Projectile.owner == Main.myPlayer)
             {
                 for (int i = 0; i < 1000; i++)
                 {
-                    if (i != projectile.whoAmI
+                    if (i != Projectile.whoAmI
                         && Main.projectile[i].active
-                        && Main.projectile[i].owner == projectile.owner
-                        && Main.projectile[i].type == projectile.type)
+                        && Main.projectile[i].owner == Projectile.owner
+                        && Main.projectile[i].type == Projectile.type)
                     {
-                        if (projectile.timeLeft >= Main.projectile[i].timeLeft)
+                        if (Projectile.timeLeft >= Main.projectile[i].timeLeft)
                             Main.projectile[i].Kill();
                         else
-                            projectile.Kill();
+                            Projectile.Kill();
                     }
                 }
             }
 
-            if (projectile.ai[0] == 0f)
+            if (Projectile.ai[0] == 0f)
             {
-                if (projectile.velocity.Length() < 0.1)
+                if (Projectile.velocity.Length() < 0.1)
                 {
-                    projectile.velocity.X = 0f;
-                    projectile.velocity.Y = 0f;
-                    projectile.ai[0] = 1f;
-                    projectile.ai[1] = 45f;
+                    Projectile.velocity.X = 0f;
+                    Projectile.velocity.Y = 0f;
+                    Projectile.ai[0] = 1f;
+                    Projectile.ai[1] = 45f;
                     return;
                 }
 
-                projectile.velocity *= 0.94f;
-                if (projectile.velocity.X < 0f)
-                    projectile.direction = -1;
+                Projectile.velocity *= 0.94f;
+                if (Projectile.velocity.X < 0f)
+                    Projectile.direction = -1;
                 else
-                    projectile.direction = 1;
+                    Projectile.direction = 1;
 
-                projectile.spriteDirection = projectile.direction;
+                Projectile.spriteDirection = Projectile.direction;
                 return;
             }
 
-            if (Main.player[projectile.owner].Center.X < projectile.Center.X)
-                projectile.direction = -1;
+            if (Main.player[Projectile.owner].Center.X < Projectile.Center.X)
+                Projectile.direction = -1;
             else
-                projectile.direction = 1;
+                Projectile.direction = 1;
 
-            projectile.spriteDirection = projectile.direction;
-            projectile.ai[1] += 1f;
+            Projectile.spriteDirection = Projectile.direction;
+            Projectile.ai[1] += 1f;
             float acceleration = 0.005f;
-            if (projectile.ai[1] > 0f)
-                projectile.velocity.Y -= acceleration;
+            if (Projectile.ai[1] > 0f)
+                Projectile.velocity.Y -= acceleration;
             else
-                projectile.velocity.Y += acceleration;
+                Projectile.velocity.Y += acceleration;
 
-            if (projectile.ai[1] >= 90f)
-                projectile.ai[1] *= -1f;
+            if (Projectile.ai[1] >= 90f)
+                Projectile.ai[1] *= -1f;
 
-            TryInteractingWithStorageProj(projectile);
+            TryInteractingWithStorageProj(Projectile);
         }
 
         public void TryInteractingWithStorageProj(Projectile proj)
@@ -146,12 +146,12 @@ namespace PboneUtils.Projectiles.Storage
                 return;
 
             localPlayer.noThrow = 2;
-            localPlayer.showItemIcon = true;
-            localPlayer.showItemIcon2 = ItemType;
+            localPlayer.cursorItemIconEnabled = true;
+            localPlayer.cursorItemIconID = ItemType;
             if (PlayerInput.UsingGamepad)
                 localPlayer.GamepadEnableGrappleCooldown();
 
-            if (Main.mouseRight && Main.mouseRightRelease && Player.StopMoneyTroughFromWorking == 0)
+            if (Main.mouseRight && Main.mouseRightRelease/* && Player.StopMoneyTroughFromWorking == 0*/)
             {
                 Main.mouseRightRelease = false;
                 localPlayer.tileInteractAttempted = true;
@@ -159,32 +159,32 @@ namespace PboneUtils.Projectiles.Storage
                 localPlayer.releaseUseTile = false;
                 if (localPlayer.chest == ChestType)
                 {
-                    Main.PlaySound(UseSound);
+                    SoundEngine.PlaySound(UseSound);
                     localPlayer.chest = -1;
                     SetWhoAmIVariable(localPlayer.GetModPlayer<PortableStoragePlayer>(), -1);
                     Recipe.FindRecipes();
                     return;
                 }
 
-                SetWhoAmIVariable(localPlayer.GetModPlayer<PortableStoragePlayer>(), projectile.whoAmI);
+                SetWhoAmIVariable(localPlayer.GetModPlayer<PortableStoragePlayer>(), Projectile.whoAmI);
 
                 localPlayer.chest = ChestType;
                 localPlayer.chestX = (int)(proj.Center.X / 16f);
                 localPlayer.chestY = (int)(proj.Center.Y / 16f);
-                localPlayer.talkNPC = -1;
-                Main.npcShop = 0;
+                localPlayer.SetTalkNPC(-1);
+                Main.SetNPCShopIndex(0);
                 Main.playerInventory = true;
-                Main.PlaySound(UseSound);
+                SoundEngine.PlaySound(UseSound);
                 Recipe.FindRecipes();
             }
         }
 
-        public override void PostDraw(SpriteBatch spriteBatch, Color lightColor)
+        public override void PostDraw(Color lightColor)
         {
-            base.PostDraw(spriteBatch, lightColor);
+            base.PostDraw(lightColor);
 
             // Uhh is outline gamepad only? Gamepad players don't exist anyways
-            //spriteBatch.Draw(Outline, projectile.position - Main.screenPosition - new Vector2(2f), null, lightColor, projectile.rotation, Vector2.Zero, projectile.scale, SpriteEffects.None, 0f);
+            //Main.spriteBatch.Draw(Outline, Projectile.position - Main.screenPosition - new Vector2(2f), null, lightColor, Projectile.rotation, Vector2.Zero, Projectile.scale, SpriteEffects.None, 0f);
         }
     }
 }

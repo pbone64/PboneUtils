@@ -9,9 +9,9 @@ namespace PboneUtils.Tiles
 {
     public class AsphaltPlatformTile : ModTile
     {
-        public override void SetDefaults()
+        public override void SetStaticDefaults()
         {
-            base.SetDefaults();
+            base.SetStaticDefaults();
             Main.tileFrameImportant[Type] = true;
             Main.tileSolidTop[Type] = true;
             Main.tileSolid[Type] = true;
@@ -19,6 +19,7 @@ namespace PboneUtils.Tiles
             Main.tileTable[Type] = true;
 
             TileID.Sets.Platforms[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
 
             TileObjectData.newTile.CoordinateHeights = new[] { 16 };
             TileObjectData.newTile.CoordinateWidth = 16;
@@ -34,12 +35,11 @@ namespace PboneUtils.Tiles
             AddMapEntry(Color.Black);
 
 #pragma warning disable ChangeMagicNumberToID // Change magic numbers into appropriate ID values
-            dustType = 109; // DustID.Asphalt, compiling doesn't work with DustID.Asphalt for whatever reason
-#pragma warning restore ChangeMagicNumberToID // Change magic numbers into appropriate ID values
-            drop = ModContent.ItemType<AsphaltPlatform>();
-            
-            disableSmartCursor = true;
-            adjTiles = new int[] { TileID.Platforms };
+            DustType = 109; // DustID.Asphalt, compiling doesn't work with DustID.Asphalt for whatever reason
+#pragma warning restore ChangeMagicNumberToID // Change magic numbers into appropriate ID 
+
+            ItemDrop = ModContent.ItemType<AsphaltPlatform>();
+            AdjTiles = new int[] { TileID.Platforms };
         }
 
         public override void FloorVisuals(Player player)

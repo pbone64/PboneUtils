@@ -12,7 +12,7 @@ namespace PboneUtils.Helpers
 
             if (tile.liquid == 0 || tile.liquidType() == type)
             {
-                Main.PlaySound(SoundID.Splash, x, y);
+                SoundEngine.PlaySound(SoundID.Splash, x, y);
                 tile.liquidType(type);
                 tile.liquid = byte.MaxValue;
                 WorldGen.SquareTileFrame(x, y);

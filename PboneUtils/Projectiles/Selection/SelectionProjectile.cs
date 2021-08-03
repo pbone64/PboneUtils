@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using PboneUtils.UI.States;
 using PboneUtils.UI;
+using Terraria.GameContent;
 
 namespace PboneUtils.Projectiles.Selection
 {
@@ -20,21 +21,21 @@ namespace PboneUtils.Projectiles.Selection
         {
             base.SetDefaults();
 
-            projectile.width = 10;
-            projectile.height = 10;
-            projectile.friendly = true;
-            projectile.ignoreWater = true;
-            projectile.tileCollide = false;
-            projectile.penetrate = -1;
+            Projectile.width = 10;
+            Projectile.height = 10;
+            Projectile.friendly = true;
+            Projectile.ignoreWater = true;
+            Projectile.tileCollide = false;
+            Projectile.penetrate = -1;
         }
 
         // AI Properties
-        public bool Initialized { get => projectile.localAI[0] == 1; set => projectile.localAI[0] = value ? 1 : 0; }
-        public float StartX { get => projectile.ai[0]; set => projectile.ai[0] = value; }
-        public float StartY { get => projectile.ai[1]; set => projectile.ai[1] = value; }
+        public bool Initialized { get => Projectile.localAI[0] == 1; set => Projectile.localAI[0] = value ? 1 : 0; }
+        public float StartX { get => Projectile.ai[0]; set => Projectile.ai[0] = value; }
+        public float StartY { get => Projectile.ai[1]; set => Projectile.ai[1] = value; }
 
         public Point StartPosition => new Vector2(StartX, StartY).ToPoint();
-        public Point CurrentPosition => projectile.Center.ToTileCoordinates();
+        public Point CurrentPosition => Projectile.Center.ToTileCoordinates();
 
         public override bool? CanCutTiles() => false;
         public override void AI()
@@ -46,7 +47,7 @@ namespace PboneUtils.Projectiles.Selection
                 // Kill if owner can't use items, is CCed (frozen, webbed, stoned), dead
                 if (Owner.noItems || Owner.CCed || Owner.dead)
                 {
-                    projectile.Kill();
+                    Projectile.Kill();
                 }
 
                 // If they aren't channeling, then do stuff before killing yourself
@@ -64,41 +65,41 @@ namespace PboneUtils.Projectiles.Selection
                         }
                     }
 
-                    projectile.Kill();
+                    Projectile.Kill();
                 }
 
-                projectile.timeLeft = 2;
-                projectile.localAI[1]++; // Timer for draw fading
+                Projectile.timeLeft = 2;
+                Projectile.localAI[1]++; // Timer for draw fading
 
                 Vector2 mouseWorld = Main.MouseWorld;
                 if (Owner.gravDir == -1f)
                     mouseWorld.Y = (Main.screenHeight - Main.mouseY) + Main.screenPosition.Y;
 
                 // Move to MouseWorld
-                if (projectile.Center != mouseWorld)
+                if (Projectile.Center != mouseWorld)
                 {
-                    projectile.netUpdate = true;
-                    projectile.Center = mouseWorld;
-                    projectile.velocity = Vector2.Zero;
+                    Projectile.netUpdate = true;
+                    Projectile.Center = mouseWorld;
+                    Projectile.velocity = Vector2.Zero;
                 }
 
                 // Only run once
                 if (!Initialized)
                 {
                     // Save the tile coords of the start position to ai0 and ai1
-                    StartX = (int)projectile.Center.X / 16;
-                    StartY = (int)projectile.Center.Y / 16;
+                    StartX = (int)Projectile.Center.X / 16;
+                    StartY = (int)Projectile.Center.Y / 16;
 
                     Initialized = true;
                 }
 
-                projectile.velocity = Vector2.Zero;
+                Projectile.velocity = Vector2.Zero;
 
                 int ownerDir = Math.Sign(Owner.velocity.X);
                 if (ownerDir != 0)
                     Owner.ChangeDir(ownerDir);
 
-                Owner.heldProj = projectile.whoAmI;
+                Owner.heldProj = Projectile.whoAmI;
                 Owner.itemRotation = 0f;
                 Owner.itemAnimation = 2;
                 Owner.itemTime = 2;
@@ -106,14 +107,15 @@ namespace PboneUtils.Projectiles.Selection
             }
         }
 
-        public override void DrawBehind(int index, List<int> drawCacheProjsBehindNPCsAndTiles, List<int> drawCacheProjsBehindNPCs, List<int> drawCacheProjsBehindProjectiles, List<int> drawCacheProjsOverWiresUI)
+        public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
         {
-            drawCacheProjsOverWiresUI.Add(projectile.whoAmI);
+            base.DrawBehind(index, behindNPCsAndTiles, behindNPCs, behindProjectiles, overPlayers, overWiresUI);
+            overWiresUI.Add(Projectile.whoAmI);
         }
 
-        public override void PostDraw(SpriteBatch spriteBatch, Color lightColor)
+        public override void PostDraw(Color lightColor)
         {
-            base.PostDraw(spriteBatch, lightColor);
+            base.PostDraw(lightColor);
 
             RadialMenu menu = PboneUtils.UI.GetUIState<RadialMenuContainer>().Internal;
             if (Owner.whoAmI == Main.myPlayer && menu != null && !menu.IsHovered()) // Only draw on owner's client
@@ -125,7 +127,7 @@ namespace PboneUtils.Projectiles.Selection
                 destination.X -= (int)Main.screenPosition.X;
                 destination.Y -= (int)Main.screenPosition.Y;
 
-                spriteBatch.Draw(Main.magicPixel, destination, null, color, 0f, Vector2.Zero, SpriteEffects.None, 0f);
+                Main.spriteBatch.Draw(TextureAssets.MagicPixel.Value, destination, null, color, 0f, Vector2.Zero, SpriteEffects.None, 0f);
             }
         }
 

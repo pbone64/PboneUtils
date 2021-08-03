@@ -1,10 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PboneUtils.Items.Tools;
-using System.Reflection;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.Enums;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -13,17 +10,13 @@ namespace PboneUtils.Tiles.Lights
 {
     public abstract class BaseLight : ModTile
     {
+        public override string Texture => "Terraria/Projectile_" + ProjectileID.ShadowBeamHostile;
+
         public abstract Color LightColor { get; }
 
-        public override bool Autoload(ref string name, ref string texture)
+        public override void SetStaticDefaults()
         {
-            texture = "Terraria/Projectile_" + ProjectileID.ShadowBeamHostile;
-            return base.Autoload(ref name, ref texture);
-        }
-
-        public override void SetDefaults()
-        {
-            base.SetDefaults();
+            base.SetStaticDefaults();
 
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
@@ -63,7 +56,7 @@ namespace PboneUtils.Tiles.Lights
                 TileLoader.SetDrawPositions(i, j, ref width, ref offsetY, ref height);
 
                 Rectangle dest = new Rectangle(x + (int)zero.X - (width - 16), y + (int)zero.Y - (height - 16) + offsetY, 16, 16);
-                spriteBatch.Draw(Main.magicPixel, dest, null, LightColor, 0f, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(TextureAssets.MagicPixel.Value, dest, null, LightColor, 0f, Vector2.Zero, SpriteEffects.None, 0f);
             }
         }
     }

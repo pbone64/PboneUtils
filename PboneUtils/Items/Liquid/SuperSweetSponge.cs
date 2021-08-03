@@ -32,7 +32,7 @@ namespace PboneUtils.Items.Liquid
                 {
                     if (LiquidHelper.DrainLiquid(Player.tileTargetX, Player.tileTargetY, LiquidID.Honey))
                     {
-                        Main.PlaySound(SoundID.Splash, (int)player.position.X, (int)player.position.Y);
+                        SoundEngine.PlaySound(SoundID.Splash, (int)player.position.X, (int)player.position.Y);
                         return true;
                     }
                 }
