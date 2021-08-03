@@ -1,5 +1,4 @@
 ﻿using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Ammo
 {
@@ -11,10 +10,10 @@ namespace PboneUtils.Items.Ammo
 
         public override void SetDefaults()
         {
-            item.CloneDefaults(BaseAmmo);
-            item.maxStack = 1;
-            item.consumable = false;
-            item.rare += 2;
+            Item.CloneDefaults(BaseAmmo);
+            Item.maxStack = 1;
+            Item.consumable = false;
+            Item.rare += 2;
 
             base.SetDefaults();
         }

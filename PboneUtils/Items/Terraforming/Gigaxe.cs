@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using PboneUtils.Projectiles.Selection;
+﻿using PboneUtils.Projectiles.Selection;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -11,15 +10,15 @@ namespace PboneUtils.Items.Terraforming
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.rare = ItemRarityID.Yellow;
-            item.value = Item.sellPrice(0, 1, 0, 0);
+            Item.rare = ItemRarityID.Yellow;
+            Item.value = Item.sellPrice(0, 1, 0, 0);
 
-            item.useTime = 10;
-            item.useAnimation = 10;
-            item.channel = true;
-            item.useStyle = ItemUseStyleID.SwingThrow;
+            Item.useTime = 10;
+            Item.useAnimation = 10;
+            Item.channel = true;
+            Item.useStyle = ItemUseStyleID.Swing;
 
-            item.shoot = ModContent.ProjectileType<GigaxePro>();
+            Item.shoot = ModContent.ProjectileType<GigaxePro>();
         }
     }
 }

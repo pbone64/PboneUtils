@@ -1,10 +1,9 @@
-﻿using PboneLib.CustomLoading;
+﻿using PboneLib.CustomLoading.Implementations;
 using Terraria;
-using Terraria.ModLoader;
 
 namespace PboneUtils.Projectiles
 {
-    public abstract class PProjectile : ModProjectile, IBetterLoadable
+    public abstract class PboneUtilsProjectile : PProjectile
     {
         public Player Owner => Main.player[Projectile.owner];
 

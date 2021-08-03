@@ -14,7 +14,7 @@ namespace PboneUtils.Items
         public override void SetDefaults(Item item)
         {
             base.SetDefaults(item);
-            AutoswingOrig = item.autoReuse;
+            AutoswingOrig = Item.autoReuse;
         }
 
         public override bool CanUseItem(Item item, Player player)
@@ -26,9 +26,9 @@ namespace PboneUtils.Items
                 {
                     foreach (ItemDefinition itemDefinition in PboneUtilsConfig.Instance.AutoswingOnEverythingBlacklist)
                     {
-                        if (itemDefinition.Type == item.type)
+                        if (itemDefinition.Type == Item.type)
                         {
-                            item.autoReuse = AutoswingOrig;
+                            Item.autoReuse = AutoswingOrig;
                             return true;
                         }
                     }
@@ -36,21 +36,21 @@ namespace PboneUtils.Items
 
                 // Check for spears (at least vanilla ones)
                 Projectile projectile = new Projectile();
-                projectile.SetDefaults(item.shoot);
+                projectile.SetDefaults(Item.shoot);
                 if (projectile.aiStyle == 19)
                 {
-                    item.autoReuse = AutoswingOrig;
+                    Item.autoReuse = AutoswingOrig;
                     return true;
                 }
 
-                item.autoReuse = true;
+                Item.autoReuse = true;
                 ChangedAutoswing = true;
 
                 return true;
             }
             else if (!PboneUtilsConfig.Instance.AutoswingOnEverything && ChangedAutoswing)
             {
-                item.autoReuse = AutoswingOrig;
+                Item.autoReuse = AutoswingOrig;
                 ChangedAutoswing = false;
 
                 return true;
@@ -61,7 +61,7 @@ namespace PboneUtils.Items
 
         public override GlobalItem NewInstance(Item item) =>
             new PInstancedGlobalItem() {
-                AutoswingOrig = item.autoReuse,
+                AutoswingOrig = Item.autoReuse,
                 ChangedAutoswing = false
             };
     }

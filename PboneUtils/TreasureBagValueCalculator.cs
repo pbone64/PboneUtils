@@ -68,10 +68,10 @@ namespace PboneUtils
             for (int i = 0; i < ItemLoader.ItemCount; i++)
             {
                 Item item = new Item();
-                item.SetDefaults(i);
+                Item.SetDefaults(i);
 
-                if ((item.IsVanilla() && !VanillaBossBags.Contains(item.type))
-                || (item.modItem != null && item.modItem.BossBagNPC == 0)) // 0 is the default
+                if ((Item.IsVanilla() && !VanillaBossBags.Contains(Item.type))
+                || (Item.modItem != null && Item.modItem.BossBagNPC == 0)) // 0 is the default
                     continue;
 
                 Player dummy = new Player(false);
@@ -83,24 +83,24 @@ namespace PboneUtils
                 {
                     try
                     {
-                        if (item.IsVanilla())
+                        if (Item.IsVanilla())
                         {
-                            dummy.OpenBossBag(item.type);
-                            ItemLoader.OpenVanillaBag("bossBag", dummy, item.type);
+                            dummy.OpenBossBag(Item.type);
+                            ItemLoader.OpenVanillaBag("bossBag", dummy, Item.type);
                         }
                         else // Modded
                         {
-                            item.modItem.OpenBossBag(dummy);
+                            Item.modItem.OpenBossBag(dummy);
                         }
                     }
                     catch (Exception e)
                     {
-                        PboneUtils.Log.Debug($"Non-fatal error '{e}' encountered while averaging treasure bag (ID: {item.type}, Name: {item.Name})");
+                        PboneUtils.Log.Debug($"Non-fatal error '{e}' encountered while averaging treasure bag (ID: {Item.type}, Name: {Item.Name})");
                         PboneUtils.Log.Debug("Skipping bag...");
                     }
                 }
 
-                AveragedValues.Add(item.type, (int)TempInfo.GetAverageValue());
+                AveragedValues.Add(Item.type, (int)TempInfo.GetAverageValue());
             }
 
             LoadingHelper.SetLoadStage("");

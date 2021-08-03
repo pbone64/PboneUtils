@@ -11,7 +11,7 @@ namespace PboneUtils.Items.Test
             base.SetDefaults();
             UseTime = 30;
             Item.useStyle = ItemUseStyleID.Swing;
-            //item.mountType = ModContent.MountType<SuperDrillMount>();
+            //Item.mountType = ModContent.MountType<SuperDrillMount>();
         }
     }
 }

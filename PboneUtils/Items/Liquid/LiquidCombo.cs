@@ -16,15 +16,15 @@ namespace PboneUtils.Items.Liquid
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.useStyle = ItemUseStyleID.HoldingOut;
-            item.useAnimation = 10;
-            item.useTime = 10;
-            item.shoot = ModContent.ProjectileType<LiquidComboPro>();
-            item.channel = true;
-            item.rare = ItemRarityID.Yellow;
-            item.value = Item.sellPrice(0, 60, 0, 0);
-            item.tileBoost += 20;
-            item.UseSound = SoundID.Item64;
+            Item.useStyle = ItemUseStyleID.HoldUp;
+            Item.useAnimation = 10;
+            Item.useTime = 10;
+            Item.shoot = ModContent.ProjectileType<LiquidComboPro>();
+            Item.channel = true;
+            Item.rare = ItemRarityID.Yellow;
+            Item.value = Item.sellPrice(0, 60, 0, 0);
+            Item.tileBoost += 20;
+            Item.UseSound = SoundID.Item64;
         }
 
         public override bool AltFunctionUse(Player player) => true;
@@ -32,7 +32,7 @@ namespace PboneUtils.Items.Liquid
         {
             if (player.altFunctionUse == 2)
             {
-                RadialMenu.SetInfo("Liquid", item.type);
+                RadialMenu.SetInfo("Liquid", Item.type);
                 PboneUtils.UI.ToggleUI<RadialMenuContainer>();
                 return false;
             }

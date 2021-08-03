@@ -1,11 +1,11 @@
 ﻿using PboneUtils.DataStructures;
+using PboneUtils.MiscModsPlayers;
 using PboneUtils.UI;
 using PboneUtils.UI.States;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 
-namespace PboneUtils.Items.Tools
+namespace PboneUtils.Items.Misc
 {
     public class MagicLight : RightClickToggleItem
     {
@@ -17,12 +17,12 @@ namespace PboneUtils.Items.Tools
         {
             base.SetDefaults();
 
-            item.autoReuse = true;
-            item.useStyle = ItemUseStyleID.SwingThrow;
+            Item.autoReuse = true;
+            Item.useStyle = ItemUseStyleID.Swing;
             UseTime = 10;
-            item.consumable = false;
-            item.rare = ItemRarityID.Yellow;
-            item.maxStack = 1;
+            Item.consumable = false;
+            Item.rare = ItemRarityID.Yellow;
+            Item.maxStack = 1;
         }
 
         public override bool AltFunctionUse(Player player) => true;
@@ -43,14 +43,14 @@ namespace PboneUtils.Items.Tools
             if (player.altFunctionUse == 2)
             {
                 // Open config
-                RadialMenu.SetInfo("Light", item.type);
+                RadialMenu.SetInfo("Light", Item.type);
                 PboneUtils.UI.ToggleUI<RadialMenuContainer>();
-                item.createTile = -1; // Don't place a tile when opening the menu
+                Item.createTile = -1; // Don't place a tile when opening the menu
             }
             else
             {
                 // Change tile based on config
-                item.createTile = mod.TileType(config.OnlyOneValue + "Light");
+                Item.createTile = mod.TileType(config.OnlyOneValue + "Light");
             }
 
             return base.CanUseItem(player);
@@ -63,7 +63,7 @@ namespace PboneUtils.Items.Tools
                 PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
                 ItemConfig config = mPlayer.ItemConfigs["Light"];
                 // Set it back to the selected tile, because it's set to -1 when the menu is opened
-                item.createTile = mod.TileType(config.OnlyOneValue + "Light");
+                Item.createTile = mod.TileType(config.OnlyOneValue + "Light");
             }
 
             return base.UseItem(player);

@@ -1,9 +1,10 @@
 ﻿using PboneUtils.Items.Storage;
-using PboneUtils.Items.Tools;
+using PboneUtils.Items.Misc;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
+using PboneUtils.MiscModsPlayers;
 
 namespace PboneUtils.NPCs
 {

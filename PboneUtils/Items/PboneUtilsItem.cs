@@ -15,8 +15,6 @@ namespace PboneUtils.Items
         public virtual bool DrawGlowmask => false;
         public virtual Color ModifyGlowmaskColor => Color.White;
 
-        public virtual bool AutoloadCondition => true;
-
         public string GlowmaskTexture => Texture + "_Glow";
         public int UseTime { set => Item.useTime = Item.useAnimation = value; }
         public Texture2D ItemTexture => TextureAssets.Item[Item.type].Value;

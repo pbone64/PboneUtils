@@ -11,11 +11,11 @@ namespace PboneUtils.Items.Bait
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.rare = ItemRarityID.Lime;
-            item.value = Item.sellPrice(0, 1, 0, 0);
+            Item.rare = ItemRarityID.Lime;
+            Item.value = Item.sellPrice(0, 1, 0, 0);
 
-            item.bait = 50;
-            item.consumable = false;
+            Item.bait = 50;
+            Item.consumable = false;
         }
 
         public override bool ConsumeAmmo(Player player) => false;

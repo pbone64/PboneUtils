@@ -1,8 +1,7 @@
 ﻿using PboneUtils.Helpers;
-using PboneUtils.ID;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Liquid
 {
@@ -14,21 +13,21 @@ namespace PboneUtils.Items.Liquid
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.useStyle = ItemUseStyleID.SwingThrow;
-            item.useAnimation = 12;
-            item.useTime = 5;
-            item.useTurn = true;
-            item.autoReuse = true;
-            item.rare = ItemRarityID.Lime;
-            item.value = Item.sellPrice(0, 10, 0, 0);
-            item.tileBoost += 2;
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.useAnimation = 12;
+            Item.useTime = 5;
+            Item.useTurn = true;
+            Item.autoReuse = true;
+            Item.rare = ItemRarityID.Lime;
+            Item.value = Item.sellPrice(0, 10, 0, 0);
+            Item.tileBoost += 2;
         }
 
-        public override bool UseItem(Player player)
+        public override bool? UseItem(Player player)
         {
             if (Main.myPlayer == player.whoAmI)
             {
-                if (player.IsTargetTileInItemRange(item))
+                if (player.IsTargetTileInItemRange(Item))
                 {
                     if (LiquidHelper.PlaceLiquid(Player.tileTargetX, Player.tileTargetY, LiquidID.Lava))
                     {

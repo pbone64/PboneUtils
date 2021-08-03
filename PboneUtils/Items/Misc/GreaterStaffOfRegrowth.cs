@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace PboneUtils.Items.Tools
+namespace PboneUtils.Items.Misc
 {
     public class GreaterStaffOfRegrowth : PboneUtilsItem
     {
@@ -13,15 +13,15 @@ namespace PboneUtils.Items.Tools
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.useStyle = ItemUseStyleID.SwingThrow;
-            item.useAnimation = 10;
-            item.useTime = 10;
-            item.shoot = ModContent.ProjectileType<GreaterStaffOfRegrowthPro>();
-            item.channel = true;
-            item.rare = ItemRarityID.Yellow;
-            item.value = Item.sellPrice(0, 0, 10, 0);
-            item.tileBoost += 20;
-            item.UseSound = SoundID.Item64;
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.useAnimation = 10;
+            Item.useTime = 10;
+            Item.shoot = ModContent.ProjectileType<GreaterStaffOfRegrowthPro>();
+            Item.channel = true;
+            Item.rare = ItemRarityID.Yellow;
+            Item.value = Item.sellPrice(0, 0, 10, 0);
+            Item.tileBoost += 20;
+            Item.UseSound = SoundID.Item64;
         }
 
         public override void AddRecipes()

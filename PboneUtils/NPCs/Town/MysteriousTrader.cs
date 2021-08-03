@@ -9,7 +9,7 @@ using Terraria.Utilities;
 namespace PboneUtils.NPCs.Town
 {
     [AutoloadHead]
-    public class MysteriousTrader : PNPC
+    public class MysteriousTrader : PboneUtilsNPC
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.MysteriousTrader;
 

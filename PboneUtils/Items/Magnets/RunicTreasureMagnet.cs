@@ -12,8 +12,8 @@ namespace PboneUtils.Items.Magnets
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.rare = ItemRarityID.Red;
-            item.value = Item.sellPrice(0, 30, 0, 0);
+            Item.rare = ItemRarityID.Red;
+            Item.value = Item.sellPrice(0, 30, 0, 0);
         }
 
         public override void UpdateInventory(Player player)

@@ -1,7 +1,6 @@
 ﻿using Terraria;
 using Terraria.GameContent.Events;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace PboneUtils.Items.WorldControl
 {
@@ -12,15 +11,15 @@ namespace PboneUtils.Items.WorldControl
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.useStyle = ItemUseStyleID.HoldingOut;
-            item.useAnimation = 15;
-            item.useTime = 15;
-            item.autoReuse = false;
-            item.rare = ItemRarityID.Pink;
-            item.value = Item.sellPrice(0, 7, 50, 0);
+            Item.useStyle = ItemUseStyleID.HoldUp;
+            Item.useAnimation = 15;
+            Item.useTime = 15;
+            Item.autoReuse = false;
+            Item.rare = ItemRarityID.Pink;
+            Item.value = Item.sellPrice(0, 7, 50, 0);
         }
 
-        public override bool UseItem(Player player)
+        public override bool? UseItem(Player player)
         {
             if (player.whoAmI == Main.myPlayer)
             {

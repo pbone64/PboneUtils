@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Graphics;
 using PboneUtils.DataStructures;
 using Terraria;
-using Terraria.ModLoader;
 using Terraria.UI;
 
 namespace PboneUtils.UI.Elements.EndlessBuffToggler

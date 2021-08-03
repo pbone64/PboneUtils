@@ -10,11 +10,11 @@ namespace PboneUtils.Items.Arena
 
         public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.WoodPlatform);
-            item.consumable = false;
-            item.createTile = ModContent.TileType<BuffBrazierTile>();
-            item.rare = ItemRarityID.Lime;
-            item.maxStack = 1;
+            Item.CloneDefaults(ItemID.WoodPlatform);
+            Item.consumable = false;
+            Item.createTile = ModContent.TileType<BuffBrazierTile>();
+            Item.rare = ItemRarityID.Lime;
+            Item.maxStack = 1;
 
             base.SetDefaults();
         }

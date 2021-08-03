@@ -1,6 +1,5 @@
 ﻿using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Bait
 {
@@ -11,11 +10,11 @@ namespace PboneUtils.Items.Bait
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.rare = ItemRarityID.Orange;
-            item.value = Item.sellPrice(0, 0, 50, 0);
+            Item.rare = ItemRarityID.Orange;
+            Item.value = Item.sellPrice(0, 0, 50, 0);
 
-            item.bait = 25;
-            item.consumable = false;
+            Item.bait = 25;
+            Item.consumable = false;
         }
 
         public override bool ConsumeAmmo(Player player) => false;

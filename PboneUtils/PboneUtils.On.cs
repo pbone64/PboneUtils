@@ -15,20 +15,26 @@ namespace PboneUtils
 
             On.Terraria.Player.HasUnityPotion += Player_HasUnityPotion;
             On.Terraria.Player.TakeUnityPotion += Player_TakeUnityPotion;
-            On.Terraria.Player.Spawn += Player_Spawn;
+            On.Terraria.Player.Spawn += Player_Spawn; ;
         }
 
         // Make the player not go to spawn under very specific conditions so teleportation app works
-        private void Player_Spawn(On.Terraria.Player.orig_Spawn orig, Player self)
+        private void Player_Spawn(On.Terraria.Player.orig_Spawn orig, Player self, PlayerSpawnContext context)
         {
+            if (context != PlayerSpawnContext.RecallFromItem)
+            {
+                orig(self, context);
+                return;
+            }
+
             if (!self.dead && // If you are not dead
                 self.HeldItem.type == ItemID.CellPhone && // If you're holding a cell phone
                 self.HasApp<TeleportationApp>() && // If you have a teleporation app
                 self.altFunctionUse == 2 && // If you're right-clicking
-                self.itemTime == PlayerHooks.TotalUseTime(self.HeldItem.useTime, self, self.HeldItem) / 2) // If it's the frame when cell phone is used
+                self.itemTime == PlayerLoader.TotalUseTime(self.HeldItem.useTime, self, self.HeldItem) / 2) // If it's the frame when cell phone is used
                 return;
 
-            orig(self);
+            orig(self, context);
         }
 
         // Make terraria not try to consume a wormhole potion if you have a wormhole app

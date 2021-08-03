@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 using PboneUtils.DataStructures;
 using PboneUtils.UI.Elements;
 using PboneUtils.UI.Elements.EndlessBuffToggler;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.Localization;

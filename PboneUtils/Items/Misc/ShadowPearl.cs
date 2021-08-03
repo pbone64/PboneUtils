@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace PboneUtils.Items.Tools
+namespace PboneUtils.Items.Misc
 {
     public class ShadowPearl : PboneUtilsItem
     {
@@ -10,11 +10,11 @@ namespace PboneUtils.Items.Tools
 
         public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.WoodPlatform);
-            item.consumable = false;
-            item.createTile = ModContent.TileType<ShadowPearlTile>();
-            item.rare = ItemRarityID.Blue;
-            item.maxStack = 20;
+            Item.CloneDefaults(ItemID.WoodPlatform);
+            Item.consumable = false;
+            Item.createTile = ModContent.TileType<ShadowPearlTile>();
+            Item.rare = ItemRarityID.Blue;
+            Item.maxStack = 20;
 
             base.SetDefaults();
         }

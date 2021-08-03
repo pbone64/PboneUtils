@@ -1,8 +1,8 @@
-﻿using Terraria;
+﻿using PboneUtils.MiscModsPlayers;
+using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 
-namespace PboneUtils.Items.Tools
+namespace PboneUtils.Items.Misc
 {
     public class GreedyChest : RightClickToggleItem
     {
@@ -11,8 +11,8 @@ namespace PboneUtils.Items.Tools
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.rare = ItemRarityID.LightRed;
-            item.value = Item.sellPrice(0, 1, 0, 0);
+            Item.rare = ItemRarityID.LightRed;
+            Item.value = Item.sellPrice(0, 1, 0, 0);
         }
 
         public override void UpdateInventory(Player player)

@@ -1,6 +1,5 @@
 ﻿using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Magnets
 {
@@ -14,8 +13,8 @@ namespace PboneUtils.Items.Magnets
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.rare = ItemRarityID.Purple;
-            item.value = Item.sellPrice(0, 45, 0, 0);
+            Item.rare = ItemRarityID.Purple;
+            Item.value = Item.sellPrice(0, 45, 0, 0);
         }
 
         public override void UpdateInventory(Player player)

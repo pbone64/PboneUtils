@@ -10,7 +10,7 @@ using Terraria.GameContent;
 
 namespace PboneUtils.Projectiles.Selection
 {
-    public abstract class SelectionProjectile : PProjectile
+    public abstract class SelectionProjectile : PboneUtilsProjectile
     {
         public virtual Action<int, int> TileAction { get; }
         public virtual Func<Rectangle, bool> PreAction { get; }

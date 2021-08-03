@@ -7,14 +7,14 @@ namespace PboneUtils.Helpers
 {
     public static class Extensions
     {
-        public static bool IsVanilla(this Item item) => item.type < ItemID.Count;
-        public static bool IsModded(this Item item) => !item.IsVanilla();
+        public static bool IsVanilla(this Item item) => Item.type < ItemID.Count;
+        public static bool IsModded(this Item item) => !Item.IsVanilla();
 
         public static void TryIncreaseMaxStack(this Item item, int newStack)
         {
-            if (item.maxStack < newStack)
+            if (Item.maxStack < newStack)
             {
-                item.maxStack = newStack;
+                Item.maxStack = newStack;
             }
         }
 

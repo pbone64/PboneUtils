@@ -2,7 +2,6 @@
 using PboneUtils.Projectiles.Storage;
 using Terraria.Audio;
 using Terraria.ModLoader;
-using PboneUtils.ID;
 
 namespace PboneUtils.Items.Storage
 {

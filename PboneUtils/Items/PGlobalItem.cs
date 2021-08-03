@@ -1,8 +1,8 @@
-﻿using Microsoft.Xna.Framework;
-using PboneUtils.Helpers;
-using PboneUtils.Items.Magnets;
-using PboneUtils.Items.Tools;
+﻿using PboneUtils.Helpers;
+using PboneUtils.Items.Misc;
+using PboneUtils.MiscModsPlayers;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -46,9 +46,8 @@ namespace PboneUtils.Items
 
             if (mPlayer.PhilosophersStone && player.HeldItem.type == ModContent.ItemType<PhilosophersStone>() && !CoinHelper.CoinTypes.Contains(item.type))
             {
-                int value = item.value;
                 SoundEngine.PlaySound(SoundID.CoinPickup);
-                player.SellItem(value, item.stack);
+                player.SellItem(item, item.stack);
 
                 return false;
             }

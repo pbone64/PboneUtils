@@ -1,6 +1,5 @@
 ﻿using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace PboneUtils.Items.CellPhoneApps
 {
@@ -16,8 +15,8 @@ namespace PboneUtils.Items.CellPhoneApps
         {
             base.SetDefaults();
 
-            item.rare = ItemRarityID.Orange;
-            item.value = Item.sellPrice(0, 1, 0, 0);
+            Item.rare = ItemRarityID.Orange;
+            Item.value = Item.sellPrice(0, 1, 0, 0);
         }
 
         public override void AddRecipes()

@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PboneUtils.ID;
 using PboneUtils.Items.Storage;
 using System;
 using Terraria;

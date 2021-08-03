@@ -30,20 +30,20 @@ namespace PboneUtils
             {
                 ItemsToCountForEndlessBuffs.Clear();
 
-                ItemsToCountForEndlessBuffs.AddRange(CollectionHelper.FromArray(player.inventory, "Inventory"));
+                ItemsToCountForEndlessBuffs.AddRange(CollectionHelper.FromArray(Player.inventory, "Inventory"));
                 InventoryItemsStart = ItemsToCountForEndlessBuffs.Count - 1;
 
-                ItemsToCountForEndlessBuffs.AddRange(CollectionHelper.FromArray(player.bank.item, "PiggyBank"));
+                ItemsToCountForEndlessBuffs.AddRange(CollectionHelper.FromArray(Player.bank.item, "PiggyBank"));
                 PiggyBankItemsStart = ItemsToCountForEndlessBuffs.Count - 1;
 
-                ItemsToCountForEndlessBuffs.AddRange(CollectionHelper.FromArray(player.bank2.item, "Safe"));
+                ItemsToCountForEndlessBuffs.AddRange(CollectionHelper.FromArray(Player.bank2.item, "Safe"));
                 SafeItemsStart = ItemsToCountForEndlessBuffs.Count - 1;
 
-                ItemsToCountForEndlessBuffs.AddRange(CollectionHelper.FromArray(player.bank3.item, "DefendersForge"));
+                ItemsToCountForEndlessBuffs.AddRange(CollectionHelper.FromArray(Player.bank3.item, "DefendersForge"));
                 DefendersForgeItemsStart = ItemsToCountForEndlessBuffs.Count - 1;
 
                 if (PboneUtils.CrossMod.IsModLoaded("ExtensibleInventory"))
-                    PboneUtils.CrossMod.GetModCompatibility<ExtensibleInventoryCompatibility>("ExtensibleInventory").DoEndlessBuffs(player);
+                    PboneUtils.CrossMod.GetModCompatibility<ExtensibleInventoryCompatibility>("ExtensibleInventory").DoEndlessBuffs(Player);
             }
 
             EndlessBuffSources.Clear();
@@ -61,7 +61,7 @@ namespace PboneUtils
                 EndlessBuffSources.Add(item.buffType, new EndlessBuffSource(item, key));
 
                 if (!DisabledBuffs.Contains(item.buffType))
-                    player.AddBuff(item.buffType, 20);
+                    Player.AddBuff(item.buffType, 20);
             }
         }
     }

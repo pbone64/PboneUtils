@@ -10,10 +10,10 @@ namespace PboneUtils.Items.Arena
 
         public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.AmmoBox);
-            item.consumable = false;
-            item.maxStack = 1;
-            item.createTile = ModContent.TileType<PreperationStationTile>();
+            Item.CloneDefaults(ItemID.AmmoBox);
+            Item.consumable = false;
+            Item.maxStack = 1;
+            Item.createTile = ModContent.TileType<PreperationStationTile>();
 
             base.SetDefaults();
         }

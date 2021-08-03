@@ -10,8 +10,8 @@ namespace PboneUtils.Items.Arena
 
         public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.WoodPlatform);
-            item.createTile = ModContent.TileType<AsphaltPlatformTile>();
+            Item.CloneDefaults(ItemID.WoodPlatform);
+            Item.createTile = ModContent.TileType<AsphaltPlatformTile>();
 
             base.SetDefaults();
         }

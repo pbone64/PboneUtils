@@ -1,9 +1,8 @@
 ﻿using PboneUtils.MiscModsPlayers;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 
-namespace PboneUtils.Items.Tools
+namespace PboneUtils.Items.Misc
 {
     public class FlameOfPeace : RightClickToggleItem
     {
@@ -12,8 +11,8 @@ namespace PboneUtils.Items.Tools
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.rare = ItemRarityID.Pink;
-            item.value = Item.buyPrice(0, 2, 50, 0);
+            Item.rare = ItemRarityID.Pink;
+            Item.value = Item.buyPrice(0, 2, 50, 0);
         }
 
         public override void AddRecipes()

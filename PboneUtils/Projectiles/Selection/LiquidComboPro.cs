@@ -3,7 +3,6 @@ using PboneUtils.DataStructures;
 using PboneUtils.Helpers;
 using PboneUtils.UI.States;
 using System;
-using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 

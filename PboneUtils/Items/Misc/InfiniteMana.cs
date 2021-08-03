@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace PboneUtils.Items.Tools
+namespace PboneUtils.Items.Misc
 {
     public class InfiniteMana : PboneUtilsItem
     {
@@ -12,16 +12,16 @@ namespace PboneUtils.Items.Tools
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.rare = ItemRarityID.Purple;
-            item.accessory = true;
-            item.value = Item.buyPrice(0, 15, 0, 0);
+            Item.rare = ItemRarityID.Purple;
+            Item.accessory = true;
+            Item.value = Item.buyPrice(0, 15, 0, 0);
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             base.UpdateAccessory(player, hideVisual);
             player.GetModPlayer<InfiniteManaPlayer>().InfiniteMana = true;
-            player.allDamage -= 0.35f;
+            player.GetDamage(DamageClass.Generic) -= 0.35f;
         }
 
         public override void AddRecipes()
@@ -68,8 +68,8 @@ namespace PboneUtils.Items.Tools
 
             if (InfiniteMana && neededMana > 0)
             {
-                player.statMana += neededMana;
-                player.ManaEffect(neededMana);
+                Player.statMana += neededMana;
+                Player.ManaEffect(neededMana);
             }
         }
 
@@ -79,8 +79,8 @@ namespace PboneUtils.Items.Tools
 
             if (InfiniteMana && manaConsumed > 0)
             {
-                player.statMana += manaConsumed;
-                player.ManaEffect(manaConsumed);
+                Player.statMana += manaConsumed;
+                Player.ManaEffect(manaConsumed);
             }
         }
 
@@ -91,7 +91,7 @@ namespace PboneUtils.Items.Tools
 
             if (InfiniteMana)
             {
-                player.maxMinions = 1;
+                Player.maxMinions = 1;
             }
         }
     }

@@ -1,6 +1,5 @@
 ﻿using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
-using PboneUtils.ID;
 using PboneUtils.NPCs.Town;
 using PboneUtils.Packets;
 using System;
@@ -87,8 +86,8 @@ namespace PboneUtils
             for (int i = 0; i < MysteriousTraderShop.Count; i++)
             {
                 Item item = new Item();
-                item.SetDefaults(MysteriousTraderShop[i]);
-                tag.Add("ModMysteriousTraderItem" + i, item.ModItem == null ? "TERRARIA" : item.ModItem.Mod.Name);
+                Item.SetDefaults(MysteriousTraderShop[i]);
+                tag.Add("ModMysteriousTraderItem" + i, Item.ModItem == null ? "TERRARIA" : Item.ModItem.Mod.Name);
                 tag.Add("MysteriousTraderItem" + i, MysteriousTraderShop[i]);
             }
 

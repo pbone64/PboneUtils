@@ -13,13 +13,13 @@ namespace PboneUtils.Items.Storage
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.useStyle = ItemUseStyleID.SwingThrow;
+            Item.useStyle = ItemUseStyleID.Swing;
             UseTime = 28;
-            item.UseSound = SoundID.Item37;
-            item.shoot = ModContent.ProjectileType<PetrifiedSafeProjectile>();
-            item.shootSpeed = 4;
-            item.rare = ItemRarityID.Orange;
-            item.value = Item.sellPrice(0, 2, 0, 0);
+            Item.UseSound = SoundID.Item37;
+            Item.shoot = ModContent.ProjectileType<PetrifiedSafeProjectile>();
+            Item.shootSpeed = 4;
+            Item.rare = ItemRarityID.Orange;
+            Item.value = Item.sellPrice(0, 2, 0, 0);
         }
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

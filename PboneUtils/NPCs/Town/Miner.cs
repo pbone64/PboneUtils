@@ -11,7 +11,7 @@ using Terraria.Utilities;
 namespace PboneUtils.NPCs.Town
 {
     [AutoloadHead]
-    public class Miner : PNPC
+    public class Miner : PboneUtilsNPC
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.Miner;
 
@@ -176,7 +176,7 @@ namespace PboneUtils.NPCs.Town
         public override void DrawTownAttackSwing(ref Texture2D item, ref int itemSize, ref float scale, ref Vector2 offset)
         {
             base.DrawTownAttackSwing(ref item, ref itemSize, ref scale, ref offset);
-            item = PboneUtils.Textures.NPCs.MinerAttack;
+            item = PboneUtils.Textures["MinerAttack"];
             itemSize = 32;
         }
     }

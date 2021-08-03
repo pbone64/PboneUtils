@@ -7,7 +7,7 @@ using Terraria.GameInput;
 
 namespace PboneUtils.Projectiles.Storage
 {
-    public abstract class StorageProjectile : PProjectile
+    public abstract class StorageProjectile : PboneUtilsProjectile
     {
         public abstract int ChestType { get; }
         public abstract int ItemType { get; }

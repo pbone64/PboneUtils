@@ -10,15 +10,6 @@ namespace PboneUtils.Items.CellPhoneApps
     public partial class AppGlobalItem : GlobalItem
     {
         public override bool InstancePerEntity => true;
-        public override bool CloneNewInstances => true;
-        public override bool NeedsSaving(Item item)
-        {
-            if (item.type == ItemID.CellPhone)
-                return true;
-
-            return base.NeedsSaving(item);
-        }
-
         public override bool AppliesToEntity(Item entity, bool lateInstantiation) => entity.type == ItemID.CellPhone;
 
         public List<(int item, string appId)> Apps = new List<(int, string)>();
@@ -31,12 +22,12 @@ namespace PboneUtils.Items.CellPhoneApps
             return gItem;
         }
 
-        public override GlobalItem NewInstance(Item item)
+        public override bool NeedsSaving(Item item)
         {
-            AppGlobalItem gItem = base.NewInstance(item) as AppGlobalItem;
-            gItem.Apps = new List<(int item, string appId)>();
+            if (item.type == ItemID.CellPhone)
+                return true;
 
-            return gItem;
+            return base.NeedsSaving(item);
         }
 
         public override TagCompound Save(Item item)
@@ -83,7 +74,7 @@ namespace PboneUtils.Items.CellPhoneApps
         public override bool CanRightClick(Item item)
         {
             if (item.type == ItemID.CellPhone)
-                return Main.mouseItem.modItem is AppItem app && !Apps.Contains((app.BaseID, app.AppName));
+                return Main.mouseItem.ModItem is AppItem app && !Apps.Contains((app.BaseID, app.AppName));
 
             return base.CanRightClick(item);
         }
@@ -94,7 +85,7 @@ namespace PboneUtils.Items.CellPhoneApps
 
             if (item.type == ItemID.CellPhone)
             {
-                if (Main.mouseItem.modItem is AppItem app)
+                if (Main.mouseItem.ModItem is AppItem app)
                 {
                     if (Apps.Contains((app.BaseID, app.AppName)))
                         return;
@@ -118,12 +109,12 @@ namespace PboneUtils.Items.CellPhoneApps
             base.ModifyTooltips(item, tooltips);
             if (item.type == ItemID.CellPhone)
             {
-                tooltips.Add(new TooltipLine(mod, "PboneUtils:CellPhoneInfo", Language.GetTextValue("Mods.PboneUtils.Common.CellPhoneInfo")));
+                tooltips.Add(new TooltipLine(Mod, "PboneUtils:CellPhoneInfo", Language.GetTextValue("Mods.PboneUtils.Common.CellPhoneInfo")));
 
                 foreach ((int item, string appId) tuple in Apps)
                 {
                     tooltips.Add(
-                        new TooltipLine(mod, "PboneUtils:CellPhoneAppDescription-" + tuple.appId.GetHashCode(),
+                        new TooltipLine(Mod, "PboneUtils:CellPhoneAppDescription-" + tuple.appId.GetHashCode(),
                         Language.GetTextValue("Mods.PboneUtils.Common.CellPhone." + tuple.appId)));
                 }
             }
@@ -137,7 +128,7 @@ namespace PboneUtils.Items.CellPhoneApps
             return base.AltFunctionUse(item, player);
         }
 
-        public override bool UseItem(Item item, Player player)
+        public override bool? UseItem(Item item, Player player)
         {
             if (item.type == ItemID.CellPhone && player.altFunctionUse == 2 && Apps.Contains((ItemID.TeleportationPotion, "Teleportation")))
             {
