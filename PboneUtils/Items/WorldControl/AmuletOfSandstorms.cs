@@ -40,13 +40,7 @@ namespace PboneUtils.Items.WorldControl
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.AncientBattleArmorMaterial, 1); // AKA forbidden fragment
-            recipe.AddRecipeGroup(PboneUtils.Recipes.AnyAdamantite, 3);
-            recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddIngredient(ItemID.AncientBattleArmorMaterial, 1).AddRecipeGroup(PboneUtils.Recipes.AnyAdamantite, 3).AddTile(TileID.MythrilAnvil).Register();
         }
     }
 }

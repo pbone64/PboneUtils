@@ -5,6 +5,7 @@ using PboneUtils.DataStructures;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using System;
+using PboneUtils.MiscModPlayers;
 
 namespace PboneUtils.UI.Elements.EndlessBuffToggler
 {

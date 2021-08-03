@@ -24,16 +24,7 @@ namespace PboneUtils.Items.Magnets
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<SpectreTreasureMagnet>());
-            recipe.AddIngredient(ItemID.FragmentSolar, 2);
-            recipe.AddIngredient(ItemID.FragmentVortex, 2);
-            recipe.AddIngredient(ItemID.FragmentNebula, 2);
-            recipe.AddIngredient(ItemID.FragmentStardust, 2);
-            recipe.AddTile(TileID.LunarCraftingStation);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddIngredient(ModContent.ItemType<SpectreTreasureMagnet>()).AddIngredient(ItemID.FragmentSolar, 2).AddIngredient(ItemID.FragmentVortex, 2).AddIngredient(ItemID.FragmentNebula, 2).AddIngredient(ItemID.FragmentStardust, 2).AddTile(TileID.LunarCraftingStation).Register();
         }
     }
 }

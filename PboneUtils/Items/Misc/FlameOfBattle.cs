@@ -17,14 +17,7 @@ namespace PboneUtils.Items.Misc
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.WaterCandle, 5);
-            recipe.AddIngredient(ItemID.BattlePotion, 5);
-            recipe.AddIngredient(ItemID.SoulofNight, 5);
-            recipe.AddTile(TileID.DemonAltar);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddIngredient(ItemID.WaterCandle, 5).AddIngredient(ItemID.BattlePotion, 5).AddIngredient(ItemID.SoulofNight, 5).AddTile(TileID.DemonAltar).Register();
         }
 
         public override void UpdateInventory(Player player)

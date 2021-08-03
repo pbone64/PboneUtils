@@ -9,7 +9,7 @@ using Terraria.ObjectData;
 
 namespace PboneUtils.Tiles.Lights
 {
-    public abstract class BaseLight : ModTile
+    public abstract class BaseLight : PboneUtilsTile
     {
         public override string Texture => "Terraria/Projectile_" + ProjectileID.ShadowBeamHostile;
 

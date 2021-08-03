@@ -1,11 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
+using PboneLib.CustomLoading.Implementations;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Magnets
 {
-    public class MagnetGlobalItem : GlobalItem
+    public class MagnetGlobalItem : PGlobalItem
     {
         public const int DeluxeTreasureMagnetRange = 320;
         public const int HallowedTreasureMangetRange = 640;

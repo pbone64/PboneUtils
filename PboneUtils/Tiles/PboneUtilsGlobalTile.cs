@@ -1,11 +1,12 @@
-﻿using System;
+﻿using PboneLib.CustomLoading.Implementations;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
 
 namespace PboneUtils.Tiles
 {
-    public class PGlobalTile : GlobalTile
+    public class PboneUtilsGlobalTile : PGlobalTile
     {
         public Dictionary<int, Func<bool>> TileBreakPredicates = new Dictionary<int, Func<bool>>();
 

@@ -18,16 +18,8 @@ namespace PboneUtils.Items.Arena
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.AsphaltBlock);
-            recipe.SetResult(this, 2);
-            recipe.AddRecipe();
-
-            recipe = new ModRecipe(mod);
-            recipe.AddIngredient(this, 2);
-            recipe.SetResult(ItemID.AsphaltBlock);
-            recipe.AddRecipe();
+            CreateRecipe(2).AddIngredient(ItemID.AsphaltBlock).Register();
+            CreateRecipe(1).AddIngredient(this, 2).ReplaceResult(ItemID.AsphaltBlock);
         }
     }
 }

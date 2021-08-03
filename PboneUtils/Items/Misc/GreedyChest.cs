@@ -23,13 +23,7 @@ namespace PboneUtils.Items.Misc
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.GoldChest);
-            recipe.AddIngredient(ItemID.SoulofNight, 2);
-            recipe.AddTile(TileID.DemonAltar);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddIngredient(ItemID.GoldChest).AddIngredient(ItemID.SoulofNight, 2).AddTile(TileID.DemonAltar).Register();
         }
     }
 }

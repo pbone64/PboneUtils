@@ -1,5 +1,4 @@
 ﻿using PboneLib.Utils;
-using PboneUtils.Helpers;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -43,13 +42,7 @@ namespace PboneUtils.Items.Liquid
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.HoneyBucket, 5);
-            recipe.AddIngredient(ItemID.SoulofLight, 2);
-            recipe.AddTile(TileID.AlchemyTable);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddIngredient(ItemID.HoneyBucket, 5).AddIngredient(ItemID.SoulofLight, 2).AddTile(TileID.AlchemyTable).Register();
         }
     }
 }

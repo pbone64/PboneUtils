@@ -23,15 +23,7 @@ namespace PboneUtils.Items.Misc
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.PiggyBank);
-            recipe.AddIngredient(ItemID.Bone, 10);
-            recipe.AddIngredient(ItemID.JungleSpores, 5);
-            recipe.AddRecipeGroup(PboneUtils.Recipes.AnyShadowScale, 10);
-            recipe.AddTile(TileID.DemonAltar);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddIngredient(ItemID.PiggyBank).AddIngredient(ItemID.Bone, 10).AddIngredient(ItemID.JungleSpores, 5).AddRecipeGroup(PboneUtils.Recipes.AnyShadowScale, 10).AddTile(TileID.DemonAltar).Register();
         }
     }
 }

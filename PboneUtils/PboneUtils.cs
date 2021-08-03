@@ -23,14 +23,12 @@ namespace PboneUtils
         public static PboneUtilsUI UI => Instance.ui;
         public static PboneUtilsTextures Textures => Instance.textures;
         public static ModRecipeManager Recipes => Instance.recipes;
-        public static TreasureBagValueCalculator BagValues => Instance.bagValues;
         public static CrossModManager CrossMod => Instance.crossModManager;
         public static PacketManager PacketManager => Instance.packetManager;
 
         private PboneUtilsUI ui;
         private PboneUtilsTextures textures;
         private ModRecipeManager recipes;
-        private TreasureBagValueCalculator bagValues;
         private CrossModManager crossModManager;
         private PacketManager packetManager;
 
@@ -52,8 +50,6 @@ namespace PboneUtils
             ui = new PboneUtilsUI();
             textures = new PboneUtilsTextures();
             recipes = new ModRecipeManager();
-            bagValues = new TreasureBagValueCalculator();
-
             packetManager = new PacketManager(this);
             packetManager.RegisterPacketHandler<SyncMysteriousTraderShop>(PacketID.SyncMysteriousTraderShop);
 
@@ -86,9 +82,6 @@ namespace PboneUtils
         {
             base.PostSetupContent();
 
-            if (PboneUtilsConfig.Instance.AverageBossBags)
-                bagValues.Load();
-
             // These get assinged to something by their ctors, don't worry
 #pragma warning disable CA1806 // Do not ignore method results
             new MysteriousTraderShopManager();
@@ -102,8 +95,6 @@ namespace PboneUtils
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            recipes.AddRecipes(this);
         }
         public override void AddRecipeGroups()
         {
@@ -114,15 +105,12 @@ namespace PboneUtils
         public override void Unload()
         {
             base.Unload();
-            if (bagValues != null)
-                bagValues.Unload();
 
             Instance = null;
 
             textures = null;
             recipes = null;
             ui = null;
-            bagValues = null;
             crossModManager = null;
             packetManager = null;
 

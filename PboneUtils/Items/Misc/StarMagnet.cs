@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -26,14 +25,7 @@ namespace PboneUtils.Items.Misc
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.FallenStar, 5);
-            recipe.AddRecipeGroup(PboneUtils.Recipes.AnyDemoniteBar, 7);
-            recipe.AddRecipeGroup(PboneUtils.Recipes.AnyShadowScale, 10);
-            recipe.AddTile(TileID.SkyMill);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddIngredient(ItemID.FallenStar, 5).AddRecipeGroup(PboneUtils.Recipes.AnyDemoniteBar, 7).AddRecipeGroup(PboneUtils.Recipes.AnyShadowScale, 10).AddTile(TileID.SkyMill).Register();
         }
     }
 

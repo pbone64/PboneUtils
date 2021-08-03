@@ -10,7 +10,7 @@ using System;
 
 namespace PboneUtils.Tiles
 {
-    public class PetrifiedSafeTile : ModTile
+    public class PetrifiedSafeTile : PboneUtilsTile
     {
         public static Func<bool> Predicate = () => NPC.downedBoss3;
 

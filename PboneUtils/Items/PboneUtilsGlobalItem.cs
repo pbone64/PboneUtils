@@ -1,4 +1,5 @@
-﻿using PboneLib.Utils;
+﻿using PboneLib.CustomLoading.Implementations;
+using PboneLib.Utils;
 using PboneUtils.Helpers;
 using PboneUtils.Items.Misc;
 using PboneUtils.MiscModsPlayers;
@@ -9,14 +10,15 @@ using Terraria.ModLoader;
 
 namespace PboneUtils.Items
 {
-    public class PGlobalItem : GlobalItem
+    public class PboneUtilsGlobalItem : PGlobalItem
     {
         public override void SetDefaults(Item item)
         {
             base.SetDefaults(item);
-            if (TreasureBagValueCalculator.Loaded && PboneUtilsConfig.Instance.AverageBossBags && item.value == 0 && PboneUtils.BagValues.AveragedValues.ContainsKey(item.type))
+            TreasureBagValueCalculator calc = ModContent.GetInstance<TreasureBagValueCalculator>();
+            if (TreasureBagValueCalculator.Loaded && PboneUtilsConfig.Instance.AverageBossBags && item.value == 0 && calc.AveragedValues.ContainsKey(item.type))
             {
-                item.value = PboneUtils.BagValues.AveragedValues[item.type];
+                item.value = calc.AveragedValues[item.type];
             }
 
             if (PboneUtilsConfig.Instance.MaxStackIncrease)

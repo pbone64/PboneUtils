@@ -1,13 +1,12 @@
-﻿using Terraria.ModLoader;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using PboneUtils.DataStructures;
 using Terraria.ModLoader.IO;
-using PboneUtils.Helpers;
 using PboneLib.Utils;
+using PboneLib.CustomLoading.Implementations;
 
 namespace PboneUtils.MiscModsPlayers
 {
-    public class PbonePlayer : ModPlayer
+    public class PbonePlayer : PPlayer
     {
         #region Fields
         // Tools

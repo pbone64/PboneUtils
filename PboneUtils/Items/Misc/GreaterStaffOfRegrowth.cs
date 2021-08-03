@@ -26,13 +26,7 @@ namespace PboneUtils.Items.Misc
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.StaffofRegrowth, 1);
-            recipe.AddIngredient(ItemID.PurificationPowder, 100);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddIngredient(ItemID.StaffofRegrowth, 1).AddIngredient(ItemID.PurificationPowder, 100).AddTile(TileID.WorkBenches).Register();
         }
     }
 }

@@ -22,13 +22,7 @@ namespace PboneUtils.Items.Bait
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Worm, 5);
-            recipe.AddIngredient(ItemID.Bone, 10);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddIngredient(ItemID.Worm, 5).AddIngredient(ItemID.Bone, 10).AddTile(TileID.WorkBenches).Register();
         }
     }
 }

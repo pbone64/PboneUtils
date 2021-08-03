@@ -1,4 +1,5 @@
-﻿using PboneUtils.DataStructures.MysteriousTrader;
+﻿using PboneLib.CustomLoading.Implementations;
+using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
 using PboneUtils.NPCs.Town;
 using PboneUtils.Packets;
@@ -16,7 +17,7 @@ using Terraria.WorldBuilding;
 
 namespace PboneUtils
 {
-    public class PboneWorld : ModSystem
+    public class PboneWorld : PSystem
     {
         private ModWorldgenManager ModWorldGen;
 

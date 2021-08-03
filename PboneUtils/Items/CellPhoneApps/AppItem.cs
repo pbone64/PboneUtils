@@ -21,13 +21,7 @@ namespace PboneUtils.Items.CellPhoneApps
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(BaseID, CraftAmount);
-            recipe.AddTile(TileID.Bottles);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddIngredient(BaseID, CraftAmount).AddTile(TileID.Bottles).Register();
         }
     }
 }

@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace PboneUtils.Tiles
 {
-    public class ShadowPearlTile : ModTile
+    public class ShadowPearlTile : PboneUtilsTile
     {
         public override void SetStaticDefaults()
         {

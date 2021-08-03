@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using PboneLib.CustomLoading.Implementations;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -7,7 +8,7 @@ using Terraria.ModLoader.IO;
 
 namespace PboneUtils.Items.CellPhoneApps
 {
-    public partial class AppGlobalItem : GlobalItem
+    public partial class AppGlobalItem : PGlobalItem
     {
         public override bool InstancePerEntity => true;
         public override bool AppliesToEntity(Item entity, bool lateInstantiation) => entity.type == ItemID.CellPhone;

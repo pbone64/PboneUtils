@@ -4,6 +4,7 @@ using System.IO;
 
 namespace PboneUtils.Packets
 {
+    // TODO autoload packets?
     public class SyncMysteriousTraderShop : IPacketHandler
     {
         public void ReadPacket(BinaryReader reader)

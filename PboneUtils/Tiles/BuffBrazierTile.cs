@@ -7,7 +7,7 @@ using Terraria.ObjectData;
 
 namespace PboneUtils.Tiles
 {
-    public class BuffBrazierTile : ModTile
+    public class BuffBrazierTile : PboneUtilsTile
     {
         public override void SetStaticDefaults()
         {

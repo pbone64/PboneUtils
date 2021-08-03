@@ -1,11 +1,11 @@
-﻿using Terraria;
+﻿using PboneLib.CustomLoading.Implementations;
+using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace PboneUtils.MiscModsPlayers
 {
-    public class VisualPlayer : ModPlayer
+    public class VisualPlayer : PPlayer
     {
         #region Fields
         public bool AmIFluxCapacitoring;

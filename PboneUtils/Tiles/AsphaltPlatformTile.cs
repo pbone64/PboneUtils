@@ -7,7 +7,7 @@ using Terraria.ObjectData;
 
 namespace PboneUtils.Tiles
 {
-    public class AsphaltPlatformTile : ModTile
+    public class AsphaltPlatformTile : PboneUtilsTile
     {
         public override void SetStaticDefaults()
         {

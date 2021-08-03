@@ -86,12 +86,7 @@ namespace PboneUtils.Items.Misc
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Torch, 99);
-            recipe.AddIngredient(ItemID.FallenStar, 5);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddIngredient(ItemID.Torch, 99).AddIngredient(ItemID.FallenStar, 5).Register();
         }
     }
 }

@@ -20,14 +20,7 @@ namespace PboneUtils.Items.Arena
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.SharpeningStation, 5);
-            recipe.AddIngredient(ItemID.AmmoBox, 5);
-            recipe.AddIngredient(ItemID.CrystalBall, 5);
-            recipe.AddIngredient(ItemID.BewitchingTable, 5);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddIngredient(ItemID.SharpeningStation, 5).AddIngredient(ItemID.AmmoBox, 5).AddIngredient(ItemID.CrystalBall, 5).AddIngredient(ItemID.BewitchingTable, 5).Register();
         }
     }
 }

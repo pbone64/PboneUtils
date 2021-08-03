@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using PboneUtils.Helpers;
 using Terraria;
-using Terraria.ModLoader;
 using PboneUtils.CrossMod.Ref.Content;
+using PboneLib.CustomLoading.Implementations;
 
-namespace PboneUtils
+namespace PboneUtils.MiscModPlayers
 {
-    public class EndlessPotionPlayer : ModPlayer
+    public class EndlessPotionPlayer : PPlayer
     {
         public Dictionary<int, EndlessBuffSource> EndlessBuffSources = new Dictionary<int, EndlessBuffSource>();
         public HashSet<int> DisabledBuffs = new HashSet<int>();

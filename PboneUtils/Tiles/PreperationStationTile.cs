@@ -7,7 +7,7 @@ using Terraria.ObjectData;
 
 namespace PboneUtils.Tiles
 {
-    public class PreperationStationTile : ModTile
+    public class PreperationStationTile : PboneUtilsTile
     {
         public override void SetStaticDefaults()
         {

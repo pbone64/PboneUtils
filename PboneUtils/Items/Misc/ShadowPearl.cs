@@ -21,13 +21,7 @@ namespace PboneUtils.Items.Misc
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddRecipeGroup(PboneUtils.Recipes.AnyDemoniteBar, 10);
-            recipe.AddRecipeGroup(PboneUtils.Recipes.AnyShadowScale, 5);
-            recipe.AddTile(TileID.DemonAltar);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddRecipeGroup(PboneUtils.Recipes.AnyDemoniteBar, 10).AddRecipeGroup(PboneUtils.Recipes.AnyShadowScale, 5).AddTile(TileID.DemonAltar).Register();
         }
     }
 }

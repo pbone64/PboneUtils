@@ -26,13 +26,7 @@ namespace PboneUtils.Items.Misc
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.ManaCrystal, 10);
-            recipe.AddIngredient(ItemID.Ectoplasm, 7);
-            recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddIngredient(ItemID.ManaCrystal, 10).AddIngredient(ItemID.Ectoplasm, 7).AddTile(TileID.MythrilAnvil).Register();
         }
     }
 

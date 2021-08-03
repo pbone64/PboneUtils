@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PboneUtils.DataStructures;
+using PboneUtils.MiscModPlayers;
 using PboneUtils.UI.Elements;
 using PboneUtils.UI.Elements.EndlessBuffToggler;
 using Terraria;

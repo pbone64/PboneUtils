@@ -1,10 +1,10 @@
-﻿using Terraria;
-using Terraria.ModLoader;
+﻿using PboneLib.CustomLoading.Implementations;
+using Terraria;
 using Terraria.ModLoader.Config;
 
 namespace PboneUtils.Items
 {
-    public class PInstancedGlobalItem : GlobalItem
+    public class InstancedPboneUtilsGlobalItem : PGlobalItem
     {
         public override bool InstancePerEntity => true;
 

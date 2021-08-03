@@ -5,10 +5,11 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using PboneUtils.MiscModsPlayers;
+using PboneLib.CustomLoading.Implementations;
 
 namespace PboneUtils.NPCs
 {
-    public class PGlobalNPC : GlobalNPC
+    public class PboneUtilsGlobalNPC : PGlobalNPC
     {
 
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)

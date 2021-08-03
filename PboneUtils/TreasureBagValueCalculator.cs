@@ -1,4 +1,5 @@
-﻿using PboneLib.Utils;
+﻿using PboneLib.CustomLoading.Implementations;
+using PboneLib.Utils;
 using PboneUtils.Helpers;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using Terraria.ModLoader;
 
 namespace PboneUtils
 {
-    public class TreasureBagValueCalculator
+    public class TreasureBagValueCalculator : PSystem
     {
         public struct TreasureBagOpeningInfo
         {
@@ -57,62 +58,65 @@ namespace PboneUtils
             TempInfo.RealValues.Add(realValue);
         }
 
-        public void Load()
+        public override void PostSetupContent()
         {
-            Loaded = false;
-            Loading = true;
-
-            AveragedValues = new Dictionary<int, int>();
-
-            LoadingHelper.SetLoadStage("Averaging treasure bag prices...");
-
-            for (int i = 0; i < ItemLoader.ItemCount; i++)
+            if (PboneUtilsConfig.Instance.AverageBossBags)
             {
-                Item item = new Item();
-                item.SetDefaults(i);
+                Loaded = false;
+                Loading = true;
 
-                if ((item.IsVanilla() && !VanillaBossBags.Contains(item.type))
-                || (item.ModItem != null && item.ModItem.BossBagNPC == 0)) // 0 is the default
-                    continue;
+                AveragedValues = new Dictionary<int, int>();
 
-                Player dummy = new Player();
+                LoadingHelper.SetLoadStage("Averaging treasure bag prices...");
 
-                LoadingHelper.SetSubText(Lang.GetItemName(i).Value);
-
-                TempInfo = new TreasureBagOpeningInfo(1); // I need this one because otherwise it calls the default paramless ctor
-                for (int j = 0; j < PboneUtilsConfig.Instance.AverageBossBagsSlider; j++)
+                for (int i = 0; i < ItemLoader.ItemCount; i++)
                 {
-                    try
+                    Item item = new Item();
+                    item.SetDefaults(i);
+
+                    if ((item.IsVanilla() && !VanillaBossBags.Contains(item.type))
+                    || (item.ModItem != null && item.ModItem.BossBagNPC == 0)) // 0 is the default
+                        continue;
+
+                    Player dummy = new Player();
+
+                    LoadingHelper.SetSubText(Lang.GetItemName(i).Value);
+
+                    TempInfo = new TreasureBagOpeningInfo(1); // I need this one because otherwise it calls the default paramless ctor
+                    for (int j = 0; j < PboneUtilsConfig.Instance.AverageBossBagsSlider; j++)
                     {
-                        if (item.IsVanilla())
+                        try
                         {
-                            dummy.OpenBossBag(item.type);
-                            ItemLoader.OpenVanillaBag("bossBag", dummy, item.type);
+                            if (item.IsVanilla())
+                            {
+                                dummy.OpenBossBag(item.type);
+                                ItemLoader.OpenVanillaBag("bossBag", dummy, item.type);
+                            }
+                            else // Modded
+                            {
+                                item.ModItem.OpenBossBag(dummy);
+                            }
                         }
-                        else // Modded
+                        catch (Exception e)
                         {
-                            item.ModItem.OpenBossBag(dummy);
+                            PboneUtils.Log.Debug($"Non-fatal error '{e}' encountered while averaging treasure bag (ID: {item.type}, Name: {item.Name})");
+                            PboneUtils.Log.Debug("Skipping bag...");
                         }
                     }
-                    catch (Exception e)
-                    {
-                        PboneUtils.Log.Debug($"Non-fatal error '{e}' encountered while averaging treasure bag (ID: {item.type}, Name: {item.Name})");
-                        PboneUtils.Log.Debug("Skipping bag...");
-                    }
+
+                    AveragedValues.Add(item.type, (int)TempInfo.GetAverageValue());
                 }
 
-                AveragedValues.Add(item.type, (int)TempInfo.GetAverageValue());
+                LoadingHelper.SetLoadStage("");
+                LoadingHelper.SetSubText("");
+                LoadingHelper.SetProgress(0f);
+
+                Loading = false;
+                Loaded = true;
             }
-
-            LoadingHelper.SetLoadStage("");
-            LoadingHelper.SetSubText("");
-            LoadingHelper.SetProgress(0f);
-
-            Loading = false;
-            Loaded = true;
         }
 
-        public void Unload()
+        public override void Unload()
         {
             if (AveragedValues != null)
                 AveragedValues.Clear();

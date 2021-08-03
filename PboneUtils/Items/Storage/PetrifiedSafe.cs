@@ -1,7 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using PboneUtils.Projectiles.Storage;
+﻿using PboneUtils.Projectiles.Storage;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -27,17 +25,6 @@ namespace PboneUtils.Items.Storage
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-            if (PboneUtilsConfig.Instance.RecipePetrifiedSafe)
-            {
-                ModRecipe recipe = new ModRecipe(mod);
-                recipe.AddIngredient(ItemID.Safe);
-                recipe.AddIngredient(ItemID.StoneBlock, 99);
-                recipe.AddIngredient(ItemID.Bone, 10);
-                recipe.AddTile(TileID.Hellforge);
-                recipe.SetResult(this);
-                recipe.AddRecipe();
-            }
         }
     }
 }

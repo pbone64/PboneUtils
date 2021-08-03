@@ -20,13 +20,7 @@ namespace PboneUtils.Items.Ammo
 
         public override void AddRecipes()
         {
-            base.AddRecipes();
-
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(BaseAmmo, 3996);
-            recipe.AddTile(TileID.CrystalBall);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            CreateRecipe(1).AddIngredient(BaseAmmo, 3996).AddTile(TileID.CrystalBall).Register();
         }
     }
 }

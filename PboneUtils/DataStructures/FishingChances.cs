@@ -1,6 +1,4 @@
-﻿using System;
-using Terraria;
-
+﻿
 /*namespace PboneUtils.DataStructures
 {
     public struct FishingChances
