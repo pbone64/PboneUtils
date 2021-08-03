@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
+using PboneLib.Utils;
 using PboneUtils.DataStructures;
 using PboneUtils.Helpers;
+using PboneUtils.MiscModsPlayers;
 using PboneUtils.UI.States;
 using System;
 using Terraria.Audio;
@@ -10,19 +12,19 @@ namespace PboneUtils.Projectiles.Selection
 {
     public class LiquidComboPro : SelectionProjectile
     {
-        int Type = -1;
+        int LiquidType = -1;
 
         public override Func<Rectangle, bool> PreAction => (rect) => {
             PbonePlayer mPlayer = Owner.GetModPlayer<PbonePlayer>();
             ItemConfig config = mPlayer.ItemConfigs["Liquid"];
 
-            Type =
+            LiquidType =
                 (config.Data["Water"] ? LiquidID.Water :
                 (config.Data["Lava"] ? LiquidID.Lava :
                 (config.Data["Honey"] ? LiquidID.Honey :
                 -1)));
 
-            return Type > -1 && !PboneUtils.UI.GetUIState<RadialMenuContainer>().Internal.IsHovered();
+            return LiquidType > -1 && !PboneUtils.UI.GetUIState<RadialMenuContainer>().Internal.IsHovered();
         };
 
         public override Action<int, int> TileAction => (i, j) => {
@@ -31,7 +33,7 @@ namespace PboneUtils.Projectiles.Selection
 
             if (!config.RedMode)
             {
-                if (LiquidHelper.PlaceLiquid(i, j, (byte)Type))
+                if (LiquidHelper.PlaceLiquid(i, j, (byte)LiquidType))
                 {
                     SoundEngine.PlaySound(SoundID.Splash, (int)Owner.position.X, (int)Owner.position.Y);
                     return;
@@ -39,7 +41,7 @@ namespace PboneUtils.Projectiles.Selection
             }
             else
             {
-                if (LiquidHelper.DrainLiquid(i, j, (byte)Type))
+                if (LiquidHelper.DrainLiquid(i, j, (byte)LiquidType))
                 {
                     SoundEngine.PlaySound(SoundID.Splash, (int)Owner.position.X, (int)Owner.position.Y);
                     return;

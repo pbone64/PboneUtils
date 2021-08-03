@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework.Graphics;
 using PboneLib.Services.Textures;
 using ReLogic.Content;
 
@@ -50,12 +51,12 @@ namespace PboneUtils
         };
 
         public string GetRadialPath(string name) => $"PboneUtils/Textures/UI/Radial/Icon{name}";
-        public IAsset GetRadialButton(bool hover, bool red)
+        public Asset<Texture2D> GetRadialButton(bool hover, bool red)
         {
             if (!hover)
-                return !red ? CachedAssets["RadialButton"] : CachedAssets["RadialButton"];
+                return !red ? GetAsset("RadialButton") : GetAsset("RadialButton");
             else
-                return !red ? CachedAssets["RadialButtonHovered"] : CachedAssets["RadialButtonRedHovered"];
+                return !red ? GetAsset("RadialButtonHovered") : GetAsset("RadialButtonRedHovered");
         }
     }
 }

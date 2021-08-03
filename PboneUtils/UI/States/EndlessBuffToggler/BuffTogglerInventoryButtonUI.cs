@@ -28,12 +28,12 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
                 top += 58;
             }
 
-            Icon = new UIImage(PboneUtils.Textures.UI.BuffTogglerInventoryButton);
+            Icon = new UIImage(PboneUtils.Textures["BuffTogglerInventoryButton"]);
             Icon.Left.Set(26, 0f);
             Icon.Top.Set(top, 0f);
             Append(Icon);
 
-            IconHighlight = new UIHoverTextImageButton(PboneUtils.Textures.UI.BuffTogglerInventoryButton_MouseOver, "dummy");
+            IconHighlight = new UIHoverTextImageButton(PboneUtils.Textures.GetAsset("BuffTogglerInventoryButton_MouseOver"), "dummy");
             IconHighlight.Left.Set(-2, 0f);
             IconHighlight.Top.Set(-2, 0f);
             IconHighlight.SetVisibility(1f, 0f);
@@ -64,14 +64,15 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
         // When excecuting a method, the clr tries to run everything in the method
         // If it can't find the magic storage assembly it just crashes, even though it's not referenced unless magic storage it loaded
         // To prevent this, it's in a property which the clr will only run if it needs to (ie, if MagicStorage is loaded)
-        private bool HackSoRuntimeDoesntCrash => Main.LocalPlayer.GetModPlayer<MagicStorage.StoragePlayer>().ViewingStorage() != new Point16(-1, -1);
+        // TODO MagicStorage
+        //private bool HackSoRuntimeDoesntCrash => Main.LocalPlayer.GetModPlayer<MagicStorage.StoragePlayer>().ViewingStorage() != new Point16(-1, -1);
         public bool CanShow()
         {
             if (!Main.playerInventory || Main.LocalPlayer.talkNPC != -1)
                 return false;
 
-            if (PboneUtils.CrossMod.IsModLoaded("MagicStorage") && HackSoRuntimeDoesntCrash)
-                return false;
+            //if (PboneUtils.CrossMod.IsModLoaded("MagicStorage") && HackSoRuntimeDoesntCrash)
+            //    return false;
 
             return true;
         }

@@ -62,8 +62,7 @@ namespace PboneUtils
         }
 
         // [OLD] Make the chest close sound not play if a portable storage is open
-        [Obsolete("1.3")]
-        private void Player_Update(ILContext il)
+        /*private void Player_Update(ILContext il)
         {
             ILCursor c = new ILCursor(il);
 
@@ -86,6 +85,6 @@ namespace PboneUtils
 
                 return volume;
             });
-        }
+        }*/
     }
 }

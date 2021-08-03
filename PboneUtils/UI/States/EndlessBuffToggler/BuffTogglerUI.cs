@@ -18,7 +18,7 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
         public const int DescriptionPanelHeight = 220;
 
         public UIDragablePanel BackPanel;
-        public UISearchBar SearchBar;
+        public UIMySearchBar SearchBar;
         public UIPanel BuffListPanel;
         public UIPanel BuffDescriptionPanel;
         public UIEndlessBuffGrid BuffGrid;
@@ -42,7 +42,7 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
             Append(BackPanel);
 
             // SEARCH BAR
-            SearchBar = new UISearchBar(BackWidth - BackPanelContentsPadding * 2, 28);
+            SearchBar = new UIMySearchBar(BackWidth - BackPanelContentsPadding * 2, 28);
             SearchBar.Top.Set(BackPanelContentsPadding, 0f);
             SearchBar.Left.Set(BackPanelContentsPadding, 0f);
             BackPanel.Append(SearchBar);

@@ -61,7 +61,7 @@ namespace PboneUtils.Tiles
 				float shakeY = Utils.RandomInt(ref num190, -10, 1) * 0.35f;
 				Vector2 position = new Vector2(i * 16 - (int)Main.screenPosition.X - (width - 16f) / 2f + shakeX, j * 16 - (int)Main.screenPosition.Y + offsetY + shakeY) + zero;
 
-				spriteBatch.Draw(flameTexture, position, new Rectangle(tile.frameX, tile.frameY, width, height), Color.White * 0.33f, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
+				spriteBatch.Draw(flameTexture, position, new Rectangle(tile.frameX, tile.frameY, width, height), Color.White * 0.33f, 0f, default, 1f, SpriteEffects.None, 0f);
 			}
 		}
 	}

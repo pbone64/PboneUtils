@@ -1,7 +1,7 @@
 ﻿using System;
 using Terraria;
 
-namespace PboneUtils.DataStructures
+/*namespace PboneUtils.DataStructures
 {
     public struct FishingChances
     {
@@ -36,4 +36,4 @@ namespace PboneUtils.DataStructures
 
         public static bool Check(int value) => Main.rand.NextBool(value);
     }
-}
+}*/

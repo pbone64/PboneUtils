@@ -4,6 +4,7 @@ using PboneUtils.UI;
 using PboneUtils.UI.States;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Misc
 {
@@ -50,20 +51,22 @@ namespace PboneUtils.Items.Misc
             else
             {
                 // Change tile based on config
-                Item.createTile = mod.TileType(config.OnlyOneValue + "Light");
+                if (ModContent.TryFind(config.OnlyOneValue + "Light", out ModTile t))
+                    Item.createTile = t.Type;
             }
 
             return base.CanUseItem(player);
         }
 
-        public override bool UseItem(Player player)
+        public override bool? UseItem(Player player)
         {
             if (player.itemAnimation == 1)
             {
                 PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
                 ItemConfig config = mPlayer.ItemConfigs["Light"];
                 // Set it back to the selected tile, because it's set to -1 when the menu is opened
-                Item.createTile = mod.TileType(config.OnlyOneValue + "Light");
+                if (ModContent.TryFind(config.OnlyOneValue + "Light", out ModTile t))
+                    Item.createTile = t.Type;
             }
 
             return base.UseItem(player);

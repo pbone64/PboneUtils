@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# CA2211: Non-constant fields should not be visible
+dotnet_diagnostic.CA2211.severity = none
+
+# CA1822: Mark members as static
+dotnet_diagnostic.CA1822.severity = none

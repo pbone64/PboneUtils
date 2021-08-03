@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using PboneUtils.Projectiles.Storage;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -22,11 +23,7 @@ namespace PboneUtils.Items.Storage
             Item.value = Item.sellPrice(0, 2, 0, 0);
         }
 
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
-            position -= new Vector2(0, 12);
-            return base.Shoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
-        }
+        // TODO shoot sutract (0, 12)
 
         public override void AddRecipes()
         {

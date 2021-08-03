@@ -21,7 +21,7 @@ namespace PboneUtils.UI.Elements.EndlessBuffToggler
             ParentEndlessBuffGridHolder = uiState;
         }
 
-        public void Rebuild(UISearchBar mySearchBar, int rowAmount)
+        public void Rebuild(UIMySearchBar mySearchBar, int rowAmount)
         {
             RemoveAllChildren();
 
@@ -36,7 +36,7 @@ namespace PboneUtils.UI.Elements.EndlessBuffToggler
 
                 string[] words = buffName.Split(' ');
 
-                if (words.Any((s) => mySearchBar.IsEmpty ? true : s.StartsWith(searchText, StringComparison.OrdinalIgnoreCase)))
+                if (words.Any((s) => mySearchBar.IsEmpty || s.StartsWith(searchText, StringComparison.OrdinalIgnoreCase)))
                 {
                     UIEndlessBuffEntry element = new UIEndlessBuffEntry(kvp.Key, kvp.Value);
                     element.Left.Set(nextPosition.X, 0f);
@@ -53,7 +53,6 @@ namespace PboneUtils.UI.Elements.EndlessBuffToggler
                     }
 
                     Append(element);
-                    element.Parent = this; // Had to add this so the game doesn't bend over and die just because I ask it to properly work
                     counter++;
                 }
             }

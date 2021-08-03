@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using PboneLib.Utils;
 using System;
 using System.Linq;
 using Terraria;
@@ -21,13 +22,13 @@ namespace PboneUtils.Helpers
                     arrival.direction = Main.spawnTileX >= WorldGen.bestX ? -1 : 1;
                     arrival.netUpdate = true;
 
-                    MiscVanillaMethods.NewTextSynced(Language.GetTextValue("Announcement.HasArrived", arrival.FullName), new Color(50, 125, 255));
+                    MiscUtils.NewTextSynced(Language.GetTextValue("Announcement.HasArrived", arrival.FullName), new Color(50, 125, 255));
                 }
             }
             else if (Main.time >= despawnTime && traveler != null && !IsNpcOnscreen(traveler.Center))
             {
 #pragma warning disable CS0618 // Type or member is obsolete
-                MiscVanillaMethods.NewTextSynced(Lang.misc[35].Format(traveler.FullName), new Color(50, 125, 255));
+                MiscUtils.NewTextSynced(Lang.misc[35].Format(traveler.FullName), new Color(50, 125, 255));
 #pragma warning restore CS0618 // Type or member is obsolete
 
                 traveler.active = false;

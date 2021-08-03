@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 
@@ -8,7 +9,7 @@ namespace PboneUtils.UI.Elements
     {
         public string Text;
 
-        public UIHoverTextImageButton(Texture2D texture, string text) : base(texture)
+        public UIHoverTextImageButton(Asset<Texture2D> texture, string text) : base(texture)
         {
             Text = text;
         }

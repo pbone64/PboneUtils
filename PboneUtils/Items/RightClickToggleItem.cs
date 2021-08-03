@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader.IO;
@@ -32,7 +33,9 @@ namespace PboneUtils.Items
         {
             base.PostDrawInInventory(spriteBatch, position, frame, drawColor, itemColor, origin, scale);
             if (!Enabled)
-                spriteBatch.Draw(Main.cdTexture, position - Main.cdTexture.Size() * 0.5f + Main.itemTexture[Item.type].Size() * 0.5f, null, drawColor * 0.95f, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(TextureAssets.Cd.Value,
+                    position - TextureAssets.Cd.Size() * 0.5f + TextureAssets.Item[Item.type].Size() * 0.5f,
+                    null, drawColor * 0.95f, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
         public override void NetSend(BinaryWriter writer)
@@ -41,9 +44,11 @@ namespace PboneUtils.Items
             writer.Write(Enabled);
         }
 
-        public override void NetRecieve(BinaryReader reader)
+
+
+        public override void NetReceive(BinaryReader reader)
         {
-            base.NetRecieve(reader);
+            base.NetReceive(reader);
             Enabled = reader.ReadBoolean();
         }
 

@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PboneUtils.DataStructures;
+using PboneUtils.MiscModsPlayers;
+using ReLogic.Content;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
@@ -58,8 +60,8 @@ namespace PboneUtils.UI
 
             Vector2 position = centerPosition - ButtonSize * 0.5f;
             bool hovered = centerHovered;
-            Texture2D buttonTexture = PboneUtils.Textures.UI.GetRadialButton(hovered, config.RedMode);
-            Texture2D iconTexture = PboneUtils.Textures.UI.RadialMenuIcons[Name + (config.RedMode ? "Red" : "")];
+            Texture2D buttonTexture = (PboneUtils.Textures.GetRadialButton(hovered, config.RedMode) as Asset<Texture2D>).Value;
+            Texture2D iconTexture = (PboneUtils.Textures.CachedAssets[Name + (config.RedMode ? "Red" : "")] as Asset<Texture2D>).Value;
             Color buttonColor = Color.White;
             Color iconColor = Color.White;
 
@@ -75,8 +77,8 @@ namespace PboneUtils.UI
 
                 position = buttonsPositions[i] - ButtonSize * 0.5f;
                 hovered = buttonsHovered[i];
-                buttonTexture = PboneUtils.Textures.UI.GetRadialButton(hovered, config.RedMode);
-                iconTexture = PboneUtils.Textures.UI.RadialMenuIcons[configName];
+                buttonTexture = PboneUtils.Textures.GetRadialButton(hovered, config.RedMode).Value;
+                iconTexture = PboneUtils.Textures[configName];
                 buttonColor = config.Data[configName] ? Color.White : (hovered ? ButtonOn : ButtonOff);
                 iconColor = config.Data[configName] ? Color.White : (hovered ? IconOn : IconOff);
 
@@ -190,7 +192,7 @@ namespace PboneUtils.UI
         public bool IsHovered()
         {
             (bool centerHovered, bool[] buttonsHovered) = GetHoveredButtons();
-            return (centerHovered) || (buttonsHovered.Count(b => b == true) > 0);
+            return (centerHovered) || (buttonsHovered.Any(b => b == true));
         }
     }
 }

@@ -23,14 +23,14 @@ namespace PboneUtils
         public static bool SuperFastTime;
 
         private static MethodInfo startRainMethod;
-        public static Action StartRain = new Action(() => startRainMethod.Invoke(null, new object[] { }));
+        public static Action StartRain = new Action(() => startRainMethod.Invoke(null, Array.Empty<object>()));
         private static MethodInfo stopRainMethod;
-        public static Action StopRain = new Action(() => stopRainMethod.Invoke(null, new object[] { }));
+        public static Action StopRain = new Action(() => stopRainMethod.Invoke(null, Array.Empty<object>()));
 
         private static MethodInfo startSandstormMethod;
-        public static Action StartSandstorm = new Action(() => startSandstormMethod.Invoke(null, new object[] { }));
+        public static Action StartSandstorm = new Action(() => startSandstormMethod.Invoke(null, Array.Empty<object>()));
         private static MethodInfo stopSandstormMethod;
-        public static Action StopStandstorm = new Action(() => stopSandstormMethod.Invoke(null, new object[] { }));
+        public static Action StopStandstorm = new Action(() => stopSandstormMethod.Invoke(null, Array.Empty<object>()));
 
         public static List<int> MysteriousTraderShop;
 
@@ -86,8 +86,8 @@ namespace PboneUtils
             for (int i = 0; i < MysteriousTraderShop.Count; i++)
             {
                 Item item = new Item();
-                Item.SetDefaults(MysteriousTraderShop[i]);
-                tag.Add("ModMysteriousTraderItem" + i, Item.ModItem == null ? "TERRARIA" : Item.ModItem.Mod.Name);
+                item.SetDefaults(MysteriousTraderShop[i]);
+                tag.Add("ModMysteriousTraderItem" + i, item.ModItem == null ? "TERRARIA" : item.ModItem.Mod.Name);
                 tag.Add("MysteriousTraderItem" + i, MysteriousTraderShop[i]);
             }
 

@@ -90,8 +90,10 @@ namespace PboneUtils
                 bagValues.Load();
 
             // These get assinged to something by their ctors, don't worry
+#pragma warning disable CA1806 // Do not ignore method results
             new MysteriousTraderShopManager();
             new CompiledMysteriousTraderShop(MysteriousTraderShopManager.Instance);
+#pragma warning restore CA1806 // Do not ignore method results
         }
 
         #region UI

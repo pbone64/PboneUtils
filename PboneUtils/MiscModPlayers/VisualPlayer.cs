@@ -1,4 +1,5 @@
 ﻿using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -16,12 +17,12 @@ namespace PboneUtils.MiscModsPlayers
             AmIFluxCapacitoring = false;
         }
 
-        public override void DrawEffects(PlayerDrawInfo drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
+        public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
         {
             base.DrawEffects(drawInfo, ref r, ref g, ref b, ref a, ref fullBright);
             if (AmIFluxCapacitoring && drawInfo.shadow == 0f && Main.rand.NextBool(8))
             {
-                Dust d = Dust.NewDustDirect(drawInfo.position, player.width, player.height, DustID.Electric);
+                Dust d = Dust.NewDustDirect(drawInfo.Position, Player.width, Player.height, DustID.Electric);
                 d.noGravity = true;
             }
         }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using PboneLib.ID;
 using PboneUtils.Items.Storage;
 using Terraria.Audio;
 using Terraria.ID;
@@ -11,7 +12,7 @@ namespace PboneUtils.Projectiles.Storage
     {
         public override int ChestType => BankID.Safe;
         public override int ItemType => ModContent.ItemType<PetrifiedSafe>();
-        public override Texture2D Outline => PboneUtils.Textures.Extras.PetrifiedSafeOutline;
+        public override Texture2D Outline => PboneUtils.Textures["PetrifiedSafeOutline"];
         public override bool Animate => false;
         public override LegacySoundStyle UseSound => SoundID.Item37;
 
@@ -20,9 +21,9 @@ namespace PboneUtils.Projectiles.Storage
         public override void SetDefaults()
         {
             base.SetDefaults();
-            projectile.Size = new Vector2(24, 48);
-            projectile.tileCollide = false;
-            projectile.timeLeft = 10800;
+            Projectile.Size = new Vector2(24, 48);
+            Projectile.tileCollide = false;
+            Projectile.timeLeft = 10800;
         }
     }
 }

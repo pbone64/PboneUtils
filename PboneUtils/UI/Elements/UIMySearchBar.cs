@@ -7,7 +7,7 @@ using Terraria.GameContent.UI.Elements;
 
 namespace PboneUtils.UI.Elements
 {
-    public class UISearchBar : UIElement
+    public class UIMySearchBar : UIElement
     {
         public const int CharacterLimit = 16;
         public const string HintText = "Search...";
@@ -23,7 +23,7 @@ namespace PboneUtils.UI.Elements
         public delegate void TextChangeDelegate(string oldText, string currentText);
         public event TextChangeDelegate OnTextChange;
 
-        public UISearchBar(int width, int height)
+        public UIMySearchBar(int width, int height)
         {
             Width.Set(width, 0f);
             Height.Set(height, 0f);

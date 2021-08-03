@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using PboneUtils.DataStructures;
 using Terraria.ModLoader.IO;
 using PboneUtils.Helpers;
+using PboneLib.Utils;
 
 namespace PboneUtils.MiscModsPlayers
 {
@@ -77,8 +78,8 @@ namespace PboneUtils.MiscModsPlayers
             base.UpdateDead();
             if (PboneUtilsConfig.Instance.FastRespawn)
             {
-                if (PboneUtilsConfig.Instance.FastRespawnDuringBoss || !MiscVanillaMethods.AnyBoss())
-                    player.respawnTimer -= 2;
+                if (PboneUtilsConfig.Instance.FastRespawnDuringBoss || !MiscUtils.AnyBoss())
+                    Player.respawnTimer -= 2;
             }
         }
     }

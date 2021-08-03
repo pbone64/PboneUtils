@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using PboneLib.Utils;
 using PboneUtils.Helpers;
 using PboneUtils.Tiles;
 using Terraria;
@@ -11,7 +12,9 @@ namespace PboneUtils
 {
     public class ModWorldgenManager
     {
+#pragma warning disable IDE0060 // Remove unused parameter
         public void GenPetrifiedSafes(GenerationProgress progress, GameConfiguration config)
+#pragma warning restore IDE0060 // Remove unused parameter
         {
             progress.Message = Language.GetTextValue("Mods.PboneUtils.WorldGen.PetrifiedSafes");
             progress.Value = 0;
@@ -52,7 +55,7 @@ namespace PboneUtils
                     if (tooClose)
                         continue;
 
-                    success = MiscVanillaMethods.BetterPlaceObject(i, j, ModContent.TileType<PetrifiedSafeTile>());
+                    success = MiscUtils.BetterPlaceObject(i, j, ModContent.TileType<PetrifiedSafeTile>());
 
                     if (success)
                         existingPositions[attempts] = new Vector2(i, j);

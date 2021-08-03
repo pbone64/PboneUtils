@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using PboneUtils.DataStructures;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.UI;
 
 namespace PboneUtils.UI.Elements.EndlessBuffToggler
@@ -26,7 +27,7 @@ namespace PboneUtils.UI.Elements.EndlessBuffToggler
         {
             // Drawing is being really weird, todo
             base.DrawSelf(spriteBatch);
-            Texture2D texture = Main.buffTexture[Buff];
+            Texture2D texture = TextureAssets.Buff[Buff].Value;
             Vector2 position = GetDimensions().Position() + texture.Size() * (1f - 1f) / 2f;
 
             // Straight outta UIImage
@@ -36,8 +37,7 @@ namespace PboneUtils.UI.Elements.EndlessBuffToggler
                 Disabled ? Color.DarkGray : Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0f
             );
 
-            IEndlessBuffGridHolder parent = Parent as IEndlessBuffGridHolder;
-            bool alwaysHighlight = (parent != null && parent.GetSelectedBuffHolder().Buff == Buff);
+            bool alwaysHighlight = (Parent is IEndlessBuffGridHolder holder && holder.GetSelectedBuffHolder().Buff == Buff);
 
             if (ContainsPoint(Main.MouseScreen) || alwaysHighlight)
             {
@@ -69,7 +69,7 @@ namespace PboneUtils.UI.Elements.EndlessBuffToggler
                     }
                 }
 
-                texture = PboneUtils.Textures.UI.BuffTogglerInventoryButton_MouseOver;
+                texture = PboneUtils.Textures["BuffTogglerInventoryButton_MouseOver"];
                 position -= new Vector2(2);
 
                 spriteBatch.Draw(texture,

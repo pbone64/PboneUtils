@@ -3,6 +3,7 @@ using PboneUtils.Projectiles.Selection;
 using PboneUtils.UI;
 using PboneUtils.UI.States;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -28,7 +29,8 @@ namespace PboneUtils.Items.Liquid
         }
 
         public override bool AltFunctionUse(Player player) => true;
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+
+        public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             if (player.altFunctionUse == 2)
             {

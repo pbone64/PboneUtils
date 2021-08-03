@@ -1,4 +1,5 @@
-﻿using PboneUtils.Helpers;
+﻿using PboneLib.Utils;
+using PboneUtils.Helpers;
 using System;
 using System.Collections.Generic;
 using Terraria;
@@ -68,13 +69,13 @@ namespace PboneUtils
             for (int i = 0; i < ItemLoader.ItemCount; i++)
             {
                 Item item = new Item();
-                Item.SetDefaults(i);
+                item.SetDefaults(i);
 
-                if ((Item.IsVanilla() && !VanillaBossBags.Contains(Item.type))
-                || (Item.modItem != null && Item.modItem.BossBagNPC == 0)) // 0 is the default
+                if ((item.IsVanilla() && !VanillaBossBags.Contains(item.type))
+                || (item.ModItem != null && item.ModItem.BossBagNPC == 0)) // 0 is the default
                     continue;
 
-                Player dummy = new Player(false);
+                Player dummy = new Player();
 
                 LoadingHelper.SetSubText(Lang.GetItemName(i).Value);
 
@@ -83,24 +84,24 @@ namespace PboneUtils
                 {
                     try
                     {
-                        if (Item.IsVanilla())
+                        if (item.IsVanilla())
                         {
-                            dummy.OpenBossBag(Item.type);
-                            ItemLoader.OpenVanillaBag("bossBag", dummy, Item.type);
+                            dummy.OpenBossBag(item.type);
+                            ItemLoader.OpenVanillaBag("bossBag", dummy, item.type);
                         }
                         else // Modded
                         {
-                            Item.modItem.OpenBossBag(dummy);
+                            item.ModItem.OpenBossBag(dummy);
                         }
                     }
                     catch (Exception e)
                     {
-                        PboneUtils.Log.Debug($"Non-fatal error '{e}' encountered while averaging treasure bag (ID: {Item.type}, Name: {Item.Name})");
+                        PboneUtils.Log.Debug($"Non-fatal error '{e}' encountered while averaging treasure bag (ID: {item.type}, Name: {item.Name})");
                         PboneUtils.Log.Debug("Skipping bag...");
                     }
                 }
 
-                AveragedValues.Add(Item.type, (int)TempInfo.GetAverageValue());
+                AveragedValues.Add(item.type, (int)TempInfo.GetAverageValue());
             }
 
             LoadingHelper.SetLoadStage("");

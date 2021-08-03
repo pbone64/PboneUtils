@@ -13,7 +13,7 @@ namespace PboneUtils.UI.Elements
         // Stores the offset from the top left of the UIPanel while dragging.
         private Vector2 offset;
         public bool dragging;
-        private List<UIElement> ExtraChildren = new List<UIElement>();
+        private readonly List<UIElement> ExtraChildren = new List<UIElement>();
 
         public UIDragablePanel() { }
         public UIDragablePanel(params UIElement[] countMeAsChildren)

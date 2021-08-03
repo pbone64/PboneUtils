@@ -26,7 +26,8 @@ namespace PboneUtils.CrossMod.Ref.Content
         private static FieldInfo ItemsField => PageType.GetField("Items", ReflectionHelper.AccessFlags);
         private static FieldInfo LibraryField => ExtInvPlayerType.GetField("Library", ReflectionHelper.AccessFlags);
 
-        private object GetLibrary(Player player) => LibraryField?.GetValue(player.GetModPlayer(ExtInv, "ExtensibleInventoryPlayer"));
+        // TODO this
+        //private object GetLibrary(Player player) => LibraryField?.GetValue(player.GetModPlayer(ExtInv, "ExtensibleInventoryPlayer"));
 
         public ExtensibleInventoryCompatibility() : base()
         {
@@ -48,7 +49,8 @@ namespace PboneUtils.CrossMod.Ref.Content
                     yield return item;
             }
 
-            object lib = GetLibrary(player);
+            //object lib = GetLibrary(player);
+            object lib = null;
             if (lib != null)
             {
                 Dictionary<string, object> books = CastDict((IDictionary)BooksField.GetValue(lib))

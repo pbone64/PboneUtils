@@ -11,8 +11,9 @@ namespace PboneUtils.Tiles
 
         public override void Load()
         {
-            TileBreakPredicates = new Dictionary<int, Func<bool>>();
-            TileBreakPredicates.Add(ModContent.TileType<PetrifiedSafeTile>(), PetrifiedSafeTile.Predicate);
+            TileBreakPredicates = new Dictionary<int, Func<bool>> {
+                [ModContent.TileType<PetrifiedSafeTile>()] = PetrifiedSafeTile.Predicate
+            };
         }
 
         public override bool CanKillTile(int i, int j, int type, ref bool blockDamaged)
