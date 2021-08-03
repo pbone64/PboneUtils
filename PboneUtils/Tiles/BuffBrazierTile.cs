@@ -9,9 +9,9 @@ namespace PboneUtils.Tiles
 {
     public class BuffBrazierTile : ModTile
     {
-        public override void SetDefaults()
+        public override void SetStaticDefaults()
         {
-            base.SetDefaults();
+            base.SetStaticDefaults();
             Main.tileFrameImportant[Type] = true;
 			Main.tileLighted[Type] = true;
 
@@ -51,7 +51,7 @@ namespace PboneUtils.Tiles
 			int offsetY = 0;
 			int height = 16;
 			TileLoader.SetDrawPositions(i, j, ref width, ref offsetY, ref height);
-			var flameTexture = ModContent.GetTexture("PboneUtils/Tiles/BuffBrazierTile_Flame");
+			Texture2D flameTexture = PboneUtils.Textures["BuffBrazierFlame"];
 
 			ulong num190 = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (uint)i);
 

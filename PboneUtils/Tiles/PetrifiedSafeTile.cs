@@ -16,9 +16,9 @@ namespace PboneUtils.Tiles
 
         public static bool MessageSent = false;
 
-        public override void SetDefaults()
+        public override void SetStaticDefaults()
         {
-            base.SetDefaults();
+            base.SetStaticDefaults();
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
 
@@ -35,7 +35,7 @@ namespace PboneUtils.Tiles
 
             ModTranslation name = CreateMapEntryName();
             AddMapEntry(Color.DarkGray, name);
-            dustType = DustID.Stone;
+            DustType = DustID.Stone;
         }
 
         public override bool CanKillTile(int i, int j, ref bool blockDamaged) => Predicate();

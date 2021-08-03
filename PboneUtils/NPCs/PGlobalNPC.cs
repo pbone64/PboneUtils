@@ -1,6 +1,7 @@
 ﻿using PboneUtils.Items.Storage;
 using PboneUtils.Items.Tools;
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -8,19 +9,16 @@ namespace PboneUtils.NPCs
 {
     public class PGlobalNPC : GlobalNPC
     {
-        public override void NPCLoot(NPC npc)
+
+        public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
         {
+            base.ModifyNPCLoot(npc, npcLoot);
+
             switch (npc.type)
             {
                 case NPCID.DD2Betsy:
-                    if (PboneUtilsConfig.Instance.StorageItemsToggle)
-                        Item.NewItem(npc.getRect(), ModContent.ItemType<DefendersCrystal>());
+                    npcLoot.Add(new DropPerPlayerOnThePlayer(ModContent.ItemType<DefendersCrystal>(), 1, 1, 1, null));
                     break;
-            }
-
-            if (Main.player[npc.FindClosestPlayer()].GetModPlayer<PbonePlayer>().GreedyChest)
-            {
-                npc.extraValue = int.MinValue;
             }
         }
 

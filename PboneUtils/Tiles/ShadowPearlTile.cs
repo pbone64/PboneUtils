@@ -8,9 +8,9 @@ namespace PboneUtils.Tiles
 {
     public class ShadowPearlTile : ModTile
     {
-        public override void SetDefaults()
+        public override void SetStaticDefaults()
         {
-            base.SetDefaults();
+            base.SetStaticDefaults();
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
 
@@ -19,8 +19,8 @@ namespace PboneUtils.Tiles
 
             ModTranslation name = CreateMapEntryName();
             AddMapEntry(Color.DarkViolet, name);
-            dustType = DustID.Shadowflame;
-            adjTiles = new int[] { TileID.DemonAltar };
+            DustType = DustID.Shadowflame;
+            AdjTiles = new int[] { TileID.DemonAltar };
         }
     }
 }

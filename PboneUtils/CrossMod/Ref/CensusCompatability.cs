@@ -1,4 +1,4 @@
-﻿using PboneLib.Core.CrossMod.Ref;
+﻿using PboneLib.Services.CrossMod.Ref;
 using PboneUtils.NPCs.Town;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -12,7 +12,7 @@ namespace PboneUtils.CrossMod.Ref.Content
         {
         }
 
-        public void Load()
+        public override void Load()
         {
             // string:"TownNPCCondition" - int:npcid - string:condition
 

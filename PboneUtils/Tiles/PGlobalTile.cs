@@ -9,12 +9,10 @@ namespace PboneUtils.Tiles
     {
         public Dictionary<int, Func<bool>> TileBreakPredicates = new Dictionary<int, Func<bool>>();
 
-        public override bool Autoload(ref string name)
+        public override void Load()
         {
             TileBreakPredicates = new Dictionary<int, Func<bool>>();
             TileBreakPredicates.Add(ModContent.TileType<PetrifiedSafeTile>(), PetrifiedSafeTile.Predicate);
-
-            return base.Autoload(ref name);
         }
 
         public override bool CanKillTile(int i, int j, int type, ref bool blockDamaged)

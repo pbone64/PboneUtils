@@ -1,4 +1,4 @@
-﻿using PboneLib.Core.CrossMod.Ref;
+﻿using PboneLib.Services.CrossMod.Ref;
 
 namespace PboneUtils.CrossMod.Ref.Content
 {

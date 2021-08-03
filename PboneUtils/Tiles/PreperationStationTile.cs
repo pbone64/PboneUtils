@@ -9,9 +9,9 @@ namespace PboneUtils.Tiles
 {
     public class PreperationStationTile : ModTile
     {
-        public override void SetDefaults()
+        public override void SetStaticDefaults()
         {
-            base.SetDefaults();
+            base.SetStaticDefaults();
             Main.tileFrameImportant[Type] = true;
 
             TileID.Sets.HasOutlines[Type] = true;
@@ -24,7 +24,7 @@ namespace PboneUtils.Tiles
 
         public override bool HasSmartInteract() => true;
 
-        public override bool NewRightClick(int i, int j)
+        public override bool RightClick(int i, int j)
         {
             Main.LocalPlayer.AddBuff(ModContent.BuffType<PreperationStationBuff>(), 1800 * 60); // 30 minutes
             return true;
