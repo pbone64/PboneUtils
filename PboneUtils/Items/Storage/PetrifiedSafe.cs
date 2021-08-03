@@ -21,7 +21,7 @@ namespace PboneUtils.Items.Storage
             Item.value = Item.sellPrice(0, 2, 0, 0);
         }
 
-        // TODO shoot sutract (0, 12)
+        // TODO shoot subtract (0, 12)
 
         public override void AddRecipes()
         {

@@ -1,7 +1,6 @@
 ﻿using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.DataStructures;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
 using PboneLib.CustomLoading.Implementations;
@@ -24,7 +23,7 @@ namespace PboneUtils.Items
             base.SetDefaults();
 
             // Autosize
-            if (Autosize && TextureAssets.Item[Item.type].Value != null)
+            /*if (Autosize && TextureAssets.Item[Item.type].Value != null)
             {
                 Vector2 texSize = TextureAssets.Item[Item.type].Size();
                 Vector2 correctedSize = texSize;
@@ -33,7 +32,8 @@ namespace PboneUtils.Items
                     correctedSize = new Vector2(texSize.X, (texSize.Y / animation.FrameCount) - animation.FrameCount * 2); // Account for the amount of frames and buffer between frames
 
                 Item.Size = correctedSize;
-            }
+            }*/
+            Item.Size = new Vector2(24);
         }
 
         public override void HoldItem(Player player)

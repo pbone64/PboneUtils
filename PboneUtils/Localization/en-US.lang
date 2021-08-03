@@ -136,7 +136,7 @@ ItemName.MagicLight=Magic Light
 ItemTooltip.MagicLight=Places infinite, invisible lights\nRight click to change the light color\nLights can be seen while this item is enabled, and seen all the time while held\n\n{$Mods.PboneUtils.Common.CanBeToggled}\n"Let there be light!"
 
 
-// NPCS
+// NPCS TODO BETTER CHAT
 TownChat.MysteriousTrader.1=What do you mean, I'm a mutant?
 TownChat.MysteriousTrader.2=Have you ever seen an angel statue fly? Unfortunately, I have.
 TownChat.MysteriousTrader.3=I walk on a fine line between selling junk and scamming.
@@ -151,7 +151,7 @@ TownChat.Miner.1=Ooo, shiny!
 TownChat.Miner.2=Why don't I mine with explosives? It ruins the ore, of course!
 TownChat.Miner.3=My pickaxe is the oldest and best in the land!
 TownChat.Miner.4=You know, I could just be turning this gold into coins.
-TownChat.Miner.5=Where do I get my ores if I'm never mining? I Keep them all in my backpack.
+TownChat.Miner.5=Where do I get my ores if I'm never mining? I keep them all in my backpack.
 TownChat.Miner.6=I hear there's a plant made of solid metal you can grow under the right conditions!
 TownChat.Miner.HardmodeOnly=Check out my cobalt ore; it is extra shiny.
 
