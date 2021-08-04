@@ -60,7 +60,7 @@ namespace PboneUtils.UI
 
             Vector2 position = centerPosition - ButtonSize * 0.5f;
             bool hovered = centerHovered;
-            Texture2D buttonTexture = (PboneUtils.Textures.GetRadialButton(hovered, config.RedMode) as Asset<Texture2D>).Value;
+            Texture2D buttonTexture = PboneUtils.Textures.GetRadialButton(hovered, config.RedMode).Value;
             Texture2D iconTexture = (PboneUtils.Textures.CachedAssets[Name + (config.RedMode ? "Red" : "")] as Asset<Texture2D>).Value;
             Color buttonColor = Color.White;
             Color iconColor = Color.White;
