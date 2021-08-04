@@ -1,7 +1,9 @@
 using log4net;
 using PboneLib.CustomLoading;
+using PboneLib.CustomLoading.Content;
 using PboneLib.Services.CrossMod;
 using PboneLib.Services.Net;
+using PboneLib.Utils;
 using PboneUtils.CrossMod.Call;
 using PboneUtils.CrossMod.Ref.Content;
 using PboneUtils.DataStructures.MysteriousTrader;
@@ -66,12 +68,18 @@ namespace PboneUtils
             Load_IL();
             Load_On();
 
-            // Adding content
-            ContentLoader loader = new ContentLoader((compoundLoadable) => {
-                AddContent(compoundLoadable.AsLoadable);
-            });
+            // Custom loading
+            CustomModLoader loader = new CustomModLoader(this);
 
-            loader.LoadFromTypes(Code.GetTypes());
+            loader.Add(new ContentLoader(content => {
+                this.AddContent(content);
+            }));
+
+            loader.Add(new PboneLib.CustomLoading.Localization.LocalizationLoader(translation => {
+                LocalizationLoader.AddTranslation(translation);
+            }));
+
+            loader.Load();
         }
 
         public override object Call(params object[] args) => crossModManager.CallManager.HandleCall(args);

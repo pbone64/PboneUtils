@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
-using PboneLib.CustomLoading.Implementations;
 
 namespace PboneUtils
 {
-    public class PboneUtilsConfig : PConfig
+    public class PboneUtilsConfig : ModConfig
     {
         public override ConfigScope Mode => ConfigScope.ServerSide;
 

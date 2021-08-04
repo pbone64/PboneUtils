@@ -1,4 +1,4 @@
-﻿using PboneLib.CustomLoading.Implementations;
+﻿using PboneLib.CustomLoading.Content.Implementations;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;

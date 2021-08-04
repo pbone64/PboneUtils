@@ -1,4 +1,4 @@
-﻿using PboneLib.CustomLoading.Implementations;
+﻿using PboneLib.CustomLoading.Content.Implementations;
 using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
 using PboneUtils.NPCs.Town;
