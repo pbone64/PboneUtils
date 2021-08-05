@@ -11,7 +11,6 @@ namespace PboneUtils.NPCs
 {
     public class PboneUtilsGlobalNPC : PGlobalNPC
     {
-
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
         {
             base.ModifyNPCLoot(npc, npcLoot);
