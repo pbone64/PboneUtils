@@ -10,7 +10,9 @@ using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
 using PboneUtils.ID;
 using PboneUtils.Packets;
+using System;
 using System.IO;
+using System.Reflection;
 using Terraria.ModLoader;
 
 namespace PboneUtils
@@ -19,7 +21,7 @@ namespace PboneUtils
     {
         public override uint ExtraPlayerBuffSlots => (uint)PboneUtilsConfig.Instance.ExtraBuffSlots;
 
-        public static PboneUtils Instance;
+        public static PboneUtils Instance => ModContent.GetInstance<PboneUtils>();
         public static ILog Log => Instance.Logger;
 
         public static PboneUtilsUI UI => Instance.ui;
@@ -45,8 +47,6 @@ namespace PboneUtils
         {
             base.Load();
             LoadingHelper.Load();
-
-            Instance = ModContent.GetInstance<PboneUtils>();
 
             // Instantiate managers
             ui = new PboneUtilsUI();
@@ -113,8 +113,6 @@ namespace PboneUtils
         public override void Unload()
         {
             base.Unload();
-
-            Instance = null;
 
             textures = null;
             recipes = null;

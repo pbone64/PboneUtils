@@ -1,5 +1,6 @@
 ﻿using PboneLib.CustomLoading.Content.Implementations;
 using Terraria;
+using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 
 namespace PboneUtils.Items
@@ -7,6 +8,12 @@ namespace PboneUtils.Items
     public class InstancedPboneUtilsGlobalItem : PGlobalItem
     {
         public override bool InstancePerEntity => true;
+        public override GlobalItem Clone(Item item, Item itemClone)
+        {
+            itemClone.GetGlobalItem<InstancedPboneUtilsGlobalItem>().AutoswingOrig = item.GetGlobalItem<InstancedPboneUtilsGlobalItem>().AutoswingOrig;
+            itemClone.GetGlobalItem<InstancedPboneUtilsGlobalItem>().ChangedAutoswing = item.GetGlobalItem<InstancedPboneUtilsGlobalItem>().ChangedAutoswing;
+            return base.Clone(item, itemClone);
+        }
 
         public bool AutoswingOrig;
         public bool ChangedAutoswing = false;
