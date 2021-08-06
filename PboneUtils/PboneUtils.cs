@@ -10,9 +10,7 @@ using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
 using PboneUtils.ID;
 using PboneUtils.Packets;
-using System;
 using System.IO;
-using System.Reflection;
 using Terraria.ModLoader;
 
 namespace PboneUtils
@@ -24,14 +22,13 @@ namespace PboneUtils
         public static PboneUtils Instance => ModContent.GetInstance<PboneUtils>();
         public static ILog Log => Instance.Logger;
 
-        public static PboneUtilsUI UI => Instance.ui;
-        public static PboneUtilsTextures Textures => Instance.textures;
+        // TODO this all needs to go to a mod system so it can load first
+        public static PboneUtilsUI UI => ModContent.GetInstance<PboneUtilsUI>();
+        public static PboneUtilsTextures Textures => ModContent.GetInstance<PboneUtilsTextures>();
         public static ModRecipeManager Recipes => Instance.recipes;
         public static CrossModManager CrossMod => Instance.crossModManager;
         public static PacketManager PacketManager => Instance.packetManager;
 
-        private PboneUtilsUI ui;
-        private PboneUtilsTextures textures;
         private ModRecipeManager recipes;
         private CrossModManager crossModManager;
         private PacketManager packetManager;
@@ -49,8 +46,6 @@ namespace PboneUtils
             LoadingHelper.Load();
 
             // Instantiate managers
-            ui = new PboneUtilsUI();
-            textures = new PboneUtilsTextures();
             recipes = new ModRecipeManager();
             packetManager = new PacketManager(this);
             packetManager.RegisterPacketHandler<SyncMysteriousTraderShop>(PacketID.SyncMysteriousTraderShop);
@@ -114,9 +109,7 @@ namespace PboneUtils
         {
             base.Unload();
 
-            textures = null;
             recipes = null;
-            ui = null;
             crossModManager = null;
             packetManager = null;
 
