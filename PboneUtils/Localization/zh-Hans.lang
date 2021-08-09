@@ -98,7 +98,7 @@ ItemName.BagOfWorms=蠕虫袋
 ItemTooltip.BagOfWorms=作为鱼饵使用时不会被消耗
 
 ItemName.Infiniworm=无尽蠕虫
-ItemTooltip.Infiniworm=作为鱼饵使用时不会被消耗\n'Enlightenment'
+ItemTooltip.Infiniworm=作为鱼饵使用时不会被消耗\n'好东西'
 
 // Misc
 ItemName.VoidPiggy=虚空猪猪
