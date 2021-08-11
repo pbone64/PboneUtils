@@ -30,13 +30,13 @@ ItemName.HallowedMagnet=神圣级宝藏磁铁
 ItemTooltip.HallowedMagnet=扩大物品拾取范围\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}
 
 ItemName.SpectreTreasureMagnet=幽冥级宝藏磁铁
-ItemTooltip.SpectreTreasureMagnet=将附件的物品传送进你的背包\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}
+ItemTooltip.SpectreTreasureMagnet=将附近的物品传送进你的背包\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}
 
 ItemName.RunicTreasureMagnet=符文级宝藏磁铁
-ItemTooltip.RunicTreasureMagnet=快速地将附件的物品传送进你的背包\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}\n'也许不会将月亮拉下来'
+ItemTooltip.RunicTreasureMagnet=快速地将附近的物品传送进你的背包\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}\n'也许不会将月亮拉下来'
 
 ItemName.MoonLordTreasureMagnet=惊惧级宝藏磁铁
-ItemTooltip.MoonLordTreasureMagnet=将附件的物品以音速传送进你的背包\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}\n'好吧,现在这个东西可能会把月亮拉下来'
+ItemTooltip.MoonLordTreasureMagnet=将附近的物品以音速传送进你的背包\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}\n'好吧,现在这个东西可能会把月亮拉下来'
 
 // World control
 ItemName.FluxCapacitor=时光电容
@@ -98,7 +98,7 @@ ItemName.BagOfWorms=蠕虫袋
 ItemTooltip.BagOfWorms=作为鱼饵使用时不会被消耗
 
 ItemName.Infiniworm=无尽蠕虫
-ItemTooltip.Infiniworm=作为鱼饵使用时不会被消耗\n'Enlightenment'
+ItemTooltip.Infiniworm=作为鱼饵使用时不会被消耗\n'好东西'
 
 // Misc
 ItemName.VoidPiggy=虚空猪猪
