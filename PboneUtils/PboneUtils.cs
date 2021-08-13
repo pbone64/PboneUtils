@@ -83,7 +83,6 @@ namespace PboneUtils
             loader.Add(new PboneLib.CustomLoading.Localization.LocalizationLoader(translation => {
                 string s = translation.Key;
                 string a = translation.GetTranslation("en-US");
-                string d = "";
                 LocalizationLoader.AddTranslation(translation);
             }));
 
