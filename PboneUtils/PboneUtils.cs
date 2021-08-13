@@ -1,6 +1,7 @@
 using log4net;
 using PboneLib.CustomLoading;
 using PboneLib.CustomLoading.Content;
+using PboneLib.DataStructures;
 using PboneLib.Services.CrossMod;
 using PboneLib.Services.Net;
 using PboneLib.Utils;
@@ -10,6 +11,7 @@ using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
 using PboneUtils.ID;
 using PboneUtils.Packets;
+using System.Collections.Generic;
 using System.IO;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
@@ -83,6 +85,11 @@ namespace PboneUtils
             loader.Add(new PboneLib.CustomLoading.Localization.LocalizationLoader(translation => {
                 string s = translation.Key;
                 string a = translation.GetTranslation("en-US");
+
+                Dictionary<int, string> translations = ModTranslationCollection.ModTranslation_translations.GetValue(translation) as Dictionary<int, string>;
+                foreach (KeyValuePair<int, string> kvp in translations)
+                    Log.Info(kvp.Key + ": " + kvp.Value);
+
                 LocalizationLoader.AddTranslation(translation);
             }));
 
