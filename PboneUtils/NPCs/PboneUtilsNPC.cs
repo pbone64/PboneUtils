@@ -2,7 +2,7 @@
 
 namespace PboneUtils.NPCs
 {
-    public class PboneUtilsNPC : PNPC
+    public abstract class PboneUtilsNPC : PNPC
     {
     }
 }

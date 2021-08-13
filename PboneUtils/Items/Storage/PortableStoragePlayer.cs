@@ -3,10 +3,11 @@ using PboneUtils.Projectiles.Storage;
 using Terraria.Audio;
 using Terraria.ModLoader;
 using PboneLib.ID;
+using PboneLib.CustomLoading.Content.Implementations;
 
 namespace PboneUtils.Items.Storage
 {
-    public class PortableStoragePlayer : ModPlayer
+    public class PortableStoragePlayer : PPlayer
     {
         public int SafeGargoyleChest = -1;
         public bool SafeGargoyleOpen = false;

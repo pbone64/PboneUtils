@@ -2,7 +2,7 @@
 
 namespace PboneUtils.Buffs
 {
-    public class PboneUtilsBuff : PBuff
+    public abstract class PboneUtilsBuff : PBuff
     {
     }
 }

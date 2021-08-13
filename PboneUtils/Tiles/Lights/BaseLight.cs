@@ -11,7 +11,7 @@ namespace PboneUtils.Tiles.Lights
 {
     public abstract class BaseLight : PboneUtilsTile
     {
-        public override string Texture => "Terraria/Projectile_" + ProjectileID.ShadowBeamHostile;
+        public override string Texture => "Terraria/Images/Projectile_" + ProjectileID.ShadowBeamFriendly; // Aka invisible
 
         public abstract Color LightColor { get; }
 

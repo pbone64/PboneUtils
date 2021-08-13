@@ -10,8 +10,9 @@ namespace PboneUtils.Items
         public override bool InstancePerEntity => true;
         public override GlobalItem Clone(Item item, Item itemClone)
         {
-            itemClone.GetGlobalItem<InstancedPboneUtilsGlobalItem>().AutoswingOrig = item.GetGlobalItem<InstancedPboneUtilsGlobalItem>().AutoswingOrig;
-            itemClone.GetGlobalItem<InstancedPboneUtilsGlobalItem>().ChangedAutoswing = item.GetGlobalItem<InstancedPboneUtilsGlobalItem>().ChangedAutoswing;
+            // TODO FIXME! Implement Clone properly
+            //itemClone.GetGlobalItem<InstancedPboneUtilsGlobalItem>().AutoswingOrig = item.GetGlobalItem<InstancedPboneUtilsGlobalItem>().AutoswingOrig;
+            //itemClone.GetGlobalItem<InstancedPboneUtilsGlobalItem>().ChangedAutoswing = item.GetGlobalItem<InstancedPboneUtilsGlobalItem>().ChangedAutoswing;
             return base.Clone(item, itemClone);
         }
 

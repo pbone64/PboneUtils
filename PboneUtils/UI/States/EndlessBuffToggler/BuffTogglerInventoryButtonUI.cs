@@ -18,7 +18,7 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
             base.OnInitialize();
 
             int top = 262;
-            if (PboneUtils.CrossMod.IsModLoaded("Fargowiltas"))
+            /*if (PboneUtils.CrossMod.IsModLoaded("Fargowiltas"))
             {
                 top += 28;
             }
@@ -26,7 +26,7 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
             if (PboneUtils.CrossMod.IsModLoaded("FargowiltasSouls"))
             {
                 top += 58;
-            }
+            }*/
 
             Icon = new UIImage(PboneUtils.Textures["BuffTogglerInventoryButton"]);
             Icon.Left.Set(26, 0f);

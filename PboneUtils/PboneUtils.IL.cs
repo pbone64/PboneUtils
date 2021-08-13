@@ -2,6 +2,8 @@
 using MonoMod.Cil;
 using PboneUtils.Items.Storage;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Terraria;
 using Terraria.Audio;
@@ -15,10 +17,13 @@ namespace PboneUtils
     public partial class PboneUtils : Mod
     {
         public FieldInfo Item59Field = typeof(SoundID).GetField("Item59");
+        private IEnumerable<MethodInfo> PlaySoundMethods = typeof(SoundEngine).GetMethods()
+            .Where(methodInfo => methodInfo.Name == "PlaySound" && methodInfo.IsStatic == true && methodInfo.IsPublic == true);
 
         public void Load_IL()
         {
-            IL.Terraria.Player.HandleBeingInChestRange += Player_HandleBeingInChestRange;
+            // TODO fixme
+            //IL.Terraria.Player.HandleBeingInChestRange += Player_HandleBeingInChestRange;
             IL.Terraria.Main.DrawBuffIcon += Main_DrawBuffIcon;
         }
 
@@ -27,15 +32,30 @@ namespace PboneUtils
         {
             ILCursor c = new ILCursor(il);
 
-            if (!c.TryGotoNext(intsr => 
-                intsr.Previous.Previous.MatchLdsfld(Item59Field) &&
-                intsr.Previous.MatchLdcI4(-1) &&
-                intsr.MatchLdcI4(-1))
+            // Go through the method body, and for every PlaySound call...
+            while (c.TryGotoNext(instr => PlaySoundMethods.Any(method => instr.MatchCall(method))))
+            {
+                // Remove it, and replace it with my own
+                c.Remove();
+                c.EmitDelegate<Action>(() => {
+                    if (!( // If no PboneUtils portable storages are open
+                    Main.LocalPlayer.GetModPlayer<PortableStoragePlayer>().SafeGargoyleOpen || Main.LocalPlayer.GetModPlayer<PortableStoragePlayer>().DefendersCrystalOpen
+                        ))
+                    {
+                        SoundEngine.PlaySound(SoundID.Item59, -1, -1);
+                    }
+                });
+            }
+
+            /*if (!c.TryGotoNext(instr => 
+                (instr.Previous != null && instr.Previous.Previous != null) && instr.Previous.Previous.MatchLdsfld(Item59Field) &&
+                (instr.Previous != null) && instr.Previous.MatchLdcI4(-1) &&
+                instr.MatchLdcI4(-1))
             )
                 throw new Exception("Unable to path Terraria.Player.HandleBeingInChestRange: couldn't match IL");
             
             // On the [Load -1] line before playsound
-            c.Remove(); // Remove the next intsr
+            c.Remove(); // Remove the next instr
 
             c.EmitDelegate<Action>(() => {
                 if (!( // If no PboneUtils portable storages are open
@@ -44,7 +64,7 @@ namespace PboneUtils
                 {
                     SoundEngine.PlaySound(SoundID.Item59, -1, -1);
                 }
-            });
+            });*/
         }
 
         // Make the buff time counter disappear under 20 ticks instead of 2 ticks

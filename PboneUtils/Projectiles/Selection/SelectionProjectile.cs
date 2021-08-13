@@ -15,7 +15,7 @@ namespace PboneUtils.Projectiles.Selection
         public virtual Action<int, int> TileAction { get; }
         public virtual Func<Rectangle, bool> PreAction { get; }
 
-        public override string Texture => "Terraria/Projectile_" + ProjectileID.ShadowBeamFriendly; // Aka invisible
+        public override string Texture => "Terraria/Images/Projectile_" + ProjectileID.ShadowBeamFriendly; // Aka invisible
 
         public override void SetDefaults()
         {

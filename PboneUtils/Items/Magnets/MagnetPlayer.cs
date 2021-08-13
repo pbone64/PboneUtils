@@ -1,8 +1,8 @@
-﻿using Terraria.ModLoader;
+﻿using PboneLib.CustomLoading.Content.Implementations;
 
 namespace PboneUtils.Items.Magnets
 {
-    public class MagnetPlayer : ModPlayer
+    public class MagnetPlayer : PPlayer
     {
         public bool DeluxeTreasureMagnet;
         public bool HallowedTreasureMagnet;

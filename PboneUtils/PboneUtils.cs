@@ -12,6 +12,7 @@ using PboneUtils.ID;
 using PboneUtils.Packets;
 using System.IO;
 using Terraria.ModLoader;
+using Terraria.ModLoader.Config;
 
 namespace PboneUtils
 {
@@ -22,7 +23,6 @@ namespace PboneUtils
         public static PboneUtils Instance => ModContent.GetInstance<PboneUtils>();
         public static ILog Log => Instance.Logger;
 
-        // TODO this all needs to go to a mod system so it can load first
         public static PboneUtilsUI UI => ModContent.GetInstance<PboneUtilsUI>();
         public static PboneUtilsTextures Textures => ModContent.GetInstance<PboneUtilsTextures>();
         public static ModRecipeManager Recipes => Instance.recipes;
@@ -35,9 +35,7 @@ namespace PboneUtils
 
         public PboneUtils()
         {
-            Properties = new ModProperties() {
-                Autoload = false
-            };
+            ContentAutoloadingEnabled = false;
         }
 
         public override void Load()
@@ -66,11 +64,26 @@ namespace PboneUtils
             // Custom loading
             CustomModLoader loader = new CustomModLoader(this);
 
-            loader.Add(new ContentLoader(content => {
+            // ModConfigs
+            ContentLoader cLoader = new ContentLoader(content => {
+                // TODO Unhardcode me! Method in PConfig
+                AddConfig("Feature Config", (ModConfig)content.Content);
+            });
+            cLoader.Settings.TryToLoadConditions = ContentLoader.ContentLoaderSettings.PresetTryToLoadConfigConditions;
+            loader.Add(cLoader);
+
+            // Everything else
+            cLoader = new ContentLoader(content => {
                 this.AddContent(content);
-            }));
+            });
+            // Added for clarity, the Action only ctor automatically calls FillWithDefaultConditions
+            cLoader.Settings.TryToLoadConditions = ContentLoader.ContentLoaderSettings.PresetNormalTryToLoadConditions;
+            loader.Add(cLoader);
 
             loader.Add(new PboneLib.CustomLoading.Localization.LocalizationLoader(translation => {
+                string s = translation.Key;
+                string a = translation.GetTranslation("en-US");
+                string d = "";
                 LocalizationLoader.AddTranslation(translation);
             }));
 

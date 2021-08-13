@@ -22,8 +22,8 @@ namespace PboneUtils
             BuffTogglerButtonInterface = QuickCreateInterface("Vanilla: Mouse Text");
             RegisterUI<BuffTogglerInventoryButtonUI>(BuffTogglerButtonInterface);
 
-            if (PboneUtilsConfig.Instance.EndlessPotions)
-                OpenUI<BuffTogglerInventoryButtonUI>();
+            //if (PboneUtilsConfig.Instance.EndlessPotions)
+            //    OpenUI<BuffTogglerInventoryButtonUI>();
         }
     }
 }
