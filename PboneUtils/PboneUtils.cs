@@ -87,6 +87,7 @@ namespace PboneUtils
                 string a = translation.GetTranslation("en-US");
 
                 Dictionary<int, string> translations = ModTranslationCollection.ModTranslation_translations.GetValue(translation) as Dictionary<int, string>;
+                //debug btw
                 foreach (KeyValuePair<int, string> kvp in translations)
                     Log.Info(kvp.Key + ": " + kvp.Value);
 
