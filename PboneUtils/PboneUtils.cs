@@ -85,12 +85,6 @@ namespace PboneUtils
             loader.Add(new PboneLib.CustomLoading.Localization.LocalizationLoader(translation => {
                 string s = translation.Key;
                 string a = translation.GetTranslation("en-US");
-
-                Dictionary<int, string> translations = ModTranslationCollection.ModTranslation_translations.GetValue(translation) as Dictionary<int, string>;
-                //debug btw
-                foreach (KeyValuePair<int, string> kvp in translations)
-                    Log.Info(kvp.Key + ": " + kvp.Value);
-
                 LocalizationLoader.AddTranslation(translation);
             }));
 
