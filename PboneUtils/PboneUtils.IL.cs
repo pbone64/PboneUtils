@@ -17,7 +17,7 @@ namespace PboneUtils
     public partial class PboneUtils : Mod
     {
         public FieldInfo Item59Field = typeof(SoundID).GetField("Item59");
-        private IEnumerable<MethodInfo> PlaySoundMethods = typeof(SoundEngine).GetMethods()
+        private readonly IEnumerable<MethodInfo> PlaySoundMethods = typeof(SoundEngine).GetMethods()
             .Where(methodInfo => methodInfo.Name == "PlaySound" && methodInfo.IsStatic == true && methodInfo.IsPublic == true);
 
         public void Load_IL()
