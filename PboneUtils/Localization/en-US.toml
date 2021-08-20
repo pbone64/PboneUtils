@@ -1,5 +1,5 @@
 ﻿# ITEMS ------------------------------------------------------------------------------------------
-[ItemName]
+[Mods.PboneUtils.ItemName]
 # Portable Storages
 PetrifiedSafe = "Petrified Safe"
 DefendersCrystal = "Defender's Crystal"
@@ -80,7 +80,7 @@ StarMagnet = "Star Magnet"
 GreedyChest = "Greedy Chest"
 MagicLight = "Magic Light"
 
-[ItemTooltip]
+[Mods.PboneUtils.ItemTooltip]
 # Portable Storages
 PetrifiedSafe = "Summons a flying safe to store your items"
 DefendersCrystal = "Summons a crystal that lets you access your defender's forge"
@@ -131,7 +131,7 @@ GreedyChest = "Stops enemies from dropping coins\n{$Mods.PboneUtils.Common.CanBe
 MagicLight = "Places infinite, invisible lights\nRight click to change the light color\nLights can be seen while this item is enabled, and seen all the time while held\n\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Let there be light!'"
 
 # NPCS ------------------------------------------------------------------------------------------
-[TownChat]
+[Mods.PboneUtils.TownChat]
 MysteriousTrader.1 = "What do you mean, I'm a mutant?"
 MysteriousTrader.2 = "Have you ever seen an angel statue fly? Unfortunately, I have."
 MysteriousTrader.3 = "I walk on a fine line between selling junk and scamming."
@@ -151,7 +151,7 @@ Miner.6 = "I hear there's a plant made of solid metal you can grow under the rig
 Miner.HardmodeOnly = "Check out my cobalt ore; it is extra shiny."
 
 # BUFFS ------------------------------------------------------------------------------------------
-[BuffName]
+[Mods.PboneUtils.BuffName]
 PreperationStationBuff = "Prepared"
 BuffBrazierBuff = "Empowered"
 
@@ -170,7 +170,7 @@ ShadowPearlTile = "Shadow Pearl"
 WorldGen.PetrifiedSafes = "Hiding safes..."
 
 # UI ------------------------------------------------------------------------------------------
-[UI]
+[Mods.PboneUtils.UI]
 EndlessBuffTogglerInventoryButton.MouseOver = "Endless Buff Toggler"
 EndlessBuffToggler.DescriptionPlaceholder = "Click on a buff to see info about it."
 EndlessBuffToggler.DescriptionName = "Name"
@@ -184,7 +184,7 @@ EndlessBuffSource.Safe = "Safe"
 EndlessBuffSource.DefendersForge = "Defender's Forge"
 
 # TODO Option.Header/Option.Tooltip
-[Config]
+[Mods.PboneUtils.Config]
 Header.MiscFeatures = "QoL Features"
 Header.ItemToggles = "Item Toggles"
 Header.MiscItemToggles = "Misc Single Item Toggles"
@@ -270,11 +270,11 @@ Census.Description.MysteriousTrader = "Randomly arrives in the morning and leave
 
 
 # MISC ------------------------------------------------------------------------------------------
-[Message]
+[Mods.PboneUtils.Message]
 PetrifiedSafeDisabled1 = "Storage items have been disabled in the config!"
 PetrifiedSafeDisabled2 = "If you want a portable safe, enable storage items in the mod "
 
-[Common]
+[Mods.PboneUtils.Common]
 Enabled.True = "Enabled"
 Enabled.False = "Disabled"
 CanBeToggled = "Right click in your inventory to toggle on and off"
