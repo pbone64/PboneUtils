@@ -1,5 +1,6 @@
 ﻿using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils
 {
@@ -9,8 +10,24 @@ namespace PboneUtils
         public string AnyDemoniteBar = "PboneUtils:AnyDemoniteBar";
         public string AnyAdamantite = "PboneUtils:AnyAdamantite";
 
-        public void AddRecipes()
+        public void AddRecipes(Mod mod)
         {
+            if (PboneUtilsConfig.Instance.RecipeEndlessWater)
+            {
+                mod.CreateRecipe(ItemID.BottomlessBucket)
+                    .AddIngredient(ItemID.WaterBucket, 5)
+                    .AddIngredient(ItemID.SoulofNight, 1)
+                    .AddIngredient(ItemID.SoulofLight, 1)
+                    .AddTile(TileID.AlchemyTable)
+                    .Register();
+
+                mod.CreateRecipe(ItemID.BottomlessBucket)
+                    .AddIngredient(ItemID.EmptyBucket, 5)
+                    .AddIngredient(ItemID.SoulofNight, 1)
+                    .AddIngredient(ItemID.SoulofLight, 1)
+                    .AddTile(TileID.AlchemyTable)
+                    .Register();
+            }
         }
 
         public void AddRecipeGroups()

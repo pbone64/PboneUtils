@@ -11,7 +11,6 @@ using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
 using PboneUtils.ID;
 using PboneUtils.Packets;
-using System.Collections.Generic;
 using System.IO;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
@@ -66,6 +65,13 @@ namespace PboneUtils
             // Custom loading
             CustomModLoader loader = new CustomModLoader(this);
 
+            // Localizations
+            loader.Add(new PboneLib.CustomLoading.Localization.LocalizationLoader(translation => {
+                string s = translation.Key;
+                string a = translation.GetTranslation("en-US");
+                LocalizationLoader.AddTranslation(translation);
+            }));
+
             // ModConfigs
             ContentLoader cLoader = new ContentLoader(content => {
                 // TODO Unhardcode me! Method in PConfig
@@ -75,30 +81,22 @@ namespace PboneUtils
             loader.Add(cLoader);
 
             // Everything else
-            cLoader = new ContentLoader(content => {
-                this.AddContent(content);
-            });
+            cLoader = new ContentLoader(this.AddContent);
             // Added for clarity, the Action only ctor automatically calls FillWithDefaultConditions
             cLoader.Settings.TryToLoadConditions = ContentLoader.ContentLoaderSettings.PresetNormalTryToLoadConditions;
             loader.Add(cLoader);
-
-            loader.Add(new PboneLib.CustomLoading.Localization.LocalizationLoader(translation => {
-                string s = translation.Key;
-                string a = translation.GetTranslation("en-US");
-                LocalizationLoader.AddTranslation(translation);
-            }));
 
             loader.Load();
         }
 
         public override object Call(params object[] args) => crossModManager.CallManager.HandleCall(args);
-
         public override void HandlePacket(BinaryReader reader, int whoAmI) => PacketManager.HandlePacket(reader);
 
         public override void PostSetupContent()
         {
             base.PostSetupContent();
 
+            // TODO improve this
             // These get assinged to something by their ctors, don't worry
 #pragma warning disable CA1806 // Do not ignore method results
             new MysteriousTraderShopManager();
@@ -106,19 +104,20 @@ namespace PboneUtils
 #pragma warning restore CA1806 // Do not ignore method results
         }
 
-        #region UI
-
-        #endregion
-
+        #region Recipes
         public override void AddRecipes()
         {
+            base.AddRecipes();
+            recipes.AddRecipes(this);
         }
         public override void AddRecipeGroups()
         {
             base.AddRecipeGroups();
             recipes.AddRecipeGroups();
         }
+        #endregion
 
+        // TODO improve nulling upon unload
         public override void Unload()
         {
             base.Unload();
