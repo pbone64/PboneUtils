@@ -53,15 +53,19 @@ namespace PboneUtils.UI
 
             Player player = Main.LocalPlayer;
             PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
+            ItemConfig config = mPlayer.ItemConfigs[Name];
 
             (Vector2 centerPosition, Vector2[] buttonsPositions) = GetPositions();
             (bool centerHovered, bool[] buttonsHovered) = GetHoveredButtons();
-            ItemConfig config = mPlayer.ItemConfigs[Name];
 
             Vector2 position = centerPosition - ButtonSize * 0.5f;
             bool hovered = centerHovered;
+
+            // For some reason, I need to pass in hovered as the red value and red as the hovered value for this texture getting to work.
+            // I have no idea why and it haunts me, but it works.
             Texture2D buttonTexture = PboneUtils.Textures.GetRadialButton(hovered, config.RedMode).Value;
             Texture2D iconTexture = (PboneUtils.Textures.CachedAssets[Name + (config.RedMode ? "Red" : "")] as Asset<Texture2D>).Value;
+
             Color buttonColor = Color.White;
             Color iconColor = Color.White;
 
@@ -78,7 +82,7 @@ namespace PboneUtils.UI
                 position = buttonsPositions[i] - ButtonSize * 0.5f;
                 hovered = buttonsHovered[i];
                 buttonTexture = PboneUtils.Textures.GetRadialButton(hovered, config.RedMode).Value;
-                iconTexture = PboneUtils.Textures[configName];
+                iconTexture = PboneUtils.Textures["Icon" + configName];
                 buttonColor = config.Data[configName] ? Color.White : (hovered ? ButtonOn : ButtonOff);
                 iconColor = config.Data[configName] ? Color.White : (hovered ? IconOn : IconOff);
 

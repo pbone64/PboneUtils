@@ -14,12 +14,16 @@ namespace PboneUtils
             ["RadialButtonHovered"] = "PboneUtils/Textures/UI/Radial/ButtonRed",
             ["RadialButtonRed"] = "PboneUtils/Textures/UI/Radial/ButtonHover",
             ["RadialButtonRedHovered"] = "PboneUtils/Textures/UI/Radial/ButtonRedHover",
-            ["IconLiquid"] = GetRadialPath("Liquid"),
-            ["IconLiquidRed"] = GetRadialPath("LiquidRed"),
+
+            // Liquid
+            ["Liquid"] = GetRadialPath("Liquid"),
+            ["LiquidRed"] = GetRadialPath("LiquidRed"),
             ["IconWater"] = GetRadialPath("Water"),
             ["IconLava"] = GetRadialPath("Lava"),
             ["IconHoney"] = GetRadialPath("Honey"),
-            ["IconLight"] = GetRadialPath("Light"),
+
+            // Light
+            ["Light"] = GetRadialPath("Light"),
             ["IconWhite"] = GetRadialPath("LightWhite"),
             ["IconRed"] = GetRadialPath("LightRed"),
             ["IconGreen"] = GetRadialPath("LightGreen"),
@@ -51,12 +55,16 @@ namespace PboneUtils
         };
 
         public string GetRadialPath(string name) => $"PboneUtils/Textures/UI/Radial/Icon{name}";
-        public Asset<Texture2D> GetRadialButton(bool hover, bool red)
+        public Asset<Texture2D> GetRadialButton(bool red, bool hover)
         {
-            if (!hover)
-                return !red ? GetAsset("RadialButton") : GetAsset("RadialButton");
-            else
-                return !red ? GetAsset("RadialButtonHovered") : GetAsset("RadialButtonRedHovered");
+            string path = "RadialButton";
+
+            if (red)
+                path += "Red";
+            if (hover)
+                path += "Hovered";
+
+            return GetAsset(path);
         }
     }
 }
