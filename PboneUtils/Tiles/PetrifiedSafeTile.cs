@@ -36,6 +36,8 @@ namespace PboneUtils.Tiles
             ModTranslation name = CreateMapEntryName();
             AddMapEntry(Color.DarkGray, name);
             DustType = DustID.Stone;
+
+            ModContent.GetInstance<PboneUtilsGlobalTile>().TileBreakPredicates.Add(Type, Predicate);
         }
 
         public override bool CanKillTile(int i, int j, ref bool blockDamaged) => Predicate();

@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using Terraria;
-using Terraria.ModLoader;
 
 namespace PboneUtils.Tiles
 {
@@ -12,9 +11,7 @@ namespace PboneUtils.Tiles
 
         public override void Load()
         {
-            TileBreakPredicates = new Dictionary<int, Func<bool>> {
-                [ModContent.TileType<PetrifiedSafeTile>()] = PetrifiedSafeTile.Predicate
-            };
+            TileBreakPredicates = new Dictionary<int, Func<bool>>();
         }
 
         public override bool CanKillTile(int i, int j, int type, ref bool blockDamaged)
