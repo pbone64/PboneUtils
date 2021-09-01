@@ -1,3 +1,6 @@
+Version 1.1.7, Version 1.1.8 and most other alpha versions
+- These are quick bug fix updates made for the alpha. To focus on development, I'm not recording every change on them
+
 Version 1.1.6 Changes ------------------------------------------------------------------------------------------
 Items
 - Added Terraforming tools, to help you with shaping your world
