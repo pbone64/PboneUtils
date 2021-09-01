@@ -18,7 +18,8 @@ namespace PboneUtils.NPCs
             switch (npc.type)
             {
                 case NPCID.DD2Betsy:
-                    npcLoot.Add(new DropPerPlayerOnThePlayer(ModContent.ItemType<DefendersCrystal>(), 1, 1, 1, null));
+                    if (PboneUtilsConfig.Instance.StorageItemsToggle)
+                        npcLoot.Add(new DropPerPlayerOnThePlayer(ModContent.ItemType<DefendersCrystal>(), 1, 1, 1, null));
                     break;
             }
         }

@@ -82,8 +82,8 @@ MagicLight = "Magic Light"
 
 [Mods.PboneUtils.ItemTooltip]
 # Portable Storages
-PetrifiedSafe = "Summons a flying safe to store your items"
-DefendersCrystal = "Summons a crystal that lets you access your defender's forge"
+PetrifiedSafe = "Summons a flying safe to store your items\n[c/ff0000:pbone Utilities Portable storages items are currently VERY BROKEN.]\n[c/ff0000:It is HIGHLY RECOMENDED that you do NOT use them.]"
+DefendersCrystal = "Summons a crystal that lets you access your Defender's Forge\n[c/ff0000:pbone Utilities Portable storages items are currently VERY BROKEN.]\n[c/ff0000:It is HIGHLY RECOMENDED that you do NOT use them.]"
 
 # Liquid
 BottomlessHoneyBucket = "Contains an endless amount of honey\nCan be poured out"

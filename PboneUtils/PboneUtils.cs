@@ -59,16 +59,14 @@ namespace PboneUtils
             crossModManager.RefManager.RegisterCompatibility<MagicStorageCompatability>();
 
             // Load MonoMod hooks
-            Load_IL();
             Load_On();
+            Load_IL();
 
             // Custom loading
             CustomModLoader loader = new CustomModLoader(this);
 
             // Localizations
             loader.Add(new PboneLib.CustomLoading.Localization.LocalizationLoader(translation => {
-                string s = translation.Key;
-                string a = translation.GetTranslation("en-US");
                 LocalizationLoader.AddTranslation(translation);
             }));
 
