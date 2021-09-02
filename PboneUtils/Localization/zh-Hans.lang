@@ -226,7 +226,7 @@ Config.Label.MagicLightToggle=魔法之光
 Config.Label.MysteriousTrader=神秘商人
 Config.Label.Miner=矿工
 
-Config.Label.RecipeEndlessWater=无尽水工具合成
+Config.Label.RecipeEndlessWater=无尽液体工具合成
 Config.Label.RecipePetrifiedSafe=石化保险箱合成
 
 Config.Tooltip.AverageBossBags=启用后可以将宝藏袋以其掉落物的平均价格出售. 注意:由于计算方法的原因, Mod在重新加载后宝藏袋的价格可能会发生变化
@@ -253,7 +253,7 @@ Config.Tooltip.EndlessBaitToggle=启用或禁用无尽鱼饵, 无尽鱼饵作用
 Config.Tooltip.VoidPiggyToggle=启用或禁用虚空猪猪, 虚空猪猪能将你获得到的钱币自动存入猪猪存钱罐中
 Config.Tooltip.PhilosophersStoneToggle=启用或禁用原初物质, 原初物质能自动出售你拾取的物品
 Config.Tooltip.SpawnRateItemsToggle=启用或禁用战斗之火和和平之火, 战斗之火和和平之火分别增加或减少刷怪率
-Config.Tooltip.GreaterStaffOfRegrowthToggle=启用或禁用用于收获草药的绿色蓝图
+Config.Tooltip.GreaterStaffOfRegrowthToggle=启用或禁用绿色蓝图, 绿色蓝图能快速收获框选区域内的草药
 Config.Tooltip.ShadowPearlToggle=启用或禁用效果等同于恶魔祭坛的暗影珠
 Config.Tooltip.InfiniteManaToggle=启用或禁用无限法力饰品
 Config.Tooltip.StarMagnetToggle=启用或禁用吸星磁铁, 吸星磁铁能增加落星出现的几率
