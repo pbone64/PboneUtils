@@ -1,0 +1,285 @@
+# ITEMS ------------------------------------------------------------------------------------------
+[Mods.PboneUtils.ItemName]
+# Portable Storages
+PetrifiedSafe = "石化保险箱"
+DefendersCrystal = "守御晶体"
+
+# Liquid
+BottomlessHoneyBucket = "无底蜂蜜桶"
+SuperSweetSponge = "海綿蛋糕"
+BottomlessLavaBucket = "无底熔岩桶"
+HeatAbsorbantSponge = "吸热海绵"
+LiquidCombo = "液体蓝图" 
+
+# Magnets
+DeluxeTreasureMagnet = "豪华级宝藏磁铁"
+HallowedMagnet = "神圣级宝藏磁铁"
+SpectreTreasureMagnet = "幽冥级宝藏磁铁" 
+RunicTreasureMagnet = "符文级宝藏磁铁"
+MoonLordTreasureMagnet = "惊惧级宝藏磁铁"
+
+# World Control
+FluxCapacitor = "时光电容"
+AmuletOfRain = "云雨之符"
+AmuletOfSandstorms = "沙暴之符"
+
+
+# Ammo
+EndlessFlamingArrow = "无尽烈焰箭袋"
+EndlessUnholyArrow = "无尽邪箭袋"
+EndlessJesterArrow = "无尽小丑之箭袋"
+EndlessHellfireArrow = "无尽狱炎箭袋"
+EndlessHolyArrow = "无尽圣箭袋"
+EndlessCursedArrow = "无尽诅咒箭袋"
+EndlessFrostburnArrow = "无尽霜冻箭袋"
+EndlessChlorophyteArrow = "无尽叶绿箭袋"
+EndlessIchorArrow = "无尽灵液箭袋"
+EndlessVenomArrow = "无尽毒液箭袋"
+EndlessBoneArrow = "无尽骨箭袋"
+EndlessLuminiteArrow = "无尽夜明箭袋"
+
+EndlessMeteorShot = "无尽流星子弹袋"
+EndlessSilverBullet = "无尽银弹药袋"
+EndlessCrystalBullet = "无尽水晶弹药袋"
+EndlessCursedBullet = "无尽诅咒弹药袋"
+EndlessChlorophyteBullet = "无尽叶绿子弹袋"
+EndlessHighVelocityBullet = "无尽高速子弹药袋"
+EndlessIchorBullet = "无尽灵液子弹袋"
+EndlessVenomBullet = "无尽毒液子弹袋"
+EndlessPartyBullet = "无尽派对子弹袋"
+EndlessNanoBullet = "无尽纳米弹药袋"
+EndlessExplodingBullet = "无尽爆破子弹袋h"
+EndlessGoldenBullet = "无尽金弹药袋"
+EndlessLuminiteBullet = "无尽夜明子弹袋"
+
+# Arena
+AsphaltPlatform = "沥青平台"
+PreperationStation = "四合一站"
+BuffBrazier = "增益火炬"
+
+# Apps
+WormholeApp = "虫洞程序"
+TeleportationApp = "随机传送程序"
+
+# Bait
+BagOfWorms = "蠕虫袋"
+Infiniworm = "无尽蠕虫"
+
+# Terraforming
+Gigaxe = "超级伐木斧"
+
+# Misc
+VoidPiggy = "虚空猪猪"
+PhilosophersStone = "原初物质"
+FlameOfBattle = "战斗之火"
+FlameOfPeace = "和平之火"
+GreaterStaffOfRegrowth = "绿色蓝图"
+ShadowPearl = "暗影珠"
+InfiniteMana = "无限法力"
+StarMagnet = "吸星磁铁"
+GreedyChest = "贪欲宝箱"
+MagicLight = "魔法之光"
+
+[Mods.PboneUtils.ItemTooltip]
+# Portable Storages
+PetrifiedSafe = "召唤一个用于存放物品的浮空保险箱\n[c/ff0000:本Mod的储存类工具目前非常不稳定.]\n[c/ff0000:不推荐使用它们.]"
+DefendersCrystal = "召唤一颗用于访问护卫熔炉的水晶\n[c/ff0000:本Mod的储存类工具目前非常不稳定.]\n[c/ff0000:不推荐使用它们.]"
+
+# Liquid
+BottomlessHoneyBucket = "含有无限多的蜂蜜\n可以倒出"
+SuperSweetSponge = "能够吸收无限多的蜂蜜"
+BottomlessLavaBucket = "含有无限多的熔岩\n可以倒出"
+HeatAbsorbantSponge = "能够吸收无限多的熔岩"
+LiquidCombo = "=使你获得对液体的最终控制权!\n右键打开设置面板"
+
+# Magnets
+DeluxeTreasureMagnet = "扩大物品拾取范围\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}"
+HallowedMagnet = "扩大物品拾取范围\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}"
+SpectreTreasureMagnet = "将附近的物品传送进你的背包\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}"
+RunicTreasureMagnet = "快速地将附近的物品传送进你的背包\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Won't pull down the moon, probably'"
+MoonLordTreasureMagnet = "将附件的物品以音速传送进你的背包\n放置在背包中即可生效\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Okay, now THIS might pull down the moon'"
+
+# World Control
+FluxCapacitor = "昼夜互换\n右键加速时间流逝速度, 再次右键恢复时间流逝速度\n'含有1.21千兆瓦!"
+AmuletOfRain = "开始或停止下雨\n'通往九重天的单程票'"
+AmuletOfSandstorms = "开始或停止沙尘暴\n'纹路粗糙'"
+
+# Arena
+AsphaltPlatform = "增加移动速度"
+PreperationStation = "右键增加近战武器的护甲穿透、减少弹药消耗率、增加法力并+1最大召唤栏\n放置时不会消耗此物品\n'同样可以制作切丝薯条!'"
+BuffBrazier = "当你在火炬附近时增加生命恢复速度、法力恢复速度、移动速度和刷怪率\n提供充足的照明\n放置时不会消耗此物品"
+
+# Apps
+WormholeApp = "安装在手机中后使手机获得无尽虫洞药水效果\n{$Mods.PboneUtils.Common.AppInfo}"
+TeleportationApp = "安装在手机中后使手机获得无尽随机传送药水效果（手持手机时按右键传送）\n{$Mods.PboneUtils.Common.AppInfo}"
+
+# Endless Ammo
+BagOfWorms = "作为鱼饵使用时不会被消耗"
+Infiniworm = "作为鱼饵使用时不会被消耗\n'好东西'"
+
+# Misc
+Gigaxe = "左键框选区域, 松开后会瞬间砍伐框选区域内所有的树木"
+VoidPiggy = "放置在背包中时你获得的钱币都会自动存入你的猪猪存钱罐中\n猪猪存钱罐中至少有1枚钱币时才会生效\n{$Mods.PboneUtils.Common.CanBeToggled}\n'异界奇物!'"
+PhilosophersStone = "手持此物品时, 自动出售你拾取的物品\n{$Mods.PboneUtils.Common.CanBeToggled}\n'不包括不朽'"
+FlameOfBattle = "大幅增加刷怪率和刷怪上限\n{$Mods.PboneUtils.Common.CanBeToggled}"
+FlameOfPeace = "大幅减少刷怪率和刷怪上限\n{$Mods.PboneUtils.Common.CanBeToggled}"
+GreaterStaffOfRegrowth = "左键框选区域, 松开后会收获被框选区域内所有的草药"
+ShadowPearl = "效果等同于恶魔祭坛"
+InfiniteMana = "降低35%伤害\n将你的最大召唤栏降至1格\n无限法力"
+StarMagnet = "大幅增加落星出现的几率\n{$Mods.PboneUtils.Common.CanBeToggled}\n'小心流星'"
+GreedyChest = "敌人不再掉落钱币\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Om nom nom'"
+MagicLight = "放置时不会消耗此物品, 物块不可见\n右键更改光的颜色\n开启此物品的效果时可以看见光, 手持此物品时则可以一直看见光\n\n{$Mods.PboneUtils.Common.CanBeToggled}\n'要有光!'"
+
+# NPCS ------------------------------------------------------------------------------------------
+[Mods.PboneUtils.TownChat]
+MysteriousTrader.1 = "照你这意思...我是突变体?"
+MysteriousTrader.2 = "你有见过一尊天使雕像在空中飞翔吗? 不幸的是, 我见过."
+MysteriousTrader.3 = "我和卖垃圾的还有诈骗犯走的是同一条路."
+MysteriousTrader.4 = "嘿, 你是不是觉得我不会搬进去住? 我所在的社团可一直在谈论关于房子的种种东西."
+MysteriousTrader.5 = "我老妈常说我该学学架构支撑以外的东西, 事实证明她错了."
+MysteriousTrader.6 = "我卖的东西都是从我的地下室里翻出来的, 别问了."
+MysteriousTrader.7 = "快随便买点什么东西吧! 这些长袍可不会自己把自己缝出来!"
+MysteriousTrader.8 = "召唤克苏鲁需要多少位教徒? 不, 你什么都没听见."
+MysteriousTrader.9 = "我售卖许多稀有的物品...都是有关克苏鲁的!"
+
+Miner.1 = "哦哦哦,亮闪闪!"
+Miner.2 = "为啥我不用炸药挖矿? 因为炸药会毁了那些矿石!"
+Miner.3 = "=我的镐子是这片大地上最古老但也是最好的!"
+Miner.4 = "我能把这些金子变钱币, 你懂我的意思吧."
+Miner.5 = "如果我从不去挖矿, 我从哪里得到的矿石? 我把它们都放在我的包包里."
+Miner.6 = "我听说有一种由固态金属制成的植物. 它们能在合适的条件下生长."
+Miner.HardmodeOnly = "快来看我的钴矿, 它是如此的闪亮"
+
+# BUFFS ------------------------------------------------------------------------------------------
+[Mods.PboneUtils.BuffName]
+PreperationStationBuff = "四合一增益"
+BuffBrazierBuff = "恢复增益"
+
+[BuffDescription]
+PreperationStationBuff = "拥有利器站、弹药箱、水晶球和施法桌效果\n当你拥有此增益时禁用单独的增益"
+BuffBrazierBuff = "拥有篝火、心灯、星星瓶、向日葵和蜂蜜效果\n当你拥有此增益时禁用单独的增益"
+
+[MapObject]
+PetrifiedSafeTile = "石化保险箱"
+AsphaltPlatformTile = "沥青平台"
+PreperationStationTile = "四合一站"
+BuffBrazierTile = "增益火炬"
+ShadowPearlTile = "暗影珠"
+
+# WORLDGEN ------------------------------------------------------------------------------------------
+WorldGen.PetrifiedSafes = "正在隐藏保险箱..."
+
+# UI ------------------------------------------------------------------------------------------
+[Mods.PboneUtils.UI]
+EndlessBuffTogglerInventoryButton.MouseOver = "无尽增益设置"
+EndlessBuffToggler.DescriptionPlaceholder = "点击一个增益以查看相关讯息."
+EndlessBuffToggler.DescriptionName = "名称"
+EndlessBuffToggler.DescriptionSource = "来源"
+EndlessBuffToggler.DescriptionDescription = "描述"
+EndlessBuffToggler.DescriptionHowToDisable = "(选中增益时右键其图标以开关其效果)"
+
+EndlessBuffSource.Inventory = "背包"
+EndlessBuffSource.PiggyBank = "猪猪存钱罐"
+EndlessBuffSource.Safe = "保险箱"
+EndlessBuffSource.DefendersForge = "护卫熔炉"
+
+# TODO Option.Header/Option.Tooltip
+[Mods.PboneUtils.Config]
+Header.MiscFeatures = "生活质量相关"
+Header.ItemToggles = "物品设置"
+Header.MiscItemToggles = "杂项物品设置"
+Header.NPCs = "有用的NPC"
+Header.QolRecipes = "生活质量合成"
+
+Label.AverageBossBagsSlider = "宝藏袋开袋模拟"
+Label.AverageBossBags = "宝藏袋价格"
+Label.ExtraBuffSlots = "额外Buff栏"
+Label.EndlessPotions = "无尽药水增益"
+Label.EndlessPotionsSlider = "无尽药水生效数量"
+Label.AutoswingOnEverything = "为所有物品启用自动挥舞"
+Label.AutoswingOnEverythingBlacklist = "自动挥舞黑名单"
+Label.MaxStackIncrease = "物品最大堆叠9999"
+Label.NoMoreGraves = "不再生成墓碑"
+Label.FastRespawn = "快速重生"
+Label.FastRespawnDuringBoss = "Boss战期间快速重生"
+
+Label.StorageItemsToggle = "储存类物品"
+Label.LiquidItemsToggle = "液体类物品"
+Label.ArenaItemsToggle = "战斗场地类物品"
+Label.MagnetItemsToggle = "磁铁类物品"
+Label.AmmoItemsToggle = "弹药类物品"
+Label.WorldControlItemsToggle = "世界控制类物品"
+Label.CellPhoneAppsToggle = "手机程序"
+Label.EndlessBaitToggle = "无尽鱼饵"
+
+Label.VoidPiggyToggle = "虚空猪猪"
+Label.PhilosophersStoneToggle = "原初物质"
+Label.SpawnRateItemsToggle = "生成稀有物品"
+Label.GreaterStaffOfRegrowthToggle = "绿色蓝图"
+Label.ShadowPearlToggle = "暗影珠"
+Label.InfiniteManaToggle = "无限法力"
+Label.StarMagnetToggle = "吸星磁铁"
+Label.GreedyChestToggle = "贪欲宝箱"
+Label.MagicLightToggle = "魔法之光"
+
+Label.MysteriousTrader = "神秘商人"
+Label.Miner = "矿工"
+
+Label.RecipeEndlessWater = "无尽液体工具合成"
+Label.RecipePetrifiedSafe = "石化保险箱合成"
+
+Tooltip.AverageBossBags = "启用后可以将宝藏袋以其掉落物的平均价格出售. 注意:由于计算方法的原因, Mod在重新加载后宝藏袋的价格可能会发生变化"
+Tooltip.AverageBossBagsSlider = "平均宝藏袋价格时模拟的开袋次数\n较高的数值将产生更一致的结果, 但会延长Mod加载时间"
+Tooltip.ExtraBuffSlots = "额外buff栏数量, 在默认22栏基础上增加(每行11格buff)"
+Tooltip.EndlessPotions = "启用后拥有一定数量的药水时将使你获得对应的无尽增益(或者不会消耗治疗药水这种东西)"
+Tooltip.EndlessPotionsSlider = "无尽药水增益生效所需的数量"
+Tooltip.AutoswingOnEverything = "启用或禁用所有物品自动挥舞功能(或者远程武器自动连射, 自动调整阴影等等诸如此类的东西)"
+Tooltip.AutoswingOnEverythingBlacklist = "无法自动挥舞的物品(如果启用)"
+Tooltip.MaxStackIncrease = "启用后会增加大多数物品的最大堆叠数量(9999)"
+Tooltip.NoMoreGraves = "启用后你和其他玩家死亡时不再掉落墓碑"
+Tooltip.FastRespawn = "启用后加快你的重生速度"
+Tooltip.FastRespawnDuringBoss = "启用后即使在Boss站期间, 也能加快重生速度"
+
+Tooltip.StorageItemsToggle = "启用或禁用此Mod的储存类物品, 便携式保险箱能让你随时随地的访问私人仓库"
+Tooltip.LiquidItemsToggle = "启用或禁用此Mod的液体类物品, 液体类物品能放置或吸收无限的熔岩或蜂蜜"
+Tooltip.AmmoItemsToggle = "启用或禁用此Mod的无尽弹药类物品"
+Tooltip.ArenaItemsToggle = "启用或禁用此Mod的战斗场地类物品, 战斗场地类物品可为你提供一些增益"
+Tooltip.MagnetItemsToggle = "启用或禁用此Mod的磁铁类物品, 磁铁类物品可以扩大你的拾取范围"
+Tooltip.WorldControlItemsToggle = "启用或禁用此Mod的世界控制类物品, 世界控制类物品可以控制时间和天气等东西"
+Tooltip.CellPhoneAppsToggle = "启用或禁用为手机提供额外功能的手机程序类物品, 比如虫洞和随机传送程序"
+Tooltip.EndlessBaitToggle = "启用或禁用无尽鱼饵, 无尽鱼饵作用? 你说呢?"
+
+Tooltip.VoidPiggyToggle = "启用或禁用虚空猪猪, 虚空猪猪能将你获得到的钱币自动存入猪猪存钱罐中"
+Tooltip.PhilosophersStoneToggle = "启用或禁用原初物质, 原初物质能自动出售你拾取的物品"
+Tooltip.SpawnRateItemsToggle = "启用或禁用战斗之火和和平之火, 战斗之火和和平之火分别增加或减少刷怪率"
+Tooltip.GreaterStaffOfRegrowthToggle = "启用或禁用绿色蓝图, 绿色蓝图能快速收获框选区域内的草药"
+Tooltip.ShadowPearlToggle = "启用或禁用效果等同于恶魔祭坛的暗影珍珠"
+Tooltip.InfiniteManaToggle = "启用或禁用无限法力饰品"
+Tooltip.StarMagnetToggle = "启用或禁用吸星磁铁, 吸星磁铁能增加落星出现的几率"
+Tooltip.GreedyChestToggle = "启用或禁用贪欲宝箱, 贪欲宝箱能阻止敌人掉落钱币"
+Tooltip.MagicLightToggle = "启用或禁用魔法之光, 魔法之光能提供光照且可以切换颜色"
+
+Tooltip.MysteriousTrader = "启用或禁用神秘商人, 神秘商人是一位出售稀有物品的NPC"
+Tooltip.Miner = "启用或禁用矿工, 矿工是一位出售矿石和宝石的NPC"
+
+Tooltip.RecipeEndlessWater = "启用或禁用无底水桶和超级吸水海绵的配方"
+Tooltip.RecipePetrifiedSafe = "启用或禁用石化保险箱的简易配方\n(一般情况下, 石化保险箱生成于地下)"
+
+Census.Description.Miner = "击败世界吞噬者或克苏鲁之脑"
+Census.Description.MysteriousTrader = "击败史莱姆王或克苏鲁之眼后, 在随机的某天早上到达并在当天晚上离开"
+
+
+# MISC ------------------------------------------------------------------------------------------
+[Mods.PboneUtils.Message]
+PetrifiedSafeDisabled1 = "已禁用储存类物品!"
+PetrifiedSafeDisabled2 = "如果你想要使用便携式保险箱, 请在设置中开启储存类物品."
+
+[Mods.PboneUtils.Common]
+Enabled.True = "已开启"
+Enabled.False = "已关闭"
+CanBeToggled = "在背包中右键此物品以开关其效果"
+
+AppInfo = "你可以通过在背包中选取程序后右键手机来安装此程序"
+CellPhoneInfo = "你可以通过背包中选取程序然后右键手机来安装程序\n已安装的程序:"
+CellPhone.Wormhole = " [i:2997] 虫洞程序: 提供无尽虫洞药水效果"
+CellPhone.Teleportation = " [i:2351] 随机传送程序: 提供无尽随机传送药水效果, 手持手机时右键进行随机传送"
