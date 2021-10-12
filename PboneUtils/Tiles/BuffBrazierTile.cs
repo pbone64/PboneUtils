@@ -50,7 +50,7 @@ namespace PboneUtils.Tiles
 			int width = 16;
 			int offsetY = 0;
 			int height = 16;
-			TileLoader.SetDrawPositions(i, j, ref width, ref offsetY, ref height);
+			TileLoader.SetDrawPositions(i, j, ref width, ref offsetY, ref height, ref tile.frameX, ref tile.frameY);
 			Texture2D flameTexture = PboneUtils.Textures["BuffBrazierFlame"];
 
 			ulong num190 = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (uint)i);

@@ -52,18 +52,18 @@ namespace PboneUtils.Items
             Enabled = reader.ReadBoolean();
         }
 
-        public override TagCompound Save()
+        public override void SaveData(TagCompound tag)
         {
-            TagCompound tag = new TagCompound() {
-                { "Enabled", Enabled }
-            };
-            return tag;
+            tag.Add("Enabled", Enabled);
+
+            base.SaveData(tag);
         }
 
-        public override void Load(TagCompound tag)
+        public override void LoadData(TagCompound tag)
         {
-            base.Load(tag);
             Enabled = tag.GetBool("Enabled");
+
+            base.LoadData(tag);
         }
     }
 }

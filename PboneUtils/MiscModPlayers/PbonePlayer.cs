@@ -50,25 +50,24 @@ namespace PboneUtils.MiscModsPlayers
         }
 
         #region I/O
-        public override TagCompound Save()
+        public override void SaveData(TagCompound tag)
         {
-            base.Save();
-            TagCompound tag = new TagCompound();
             foreach (KeyValuePair<string, ItemConfig> kvp in ItemConfigs)
             {
                 tag.Add(kvp.Key, kvp.Value.Save());
             }
 
-            return tag;
+            base.SaveData(tag);
         }
 
-        public override void Load(TagCompound tag)
+        public override void LoadData(TagCompound tag)
         {
-            base.Load(tag);
             foreach (string s in ItemConfigs.Keys)
             {
                 ItemConfigs[s].Load(tag, s);
             }
+
+            base.LoadData(tag);
         }
         #endregion
 

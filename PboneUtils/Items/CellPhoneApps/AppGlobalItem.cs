@@ -23,21 +23,10 @@ namespace PboneUtils.Items.CellPhoneApps
             return gItem;
         }
 
-        public override bool NeedsSaving(Item item)
-        {
-            if (item.type == ItemID.CellPhone)
-                return true;
-
-            return base.NeedsSaving(item);
-        }
-
-        public override TagCompound Save(Item item)
+        public override void SaveData(Item item, TagCompound tag)
         {
             if (item.type == ItemID.CellPhone)
             {
-#pragma warning disable IDE0028 // Simplify collection initialization
-                TagCompound tag = new TagCompound();
-#pragma warning restore IDE0028 // Simplify collection initialization
                 tag.Add("AppCount", Apps.Count);
 
                 for (int i = 0; i < Apps.Count; i++)
@@ -45,17 +34,13 @@ namespace PboneUtils.Items.CellPhoneApps
                     tag.Add("AppId" + i, Apps[i].appId);
                     tag.Add("AppItem" + i, Apps[i].item);
                 }
-
-                return tag;
             }
 
-            return base.Save(item);
+            base.SaveData(item, tag);
         }
 
-        public override void Load(Item item, TagCompound tag)
+        public override void LoadData(Item item, TagCompound tag)
         {
-            base.Load(item, tag);
-
             if (item.type == ItemID.CellPhone)
             {
                 Apps.Clear();
@@ -70,6 +55,8 @@ namespace PboneUtils.Items.CellPhoneApps
                         );
                 }
             }
+
+            base.LoadData(item, tag);
         }
 
         public override bool CanRightClick(Item item)

@@ -76,12 +76,8 @@ namespace PboneUtils
             TravelingNPCHelper.DoTravellingMerchant(ModContent.NPCType<MysteriousTrader>(), 48600, () => (NPC.downedSlimeKing || NPC.downedBoss1) && Main.rand.NextBool(3));
         }
 
-        public override TagCompound SaveWorldData()
+        public override void SaveWorldData(TagCompound tag)
         {
-#pragma warning disable IDE0028 // Simplify collection initialization
-            TagCompound tag = new TagCompound();
-#pragma warning restore IDE0028 // Simplify collection initialization
-
             tag.Add("MysteriousTraderCount", MysteriousTraderShop.Count);
 
             for (int i = 0; i < MysteriousTraderShop.Count; i++)
@@ -91,8 +87,6 @@ namespace PboneUtils
                 tag.Add("ModMysteriousTraderItem" + i, item.ModItem == null ? "TERRARIA" : item.ModItem.Mod.Name);
                 tag.Add("MysteriousTraderItem" + i, MysteriousTraderShop[i]);
             }
-
-            return tag;
         }
 
         public override void LoadWorldData(TagCompound tag)
