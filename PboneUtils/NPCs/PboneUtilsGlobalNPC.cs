@@ -6,6 +6,8 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using PboneUtils.MiscModsPlayers;
 using PboneLib.CustomLoading.Content.Implementations;
+using Terraria.GameContent.Bestiary;
+using PboneUtils.Items.Clovers;
 
 namespace PboneUtils.NPCs
 {
@@ -33,6 +35,19 @@ namespace PboneUtils.NPCs
                     {
                         shop.item[nextSlot].SetDefaults(ModContent.ItemType<PhilosophersStone>());
                         nextSlot++;
+                    }
+                    break;
+
+                case NPCID.BestiaryGirl:
+                    if (PboneUtilsConfig.Instance.CloversToggle)
+                    {
+                        BestiaryUnlockProgressReport bestiaryProgressReport = Main.GetBestiaryProgressReport();
+
+                        if (bestiaryProgressReport.CompletionPercent >= 0.07f)
+                        {
+                            shop.item[nextSlot].SetDefaults(ModContent.ItemType<FourLeafClover>());
+                            nextSlot++;
+                        }
                     }
                     break;
             }

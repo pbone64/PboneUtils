@@ -139,6 +139,25 @@ namespace PboneUtils
         [ReloadRequired]
         public bool EndlessBaitToggle;
 
+        [Label("$Mods.PboneUtils.Config.Label.CloversToggle")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.CloversToggle")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool CloversToggle;
+
+
+        // ITEM SETTINGS
+
+        [Label("$Mods.PboneUtils.Config.Label.GoldenCloverLuckSlider")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.GoldenCloverLuckSlider")]
+        [Slider]
+        [Range(0f, 1f)]
+        [Increment(0.05f)]
+        [DefaultValue(1f)]
+        [DrawTicks]
+        [ReloadRequired]
+        public float GoldenCloverLuckSlider;
+
 
         // MISC SINGLE ITEMS
 

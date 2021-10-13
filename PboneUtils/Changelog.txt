@@ -1,4 +1,20 @@
-Version 1.1.7, Version 1.1.8 and most other alpha versions
+Version 1.2.2 Changes ------------------------------------------------------------------------------------------
+Items
+- Added clovers, items to help you with luck
+-- Four leaf clover, which displays your luck
+-- Corrupticlover, which displays your luck and (tries to) keep it at the default value
+-- Trefaurium, which displays your luck and increases it
+-- Apps for all these items, if clovers and cellphone apps are enabled
+- Added a treasure magnet to Deluxe Treasure Magnet's recipe
+- Re-added Petrified safe's recipe, it somehow vanished (not that it matters, it's still not functional)
+
+NPCs
+- Gave the Miner and Mysterious Trader bestiary descriptions.
+
+Bugs
+- Fixed a crash upon generating a world
+
+Version 1.1.7, Version 1.1.8 and most other alpha versions -----------------------------------------------------
 - These are quick bug fix updates made for the alpha. To focus on development, I'm not recording every change on them
 
 Version 1.1.6 Changes ------------------------------------------------------------------------------------------

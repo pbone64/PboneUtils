@@ -22,7 +22,7 @@ namespace PboneUtils.Items.Magnets
 
         public override void AddRecipes()
         {
-            CreateRecipe(1).AddIngredient(ItemID.GoldCoin, 15).AddTile(TileID.MythrilAnvil).Register();
+            CreateRecipe(1).AddIngredient(ItemID.TreasureMagnet).AddIngredient(ItemID.GoldCoin, 15).AddTile(TileID.MythrilAnvil).Register();
         }
     }
 }

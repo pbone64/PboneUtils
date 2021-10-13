@@ -1,7 +1,6 @@
 using log4net;
 using PboneLib.CustomLoading;
 using PboneLib.CustomLoading.Content;
-using PboneLib.DataStructures;
 using PboneLib.Services.CrossMod;
 using PboneLib.Services.Net;
 using PboneLib.Utils;

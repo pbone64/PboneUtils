@@ -50,7 +50,7 @@ namespace PboneUtils.NPCs.Town
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-                new FlavorTextBestiaryInfoElement("Mods.PboneUtils.Bestiary.Miner")
+                new FlavorTextBestiaryInfoElement("Mods.PboneUtils.Bestiary.MysteriousTrader")
             });
         }
 

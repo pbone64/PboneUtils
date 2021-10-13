@@ -139,6 +139,12 @@ namespace PboneUtils
             PboneUtils.PacketManager.ReadPacket<SyncMysteriousTraderShop>(reader);
         }
 
+        public override void PreWorldGen()
+        {
+            base.PreWorldGen();
+            MysteriousTraderShop = new List<int>();
+        }
+
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
         {
             base.ModifyWorldGenTasks(tasks, ref totalWeight);

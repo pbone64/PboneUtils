@@ -25,6 +25,10 @@ namespace PboneUtils.Items.Storage
 
         public override void AddRecipes()
         {
+            if (PboneUtilsConfig.Instance.RecipePetrifiedSafe)
+            {
+                CreateRecipe().AddIngredient(ItemID.Safe).AddIngredient(ItemID.StoneBlock, 100).AddIngredient(ItemID.Bone, 5).AddTile(TileID.Anvils).Register();
+            }
         }
     }
 }

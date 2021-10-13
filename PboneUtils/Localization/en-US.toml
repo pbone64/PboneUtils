@@ -68,6 +68,11 @@ Infiniworm = "The Infiniworm"
 # Terraforming
 Gigaxe = "Gigaxe"
 
+# Clovers
+FourLeafClover = "Four Leaf Clover"
+CorruptedClover = "Corrupted Clover"
+GoldenClover = "Trefaurium"
+
 # Misc
 VoidPiggy = "Void Piggy"
 PhilosophersStone = "Prima Materia"
@@ -117,6 +122,11 @@ TeleportationApp = "Allows you to teleport by holding the Cell Phone in your han
 BagOfWorms = "Not consumed when used as bait"
 Infiniworm = "Not consumed when used as bait\n'Enlightenment'"
 
+# Clover
+FourLeafClover = "Displays your luck\n'Lucky you!'"
+CorruptedClover = "Displays your luck\nLocks your luck to the default value\n'Wait, where are the thorns?'"
+GoldenClover = "Displays your luck\nIncreases your luck\n'I know gold's a bit gauche, but...'"
+
 # Misc
 Gigaxe = "Click and drag to select an area\nAll trees in the selected area are instantly chopped"
 VoidPiggy = "When carried, coins are automatically sent to your piggy bank\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'"
@@ -150,6 +160,11 @@ Miner.5 = "Where do I get my ores if I'm never mining? I keep them all in my bac
 Miner.6 = "I hear there's a plant made of solid metal you can grow under the right conditions!"
 Miner.HardmodeOnly = "Check out my cobalt ore; it is extra shiny."
 
+# BESTIARY ------------------------------------------------------------------------------------------
+[Mods.PboneUtils.Bestiary]
+Miner = "The Miner is happy to sell many different varieties of mined goods."
+MysteriousTrader = "The Mysterious Trader is a robed figure who seems to belong to some sort of... club. They sell many odds and ends from the corners of the world."
+
 # BUFFS ------------------------------------------------------------------------------------------
 [Mods.PboneUtils.BuffName]
 PreperationStationBuff = "Prepared"
@@ -165,6 +180,12 @@ AsphaltPlatformTile = "Asphalt Platform"
 PreperationStationTile = "Preparation Station"
 BuffBrazierTile = "Buff Brazier"
 ShadowPearlTile = "Shadow Pearl"
+
+# INFO DISPLAYS ------------------------------------------------------------------------------------------
+[Mods.PboneUtils.InfoDisplayName]
+CloverUI1 = "Luck"
+CloverUI2 = "Luck"
+CloverUI3 = "Luck"
 
 # WORLDGEN ------------------------------------------------------------------------------------------
 WorldGen.PetrifiedSafes = "Hiding safes..."
@@ -211,6 +232,9 @@ Label.AmmoItemsToggle = "Ammo Items"
 Label.WorldControlItemsToggle = "World Control Items"
 Label.CellPhoneAppsToggle = "Cell Phone Apps"
 Label.EndlessBaitToggle = "Endless Bait"
+Label.CloversToggle = "Clovers"
+
+Label.GoldenCloverLuckSlider = "Trefaurium Luck Bonus"
 
 Label.VoidPiggyToggle = "Void Piggy"
 Label.PhilosophersStoneToggle = "Prima Materia"
@@ -248,6 +272,9 @@ Tooltip.MagnetItemsToggle = "Enable or disable this mod's magnet items, which in
 Tooltip.WorldControlItemsToggle = "Enable or disable this mod's world control items, which can change the time, weather, and more"
 Tooltip.CellPhoneAppsToggle = "Enable or disable Cell Phone apps, upgrades to the Cell Phone which provide extra functionality"
 Tooltip.EndlessBaitToggle = "Enable or disable Endless Bait, which does what you think it does"
+Tooltip.CloversToggle = "Enable or disable clovers, which are items that let you see and improve your luck stat"
+
+Tooltip.GoldenCloverLuckSlider = "The amount of bonus luck the Trefaurium gives, if it's enabled"
 
 Tooltip.VoidPiggyToggle = "Enable or disable the Void Piggy item, which sends collected coins to your piggy bank"
 Tooltip.PhilosophersStoneToggle = "Enable or disable the Prima Materia item, which sells picked up items"
