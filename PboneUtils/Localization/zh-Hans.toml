@@ -68,6 +68,11 @@ Infiniworm = "无尽蠕虫"
 # Terraforming
 Gigaxe = "超级伐木斧"
 
+# Clovers
+FourLeafClover = "四叶草"
+CorruptedClover = "腐化四叶草"
+GoldenClover = "黄金四叶草"
+
 # Misc
 VoidPiggy = "虚空猪猪"
 PhilosophersStone = "原初物质"
@@ -117,6 +122,11 @@ TeleportationApp = "安装在手机中后使手机获得无尽随机传送药水
 BagOfWorms = "作为鱼饵使用时不会被消耗"
 Infiniworm = "作为鱼饵使用时不会被消耗\n'好东西'"
 
+# Clover
+FourLeafClover = "用于显示你的运气值\n'祝好运!'"
+CorruptedClover = "用于显示你的运气值\n将你的运气值锁定在默认值\n'等下, 这些荆棘哪来的?'"
+GoldenClover = "用于显示你的运气值\n增加你的运气值\n'我知道黄金有点庸俗, 但是...'"
+
 # Misc
 Gigaxe = "左键框选区域, 松开后会瞬间砍伐框选区域内所有的树木"
 VoidPiggy = "放置在背包中时你获得的钱币都会自动存入你的猪猪存钱罐中\n猪猪存钱罐中至少有1枚钱币时才会生效\n{$Mods.PboneUtils.Common.CanBeToggled}\n'异界奇物!'"
@@ -149,6 +159,10 @@ Miner.4 = "我能把这些金子变钱币, 你懂我的意思吧."
 Miner.5 = "如果我从不去挖矿, 我从哪里得到的矿石? 我把它们都放在我的包包里."
 Miner.6 = "我听说有一种由固态金属制成的植物. 它们能在合适的条件下生长."
 Miner.HardmodeOnly = "快来看我的钴矿, 它是如此的闪亮"
+# BESTIARY ------------------------------------------------------------------------------------------
+[Mods.PboneUtils.Bestiary]
+Miner = "矿工很乐意出售许多不同种类的矿物产品."
+MysteriousTrader = "神秘商人穿着神秘的长袍, 似乎属于某种...神秘社团. 他们分散在世界各地并出售一些杂七杂八的东西."
 
 # BUFFS ------------------------------------------------------------------------------------------
 [Mods.PboneUtils.BuffName]
@@ -165,7 +179,11 @@ AsphaltPlatformTile = "沥青平台"
 PreperationStationTile = "四合一站"
 BuffBrazierTile = "增益火炬"
 ShadowPearlTile = "暗影珠"
-
+# INFO DISPLAYS ------------------------------------------------------------------------------------------
+[Mods.PboneUtils.InfoDisplayName]
+CloverUI1 = "运气"
+CloverUI2 = "运气"
+CloverUI3 = "运气"
 # WORLDGEN ------------------------------------------------------------------------------------------
 WorldGen.PetrifiedSafes = "正在隐藏保险箱..."
 
@@ -211,6 +229,9 @@ Label.AmmoItemsToggle = "弹药类物品"
 Label.WorldControlItemsToggle = "世界控制类物品"
 Label.CellPhoneAppsToggle = "手机程序"
 Label.EndlessBaitToggle = "无尽鱼饵"
+Label.CloversToggle = "四叶草"
+
+Label.GoldenCloverLuckSlider = "黄金四叶草运气奖励"
 
 Label.VoidPiggyToggle = "虚空猪猪"
 Label.PhilosophersStoneToggle = "原初物质"
@@ -238,7 +259,7 @@ Tooltip.AutoswingOnEverythingBlacklist = "无法自动挥舞的物品(如果启�
 Tooltip.MaxStackIncrease = "启用后会增加大多数物品的最大堆叠数量(9999)"
 Tooltip.NoMoreGraves = "启用后你和其他玩家死亡时不再掉落墓碑"
 Tooltip.FastRespawn = "启用后加快你的重生速度"
-Tooltip.FastRespawnDuringBoss = "启用后即使在Boss站期间, 也能加快重生速度"
+Tooltip.FastRespawnDuringBoss = "启用后即使在Boss战期间, 也能加快重生速度"
 
 Tooltip.StorageItemsToggle = "启用或禁用此Mod的储存类物品, 便携式保险箱能让你随时随地的访问私人仓库"
 Tooltip.LiquidItemsToggle = "启用或禁用此Mod的液体类物品, 液体类物品能放置或吸收无限的熔岩或蜂蜜"
@@ -248,6 +269,9 @@ Tooltip.MagnetItemsToggle = "启用或禁用此Mod的磁铁类物品, 磁铁类�
 Tooltip.WorldControlItemsToggle = "启用或禁用此Mod的世界控制类物品, 世界控制类物品可以控制时间和天气等东西"
 Tooltip.CellPhoneAppsToggle = "启用或禁用为手机提供额外功能的手机程序类物品, 比如虫洞和随机传送程序"
 Tooltip.EndlessBaitToggle = "启用或禁用无尽鱼饵, 无尽鱼饵作用? 你说呢?"
+Tooltip.CloversToggle = "启用或禁用四叶草, 四叶草类物品能让你看到并改善你的运气"
+
+Tooltip.GoldenCloverLuckSlider = "黄金四叶草提供的运气数值, 仅启用后生效"
 
 Tooltip.VoidPiggyToggle = "启用或禁用虚空猪猪, 虚空猪猪能将你获得到的钱币自动存入猪猪存钱罐中"
 Tooltip.PhilosophersStoneToggle = "启用或禁用原初物质, 原初物质能自动出售你拾取的物品"
