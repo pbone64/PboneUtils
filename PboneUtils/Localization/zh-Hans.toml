@@ -259,7 +259,7 @@ Tooltip.AutoswingOnEverythingBlacklist = "无法自动挥舞的物品(如果启�
 Tooltip.MaxStackIncrease = "启用后会增加大多数物品的最大堆叠数量(9999)"
 Tooltip.NoMoreGraves = "启用后你和其他玩家死亡时不再掉落墓碑"
 Tooltip.FastRespawn = "启用后加快你的重生速度"
-Tooltip.FastRespawnDuringBoss = "启用后即使在Boss战期间, 也能加快重生速度"
+Tooltip.FastRespawnDuringBoss = "启用后即使在Boss战期间也能加快你的重生速度"
 
 Tooltip.StorageItemsToggle = "启用或禁用此Mod的储存类物品, 便携式保险箱能让你随时随地的访问私人仓库"
 Tooltip.LiquidItemsToggle = "启用或禁用此Mod的液体类物品, 液体类物品能放置或吸收无限的熔岩或蜂蜜"
