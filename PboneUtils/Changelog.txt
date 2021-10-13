@@ -1,8 +1,12 @@
+Version 1.2.3 Changes ------------------------------------------------------------------------------------------
+Items
+- Renamed "Corrupted Clover" to "Corrupticlover"
+
 Version 1.2.2 Changes ------------------------------------------------------------------------------------------
 Items
 - Added clovers, items to help you with luck
 -- Four leaf clover, which displays your luck
--- Corrupticlover, which displays your luck and (tries to) keep it at the default value
+-- Corrupted Clover, which displays your luck and (tries to) keep it at the default value
 -- Trefaurium, which displays your luck and increases it
 -- Apps for all these items, if clovers and cellphone apps are enabled
 - Added a treasure magnet to Deluxe Treasure Magnet's recipe
