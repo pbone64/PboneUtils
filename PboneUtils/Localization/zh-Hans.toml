@@ -159,6 +159,7 @@ Miner.4 = "我能把这些金子变钱币, 你懂我的意思吧."
 Miner.5 = "如果我从不去挖矿, 我从哪里得到的矿石? 我把它们都放在我的包包里."
 Miner.6 = "我听说有一种由固态金属制成的植物. 它们能在合适的条件下生长."
 Miner.HardmodeOnly = "快来看我的钴矿, 它是如此的闪亮"
+
 # BESTIARY ------------------------------------------------------------------------------------------
 [Mods.PboneUtils.Bestiary]
 Miner = "矿工很乐意出售许多不同种类的矿物产品."
@@ -179,11 +180,13 @@ AsphaltPlatformTile = "沥青平台"
 PreperationStationTile = "四合一站"
 BuffBrazierTile = "增益火炬"
 ShadowPearlTile = "暗影珠"
+
 # INFO DISPLAYS ------------------------------------------------------------------------------------------
 [Mods.PboneUtils.InfoDisplayName]
 CloverUI1 = "运气"
 CloverUI2 = "运气"
 CloverUI3 = "运气"
+
 # WORLDGEN ------------------------------------------------------------------------------------------
 WorldGen.PetrifiedSafes = "正在隐藏保险箱..."
 
