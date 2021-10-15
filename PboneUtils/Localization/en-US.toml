@@ -170,11 +170,11 @@ MysteriousTrader = "The Mysterious Trader is a robed figure who seems to belong 
 PreperationStationBuff = "Prepared"
 BuffBrazierBuff = "Empowered"
 
-[BuffDescription]
+[Mods.PboneUtils.BuffDescription]
 PreperationStationBuff = "Effects of the Sharpening Station, Ammo Box, Crystal Ball, and Bewitching Table\nDisables the individual station buffs"
 BuffBrazierBuff = "Effects of Campfire, Heart Lantern, Star in a Bottle, Sunflower, and Honey\nDisables the individual buffs"
 
-[MapObject]
+[Mods.PboneUtils.MapObject]
 PetrifiedSafeTile = "Petrified Safe"
 AsphaltPlatformTile = "Asphalt Platform"
 PreperationStationTile = "Preparation Station"
@@ -188,7 +188,8 @@ CloverUI2 = "Luck"
 CloverUI3 = "Luck"
 
 # WORLDGEN ------------------------------------------------------------------------------------------
-WorldGen.PetrifiedSafes = "Hiding safes..."
+[Mods.PboneUtils.Worldgen]
+PetrifiedSafes = "Hiding safes..."
 
 # UI ------------------------------------------------------------------------------------------
 [Mods.PboneUtils.UI]
@@ -292,8 +293,10 @@ Tooltip.Miner = "Enable or disable the Miner, an NPC that sells ores and gems"
 Tooltip.RecipeEndlessWater = "Enable or disable Endless Water Bucket and Super Absorbant Sponge recipes"
 Tooltip.RecipePetrifiedSafe = "Enable or disable a simple recipe for the Petrified Safe\n(By default, Petrified Safes generate in the underworld during world generation)"
 
-Census.Description.Miner = "Defeat Eater of Worlds/Brain of Cthulhu"
-Census.Description.MysteriousTrader = "Randomly arrives in the morning and leaves at night, after King Slime or Eye of Cthulhu"
+# CENSUS ------------------------------------------------------------------------------------------
+[Mods.PboneUtils.Census]
+Description.Miner = "Defeat Eater of Worlds/Brain of Cthulhu"
+Description.MysteriousTrader = "Randomly arrives in the morning and leaves at night, after King Slime or Eye of Cthulhu"
 
 
 # MISC ------------------------------------------------------------------------------------------
