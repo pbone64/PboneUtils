@@ -99,7 +99,7 @@ LiquidCombo = "Allows ultimate control over liquids!\nRight click while holding 
 
 # Magnets
 DeluxeTreasureMagnet = "Vastly increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}"
-HallowedMagnet = "Massively increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}"
+HallowedTreasureMagnet = "Massively increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}"
 SpectreTreasureMagnet = "Teleports nearby items into your inventory\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}"
 RunicTreasureMagnet = "Quickly teleports nearby items into your inventory\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Won't pull down the moon, probably'"
 MoonLordTreasureMagnet = "Teleports nearby items into your inventory at the speed of sound\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Okay, now THIS might pull down the moon'"

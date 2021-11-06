@@ -37,8 +37,13 @@ namespace PboneUtils
         }
 
         public static HashSet<int> VanillaBossBags = new HashSet<int>() {
-            ItemID.KingSlimeBossBag, ItemID.EyeOfCthulhuBossBag, ItemID.EaterOfWorldsBossBag, ItemID.BrainOfCthulhuBossBag, ItemID.QueenBeeBossBag, ItemID.SkeletronBossBag, ItemID.WallOfFleshBossBag,
-            ItemID.DestroyerBossBag, ItemID.TwinsBossBag, ItemID.SkeletronPrimeBossBag, ItemID.PlanteraBossBag, ItemID.GolemBossBag, ItemID.FishronBossBag, ItemID.MoonLordBossBag, ItemID.BossBagBetsy,
+            ItemID.KingSlimeBossBag, ItemID.EyeOfCthulhuBossBag, ItemID.EaterOfWorldsBossBag, ItemID.BrainOfCthulhuBossBag,
+            ItemID.QueenBeeBossBag, ItemID.SkeletronBossBag, ItemID.WallOfFleshBossBag,
+
+            ItemID.QueenSlimeBossBag, ItemID.DestroyerBossBag, ItemID.TwinsBossBag, ItemID.SkeletronPrimeBossBag,
+            ItemID.PlanteraBossBag, ItemID.GolemBossBag, ItemID.FairyQueenBossBag, ItemID.FishronBossBag,
+            ItemID.MoonLordBossBag, ItemID.BossBagBetsy,
+
             ItemID.CultistBossBag, ItemID.BossBagDarkMage, ItemID.BossBagOgre
         };
 
@@ -48,14 +53,17 @@ namespace PboneUtils
 
         public Dictionary<int, int> AveragedValues;
 
-        public static void HandleQuickSpawnItem(int item, int stack)
+        public static int HandleQuickSpawnItem(int item, int stack)
         {
             Item instance = new Item();
             instance.SetDefaults(item);
+            Main.item[0] = instance; // I think this is required for mods that use the Main.item whoAmI to change instanced fields
 
             int realValue = instance.value * stack;
 
             TempInfo.RealValues.Add(realValue);
+
+            return 0;
         }
 
         public override void PostSetupContent()

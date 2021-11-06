@@ -1,3 +1,9 @@
+Version 1.2.5 Changes ------------------------------------------------------------------------------------------
+Bugs
+- Magic Light now works
+- Queen Slime and Empress of Light treasure bags are now averaged
+- Fixed a tooltip bug with Hallowed Magnet
+
 Version 1.2.3 Changes ------------------------------------------------------------------------------------------
 Items
 - Renamed "Corrupted Clover" to "Corrupticlover"

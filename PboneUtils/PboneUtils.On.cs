@@ -60,12 +60,12 @@ namespace PboneUtils
         }
 
         // Redirect QuickSpawnItem calls to TreasureBagValueCalculator during loading to average treasure bag sell prices
-        private void Player_QuickSpawnItem_int_int(On.Terraria.Player.orig_QuickSpawnItem_int_int orig, Player self, int item, int stack)
+        private int Player_QuickSpawnItem_int_int(On.Terraria.Player.orig_QuickSpawnItem_int_int orig, Player self, int item, int stack)
         {
             if (!TreasureBagValueCalculator.Loading)
-                orig(self, item, stack);
+                return orig(self, item, stack);
             else
-                TreasureBagValueCalculator.HandleQuickSpawnItem(item, stack);
+                return TreasureBagValueCalculator.HandleQuickSpawnItem(item, stack);
         }
     }
 }
