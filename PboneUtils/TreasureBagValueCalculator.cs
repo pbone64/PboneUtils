@@ -15,8 +15,7 @@ namespace PboneUtils
         {
             public List<int> RealValues;
 
-            [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "<Pending>")]
-            public TreasureBagOpeningInfo(int whyCantStructsHaveParamlessCtors = 0)
+            public TreasureBagOpeningInfo()
             {
                 RealValues = new List<int>();
             }
@@ -37,7 +36,7 @@ namespace PboneUtils
         }
 
         public static HashSet<int> VanillaBossBags = new HashSet<int>() {
-            ItemID.KingSlimeBossBag, ItemID.EyeOfCthulhuBossBag, ItemID.EaterOfWorldsBossBag, ItemID.BrainOfCthulhuBossBag,
+            ItemID.KingSlimeBossBag, ItemID.EyeOfCthulhuBossBag, ItemID.DeerclopsBossBag, ItemID.EaterOfWorldsBossBag, ItemID.BrainOfCthulhuBossBag,
             ItemID.QueenBeeBossBag, ItemID.SkeletronBossBag, ItemID.WallOfFleshBossBag,
 
             ItemID.QueenSlimeBossBag, ItemID.DestroyerBossBag, ItemID.TwinsBossBag, ItemID.SkeletronPrimeBossBag,
@@ -75,7 +74,6 @@ namespace PboneUtils
 
                 AveragedValues = new Dictionary<int, int>();
 
-                LoadingHelper.SetLoadStage("Averaging treasure bag prices...");
 
                 for (int i = 0; i < ItemLoader.ItemCount; i++)
                 {
@@ -88,9 +86,7 @@ namespace PboneUtils
 
                     Player dummy = new Player();
 
-                    LoadingHelper.SetSubText(Lang.GetItemName(i).Value);
-
-                    TempInfo = new TreasureBagOpeningInfo(1); // I need this one because otherwise it calls the default paramless ctor
+                    TempInfo = new TreasureBagOpeningInfo();
                     for (int j = 0; j < PboneUtilsConfig.Instance.AverageBossBagsSlider; j++)
                     {
                         try
@@ -114,10 +110,6 @@ namespace PboneUtils
 
                     AveragedValues.Add(item.type, (int)TempInfo.GetAverageValue());
                 }
-
-                LoadingHelper.SetLoadStage("");
-                LoadingHelper.SetSubText("");
-                LoadingHelper.SetProgress(0f);
 
                 Loading = false;
                 Loaded = true;

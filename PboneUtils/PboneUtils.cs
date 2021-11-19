@@ -41,7 +41,6 @@ namespace PboneUtils
         public override void Load()
         {
             base.Load();
-            LoadingHelper.Load();
 
             // Instantiate managers
             recipes = new ModRecipeManager();

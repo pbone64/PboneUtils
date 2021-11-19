@@ -3,9 +3,9 @@
   <Import Project="../../tModLoader.targets" />
   <PropertyGroup>
     <AssemblyName>PboneUtils</AssemblyName>
-    <TargetFramework>net5.0</TargetFramework>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>latest</LangVersion>
+	<TargetFramework>net6.0</TargetFramework>
+	<PlatformTarget>AnyCPU</PlatformTarget>
+	<LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
