@@ -44,7 +44,7 @@ namespace PboneUtils.Items.Liquid
 
         public override void AddRecipes()
         {
-            CreateRecipe(1).AddIngredient(ItemID.BottomlessBucket).AddIngredient(ModContent.ItemType<BottomlessLavaBucket>()).AddIngredient(ModContent.ItemType<BottomlessHoneyBucket>()).AddIngredient(ItemID.SuperAbsorbantSponge).AddIngredient(ModContent.ItemType<HeatAbsorbantSponge>()).AddIngredient(ModContent.ItemType<SuperSweetSponge>()).AddTile(TileID.AlchemyTable).Register();
+            CreateRecipe(1).AddIngredient(ItemID.BottomlessBucket).AddIngredient(ItemID.BottomlessLavaBucket).AddIngredient(ModContent.ItemType<BottomlessHoneyBucket>()).AddIngredient(ItemID.SuperAbsorbantSponge).AddIngredient(ItemID.LavaAbsorbantSponge).AddIngredient(ModContent.ItemType<SuperSweetSponge>()).AddTile(TileID.AlchemyTable).Register();
         }
     }
 }
