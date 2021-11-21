@@ -3,10 +3,12 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace PboneUtils.Items.Terraforming
+namespace PboneUtils.Items.Building.Terraforming
 {
     public class Gigaxe : PboneUtilsItem
     {
+        // UNFINISHED ITEM, STOP BEING LAZY PBONE
+
         public override void SetDefaults()
         {
             base.SetDefaults();

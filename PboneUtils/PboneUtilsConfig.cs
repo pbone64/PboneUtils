@@ -145,6 +145,12 @@ namespace PboneUtils
         [ReloadRequired]
         public bool CloversToggle;
 
+        [Label("$Mods.PboneUtils.Config.Label.BuildingItemToggle")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.BuildingItemToggle")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool BuildingItemToggle;
+
 
         // ITEM SETTINGS
 

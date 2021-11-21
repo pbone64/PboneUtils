@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using PboneLib.CustomLoading.Content.Implementations;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -30,7 +31,7 @@ namespace PboneUtils.Items.Misc
         }
     }
 
-    public class InfiniteManaPlayer : ModPlayer
+    public class InfiniteManaPlayer : PPlayer
     {
         public bool InfiniteMana;
 

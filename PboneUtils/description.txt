@@ -10,7 +10,8 @@ Adds many features and items to increase the quality of life, including
 ...and more! All features/items can be enabled and disabled to prevent content overlap.
 The homepage has all the info on current features, changelogs, and an invite to our discord server. Check it out!
 
-!! This mod is in early beta testing for the 1.4 alpha. Please, please, please report any issues you find in the mods discord, found on the homepage. !!
+!! NOTE: I will not respond to bug requests on the steam page! To keep things centralized, create a GitHub issue or report them on the Discord !!
+Forum Page (Includes GitHub and Discord links): https://forums.terraria.org/index.php?threads/pbones-utilities.105537/
 
 Credits:
  - pbone: Main Developer.

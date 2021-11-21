@@ -9,6 +9,9 @@ namespace PboneUtils
         public string AnyShadowScale = "PboneUtils:AnyShadowScale";
         public string AnyDemoniteBar = "PboneUtils:AnyDemoniteBar";
         public string AnyAdamantite = "PboneUtils:AnyAdamantite";
+        public string AnyCopperBar = "PboneUtils:AnyCopperBar";
+        public string AnySilverBar = "PboneUtils:AnySilverBar";
+        public string AnyGoldBar = "PboneUtils:AnyGoldBar";
 
         public void AddRecipes(Mod mod)
         {
@@ -32,23 +35,21 @@ namespace PboneUtils
 
         public void AddRecipeGroups()
         {
-            RecipeGroup group = new RecipeGroup(() => $"{Lang.GetItemName(ItemID.ShadowScale)}/{Lang.GetItemName(ItemID.TissueSample)}", new int[2] {
-                ItemID.ShadowScale,
-                ItemID.TissueSample
-            });
-            RecipeGroup.RegisterGroup(AnyShadowScale, group);
+            RegisterTwoItemGroup(AnyShadowScale, ItemID.ShadowScale, ItemID.TissueSample);
+            RegisterTwoItemGroup(AnyDemoniteBar, ItemID.DemoniteBar, ItemID.CrimtaneBar);
+            RegisterTwoItemGroup(AnyAdamantite, ItemID.AdamantiteBar, ItemID.TitaniumBar);
+            RegisterTwoItemGroup(AnyCopperBar, ItemID.CopperBar, ItemID.TinBar);
+            RegisterTwoItemGroup(AnySilverBar, ItemID.SilverBar, ItemID.TungstenBar);
+            RegisterTwoItemGroup(AnyGoldBar, ItemID.GoldBar, ItemID.PlatinumBar);
+        }
 
-            group = new RecipeGroup(() => $"{Lang.GetItemName(ItemID.DemoniteBar)}/{Lang.GetItemName(ItemID.CrimtaneBar)}", new int[2] {
-                ItemID.DemoniteBar,
-                ItemID.CrimtaneBar
+        private void RegisterTwoItemGroup(string key, int item1, int item2)
+        {
+            RecipeGroup group = new RecipeGroup(() => $"{Lang.GetItemName(item1)}/{Lang.GetItemName(item2)}", new int[2] {
+                item1,
+                item2
             });
-            RecipeGroup.RegisterGroup(AnyDemoniteBar, group);
-
-            group = new RecipeGroup(() => $"{Lang.GetItemName(ItemID.AdamantiteBar)}/{Lang.GetItemName(ItemID.TitaniumBar)}", new int[2] {
-                ItemID.AdamantiteBar,
-                ItemID.TitaniumBar
-            });
-            RecipeGroup.RegisterGroup(AnyAdamantite, group);
+            RecipeGroup.RegisterGroup(key, group);
         }
     }
 }

@@ -1,3 +1,12 @@
+Version 1.3.0 Changes ------------------------------------------------------------------------------------------
+Items
+- Added Building items
+-- Miner's Emblem, to speed up your mining
+-- Builder's Emblem, to speed up your building
+
+Bugs
+- Fixed a bug with Infinite Mana
+
 Version 1.2.5 Changes ------------------------------------------------------------------------------------------
 Bugs
 - Magic Light now works
