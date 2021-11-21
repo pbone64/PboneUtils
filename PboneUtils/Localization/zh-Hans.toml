@@ -73,6 +73,11 @@ FourLeafClover = "四叶草"
 CorruptedClover = "腐化四叶草"
 GoldenClover = "黄金四叶草"
 
+# Building
+BuildersEmblem = "建造者徽章"
+MinersEmblem = "矿工徽章"
+CreatorsEmblem = "铸造者徽章"
+
 # Misc
 VoidPiggy = "虚空猪猪"
 PhilosophersStone = "原初物质"
@@ -126,6 +131,11 @@ Infiniworm = "作为鱼饵使用时不会被消耗\n'好东西'"
 FourLeafClover = "用于显示你的运气值\n'祝好运!'"
 CorruptedClover = "用于显示你的运气值\n将你的运气值锁定在默认值\n'等下, 这些荆棘哪来的?'"
 GoldenClover = "用于显示你的运气值\n增加你的运气值\n'我知道黄金有点庸俗, 但是...'"
+
+# Building
+BuildersEmblem = "增加25%物块和墙壁放置速度"
+MinersEmblem = "增加25%挖掘速度"
+CreatorsEmblem = "增加25%物块和墙壁放置速度\n增加25%挖掘速度"
 
 # Misc
 Gigaxe = "左键框选区域, 松开后会瞬间砍伐框选区域内所有的树木"
@@ -234,6 +244,7 @@ Label.WorldControlItemsToggle = "世界控制类物品"
 Label.CellPhoneAppsToggle = "手机程序"
 Label.EndlessBaitToggle = "无尽鱼饵"
 Label.CloversToggle = "四叶草"
+Label.BuildingItemsToggle = "建造类物品"
 
 Label.GoldenCloverLuckSlider = "黄金四叶草运气奖励"
 
@@ -265,15 +276,16 @@ Tooltip.NoMoreGraves = "启用后你和其他玩家死亡时不再掉落墓碑"
 Tooltip.FastRespawn = "启用后加快你的重生速度"
 Tooltip.FastRespawnDuringBoss = "启用后即使在Boss战期间也能加快你的重生速度"
 
-Tooltip.StorageItemsToggle = "启用或禁用此Mod的储存类物品, 便携式保险箱能让你随时随地的访问私人仓库"
-Tooltip.LiquidItemsToggle = "启用或禁用此Mod的液体类物品, 液体类物品能放置或吸收无限的熔岩或蜂蜜"
-Tooltip.AmmoItemsToggle = "启用或禁用此Mod的无尽弹药类物品"
-Tooltip.ArenaItemsToggle = "启用或禁用此Mod的战斗场地类物品, 战斗场地类物品可为你提供一些增益"
-Tooltip.MagnetItemsToggle = "启用或禁用此Mod的磁铁类物品, 磁铁类物品可以扩大你的拾取范围"
-Tooltip.WorldControlItemsToggle = "启用或禁用此Mod的世界控制类物品, 世界控制类物品可以控制时间和天气等东西"
+Tooltip.StorageItemsToggle = "启用或禁用储存类物品, 便携式保险箱能让你随时随地的访问私人仓库"
+Tooltip.LiquidItemsToggle = "启用或禁用液体类物品, 液体类物品能放置或吸收无限的熔岩或蜂蜜"
+Tooltip.AmmoItemsToggle = "启用或禁用无尽弹药类物品"
+Tooltip.ArenaItemsToggle = "启用或禁用战斗场地类物品, 战斗场地类物品可为你提供一些增益"
+Tooltip.MagnetItemsToggle = "启用或禁用磁铁类物品, 磁铁类物品可以扩大你的拾取范围"
+Tooltip.WorldControlItemsToggle = "启用或禁用世界控制类物品, 世界控制类物品可以控制时间和天气等东西"
 Tooltip.CellPhoneAppsToggle = "启用或禁用为手机提供额外功能的手机程序类物品, 比如虫洞和随机传送程序"
 Tooltip.EndlessBaitToggle = "启用或禁用无尽鱼饵, 无尽鱼饵作用? 你说呢?"
 Tooltip.CloversToggle = "启用或禁用四叶草, 四叶草类物品能让你看到并改善你的运气"
+Tooltip.BuildingItemsToggle = "启用或禁用建造类物品, 建造类物品提供建造和挖掘相关的加成"
 
 Tooltip.GoldenCloverLuckSlider = "黄金四叶草提供的运气数值, 仅启用后生效"
 
