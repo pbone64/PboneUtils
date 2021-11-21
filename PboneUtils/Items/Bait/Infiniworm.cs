@@ -19,7 +19,7 @@ namespace PboneUtils.Items.Bait
         }
 
         public override bool ConsumeItem(Player player) => false;
-        public override bool CanBeConsumedAsAmmo(Player player) => true;
+        public override bool CanBeConsumedAsAmmo(Player player) => false;
 
         public override void AddRecipes()
         {
