@@ -76,6 +76,7 @@ GoldenClover = "Trefaurium"
 # Building
 BuildersEmblem = "Builder's Emblem"
 MinersEmblem = "Miner's Emblem"
+CreatorsEmblem = "Creator's Emblem"
 
 # Misc
 VoidPiggy = "Void Piggy"
@@ -134,6 +135,7 @@ GoldenClover = "Displays your luck\nIncreases your luck\n'I know gold's a bit ga
 # Building
 BuildersEmblem = "25% increased block and wall placement speed"
 MinersEmblem = "25% increased mining speed"
+CreatorsEmblem = "25% increased block and wall placement speed\n25% increased mining speed"
 
 # Misc
 Gigaxe = "Click and drag to select an area\nAll trees in the selected area are instantly chopped"
