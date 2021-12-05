@@ -4,6 +4,7 @@ Items
 -- Miner's Emblem, to speed up your mining
 -- Builder's Emblem, to speed up your building
 -- Creator's Emblem, combo of the above two
+-- There are some unobtainable WIP ones and much more plans; I released this update early for bug fixes
 - Clovers are now accessories; they still work in the inventory, but may be equipped as accessories
 
 Bugs
