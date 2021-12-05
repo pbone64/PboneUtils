@@ -11,8 +11,7 @@ namespace PboneUtils.Items.WorldControl
         {
             base.SetDefaults();
             Item.useStyle = ItemUseStyleID.HoldUp;
-            Item.useAnimation = 15;
-            Item.useTime = 15;
+            UseTime = 15;
             Item.autoReuse = false;
             Item.rare = ItemRarityID.Pink;
             Item.value = Item.sellPrice(0, 7, 50, 0);
@@ -20,29 +19,13 @@ namespace PboneUtils.Items.WorldControl
 
         public override bool? UseItem(Player player)
         {
-            if (player.whoAmI == Main.myPlayer)
-            {
-                if (Main.raining)
-                    PboneWorld.StopRain();
-                else
-                    PboneWorld.StartRain();
+            // Call it on the server and every client - this updates visuals immediatly and shouldn't cause any issues
+            if (Main.raining)
+                Main.StopRain();
+            else
+                Main.StartRain();
 
-                // Vanilla does some wacky syncing. I'm just calling SendData and hoping for the best
-                /*if (Main.maxRaining != Main.oldMaxRaining)
-                {
-                    if (Main.netMode == NetmodeID.MultiplayerClient)
-                    {
-                        NetMessage.SendData(MessageID.WorldData);
-                    }
-                    Main.oldMaxRaining = Main.maxRaining;
-                }*/
-                if (Main.netMode == NetmodeID.MultiplayerClient)
-                    NetMessage.SendData(MessageID.WorldData);
-
-                return true;
-            }
-
-            return base.UseItem(player);
+            return true;
         }
 
         public override void AddRecipes()

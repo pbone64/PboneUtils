@@ -54,7 +54,7 @@ namespace PboneUtils.Items
             if (DrawGlowmask)
             {
                 Texture2D texture = ModContent.Request<Texture2D>(GlowmaskTexture).Value;
-                spriteBatch.Draw(texture, position, frame, Color.White, 0f, origin, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(texture, position, frame, ModifyGlowmaskColor, 0f, origin, scale, SpriteEffects.None, 0f);
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using PboneLib.Utils;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -81,9 +82,16 @@ namespace PboneUtils.NPCs.Town
         {
             base.SetupShop(shop, ref nextSlot);
 
-            foreach (int i in PboneWorld.MysteriousTraderShop)
+            try
             {
-                shop.AddShopItem(i, ref nextSlot);
+                foreach (int i in PboneWorld.MysteriousTraderShop)
+                {
+                    shop.AddShopItem(i, ref nextSlot);
+                }
+            }
+            catch (NullReferenceException)
+            {
+                PboneUtils.Log.Warn("NullRef when trying to populate mysterious trader shop!");
             }
         }
 

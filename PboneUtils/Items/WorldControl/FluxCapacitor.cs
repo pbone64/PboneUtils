@@ -12,8 +12,7 @@ namespace PboneUtils.Items.WorldControl
         {
             base.SetDefaults();
             Item.useStyle = ItemUseStyleID.HoldUp;
-            Item.useAnimation = 15;
-            Item.useTime = 15;
+            UseTime = 15;
             Item.autoReuse = false;
             Item.rare = ItemRarityID.Pink;
             Item.value = Item.sellPrice(0, 7, 50, 0);

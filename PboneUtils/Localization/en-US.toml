@@ -220,6 +220,7 @@ EndlessBuffSource.DefendersForge = "Defender's Forge"
 Header.MiscFeatures = "QoL Features"
 Header.ItemToggles = "Item Toggles"
 Header.MiscItemToggles = "Misc Single Item Toggles"
+Header.ItemSettings = "Item Settings"
 Header.NPCs = "Helpful NPCs"
 Header.QolRecipes = "QoL Recipes"
 
@@ -325,3 +326,6 @@ AppInfo = "Can be installed to a Cell Phone by picking this item up on your mous
 CellPhoneInfo = "Apps can be installed by picking this item up on your mouse and right-clicking the Cell Phone in your inventory\nCurrently installed apps:"
 CellPhone.Wormhole = " [i:2997] Wormhole App: Provides an infinite wormhole effect"
 CellPhone.Teleportation = " [i:2351] Teleportation App: Allows you to teleport by holding the Cell Phone in your hand and right-clicking"
+
+# Note to translators: Do NOT translate the [<REPLACEME>]! You may translate everything around it, but it is required to keep the [<REPLACEME>] as-is.
+TerraformerScrollInfo = "Hold the Terraforming: Scroll Mode key (Current: [<REPLACEME>]) and scroll up or down on the scroll wheel to increase or decrease brush size"

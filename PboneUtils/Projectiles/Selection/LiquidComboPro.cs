@@ -11,7 +11,7 @@ namespace PboneUtils.Projectiles.Selection
 {
     public class LiquidComboPro : SelectionProjectile
     {
-        int LiquidType = -1;
+        private int LiquidType = -1;
 
         public override Func<Rectangle, bool> PreAction => (rect) => {
             PbonePlayer mPlayer = Owner.GetModPlayer<PbonePlayer>();

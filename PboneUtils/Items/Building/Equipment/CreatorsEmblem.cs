@@ -13,7 +13,7 @@ namespace PboneUtils.Items.Building.Equipment
             base.SetDefaults();
             Item.rare = ItemRarityID.Orange;
             Item.accessory = true;
-            Item.value = Item.buyPrice(0, 0, 50, 0);
+            Item.value = Item.buyPrice(0, 0, 55, 0);
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

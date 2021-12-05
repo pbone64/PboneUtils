@@ -14,8 +14,7 @@ namespace PboneUtils.Items.Misc
         {
             base.SetDefaults();
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.useAnimation = 10;
-            Item.useTime = 10;
+            UseTime = 10;
             Item.shoot = ModContent.ProjectileType<GreaterStaffOfRegrowthPro>();
             Item.channel = true;
             Item.rare = ItemRarityID.Yellow;

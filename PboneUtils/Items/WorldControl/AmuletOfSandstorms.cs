@@ -12,8 +12,7 @@ namespace PboneUtils.Items.WorldControl
         {
             base.SetDefaults();
             Item.useStyle = ItemUseStyleID.HoldUp;
-            Item.useAnimation = 15;
-            Item.useTime = 15;
+            UseTime = 15;
             Item.autoReuse = false;
             Item.rare = ItemRarityID.Pink;
             Item.value = Item.sellPrice(0, 7, 50, 0);
@@ -21,21 +20,13 @@ namespace PboneUtils.Items.WorldControl
 
         public override bool? UseItem(Player player)
         {
-            if (player.whoAmI == Main.myPlayer)
-            {
-                if (Sandstorm.Happening)
-                    PboneWorld.StopStandstorm();
-                else
-                    PboneWorld.StartSandstorm();
-
-                // Same case as amulet of rain syncing, just hope it works
-                if (Main.netMode == NetmodeID.MultiplayerClient)
-                    NetMessage.SendData(MessageID.WorldData);
-
-                return true;
-            }
-
-            return base.UseItem(player);
+            // Call it on the server and every client - this updates visuals immediatly and shouldn't cause any issues
+            if (Sandstorm.Happening)
+                Sandstorm.StopSandstorm();
+            else
+                Sandstorm.StartSandstorm();
+                
+            return true;
         }
 
         public override void AddRecipes()

@@ -3,12 +3,9 @@ using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
 using PboneUtils.NPCs.Town;
 using PboneUtils.Packets;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
 using Terraria;
-using Terraria.GameContent.Events;
 using Terraria.GameContent.Generation;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -23,26 +20,7 @@ namespace PboneUtils
 
         public static bool SuperFastTime;
 
-        private static MethodInfo startRainMethod;
-        public static Action StartRain = new Action(() => startRainMethod.Invoke(null, Array.Empty<object>()));
-        private static MethodInfo stopRainMethod;
-        public static Action StopRain = new Action(() => stopRainMethod.Invoke(null, Array.Empty<object>()));
-
-        private static MethodInfo startSandstormMethod;
-        public static Action StartSandstorm = new Action(() => startSandstormMethod.Invoke(null, Array.Empty<object>()));
-        private static MethodInfo stopSandstormMethod;
-        public static Action StopStandstorm = new Action(() => stopSandstormMethod.Invoke(null, Array.Empty<object>()));
-
         public static List<int> MysteriousTraderShop;
-
-        public override void Load()
-        {
-            startRainMethod = typeof(Main).GetMethod("StartRain", BindingFlags.Static | BindingFlags.NonPublic);
-            stopRainMethod = typeof(Main).GetMethod("StopRain", BindingFlags.Static | BindingFlags.NonPublic);
-
-            startSandstormMethod = typeof(Sandstorm).GetMethod("StartSandstorm", BindingFlags.Static | BindingFlags.NonPublic);
-            stopSandstormMethod = typeof(Sandstorm).GetMethod("StopSandstorm", BindingFlags.Static | BindingFlags.NonPublic);
-        }
 
         public override void OnWorldLoad()
         {

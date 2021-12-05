@@ -12,11 +12,18 @@ namespace PboneUtils.Items.Clovers
             base.SetDefaults();
             Item.rare = ItemRarityID.Lime;
             Item.value = Item.sellPrice(0, 25, 0, 0);
+            Item.accessory = true;
         }
 
         public override void UpdateInventory(Player player)
         {
             base.UpdateInventory(player);
+            player.GetModPlayer<CloverPlayer>().TryChangeCloverMode(CloverPlayer.GoldenClover);
+        }
+
+        public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            base.UpdateAccessory(player, hideVisual);
             player.GetModPlayer<CloverPlayer>().TryChangeCloverMode(CloverPlayer.GoldenClover);
         }
 

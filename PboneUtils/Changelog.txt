@@ -1,11 +1,15 @@
-Version 1.3.0 Changes ------------------------------------------------------------------------------------------
+Version 1.2.8 Changes ------------------------------------------------------------------------------------------
 Items
 - Added Building items
 -- Miner's Emblem, to speed up your mining
 -- Builder's Emblem, to speed up your building
+-- Creator's Emblem, combo of the above two
+- Clovers are now accessories; they still work in the inventory, but may be equipped as accessories
 
 Bugs
 - Fixed a bug with Infinite Mana
+- Fixed a bug with Amulet of Sandstorms and Amulet of Rain
+- Fixed a crash caused by playing this mod with TRAI
 
 Version 1.2.5 Changes ------------------------------------------------------------------------------------------
 Bugs

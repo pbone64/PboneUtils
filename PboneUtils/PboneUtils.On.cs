@@ -1,4 +1,5 @@
 ﻿using PboneUtils.Helpers;
+using PboneUtils.Items.Building.Terraforming;
 using PboneUtils.Items.CellPhoneApps;
 using Terraria;
 using Terraria.ID;
@@ -15,7 +16,18 @@ namespace PboneUtils
 
             On.Terraria.Player.HasUnityPotion += Player_HasUnityPotion;
             On.Terraria.Player.TakeUnityPotion += Player_TakeUnityPotion;
-            On.Terraria.Player.Spawn += Player_Spawn; ;
+            On.Terraria.Player.Spawn += Player_Spawn;
+
+            On.Terraria.Player.ScrollHotbar += Player_ScrollHotbar;
+        }
+
+        // Make the hotbar not scroll if you're holding a Terraformer and you have the scroll mode key held down
+        private void Player_ScrollHotbar(On.Terraria.Player.orig_ScrollHotbar orig, Player self, int Offset)
+        {
+            if (self.GetModPlayer<TerraformingPlayer>().HoldingTerraformer && PboneUtilsHotkeys.TerraformingScrollModeKey.Current)
+                return;
+
+            orig(self, Offset);
         }
 
         // Make the player not go to spawn under very specific conditions so teleportation app works

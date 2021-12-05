@@ -145,8 +145,8 @@ namespace PboneUtils
         [ReloadRequired]
         public bool CloversToggle;
 
-        [Label("$Mods.PboneUtils.Config.Label.BuildingItemToggle")]
-        [Tooltip("$Mods.PboneUtils.Config.Tooltip.BuildingItemToggle")]
+        [Label("$Mods.PboneUtils.Config.Label.BuildingItemsToggle")]
+        [Tooltip("$Mods.PboneUtils.Config.Tooltip.BuildingItemsToggle")]
         [DefaultValue(true)]
         [ReloadRequired]
         public bool BuildingItemToggle;
@@ -154,6 +154,7 @@ namespace PboneUtils
 
         // ITEM SETTINGS
 
+        [Header("$Mods.PboneUtils.Config.Header.ItemSettings")]
         [Label("$Mods.PboneUtils.Config.Label.GoldenCloverLuckSlider")]
         [Tooltip("$Mods.PboneUtils.Config.Tooltip.GoldenCloverLuckSlider")]
         [Slider]

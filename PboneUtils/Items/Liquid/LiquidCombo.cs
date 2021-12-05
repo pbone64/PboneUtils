@@ -18,8 +18,7 @@ namespace PboneUtils.Items.Liquid
         {
             base.SetDefaults();
             Item.useStyle = ItemUseStyleID.HoldUp;
-            Item.useAnimation = 10;
-            Item.useTime = 10;
+            UseTime = 10;
             Item.shoot = ModContent.ProjectileType<LiquidComboPro>();
             Item.channel = true;
             Item.rare = ItemRarityID.Yellow;
