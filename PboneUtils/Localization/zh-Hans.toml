@@ -220,6 +220,7 @@ EndlessBuffSource.DefendersForge = "护卫熔炉"
 Header.MiscFeatures = "生活质量相关"
 Header.ItemToggles = "物品设置"
 Header.MiscItemToggles = "杂项物品设置"
+Header.ItemSettings = "物品设置"
 Header.NPCs = "有用的NPC"
 Header.QolRecipes = "生活质量合成"
 
@@ -325,3 +326,6 @@ AppInfo = "你可以通过在背包中选取程序后右键手机来安装此程
 CellPhoneInfo = "你可以通过背包中选取程序然后右键手机来安装程序\n已安装的程序:"
 CellPhone.Wormhole = " [i:2997] 虫洞程序: 提供无尽虫洞药水效果"
 CellPhone.Teleportation = " [i:2351] 随机传送程序: 提供无尽随机传送药水效果, 手持手机时右键进行随机传送"
+
+# Note to translators: Do NOT translate the [<REPLACEME>]! You may translate everything around it, but it is required to keep the [<REPLACEME>] as-is.
+TerraformerScrollInfo = "地形生成: 按住 (当前: [<REPLACEME>]) 并向上或向下滚动滚轮以增加或减少笔刷的大小"
