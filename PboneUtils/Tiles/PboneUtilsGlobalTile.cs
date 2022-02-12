@@ -22,7 +22,7 @@ namespace PboneUtils.Tiles
 
         private bool CheckPredicate(Tile tile, bool baseValue)
         {
-            if (TileBreakPredicates.TryGetValue(tile.type, out Func<bool> predicate))
+            if (TileBreakPredicates.TryGetValue(tile.TileType, out Func<bool> predicate))
                 return predicate();
 
             return baseValue;

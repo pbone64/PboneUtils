@@ -55,7 +55,7 @@ namespace PboneUtils.Tiles.Lights
                 int width = 16;
                 int offsetY = 0;
                 int height = 16;
-                TileLoader.SetDrawPositions(i, j, ref width, ref offsetY, ref height, ref tile.frameX, ref tile.frameY);
+                TileLoader.SetDrawPositions(i, j, ref width, ref offsetY, ref height, ref tile.TileFrameX, ref tile.TileFrameY);
 
                 Rectangle dest = new Rectangle(x + (int)zero.X - (width - 16), y + (int)zero.Y - (height - 16) + offsetY, 16, 16);
                 spriteBatch.Draw(TextureAssets.MagicPixel.Value, dest, null, LightColor, 0f, Vector2.Zero, SpriteEffects.None, 0f);

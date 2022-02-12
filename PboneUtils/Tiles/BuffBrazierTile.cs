@@ -50,7 +50,7 @@ namespace PboneUtils.Tiles
 			int width = 16;
 			int offsetY = 0;
 			int height = 16;
-			TileLoader.SetDrawPositions(i, j, ref width, ref offsetY, ref height, ref tile.frameX, ref tile.frameY);
+			TileLoader.SetDrawPositions(i, j, ref width, ref offsetY, ref height, ref tile.TileFrameX, ref tile.TileFrameY);
 			Texture2D flameTexture = PboneUtils.Textures["BuffBrazierFlame"];
 
 			ulong num190 = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (uint)i);
@@ -61,7 +61,7 @@ namespace PboneUtils.Tiles
 				float shakeY = Utils.RandomInt(ref num190, -10, 1) * 0.35f;
 				Vector2 position = new Vector2(i * 16 - (int)Main.screenPosition.X - (width - 16f) / 2f + shakeX, j * 16 - (int)Main.screenPosition.Y + offsetY + shakeY) + zero;
 
-				spriteBatch.Draw(flameTexture, position, new Rectangle(tile.frameX, tile.frameY, width, height), Color.White * 0.33f, 0f, default, 1f, SpriteEffects.None, 0f);
+				spriteBatch.Draw(flameTexture, position, new Rectangle(tile.TileFrameX, tile.TileFrameY, width, height), Color.White * 0.33f, 0f, default, 1f, SpriteEffects.None, 0f);
 			}
 		}
 	}

@@ -55,9 +55,9 @@ namespace PboneUtils.Helpers
                             WorldGen.KillWall(i, j);
                             break;
                         case TerraformerType.Tree:
-                            if (t.type == TileID.Trees || TileID.Sets.CountsAsGemTree[t.type])
+                            if (t.TileType == TileID.Trees || TileID.Sets.CountsAsGemTree[t.TileType])
                             {
-                                if (TileID.Sets.IsShakeable[t.type])
+                                if (TileID.Sets.IsShakeable[t.TileType])
                                     WorldGen.KillTile(i, j, true); // Shake the tree
 
                                 WorldGen.KillTile(i, j); // Kill the tree
