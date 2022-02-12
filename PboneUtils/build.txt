@@ -1,0 +1,10 @@
+displayName = pbone's Utilities
+author = pbone
+version = 1.3
+homepage = https://forums.terraria.org/index.php?threads/pbones-utilities.105537/
+buildIgnore = build.txt, bin/*, obj/*, PboneLib/*, Thumbs.db, .*
+modReferences = PboneLib
+hideCode = false
+hideResources = false
+includeSource = true
+includePDB = false
