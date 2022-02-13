@@ -8,11 +8,11 @@ namespace PboneUtils.Projectiles.Selection
     {
         public override Action<int, int> TileAction => (i, j) => {
             Tile tile = Framing.GetTileSafely(i, j);
-            if (Main.tileAlch[tile.type])
+            if (Main.tileAlch[tile.TileType])
             {
-                if (tile.type > 82)
+                if (tile.TileType > 82)
                 {
-                    int type = tile.frameX / 18;
+                    int type = tile.TileFrameX / 18;
                     int herb = 313 + type;
                     int seed = 307 + type;
                     if (type == 6)
@@ -21,7 +21,7 @@ namespace PboneUtils.Projectiles.Selection
                         seed = 2357;
                     }
 
-                    ModTile mTile = ModContent.GetModTile(tile.type);
+                    ModTile mTile = ModContent.GetModTile(tile.TileType);
                     if (mTile == null)
                     {
                         // Staff of regrowth herb effect
