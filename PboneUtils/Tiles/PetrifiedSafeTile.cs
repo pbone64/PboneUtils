@@ -46,7 +46,7 @@ namespace PboneUtils.Tiles
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             if (PboneUtilsConfig.Instance.StorageItemsToggle)
-                Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<PetrifiedSafe>());
+                Item.NewItem(Main.LocalPlayer.GetItemSource_TileInteraction(i, j), i * 16, j * 16, 32, 16, ModContent.ItemType<PetrifiedSafe>());
             else if (!MessageSent)
             {
                 Main.NewText(Language.GetTextValue("Mods.PboneUtils.Message.PetrifiedSafeDisabled1"), Main.OurFavoriteColor);

@@ -1,10 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using PboneUtils.Helpers;
-using PboneUtils.Projectiles.Terraforming;
 using System;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Building.Terraforming
 {

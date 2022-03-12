@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using PboneUtils.Helpers;
 using Terraria;
 using PboneUtils.CrossMod.Ref.Content;
-using PboneLib.CustomLoading.Content.Implementations;
+using PboneLib.CustomLoading.Content.Implementations.Misc;
 
 namespace PboneUtils.MiscModPlayers
 {

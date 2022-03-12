@@ -2,6 +2,7 @@
 using PboneUtils.Items.Building.Terraforming;
 using PboneUtils.Items.CellPhoneApps;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -11,7 +12,7 @@ namespace PboneUtils
     {
         public void Load_On()
         {
-            On.Terraria.Player.QuickSpawnItem_int_int += Player_QuickSpawnItem_int_int;
+            On.Terraria.Player.QuickSpawnItem_IEntitySource_int_int += Player_QuickSpawnItem_int_int;
             On.Terraria.Player.DropTombstone += Player_DropTombstone;
 
             On.Terraria.Player.HasUnityPotion += Player_HasUnityPotion;
@@ -72,10 +73,10 @@ namespace PboneUtils
         }
 
         // Redirect QuickSpawnItem calls to TreasureBagValueCalculator during loading to average treasure bag sell prices
-        private int Player_QuickSpawnItem_int_int(On.Terraria.Player.orig_QuickSpawnItem_int_int orig, Player self, int item, int stack)
+        private int Player_QuickSpawnItem_int_int(On.Terraria.Player.orig_QuickSpawnItem_IEntitySource_int_int orig, Player self, IEntitySource source, int item, int stack)
         {
             if (!TreasureBagValueCalculator.Loading)
-                return orig(self, item, stack);
+                return orig(self, source, item, stack);
             else
                 return TreasureBagValueCalculator.HandleQuickSpawnItem(item, stack);
         }

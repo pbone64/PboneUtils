@@ -1,4 +1,4 @@
-﻿using PboneLib.CustomLoading.Content.Implementations;
+﻿using PboneLib.CustomLoading.Content.Implementations.Misc;
 
 namespace PboneUtils.Items.Magnets
 {

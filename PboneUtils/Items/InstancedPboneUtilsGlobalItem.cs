@@ -1,4 +1,4 @@
-﻿using PboneLib.CustomLoading.Content.Implementations;
+﻿using PboneLib.CustomLoading.Content.Implementations.Globals;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;

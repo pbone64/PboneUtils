@@ -5,9 +5,9 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using PboneUtils.MiscModsPlayers;
-using PboneLib.CustomLoading.Content.Implementations;
 using Terraria.GameContent.Bestiary;
 using PboneUtils.Items.Clovers;
+using PboneLib.CustomLoading.Content.Implementations.Globals;
 
 namespace PboneUtils.NPCs
 {

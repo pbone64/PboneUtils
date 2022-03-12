@@ -2,7 +2,7 @@
 using PboneUtils.DataStructures;
 using Terraria.ModLoader.IO;
 using PboneLib.Utils;
-using PboneLib.CustomLoading.Content.Implementations;
+using PboneLib.CustomLoading.Content.Implementations.Misc;
 
 namespace PboneUtils.MiscModsPlayers
 {

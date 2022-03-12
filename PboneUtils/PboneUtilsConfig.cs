@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
-using PboneLib.CustomLoading.Content.Implementations;
+using PboneLib.CustomLoading.Content.Implementations.Misc;
 
 namespace PboneUtils
 {
