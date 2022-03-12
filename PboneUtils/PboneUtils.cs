@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace PboneUtils
 {
-	public class PboneUtils : Mod
+	public sealed class PboneUtils : Mod
 	{
 	}
 }
