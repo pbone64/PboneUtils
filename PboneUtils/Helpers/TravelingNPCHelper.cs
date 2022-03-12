@@ -3,6 +3,7 @@ using PboneLib.Utils;
 using System;
 using System.Linq;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.Localization;
 
 namespace PboneUtils.Helpers
@@ -17,7 +18,7 @@ namespace PboneUtils.Helpers
             {
                 if (spawnCondition())
                 {
-                    NPC arrival = Main.npc[NPC.NewNPC(Main.spawnTileX * 16, Main.spawnTileY * 16, type, 1)];
+                    NPC arrival = Main.npc[NPC.NewNPC(NPC.GetSpawnSourceForTownSpawn(), Main.spawnTileX * 16, Main.spawnTileY * 16, type, 1)];
                     arrival.homeless = true;
                     arrival.direction = Main.spawnTileX >= WorldGen.bestX ? -1 : 1;
                     arrival.netUpdate = true;

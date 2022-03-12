@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using PboneLib.CustomLoading.Content.Implementations;
+using PboneLib.CustomLoading.Content.Implementations.Globals;
 using Terraria;
 using Terraria.ID;
 

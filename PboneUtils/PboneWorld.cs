@@ -1,4 +1,4 @@
-﻿using PboneLib.CustomLoading.Content.Implementations;
+﻿using PboneLib.CustomLoading.Content.Implementations.Misc;
 using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.Helpers;
 using PboneUtils.NPCs.Town;
@@ -128,7 +128,7 @@ namespace PboneUtils
             base.ModifyWorldGenTasks(tasks, ref totalWeight);
             ModWorldGen = new ModWorldgenManager();
 
-            tasks.Add(new PassLegacy("pbone's Utilities: Petrified Safes", new WorldGenLegacyMethod(ModWorldGen.GenPetrifiedSafes)));
+            //tasks.Add(new PassLegacy("pbone's Utilities: Petrified Safes", new WorldGenLegacyMethod(ModWorldGen.GenPetrifiedSafes)));
         }
     }
 }

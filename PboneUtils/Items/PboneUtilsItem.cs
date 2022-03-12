@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
-using PboneLib.CustomLoading.Content.Implementations;
+using PboneLib.CustomLoading.Content.Implementations.Content;
 
 namespace PboneUtils.Items
 {

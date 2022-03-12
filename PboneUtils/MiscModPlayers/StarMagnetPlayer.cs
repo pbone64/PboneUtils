@@ -2,7 +2,7 @@
 using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
-using PboneLib.CustomLoading.Content.Implementations;
+using PboneLib.CustomLoading.Content.Implementations.Misc;
 
 namespace PboneUtils.MiscModPlayers
 {

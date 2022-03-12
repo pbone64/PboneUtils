@@ -1,4 +1,4 @@
-﻿using PboneLib.CustomLoading.Content.Implementations;
+﻿using PboneLib.CustomLoading.Content.Implementations.Globals;
 using PboneLib.Utils;
 using PboneUtils.Helpers;
 using PboneUtils.Items.Misc;
