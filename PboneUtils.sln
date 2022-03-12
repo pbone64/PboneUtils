@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PboneUtils", "PboneUtils\PboneUtils.csproj", "{556A3F5E-B4AD-44CB-8B57-A739607FD855}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PboneLib", "PboneLib\PboneLib.csproj", "{ECEA7E00-517B-45A5-9DA6-C61CE5BB65E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{556A3F5E-B4AD-44CB-8B57-A739607FD855}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{556A3F5E-B4AD-44CB-8B57-A739607FD855}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{556A3F5E-B4AD-44CB-8B57-A739607FD855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECEA7E00-517B-45A5-9DA6-C61CE5BB65E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECEA7E00-517B-45A5-9DA6-C61CE5BB65E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECEA7E00-517B-45A5-9DA6-C61CE5BB65E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECEA7E00-517B-45A5-9DA6-C61CE5BB65E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,6 +11,6 @@
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\" />
+    <ProjectReference Include="..\PboneLib\PboneLib.csproj" />
   </ItemGroup>
 </Project>
