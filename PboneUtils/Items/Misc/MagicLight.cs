@@ -51,11 +51,6 @@ namespace PboneUtils.Items.Misc
             else
             {
                 // Change tile based on config
-                
-                for (int i = TileID.Count; i < TileLoader.TileCount; i++)
-                {
-                    Main.NewText(TileLoader.GetTile(i).FullName);
-                }
 
                 if (ModContent.TryFind("PboneUtils/" + config.OnlyOneValue + "Light", out ModTile t))
                     Item.createTile = t.Type;
