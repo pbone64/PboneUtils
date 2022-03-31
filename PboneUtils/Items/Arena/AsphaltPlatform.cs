@@ -1,6 +1,7 @@
 ﻿using PboneUtils.Tiles;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
 
 namespace PboneUtils.Items.Arena
 {
@@ -14,6 +15,11 @@ namespace PboneUtils.Items.Arena
             Item.createTile = ModContent.TileType<AsphaltPlatformTile>();
 
             base.SetDefaults();
+        }
+        public override void SetStaticDefaults()
+        {
+            base.SetStaticDefaults();
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 200;
         }
 
         public override void AddRecipes()

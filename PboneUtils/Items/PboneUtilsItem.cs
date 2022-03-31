@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
+using Terraria.GameContent.Creative;
 using PboneLib.CustomLoading.Content.Implementations.Content;
 
 namespace PboneUtils.Items
@@ -34,6 +35,11 @@ namespace PboneUtils.Items
                 Item.Size = correctedSize;
             }*/
             Item.Size = new Vector2(24);
+        }
+        public override void SetStaticDefaults()
+        {
+            base.SetStaticDefaults();
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
         public override void HoldItem(Player player)
