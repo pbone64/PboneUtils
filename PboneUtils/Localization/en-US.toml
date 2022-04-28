@@ -2,5 +2,9 @@
 [Mods.PboneUtils.Config]
 Header.ItemToggles = "Item Toggles"
 
-Option.ItemToggle_LiquidItems.Label = "Liquid Items"
-Option.ItemToggle_LiquidItems.Tooltip = "Enable or disable this mod's liquid items, which let you place and absorb infinite amounts of lava or honey"
+Option.ItemToggle_EndlessLiquidItems.Label = "[mi:PboneUtils.BottomlessHoneyBucket] Endless Liquid Items"
+Option.ItemToggle_EndlessLiquidItems.Tooltip = "Enable or disable endless liquid items, which let you place and absorb an infinite amount of honey; as well as fill and drain large areas with liquid."
+
+Header.UsefulRecipes = "[i:36] QoL Recipes"
+
+Option.RecipeToggle_EndlessLiquidRecipes.Label = "[i:3031] Endless Liquid Item Recipes"

@@ -7,7 +7,7 @@ namespace PboneUtils.Content.Liquid.Items
 {
     public sealed class BottomlessHoneyBucket : PboneUtilsItem
     {
-        public sealed override bool LoadCondition() => FeatureConfig.Instance.ItemToggle_LiquidItems;
+        public sealed override bool LoadCondition() => FeatureConfig.Instance.ItemToggle_EndlessLiquidItems;
 
         public sealed override void SetDefaults()
         {
@@ -28,16 +28,13 @@ namespace PboneUtils.Content.Liquid.Items
 
         public sealed override bool? UseItem(Player player)
         {
-            if (Main.myPlayer == player.whoAmI)
+            if (Main.myPlayer == player.whoAmI || !player.IsTargetTileInItemRange(Item))
+                return base.UseItem(player);
+
+            if (LiquidHelper.PlaceLiquid(Player.tileTargetX, Player.tileTargetY, LiquidID.Honey))
             {
-                if (player.IsTargetTileInItemRange(Item))
-                {
-                    if (LiquidHelper.PlaceLiquid(Player.tileTargetX, Player.tileTargetY, LiquidID.Honey))
-                    {
-                        SoundEngine.PlaySound(SoundID.Splash, (int)player.position.X, (int)player.position.Y);
-                        return true;
-                    }
-                }
+                SoundEngine.PlaySound(SoundID.Splash, (int)player.position.X, (int)player.position.Y);
+                return true;
             }
 
             return base.UseItem(player);

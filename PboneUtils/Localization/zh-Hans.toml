@@ -2,5 +2,9 @@
 [Mods.PboneUtils.Config]
 Header.ItemToggles = "物品设置"
 
-Option.ItemToggle_LiquidItems.Label = "液体类物品"
-Option.ItemToggle_LiquidItems.Tooltip = "启用或禁用液体类物品, 液体类物品能放置或吸收无限的熔岩或蜂蜜"
+Option.ItemToggle_EndlessLiquidItems.Label = "[mi:PboneUtils.BottomlessHoneyBucket] 液体类物品"
+Option.ItemToggle_EndlessLiquidItems.Tooltip = "启用或禁用液体类物品, 液体类物品能放置或吸收无限的熔岩或蜂蜜"
+
+Header.UsefulRecipes = "[i:36] QoL Recipes"
+
+Option.RecipeToggle_EndlessLiquidRecipes.Label = "[i:3031] Endless Liquid Item Recipes"
