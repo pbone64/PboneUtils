@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using PboneUtils.Buffs;
 using Terraria;
+using Terraria.GameContent.ObjectInteractions;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -22,7 +23,7 @@ namespace PboneUtils.Tiles
             AddMapEntry(Color.DarkGreen);
         }
 
-        public override bool HasSmartInteract() => true;
+        public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
 
         public override bool RightClick(int i, int j)
         {

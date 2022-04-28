@@ -29,7 +29,7 @@ namespace PboneUtils.MiscModPlayers
             base.PostUpdate();
             if (StarMagnet && !Main.dayTime)
             {
-                float num139 = Main.maxTilesX / 4200;
+                float num139 = (float)Main.maxTilesX / 4200;
                 if (Main.rand.Next(8000) < 10f * num139)
                 {
                     int num140 = Main.rand.Next(Main.maxTilesX - 50) + 100;
@@ -43,7 +43,7 @@ namespace PboneUtils.MiscModPlayers
                     num144 = 12f / num144;
                     num142 *= num144;
                     num143 *= num144;
-                    Projectile.NewProjectile(Projectile.GetNoneSource(), vector.X, vector.Y, num142, num143, ProjectileID.FallingStar, 1000, 10f, Main.myPlayer);
+                    Projectile.NewProjectile(Entity.GetSource_None(), vector.X, vector.Y, num142, num143, ProjectileID.FallingStar, 1000, 10f, Main.myPlayer);
                 }
             }
         }

@@ -57,7 +57,7 @@ namespace PboneUtils.NPCs.Town
 
         public override bool CanTownNPCSpawn(int numTownNPCs, int money) => false;
         public override bool CanGoToStatue(bool toKingStatue) => false;
-        public override string TownNPCName() => Main.rand.Next(Names);
+        public override List<string> SetNPCNameList() => Names;
 
         public override string GetChat()
         {
