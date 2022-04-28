@@ -18,7 +18,7 @@ namespace PboneUtils.Helpers
             {
                 if (spawnCondition())
                 {
-                    NPC arrival = Main.npc[NPC.NewNPC(NPC.GetSpawnSourceForTownSpawn(), Main.spawnTileX * 16, Main.spawnTileY * 16, type, 1)];
+                    NPC arrival = Main.npc[NPC.NewNPC(Entity.GetSource_TownSpawn(), Main.spawnTileX * 16, Main.spawnTileY * 16, type, 1)];
                     arrival.homeless = true;
                     arrival.direction = Main.spawnTileX >= WorldGen.bestX ? -1 : 1;
                     arrival.netUpdate = true;

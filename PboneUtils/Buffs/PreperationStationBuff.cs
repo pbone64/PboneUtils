@@ -16,7 +16,7 @@ namespace PboneUtils.Buffs
             base.Update(player, ref buffIndex);
 
             // Sharpening Station
-            player.armorPenetration += 4;
+            player.GetArmorPenetration(DamageClass.Default) += 4;
 
             // Ammobox
             player.ammoBox = true;
