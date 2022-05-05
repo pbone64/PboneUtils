@@ -1,10 +1,10 @@
-﻿# Config ------------------------------------------------------------------------------------------
+# Config ------------------------------------------------------------------------------------------
 [Mods.PboneUtils.Config]
 Header.ItemToggles = "物品设置"
 
-Option.ItemToggle_EndlessLiquidItems.Label = "[mi:PboneUtils.BottomlessHoneyBucket] 液体类物品"
-Option.ItemToggle_EndlessLiquidItems.Tooltip = "启用或禁用液体类物品, 液体类物品能放置或吸收无限的熔岩或蜂蜜"
+Option.ItemToggle_EndlessLiquidItems.Label = "[mi:PboneUtils.BottomlessHoneyBucket] 无尽液体类物品"
+Option.ItemToggle_EndlessLiquidItems.Tooltip = "启用或禁用无尽液体类物品, 液体类物品能放置或吸收无限的蜂蜜; 以及用液体填充和吸收大面积区域."
 
-Header.UsefulRecipes = "[i:36] QoL Recipes"
+Header.UsefulRecipes = "[i:36] 生活质量合成表"
 
-Option.RecipeToggle_EndlessLiquidRecipes.Label = "[i:3031] Endless Liquid Item Recipes"
+Option.RecipeToggle_EndlessLiquidRecipes.Label = "[i:3031] 无尽液体类物品合成表"
