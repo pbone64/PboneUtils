@@ -26,8 +26,8 @@ namespace PboneUtils.Projectiles.Selection
                     {
                         // Staff of regrowth herb effect
                         WorldGen.KillTile(i, j, noItem: true);
-                        Item.NewItem(Owner.GetItemSource_TileInteraction(i, j), i * 16, j * 16, 16, 16, seed, WorldGen.genRand.Next(1, 6));
-                        Item.NewItem(Owner.GetItemSource_TileInteraction(i, j), i * 16, j * 16, 16, 16, herb, WorldGen.genRand.Next(1, 3));
+                        Item.NewItem(Owner.GetSource_TileInteraction(i, j), i * 16, j * 16, 16, 16, seed, WorldGen.genRand.Next(1, 6));
+                        Item.NewItem(Owner.GetSource_TileInteraction(i, j), i * 16, j * 16, 16, 16, herb, WorldGen.genRand.Next(1, 3));
 
                         // Replant
                         Item seedItem = new Item();

@@ -30,7 +30,7 @@ namespace PboneUtils.Helpers
 
             if (player.whoAmI == Main.myPlayer && player.ownedProjectileCounts[ModContent.ProjectileType<TerraformerBrushPreview>()] < 1)
                 Projectile.NewProjectile(
-                    player.GetProjectileSource_Item(item.Item), Main.MouseWorld, Vector2.Zero,
+                    player.GetSource_ItemUse(item.Item), Main.MouseWorld, Vector2.Zero,
                     ModContent.ProjectileType<TerraformerBrushPreview>(), 0, 0, player.whoAmI
                     );
         }
