@@ -63,8 +63,8 @@ namespace PboneUtils.NPCs.Town
             });
         }
 
-		public override void OnKill()
-		{
+	public override void OnKill()
+	{
             Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreHead").Type, 1f);
             for (int i = 0; i < 2; i++)
             {
@@ -73,7 +73,7 @@ namespace PboneUtils.NPCs.Town
             Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreLeg").Type, 1f);
         }
 
-		public override bool CanTownNPCSpawn(int numTownNPCs, int money) => false;
+	public override bool CanTownNPCSpawn(int numTownNPCs, int money) => false;
         public override bool CanGoToStatue(bool toKingStatue) => false;
         public override List<string> SetNPCNameList() => Names;
 
