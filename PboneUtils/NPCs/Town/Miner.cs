@@ -234,14 +234,14 @@ namespace PboneUtils.NPCs.Town
         public Asset<Texture2D> GetTextureNPCShouldUse(NPC npc)
         {
             if (npc.IsABestiaryIconDummy && !npc.ForcePartyHatOn)
-                return ModContent.Request<Texture2D>((GetType().Namespace + "." + npc.TypeName).Replace('.', '/'));
+                return ModContent.Request<Texture2D>((GetType().Namespace + ".Miner").Replace('.', '/'));
 
             if (npc.altTexture == 1)
-                return ModContent.Request<Texture2D>((GetType().Namespace + "." + npc.TypeName).Replace('.', '/') + "_Party");
+                return ModContent.Request<Texture2D>((GetType().Namespace + ".Miner").Replace('.', '/') + "_Party");
 
-            return ModContent.Request<Texture2D>((GetType().Namespace + "." + npc.TypeName).Replace('.', '/'));
+            return ModContent.Request<Texture2D>((GetType().Namespace + ".Miner").Replace('.', '/'));
         }
 
-        public int GetHeadTextureIndex(NPC npc) => ModContent.GetModHeadSlot((GetType().Namespace + "." + npc.TypeName).Replace('.', '/') + "_Head");
+        public int GetHeadTextureIndex(NPC npc) => ModContent.GetModHeadSlot((GetType().Namespace + ".Miner").Replace('.', '/') + "_Head");
     }
 }
