@@ -8,6 +8,9 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.Utilities;
+using Terraria.GameContent;
+using ReLogic.Content;
+using Terraria.GameContent.Personalities;
 
 namespace PboneUtils.NPCs.Town
 {
@@ -30,6 +33,25 @@ namespace PboneUtils.NPCs.Town
             NPCID.Sets.AttackTime[NPC.type] = 20;
             NPCID.Sets.AttackAverageChance[NPC.type] = 30;
             NPCID.Sets.HatOffsetY[NPC.type] = 4;
+
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new(0)
+            {
+                Velocity = 1f, // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
+                Direction = -1
+            };
+
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
+
+            NPC.Happiness
+                .SetBiomeAffection<UndergroundBiome>(AffectionLevel.Love)
+                .SetBiomeAffection<HallowBiome>(AffectionLevel.Like)
+                .SetBiomeAffection<ForestBiome>(AffectionLevel.Like)
+                .SetBiomeAffection<DesertBiome>(AffectionLevel.Dislike)
+                .SetBiomeAffection<OceanBiome>(AffectionLevel.Hate)
+                .SetNPCAffection(NPCID.Demolitionist, AffectionLevel.Like)
+                .SetNPCAffection(NPCID.Merchant, AffectionLevel.Like)
+                //Princess is automatically set
+            ; // < Mind the semicolon!
         }
 
         public override void SetDefaults()
@@ -56,8 +78,23 @@ namespace PboneUtils.NPCs.Town
             });
         }
 
+        public override void OnKill()
+        {
+            if (Terraria.GameContent.Events.BirthdayParty.PartyIsUp)
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreHeadParty").Type, 1f);
+            else
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreHead").Type, 1f);
+
+            for (int i = 0; i < 2; i++)
+            {
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreArm").Type, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreLeg").Type, 1f);
+            }
+        }
+
         public override bool CanTownNPCSpawn(int numTownNPCs, int money) => NPC.downedBoss2;
         public override bool CanGoToStatue(bool toKingStatue) => toKingStatue;
+        public override ITownNPCProfile TownNPCProfile() => new MinerProfile();
         public override List<string> SetNPCNameList() => Names;
 
         public override string GetChat()
@@ -188,5 +225,23 @@ namespace PboneUtils.NPCs.Town
             item = PboneUtils.Textures["MinerAttack"];
             itemSize = 32;
         }
+    }
+    public class MinerProfile : ITownNPCProfile
+    {
+        public int RollVariation() => 0;
+        public string GetNameForVariant(NPC npc) => npc.getNewNPCName();
+
+        public Asset<Texture2D> GetTextureNPCShouldUse(NPC npc)
+        {
+            if (npc.IsABestiaryIconDummy && !npc.ForcePartyHatOn)
+                return ModContent.Request<Texture2D>((GetType().Namespace + ".Miner").Replace('.', '/'));
+
+            if (npc.altTexture == 1)
+                return ModContent.Request<Texture2D>((GetType().Namespace + ".Miner").Replace('.', '/') + "_Party");
+
+            return ModContent.Request<Texture2D>((GetType().Namespace + ".Miner").Replace('.', '/'));
+        }
+
+        public int GetHeadTextureIndex(NPC npc) => ModContent.GetModHeadSlot((GetType().Namespace + ".Miner").Replace('.', '/') + "_Head");
     }
 }
