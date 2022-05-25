@@ -16,7 +16,7 @@ namespace PboneUtils.Projectiles.Storage
         public override int ItemType => ModContent.ItemType<DefendersCrystal>();
         public override Texture2D Outline => PboneUtils.Textures["DefendersCrystalOutline"];
         public override bool Animate => false;
-        public override LegacySoundStyle UseSound => SoundID.DD2_BookStaffCast;
+        public override SoundStyle UseSound => SoundID.DD2_BookStaffCast;
 
         public override void SetWhoAmIVariable(PortableStoragePlayer player, int value) => player.DefendersCrystalChest = value;
 

@@ -10,6 +10,7 @@ using PboneUtils.DataStructures.MysteriousTrader;
 using PboneUtils.ID;
 using PboneUtils.Packets;
 using System.IO;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 
@@ -97,6 +98,16 @@ namespace PboneUtils
             new MysteriousTraderShopManager();
             new CompiledMysteriousTraderShop(MysteriousTraderShopManager.Instance);
 #pragma warning restore CA1806 // Do not ignore method results
+
+            // Temporary Census here until the CensusCompatibility is fixed
+            if (ModLoader.TryGetMod("Census", out Mod censusMod))
+			{
+                if (PboneUtilsConfig.Instance.Miner)
+                    censusMod.Call("TownNPCCondition", ModContent.NPCType<NPCs.Town.Miner>(), Language.GetTextValue("Mods.PboneUtils.Census.Description.Miner"));
+
+                if (PboneUtilsConfig.Instance.MysteriousTrader)
+                    censusMod.Call("TownNPCCondition", ModContent.NPCType<NPCs.Town.MysteriousTrader>(), Language.GetTextValue("Mods.PboneUtils.Census.Description.MysteriousTrader"));
+            }
         }
 
         #region Recipes

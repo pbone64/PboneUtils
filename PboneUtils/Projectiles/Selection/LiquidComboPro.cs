@@ -34,7 +34,7 @@ namespace PboneUtils.Projectiles.Selection
             {
                 if (LiquidHelper.PlaceLiquid(i, j, (byte)LiquidType))
                 {
-                    SoundEngine.PlaySound(SoundID.Splash, (int)Owner.position.X, (int)Owner.position.Y);
+                    SoundEngine.PlaySound(SoundID.Splash, Owner.position);
                     return;
                 }
             }
@@ -42,7 +42,7 @@ namespace PboneUtils.Projectiles.Selection
             {
                 if (LiquidHelper.DrainLiquid(i, j, (byte)LiquidType))
                 {
-                    SoundEngine.PlaySound(SoundID.Splash, (int)Owner.position.X, (int)Owner.position.Y);
+                    SoundEngine.PlaySound(SoundID.Splash, Owner.position);
                     return;
                 }
             }

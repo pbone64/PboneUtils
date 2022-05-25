@@ -39,7 +39,7 @@ namespace PboneUtils.Items.Storage
             int projectileType = ModContent.ProjectileType<T>();
             T instance = new T();
             int bankID = instance.ChestType;
-            LegacySoundStyle useSound = instance.UseSound;
+            SoundStyle useSound = instance.UseSound;
 
             if (Main.projectile[whoAmI].active && Main.projectile[whoAmI].type == projectileType)
             {

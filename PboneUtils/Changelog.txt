@@ -1,3 +1,19 @@
+Version 1.2.13 Changes ------------------------------------------------------------------------------------------
+NPCs
+- Added an alternate sprite for the Miner for parties
+- Added Happiness for the Miner
+-- Loves Underground; Likes Forest, Hallow, Demolitionist, Merchant, and Princess; Dislikes Desert, Hates Ocean.
+- Added Happiness quotes for the Miner (and Mysterious Trader)
+- Added gore for the Miner and Mysterious Trader when they die
+- Made the Miner and Mysterious Trader animate in the Bestiary.
+
+Bugs
+- Re-implemented Census support
+
+Version 1.2.12 Changes ------------------------------------------------------------------------------------------
+Items
+- Added Journey Mode Researching for all items
+
 Version 1.2.9 Changes ------------------------------------------------------------------------------------------
 Items
 - Added Building items
