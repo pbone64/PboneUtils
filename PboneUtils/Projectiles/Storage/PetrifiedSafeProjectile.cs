@@ -14,7 +14,7 @@ namespace PboneUtils.Projectiles.Storage
         public override int ItemType => ModContent.ItemType<PetrifiedSafe>();
         public override Texture2D Outline => PboneUtils.Textures["PetrifiedSafeOutline"];
         public override bool Animate => false;
-        public override LegacySoundStyle UseSound => SoundID.Item37;
+        public override SoundStyle UseSound => SoundID.Item37;
 
         public override void SetWhoAmIVariable(PortableStoragePlayer player, int value) => player.SafeGargoyleChest = value;
 

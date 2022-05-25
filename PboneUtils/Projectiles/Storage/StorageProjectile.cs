@@ -15,7 +15,7 @@ namespace PboneUtils.Projectiles.Storage
 
         public abstract void SetWhoAmIVariable(PortableStoragePlayer player, int value);
         public virtual bool Animate => true;
-        public abstract LegacySoundStyle UseSound { get; }
+        public abstract SoundStyle UseSound { get; }
 
         public override void SetStaticDefaults()
         {
