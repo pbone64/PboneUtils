@@ -42,7 +42,7 @@ namespace PboneUtils
                     Main.LocalPlayer.GetModPlayer<PortableStoragePlayer>().SafeGargoyleOpen || Main.LocalPlayer.GetModPlayer<PortableStoragePlayer>().DefendersCrystalOpen
                         ))
                     {
-                        SoundEngine.PlaySound(SoundID.Item59, -1, -1);
+                        SoundEngine.PlaySound(SoundID.Item59);
                     }
                 });
             }

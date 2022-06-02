@@ -29,6 +29,14 @@ namespace PboneUtils.NPCs.Town
             NPCID.Sets.AttackTime[NPC.type] = 45;
             NPCID.Sets.AttackAverageChance[NPC.type] = 30;
             NPCID.Sets.HatOffsetY[NPC.type] = 4;
+
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new(0)
+            {
+                Velocity = 1f, // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
+                Direction = -1
+            };
+
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
         }
 
         public override void SetDefaults()
@@ -55,7 +63,17 @@ namespace PboneUtils.NPCs.Town
             });
         }
 
-        public override bool CanTownNPCSpawn(int numTownNPCs, int money) => false;
+	public override void OnKill()
+	{
+            Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreHead").Type, 1f);
+            for (int i = 0; i < 2; i++)
+            {
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreArm").Type, 1f);
+            }
+            Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreLeg").Type, 1f);
+        }
+
+	public override bool CanTownNPCSpawn(int numTownNPCs, int money) => false;
         public override bool CanGoToStatue(bool toKingStatue) => false;
         public override List<string> SetNPCNameList() => Names;
 
