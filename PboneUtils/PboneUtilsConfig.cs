@@ -8,6 +8,7 @@ namespace PboneUtils
 {
     public class PboneUtilsConfig : PConfig
     {
+        public override string GetName() => "Feature Config";
         public override ConfigScope Mode => ConfigScope.ServerSide;
 
         public static PboneUtilsConfig Instance => ModContent.GetInstance<PboneUtilsConfig>();
