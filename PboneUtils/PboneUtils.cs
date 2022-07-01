@@ -69,7 +69,7 @@ namespace PboneUtils
             CustomLocalizationLoader localizationLoader = new(LocalizationLoader.AddTranslation);
 
             CustomContentLoader configLoader = new(new(content => {
-                PConfig config = content.AsLoadable as PConfig;
+                PConfig config = content.Content as PConfig;
                 AddConfig(config.GetName(), config);
             }));
             configLoader.Settings.TryToLoadConditions = CustomContentLoader.ContentLoaderSettings.PresetTryToLoadConfigConditions;
@@ -78,7 +78,7 @@ namespace PboneUtils
             CustomContentLoader contentLoader = new(new(content => {
                 AddContent(content.AsLoadable);
             }));
-            configLoader.Settings.TryToLoadConditions = CustomContentLoader.ContentLoaderSettings.PresetNormalTryToLoadConditions;
+            contentLoader.Settings.TryToLoadConditions = CustomContentLoader.ContentLoaderSettings.PresetNormalTryToLoadConditions;
             modLoader.Add(contentLoader);
 
             modLoader.Load();

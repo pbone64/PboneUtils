@@ -17,14 +17,14 @@ namespace PboneUtils
         {
             if (PboneUtilsConfig.Instance.RecipeEndlessWater)
             {
-                mod.CreateRecipe(ItemID.BottomlessBucket)
+                Recipe.Create(ItemID.BottomlessBucket)
                     .AddIngredient(ItemID.WaterBucket, 5)
                     .AddIngredient(ItemID.SoulofNight, 1)
                     .AddIngredient(ItemID.SoulofLight, 1)
                     .AddTile(TileID.AlchemyTable)
                     .Register();
 
-                mod.CreateRecipe(ItemID.BottomlessBucket)
+                Recipe.Create(ItemID.BottomlessBucket)
                     .AddIngredient(ItemID.EmptyBucket, 5)
                     .AddIngredient(ItemID.SoulofNight, 1)
                     .AddIngredient(ItemID.SoulofLight, 1)
