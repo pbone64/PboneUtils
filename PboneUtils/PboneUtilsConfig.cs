@@ -6,6 +6,7 @@ using PboneLib.CustomLoading.Content.Implementations.Misc;
 
 namespace PboneUtils
 {
+    [ExtendsFromMod("PboneLib")]
     public class PboneUtilsConfig : PConfig
     {
         public override string GetName() => "Feature Config";
