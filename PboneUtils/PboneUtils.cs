@@ -1,6 +1,9 @@
 using log4net;
 using PboneLib.CustomLoading;
 using PboneLib.CustomLoading.Content;
+using PboneLib.CustomLoading.Content.Conditions;
+using PboneLib.CustomLoading.Content.Implementations.Misc;
+using PboneLib.CustomLoading.Localization;
 using PboneLib.Services.CrossMod;
 using PboneLib.Services.Net;
 using PboneLib.Utils;
@@ -61,28 +64,24 @@ namespace PboneUtils
             Load_IL();
 
             // Custom loading
-            CustomModLoader loader = new CustomModLoader(this);
+            CustomModLoader modLoader = new(this);
 
-            // Localizations
-            loader.Add(new PboneLib.CustomLoading.Localization.LocalizationLoader(translation => {
-                LocalizationLoader.AddTranslation(translation);
+            CustomLocalizationLoader localizationLoader = new(LocalizationLoader.AddTranslation);
+
+            CustomContentLoader configLoader = new(new(content => {
+                PConfig config = content.Content as PConfig;
+                AddConfig(config.GetName(), config);
             }));
+            configLoader.Settings.TryToLoadConditions = CustomContentLoader.ContentLoaderSettings.PresetTryToLoadConfigConditions;
+            modLoader.Add(configLoader);
 
-            // ModConfigs
-            ContentLoader cLoader = new ContentLoader(content => {
-                // TODO Unhardcode me! Method in PConfig
-                AddConfig("Feature Config", (ModConfig)content.Content);
-            });
-            cLoader.Settings.TryToLoadConditions = ContentLoader.ContentLoaderSettings.PresetTryToLoadConfigConditions;
-            loader.Add(cLoader);
+            CustomContentLoader contentLoader = new(new(content => {
+                AddContent(content.AsLoadable);
+            }));
+            contentLoader.Settings.TryToLoadConditions = CustomContentLoader.ContentLoaderSettings.PresetNormalTryToLoadConditions;
+            modLoader.Add(contentLoader);
 
-            // Everything else
-            cLoader = new ContentLoader(this.AddContent);
-            // Added for clarity, the Action only ctor automatically calls FillWithDefaultConditions
-            cLoader.Settings.TryToLoadConditions = ContentLoader.ContentLoaderSettings.PresetNormalTryToLoadConditions;
-            loader.Add(cLoader);
-
-            loader.Load();
+            modLoader.Load();
         }
 
         public override object Call(params object[] args) => crossModManager.CallManager.HandleCall(args);
