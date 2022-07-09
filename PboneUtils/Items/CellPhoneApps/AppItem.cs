@@ -1,5 +1,6 @@
 ﻿using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.CellPhoneApps
 {
@@ -10,6 +11,7 @@ namespace PboneUtils.Items.CellPhoneApps
         public virtual int CraftAmount { get => 30; }
 
         public override bool LoadCondition() => PboneUtilsConfig.Instance.CellPhoneAppsToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().CellPhoneAppsToggle;
 
         public override void SetDefaults()
         {

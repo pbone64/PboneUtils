@@ -306,3 +306,8 @@ Mods: {
 		}
 	}
 }
+
+TownNPCMood_Princess: {
+	LoveNPC_PboneUtils/Miner: "I love {NPCName}."
+	LoveNPC_PboneUtils/MysteriousTrader: "I love {NPCName}."
+}

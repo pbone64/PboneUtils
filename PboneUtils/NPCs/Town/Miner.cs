@@ -17,9 +17,10 @@ namespace PboneUtils.NPCs.Town
     [AutoloadHead]
     public class Miner : PboneUtilsNPC
     {
-        public override bool LoadCondition() => PboneUtilsConfig.Instance.Miner;
+        public override bool LoadCondition() =>  ModContent.GetInstance<PboneUtilsConfig>().Miner;
+		public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().Miner;
 
-        private readonly List<string> Names = new List<string>() {
+		private readonly List<string> Names = new List<string>() {
             "Durin", "Armok", "Tarn", "Asmel", "Doren", "Ber", "Datan"
         };
 
@@ -92,7 +93,7 @@ namespace PboneUtils.NPCs.Town
             }
         }
 
-        public override bool CanTownNPCSpawn(int numTownNPCs, int money) => NPC.downedBoss2;
+        public override bool CanTownNPCSpawn(int numTownNPCs, int money) => NPC.downedBoss2 && ModContent.GetInstance<PboneUtilsConfig>().Miner;
         public override bool CanGoToStatue(bool toKingStatue) => toKingStatue;
         public override ITownNPCProfile TownNPCProfile() => new MinerProfile();
         public override List<string> SetNPCNameList() => Names;
@@ -140,7 +141,10 @@ namespace PboneUtils.NPCs.Town
 
             if (Main.hardMode)
             {
-                shop.AddShopItem(ItemID.Obsidian, ref nextSlot);
+                //shop.AddShopItem(ItemID.Obsidian, ref nextSlot);
+                shop.item[nextSlot].SetDefaults(ItemID.Obsidian);
+                shop.item[nextSlot].shopCustomPrice = 500;
+                nextSlot++;
                 shop.AddShopItem(ItemID.Hellstone, ref nextSlot);
             }
 

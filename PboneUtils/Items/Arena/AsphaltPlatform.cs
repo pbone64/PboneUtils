@@ -8,6 +8,7 @@ namespace PboneUtils.Items.Arena
     public class AsphaltPlatform : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.ArenaItemsToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().ArenaItemsToggle;
 
         public override void SetDefaults()
         {

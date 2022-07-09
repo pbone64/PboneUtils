@@ -1,3 +1,14 @@
+Version 1.2.16 Changes ------------------------------------------------------------------------------------------
+Bandaid Update
+Bugs
+- Fixed Miner and Mysterious Trader being loaded when the configs for them were turned off.
+- Fixed the Item Toggles configs not working.
+- Fixed the Princess' Happiness dialog when talking about the Miner or Mysterious Trader.
+- Fixed infinite bait items being consumed.
+- Obsidian sold by the Miner now costs 5 silver instead of no value.
+- Moved Mod.Recipes to ModSystems.Recipes
+- Fixed Chinese localization (Thanks Lin-cat)
+
 Version 1.2.13 Changes ------------------------------------------------------------------------------------------
 NPCs
 - Added an alternate sprite for the Miner for parties

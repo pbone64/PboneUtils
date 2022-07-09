@@ -7,6 +7,7 @@ namespace PboneUtils.Items.Building.Equipment
     public class CreatorsEmblem : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.BuildingItemToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().BuildingItemToggle;
 
         public override void SetDefaults()
         {

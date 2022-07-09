@@ -12,6 +12,7 @@ namespace PboneUtils.Items.Liquid
     public class LiquidCombo : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.LiquidItemsToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().LiquidItemsToggle;
         public override bool ShowItemIconWhenInRange => true;
 
         public override void SetDefaults()

@@ -8,6 +8,7 @@ namespace PboneUtils.Items.Storage
     public class DefendersCrystal : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.StorageItemsToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().StorageItemsToggle;
 
         public override void SetDefaults()
         {

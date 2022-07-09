@@ -1,11 +1,15 @@
 ﻿using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
+using PboneLib.CustomLoading.Content.Implementations.Misc;
 
 namespace PboneUtils
 {
-    public class ModRecipeManager
+    public class ModRecipeManager : PSystem
     {
+        public static ModRecipeManager Recipes => ModContent.GetInstance<ModRecipeManager>();
+
         public string AnyShadowScale = "PboneUtils:AnyShadowScale";
         public string AnyDemoniteBar = "PboneUtils:AnyDemoniteBar";
         public string AnyAdamantite = "PboneUtils:AnyAdamantite";
@@ -13,7 +17,7 @@ namespace PboneUtils
         public string AnySilverBar = "PboneUtils:AnySilverBar";
         public string AnyGoldBar = "PboneUtils:AnyGoldBar";
 
-        public void AddRecipes(Mod mod)
+        public override void AddRecipes()
         {
             if (PboneUtilsConfig.Instance.RecipeEndlessWater)
             {
@@ -33,7 +37,7 @@ namespace PboneUtils
             }
         }
 
-        public void AddRecipeGroups()
+        public override void AddRecipeGroups()
         {
             RegisterTwoItemGroup(AnyShadowScale, ItemID.ShadowScale, ItemID.TissueSample);
             RegisterTwoItemGroup(AnyDemoniteBar, ItemID.DemoniteBar, ItemID.CrimtaneBar);
@@ -45,10 +49,10 @@ namespace PboneUtils
 
         private void RegisterTwoItemGroup(string key, int item1, int item2)
         {
-            RecipeGroup group = new RecipeGroup(() => $"{Lang.GetItemName(item1)}/{Lang.GetItemName(item2)}", new int[2] {
+            RecipeGroup group = new RecipeGroup(() => $"{Lang.GetItemName(item1)}/{Lang.GetItemName(item2)}",
                 item1,
                 item2
-            });
+            );
             RecipeGroup.RegisterGroup(key, group);
         }
     }

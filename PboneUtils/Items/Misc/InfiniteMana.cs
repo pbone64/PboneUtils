@@ -6,8 +6,9 @@ using Terraria.ModLoader;
 namespace PboneUtils.Items.Misc
 {
     public class InfiniteMana : PboneUtilsItem
-    {
-        public override bool LoadCondition() => PboneUtilsConfig.Instance.InfiniteManaToggle;
+	{
+		public override bool LoadCondition() => PboneUtilsConfig.Instance.InfiniteManaToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().InfiniteManaToggle;
         public override bool DrawGlowmask => true;
 
         public override void SetDefaults()

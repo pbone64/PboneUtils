@@ -1,12 +1,14 @@
 ﻿using PboneUtils.MiscModsPlayers;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Misc
 {
     public class VoidPiggy : RightClickToggleItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.VoidPiggyToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().VoidPiggyToggle;
 
         public override void SetDefaults()
         {
@@ -23,7 +25,7 @@ namespace PboneUtils.Items.Misc
 
         public override void AddRecipes()
         {
-            CreateRecipe(1).AddIngredient(ItemID.PiggyBank).AddIngredient(ItemID.Bone, 10).AddIngredient(ItemID.JungleSpores, 5).AddRecipeGroup(PboneUtils.Recipes.AnyShadowScale, 10).AddTile(TileID.DemonAltar).Register();
+            CreateRecipe(1).AddIngredient(ItemID.PiggyBank).AddIngredient(ItemID.Bone, 10).AddIngredient(ItemID.JungleSpores, 5).AddRecipeGroup(ModRecipeManager.Recipes.AnyShadowScale, 10).AddTile(TileID.DemonAltar).Register();
         }
     }
 }

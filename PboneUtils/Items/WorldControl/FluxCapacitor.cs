@@ -1,12 +1,14 @@
 ﻿using PboneUtils.MiscModsPlayers;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.WorldControl
 {
     public class FluxCapacitor : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.WorldControlItemsToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().WorldControlItemsToggle;
 
         public override void SetDefaults()
         {

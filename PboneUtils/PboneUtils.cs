@@ -28,11 +28,9 @@ namespace PboneUtils
 
         public static PboneUtilsUI UI => ModContent.GetInstance<PboneUtilsUI>();
         public static PboneUtilsTextures Textures => ModContent.GetInstance<PboneUtilsTextures>();
-        public static ModRecipeManager Recipes => Instance.recipes;
         public static CrossModManager CrossMod => Instance.crossModManager;
         public static PacketManager PacketManager => Instance.packetManager;
 
-        private ModRecipeManager recipes;
         private CrossModManager crossModManager;
         private PacketManager packetManager;
 
@@ -46,7 +44,6 @@ namespace PboneUtils
             base.Load();
 
             // Instantiate managers
-            recipes = new ModRecipeManager();
             packetManager = new PacketManager(this);
             packetManager.RegisterPacketHandler<SyncMysteriousTraderShop>(PacketID.SyncMysteriousTraderShop);
 
@@ -109,25 +106,11 @@ namespace PboneUtils
             }
         }
 
-        #region Recipes
-        public override void AddRecipes()
-        {
-            base.AddRecipes();
-            recipes.AddRecipes(this);
-        }
-        public override void AddRecipeGroups()
-        {
-            base.AddRecipeGroups();
-            recipes.AddRecipeGroups();
-        }
-        #endregion
-
         // TODO improve nulling upon unload
         public override void Unload()
         {
             base.Unload();
 
-            recipes = null;
             crossModManager = null;
             packetManager = null;
 

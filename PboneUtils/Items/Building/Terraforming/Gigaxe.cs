@@ -3,12 +3,14 @@ using PboneUtils.Helpers;
 using System;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Building.Terraforming
 {
     public class Gigaxe : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.BuildingItemToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().BuildingItemToggle;
         public override bool DrawGlowmask => true;
         public override Color ModifyGlowmaskColor => Color.White * ((float)(Math.Sin(Main.GameUpdateCount / 12f) + 1f) / 2f);
 
