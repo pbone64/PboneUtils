@@ -36,6 +36,11 @@ namespace PboneUtils.Items.Clovers
                 .AddIngredient(ItemID.PurpleSolution, 2)
                 .AddTile(TileID.DemonAltar)
                 .Register();
+            CreateRecipe()
+                .AddIngredient<FourLeafClover>()
+                .AddIngredient(ItemID.RedSolution, 2)
+                .AddTile(TileID.DemonAltar)
+                .Register();
         }
     }
 }

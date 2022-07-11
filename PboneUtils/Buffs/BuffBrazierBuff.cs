@@ -22,7 +22,7 @@ namespace PboneUtils.Buffs
             Main.SceneMetrics.HasHeartLantern = true;
 
             // Star in a Bottle
-            Main.SceneMetrics.HasHeartLantern = true;
+            Main.SceneMetrics.HasStarInBottle = true;
 
             // Sunflower
             Main.SceneMetrics.HasHeartLantern = true;

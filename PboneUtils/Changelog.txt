@@ -6,6 +6,15 @@ Bugs
 - Fixed the Princess' Happiness dialog when talking about the Miner or Mysterious Trader.
 - Fixed infinite bait items being consumed.
 - Obsidian sold by the Miner now costs 5 silver instead of no value.
+- Corrected the tooltip on the Miner's Emblem saying 25% speed when it was actually 15% (Creator's Emblem is still 25%).
+- Fixed the Buff Brazier not giving the Star in a Bottle buff.
+- Fixed the Preparation Station not giving the Sharpening Station buff correctly.
+- Added a sound when using the Preparation Station.
+- Fixed Greedy Chest not working.
+- Adjusted the items in the Mysterious Trader's shop. Now sells more items. Sells X in a Bottle accessories instead of X in a Balloon accessories. Sells the Terragrim instead of the Arkhalis.
+- Mysterious Trader will sell 2 more items in Hardmode and 1 more item in Expert Mode.
+- Corrupticlover can now be crafted with Red Solution.
+- The Master Plan will no longer place or absorb liquids while the menu is open (Previously, clicking the menu buttons would place/absorb liquid).
 - Moved Mod.Recipes to ModSystems.Recipes
 - Fixed Chinese localization (Thanks Lin-cat)
 

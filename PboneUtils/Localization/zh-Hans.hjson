@@ -93,7 +93,7 @@ Mods: {
 			CorruptedClover: "用于显示你的运气值\n将你的运气值锁定在默认值\n'等下, 这些荆棘哪来的?'"
 			GoldenClover: "用于显示你的运气值\n增加你的运气值\n'我知道黄金有点庸俗, 但是...'"
 			BuildersEmblem: "增加25%物块和墙壁放置速度"
-			MinersEmblem: "增加25%挖掘速度"
+			MinersEmblem: "增加15%挖掘速度"
 			CreatorsEmblem: "增加25%物块和墙壁放置速度\n增加25%挖掘速度"
 			Gigaxe: "左键框选区域, 松开后会瞬间砍伐框选区域内所有的树木"
 			VoidPiggy: "放置在背包中时你获得的钱币都会自动存入你的猪猪存钱罐中\n猪猪存钱罐中至少有1枚钱币时才会生效\n{$Mods.PboneUtils.Common.CanBeToggled}\n'异界奇物!'"

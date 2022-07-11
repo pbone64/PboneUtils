@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using PboneUtils.Buffs;
 using Terraria;
+using Terraria.Audio;
 using Terraria.GameContent.ObjectInteractions;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -27,6 +28,7 @@ namespace PboneUtils.Tiles
 
         public override bool RightClick(int i, int j)
         {
+            SoundEngine.PlaySound(SoundID.Item45);
             Main.LocalPlayer.AddBuff(ModContent.BuffType<PreperationStationBuff>(), 1800 * 60); // 30 minutes
             return true;
         }
