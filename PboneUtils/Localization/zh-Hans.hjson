@@ -83,7 +83,7 @@ Mods: {
 			AmuletOfRain: "开始或停止下雨\n'通往九重天的单程票'"
 			AmuletOfSandstorms: "开始或停止沙尘暴\n'纹路粗糙'"
 			AsphaltPlatform: "增加移动速度"
-			PreperationStation: "右键增加近战武器的护甲穿透、减少弹药消耗率、增加法力并+1最大召唤栏\n放置时不会消耗此物品\n'同样可以制作切丝薯条!'"
+			PreperationStation: "右键增加近战武器的护甲穿透、减少弹药消耗率、\n增加魔法能力并+1最大召唤栏\n放置时不会消耗此物品\n'同样可以制作切丝薯条!'"
 			BuffBrazier: "当你在火炬附近时增加生命恢复速度、法力恢复速度、移动速度和刷怪率\n提供充足的照明\n放置时不会消耗此物品"
 			WormholeApp: "安装在手机中后使手机获得无尽虫洞药水效果\n{$Mods.PboneUtils.Common.AppInfo}"
 			TeleportationApp: "安装在手机中后使手机获得无尽随机传送药水效果（手持手机时按右键传送）\n{$Mods.PboneUtils.Common.AppInfo}"
