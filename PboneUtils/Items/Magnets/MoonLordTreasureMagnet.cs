@@ -1,5 +1,6 @@
 ﻿using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Magnets
 {
@@ -8,6 +9,7 @@ namespace PboneUtils.Items.Magnets
     public class MoonLordTreasureMagnet : RightClickToggleItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.MagnetItemsToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().MagnetItemsToggle;
         public override bool DrawGlowmask => true;
 
         public override void SetDefaults()

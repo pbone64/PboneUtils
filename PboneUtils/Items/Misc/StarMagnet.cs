@@ -1,12 +1,14 @@
 ﻿using PboneUtils.MiscModPlayers;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Misc
 {
     public class StarMagnet : RightClickToggleItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.StarMagnetToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().StarMagnetToggle;
 
         public override void SetDefaults()
         {
@@ -23,7 +25,7 @@ namespace PboneUtils.Items.Misc
 
         public override void AddRecipes()
         {
-            CreateRecipe(1).AddIngredient(ItemID.FallenStar, 5).AddRecipeGroup(PboneUtils.Recipes.AnyDemoniteBar, 7).AddRecipeGroup(PboneUtils.Recipes.AnyShadowScale, 10).AddTile(TileID.SkyMill).Register();
+            CreateRecipe(1).AddIngredient(ItemID.FallenStar, 5).AddRecipeGroup(ModRecipeManager.Recipes.AnyDemoniteBar, 7).AddRecipeGroup(ModRecipeManager.Recipes.AnyShadowScale, 10).AddTile(TileID.SkyMill).Register();
         }
     }
 }

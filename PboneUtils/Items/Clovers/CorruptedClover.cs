@@ -1,11 +1,13 @@
 ﻿using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Clovers
 {
     public class CorruptedClover : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.CloversToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().CloversToggle;
 
         public override void SetDefaults()
         {
@@ -32,6 +34,11 @@ namespace PboneUtils.Items.Clovers
             CreateRecipe()
                 .AddIngredient<FourLeafClover>()
                 .AddIngredient(ItemID.PurpleSolution, 2)
+                .AddTile(TileID.DemonAltar)
+                .Register();
+            CreateRecipe()
+                .AddIngredient<FourLeafClover>()
+                .AddIngredient(ItemID.RedSolution, 2)
                 .AddTile(TileID.DemonAltar)
                 .Register();
         }

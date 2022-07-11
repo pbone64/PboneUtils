@@ -7,6 +7,7 @@ namespace PboneUtils.Items.Misc
     public class ShadowPearl : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.ShadowPearlToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().ShadowPearlToggle;
 
         public override void SetDefaults()
         {
@@ -21,7 +22,7 @@ namespace PboneUtils.Items.Misc
 
         public override void AddRecipes()
         {
-            CreateRecipe(1).AddRecipeGroup(PboneUtils.Recipes.AnyDemoniteBar, 10).AddRecipeGroup(PboneUtils.Recipes.AnyShadowScale, 5).AddTile(TileID.DemonAltar).Register();
+            CreateRecipe(1).AddRecipeGroup(ModRecipeManager.Recipes.AnyDemoniteBar, 10).AddRecipeGroup(ModRecipeManager.Recipes.AnyShadowScale, 5).AddTile(TileID.DemonAltar).Register();
         }
     }
 }

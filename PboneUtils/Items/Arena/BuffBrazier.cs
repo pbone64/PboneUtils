@@ -7,6 +7,7 @@ namespace PboneUtils.Items.Arena
     public class BuffBrazier : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.ArenaItemsToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().ArenaItemsToggle;
 
         public override void SetDefaults()
         {

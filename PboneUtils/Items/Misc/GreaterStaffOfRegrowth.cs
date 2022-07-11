@@ -8,6 +8,7 @@ namespace PboneUtils.Items.Misc
     public class GreaterStaffOfRegrowth : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.GreaterStaffOfRegrowthToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().GreaterStaffOfRegrowthToggle;
         public override bool ShowItemIconWhenInRange => true;
 
         public override void SetDefaults()

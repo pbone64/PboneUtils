@@ -1,12 +1,14 @@
 ﻿using PboneUtils.MiscModsPlayers;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Misc
 {
     public class FlameOfPeace : RightClickToggleItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.SpawnRateItemsToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().SpawnRateItemsToggle;
 
         public override void SetDefaults()
         {

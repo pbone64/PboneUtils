@@ -16,20 +16,28 @@ namespace PboneUtils.DataStructures.MysteriousTrader
 
             MyRegisterItem(ItemID.TruffleWorm, MysteriousTraderItemRarity.Legendary, () => NPC.downedPlantBoss && !NPC.downedFishron);
             MyRegisterItem(ItemID.RodofDiscord, MysteriousTraderItemRarity.Legendary, () => NPC.downedMechBossAny);
-            MyRegisterItem(ItemID.Arkhalis, MysteriousTraderItemRarity.Legendary, () => NPC.downedBoss1);
+            MyRegisterItem(ItemID.Terragrim, MysteriousTraderItemRarity.Legendary, () => NPC.downedBoss1);
+            MyRegisterItem(ItemID.LavaCharm, MysteriousTraderItemRarity.Legendary, () => Main.hardMode);
 
             MyRegisterItem(ItemID.SittingDucksFishingRod, MysteriousTraderItemRarity.Rare, () => NPC.downedBoss3);
             MyRegisterItem(ItemID.PulseBow, MysteriousTraderItemRarity.Rare, () => NPC.downedPlantBoss);
+            MyRegisterItem(ItemID.BouncingShield, MysteriousTraderItemRarity.Rare, () => Main.hardMode);
+            MyRegisterItem(ItemID.PutridScent, MysteriousTraderItemRarity.Rare, () => Main.hardMode && WorldGen.crimson);
+            MyRegisterItem(ItemID.FleshKnuckles, MysteriousTraderItemRarity.Rare, () => Main.hardMode && !WorldGen.crimson);
             MyRegisterItem(ItemID.AnkletoftheWind, MysteriousTraderItemRarity.Rare);
-            MyRegisterItem(ItemID.AmmoBox, MysteriousTraderItemRarity.Rare);
+            MyRegisterItem(ItemID.AmmoBox, MysteriousTraderItemRarity.Rare, () => !Main.hardMode);
             MyRegisterItem(ItemID.CelestialMagnet, MysteriousTraderItemRarity.Rare);
             MyRegisterItem(ItemID.MagicHat, MysteriousTraderItemRarity.Rare);
             MyRegisterItem(ItemID.StaffofRegrowth, MysteriousTraderItemRarity.Rare);
-            MyRegisterItem(ItemID.BlizzardinaBalloon, MysteriousTraderItemRarity.Rare);
-            MyRegisterItem(ItemID.SandstorminaBalloon, MysteriousTraderItemRarity.Rare);
-            MyRegisterItem(ItemID.CloudinaBalloon, MysteriousTraderItemRarity.Rare);
+            MyRegisterItem(ItemID.TsunamiInABottle, MysteriousTraderItemRarity.Rare);
+            MyRegisterItem(ItemID.BlizzardinaBottle, MysteriousTraderItemRarity.Rare);
+            MyRegisterItem(ItemID.SandstorminaBottle, MysteriousTraderItemRarity.Rare);
+            MyRegisterItem(ItemID.CloudinaBottle, MysteriousTraderItemRarity.Rare);
             MyRegisterItem(ItemID.WhoopieCushion, MysteriousTraderItemRarity.Rare);
 
+            MyRegisterItem(ItemID.AmmoBox, MysteriousTraderItemRarity.Common, () => Main.hardMode);
+            MyRegisterItem(ItemID.HermesBoots, MysteriousTraderItemRarity.Common, () => NPC.downedBoss1);
+            MyRegisterItem(ItemID.AncientChisel, MysteriousTraderItemRarity.Common, () => NPC.downedBoss2);
             MyRegisterItem(ItemID.BandofRegeneration, MysteriousTraderItemRarity.Common);
             MyRegisterItem(ItemID.Aglet, MysteriousTraderItemRarity.Common);
 
@@ -39,6 +47,7 @@ namespace PboneUtils.DataStructures.MysteriousTrader
 
             MyRegisterItem(ItemID.ActuationAccessory, MysteriousTraderItemRarity.Common);
             MyRegisterItem(ItemID.PortableCementMixer, MysteriousTraderItemRarity.Common);
+            MyRegisterItem(ItemID.PaintSprayer, MysteriousTraderItemRarity.Common);
             MyRegisterItem(ItemID.ExtendoGrip, MysteriousTraderItemRarity.Common);
             MyRegisterItem(ItemID.BrickLayer, MysteriousTraderItemRarity.Common);
 

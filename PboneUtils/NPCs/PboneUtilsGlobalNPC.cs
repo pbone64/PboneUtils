@@ -26,7 +26,15 @@ namespace PboneUtils.NPCs
             }
         }
 
-        public override void SetupShop(int type, Chest shop, ref int nextSlot)
+		public override void OnKill(NPC npc)
+		{
+            if (Main.player[npc.FindClosestPlayer()].GetModPlayer<PbonePlayer>().GreedyChest)
+            {
+                npc.extraValue = int.MinValue;
+            }
+        }
+
+		public override void SetupShop(int type, Chest shop, ref int nextSlot)
         {
             switch (type)
             {

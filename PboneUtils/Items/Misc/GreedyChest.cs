@@ -1,12 +1,14 @@
 ﻿using PboneUtils.MiscModsPlayers;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Misc
 {
     public class GreedyChest : RightClickToggleItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.GreedyChestToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().GreedyChestToggle;
 
         public override void SetDefaults()
         {

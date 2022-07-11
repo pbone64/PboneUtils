@@ -7,6 +7,7 @@ namespace PboneUtils.Items.Bait
     public class Infiniworm : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.EndlessBaitToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().EndlessBaitToggle;
 
         public override void SetDefaults()
         {
@@ -20,6 +21,7 @@ namespace PboneUtils.Items.Bait
 
         public override bool ConsumeItem(Player player) => false;
         public override bool CanBeConsumedAsAmmo(Item weapon, Player player) => false;
+        public override bool? CanConsumeBait(Player player) => false;
 
         public override void AddRecipes()
         {

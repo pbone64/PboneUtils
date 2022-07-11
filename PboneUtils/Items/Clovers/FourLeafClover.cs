@@ -1,11 +1,13 @@
 ﻿using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Clovers
 {
     public class FourLeafClover : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.CloversToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().CloversToggle;
 
         public override void SetDefaults()
         {

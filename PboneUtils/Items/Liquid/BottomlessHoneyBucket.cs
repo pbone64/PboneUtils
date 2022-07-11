@@ -2,12 +2,14 @@
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Liquid
 {
     public class BottomlessHoneyBucket : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.LiquidItemsToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().LiquidItemsToggle;
         public override bool ShowItemIconWhenInRange => true;
 
         public override void SetDefaults()

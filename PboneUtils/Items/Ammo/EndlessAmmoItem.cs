@@ -1,10 +1,12 @@
 ﻿using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Ammo
 {
     public abstract class EndlessAmmoItem : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.AmmoItemsToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().AmmoItemsToggle;
 
         public abstract int BaseAmmo { get; }
 

@@ -1,12 +1,14 @@
 ﻿using Terraria;
 using Terraria.GameContent.Events;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.WorldControl
 {
     public class AmuletOfSandstorms : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.WorldControlItemsToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().WorldControlItemsToggle;
 
         public override void SetDefaults()
         {
@@ -31,7 +33,7 @@ namespace PboneUtils.Items.WorldControl
 
         public override void AddRecipes()
         {
-            CreateRecipe(1).AddIngredient(ItemID.AncientBattleArmorMaterial, 1).AddRecipeGroup(PboneUtils.Recipes.AnyAdamantite, 3).AddTile(TileID.MythrilAnvil).Register();
+            CreateRecipe(1).AddIngredient(ItemID.AncientBattleArmorMaterial, 1).AddRecipeGroup(ModRecipeManager.Recipes.AnyAdamantite, 3).AddTile(TileID.MythrilAnvil).Register();
         }
     }
 }

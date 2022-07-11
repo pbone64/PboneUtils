@@ -83,7 +83,7 @@ Mods: {
 			AmuletOfRain: "Starts or stops rain\n'One way ticket to cloud nine'"
 			AmuletOfSandstorms: "Starts or stops sandstorms\n'It's course and rough'"
 			AsphaltPlatform: "Increases running speed"
-			PreperationStation: "Right click to increase armor penetration for melee weapons, reduce ammo usage, increase magic powers, and have more minions\nIsn't consumed upon being placed\n'Also makes Julienne Fries!'"
+			PreperationStation: "Right click to increase armor penetration for melee weapons, reduce ammo usage,\nincrease magic powers, and have more minions\nIsn't consumed upon being placed\n'Also makes Julienne Fries!'"
 			BuffBrazier: "Increases your life regen, mana regen, movement speed, and reduces enemy spawnrates when nearby\nProvides a decent amount of light\nIsn't consumed upon being placed"
 			WormholeApp: "Provides an infinite wormhole effect when installed in a Cell Phone\n{$Mods.PboneUtils.Common.AppInfo}"
 			TeleportationApp: "Allows you to teleport by holding the Cell Phone in your hand and right-clicking when installed in a Cell Phone\n{$Mods.PboneUtils.Common.AppInfo}"
@@ -93,7 +93,7 @@ Mods: {
 			CorruptedClover: "Displays your luck\nLocks your luck to the default value\n'Wait, where are the thorns?'"
 			GoldenClover: "Displays your luck\nIncreases your luck\n'I know gold's a bit gauche, but...'"
 			BuildersEmblem: "25% increased block and wall placement speed"
-			MinersEmblem: "25% increased mining speed"
+			MinersEmblem: "15% increased mining speed"
 			CreatorsEmblem: "25% increased block and wall placement speed\n25% increased mining speed"
 			Gigaxe: "Click and drag to select an area\nAll trees in the selected area are instantly chopped"
 			VoidPiggy: "When carried, coins are automatically sent to your piggy bank\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'"
@@ -305,4 +305,9 @@ Mods: {
 			TerraformerScrollInfo: "Hold the Terraforming: Scroll Mode key (Current: [<REPLACEME>]) and scroll up or down on the scroll wheel to increase or decrease brush size"
 		}
 	}
+}
+
+TownNPCMood_Princess: {
+	LoveNPC_PboneUtils/Miner: "I love {NPCName}."
+	LoveNPC_PboneUtils/MysteriousTrader: "I love {NPCName}."
 }

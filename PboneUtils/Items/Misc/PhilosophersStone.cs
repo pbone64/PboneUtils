@@ -1,12 +1,14 @@
 ﻿using PboneUtils.MiscModsPlayers;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace PboneUtils.Items.Misc
 {
     public class PhilosophersStone : RightClickToggleItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.PhilosophersStoneToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().PhilosophersStoneToggle;
 
         public override void SetDefaults()
         {

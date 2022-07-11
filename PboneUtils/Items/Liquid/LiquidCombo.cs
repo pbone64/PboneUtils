@@ -1,4 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
+using PboneUtils.DataStructures;
+using PboneUtils.MiscModsPlayers;
 using PboneUtils.Projectiles.Selection;
 using PboneUtils.UI;
 using PboneUtils.UI.States;
@@ -12,6 +14,7 @@ namespace PboneUtils.Items.Liquid
     public class LiquidCombo : PboneUtilsItem
     {
         public override bool LoadCondition() => PboneUtilsConfig.Instance.LiquidItemsToggle;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().LiquidItemsToggle;
         public override bool ShowItemIconWhenInRange => true;
 
         public override void SetDefaults()
@@ -31,13 +34,24 @@ namespace PboneUtils.Items.Liquid
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
+            PbonePlayer mPlayer = player.GetModPlayer<PbonePlayer>();
+            ItemConfig config = mPlayer.ItemConfigs["Liquid"];
+
+            // Don't run if a liquid type hasn't been chosen and the player isn't right clicking
+            if (config.OnlyOneValue == default && player.altFunctionUse != 2)
+                return false;
+
             if (player.altFunctionUse == 2)
             {
                 RadialMenu.SetInfo("Liquid", Item.type);
                 PboneUtils.UI.ToggleUI<RadialMenuContainer>();
                 return false;
             }
-
+            // Don't place anything if the menu is open
+            if (PboneUtils.UI.GetUIState<RadialMenuContainer>().Internal.Active)
+			{
+                return false;
+			}
             return true;
         }
 
