@@ -14,7 +14,7 @@ namespace PboneUtils.NPCs.Town
     public class MysteriousTrader : PboneUtilsNPC
     {
         public override bool LoadCondition() =>  ModContent.GetInstance<PboneUtilsConfig>().MysteriousTrader;
-        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().Miner;
+        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().MysteriousTrader;
 
         private readonly List<string> Names = new List<string>() {
             "Verboten", "Thooloo", "Uri", "Sellatron", "Indigo", "Steve"
