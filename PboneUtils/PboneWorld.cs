@@ -50,8 +50,8 @@ namespace PboneUtils
                     PboneUtils.PacketManager.WriteAndSendPacket<SyncMysteriousTraderShop>();
                 }
             }
-
-            TravelingNPCHelper.DoTravellingMerchant(ModContent.NPCType<MysteriousTrader>(), 48600, () => (NPC.downedSlimeKing || NPC.downedBoss1) && Main.rand.NextBool(3));
+            if (ModContent.GetInstance<PboneUtilsConfig>().MysteriousTrader)
+                TravelingNPCHelper.DoTravellingMerchant(ModContent.NPCType<MysteriousTrader>(), 48600, () => (NPC.downedSlimeKing || NPC.downedBoss1) && Main.rand.NextBool(3));
         }
 
         public override void SaveWorldData(TagCompound tag)
