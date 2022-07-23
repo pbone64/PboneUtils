@@ -17,7 +17,7 @@ Credits:
  - pbone: Main Developer.
  - Tomat: Developer, fixer of spritesheets.
  - Lin-cat: Chinese translation.
- - Rijam: Additional fixer of spritesheets.
+ - Rijam: Maintainer.
 
 Additional thanks to many idea givers and bug reporters, including... (in no particular order)
 Davlos25, Aikkura, Pins30, CrimsonStorm404, Jerryhhnk, The_Idea, TechTato, Saint Sigma X, IDGCaptainRussia, Candiescence, Satansof2, Rune Zhevitz, ddrake88, BurntChow, Neko the Cat'nt, MassContent, Logantastic, Ertila007, McGunboat, Thomarius, holly!, Hot Bulo4ka, LanToaster, Skip, Alain Zv, moth, sneapeak
