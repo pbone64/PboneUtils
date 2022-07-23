@@ -3,6 +3,7 @@ using PboneLib.Utils;
 using System;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -80,7 +81,7 @@ namespace PboneUtils
                     item.SetDefaults(i);
 
                     if ((item.IsVanilla() && !VanillaBossBags.Contains(item.type))
-                    || (item.ModItem != null && item.ModItem.BossBagNPC == 0)) // 0 is the default
+                    || (item.ModItem != null && !ItemID.Sets.BossBag[item.type] == true)) // item.ModItem.BossBagNPC == 0) Obsolete // 0 is the default
                         continue;
 
                     Player dummy = new Player();
@@ -93,11 +94,39 @@ namespace PboneUtils
                             if (item.IsVanilla())
                             {
                                 dummy.OpenBossBag(item.type);
-                                ItemLoader.OpenVanillaBag("bossBag", dummy, item.type);
+                                // ItemLoader.OpenVanillaBag("bossBag", dummy, item.type); // Obsolete
+
+                                // Note from Rijam:
+                                // dummy.OpenBossBag(item.type) and maybe dummy.DropFromItem(item.type) seems to be the only things that do anything.
+                                // But, for some reason, some of the bags still have no value.
+                                // The ones that do have a value are way too low (a few silver when it should be many gold for example).
+                                // Below are some of the other things that I tried.
+
+                                dummy.DropFromItem(item.type);
+                                
+                                /*
+                                DropAttemptInfo info = new()
+                                {
+                                    player = dummy,
+                                    item = item.type,
+                                    IsExpertMode = Main.expertMode,
+                                    IsMasterMode = Main.masterMode,
+                                    IsInSimulation = false, // Tried true too
+                                    rng = Main.rand,
+                                };
+                                */
+                                // Main.ItemDropSolver.TryDropping(info);
+                                // CommonCode.DropItem(info, item.type, 1);
+                                // ItemDropRule.BossBag(item.type);
+                                // ItemLoader.ModifyItemLoot(item, new ItemLoot(item.type, new ItemDropDatabase()));
+                                // item.ModItem.ModifyItemLoot(new ItemLoot(item.type, (ItemDropDatabase)ItemDropRule.BossBag(item.type)));
                             }
                             else // Modded
                             {
-                                item.ModItem.OpenBossBag(dummy);
+                                //item.ModItem.OpenBossBag(dummy); // Obsolete
+
+                                dummy.OpenBossBag(item.type);
+                                dummy.DropFromItem(item.type);
                             }
                         }
                         catch (Exception e)
@@ -106,7 +135,6 @@ namespace PboneUtils
                             PboneUtils.Log.Debug("Skipping bag...");
                         }
                     }
-
                     AveragedValues.Add(item.type, (int)TempInfo.GetAverageValue());
                 }
 
