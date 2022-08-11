@@ -25,7 +25,7 @@ namespace PboneUtils.Buffs
             Main.SceneMetrics.HasStarInBottle = true;
 
             // Sunflower
-            Main.SceneMetrics.HasHeartLantern = true;
+            Main.SceneMetrics.HasSunflower = true;
 
             // Honey
             player.honey = true;
