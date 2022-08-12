@@ -7,7 +7,7 @@ Bugs
 - Fixed infinite bait items being consumed.
 - Obsidian sold by the Miner now costs 5 silver instead of no value.
 - Corrected the tooltip on the Miner's Emblem saying 25% speed when it was actually 15% (Creator's Emblem is still 25%).
-- Fixed the Buff Brazier not giving the Star in a Bottle buff.
+- Fixed the Buff Brazier not giving the Star in a Bottle and Sunflower buff.
 - Fixed the Preparation Station not giving the Sharpening Station buff correctly.
 - Added a sound when using the Preparation Station.
 - Fixed Greedy Chest not working.
