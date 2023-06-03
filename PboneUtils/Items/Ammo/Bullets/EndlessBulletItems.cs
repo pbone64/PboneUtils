@@ -12,7 +12,12 @@ namespace PboneUtils.Items.Ammo.Bullets
         public override int BaseAmmo => ItemID.SilverBullet;
     }
 
-    public class EndlessCrystalBullet : EndlessAmmoItem
+    public class EndlessTungstenBullet : EndlessAmmoItem
+    {
+        public override int BaseAmmo => ItemID.TungstenBullet;
+    }
+
+	public class EndlessCrystalBullet : EndlessAmmoItem
     {
         public override int BaseAmmo => ItemID.CrystalBullet;
     }

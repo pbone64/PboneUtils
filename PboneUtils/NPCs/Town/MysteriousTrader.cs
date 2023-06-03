@@ -20,7 +20,9 @@ namespace PboneUtils.NPCs.Town
             "Verboten", "Thooloo", "Uri", "Sellatron", "Indigo", "Steve"
         };
 
-        public override void SetStaticDefaults()
+		private static readonly string Shop1 = "Shop1";
+
+		public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = Main.npcFrameCount[NPCID.Merchant];
             NPCID.Sets.ExtraFramesCount[NPC.type] = NPCID.Sets.ExtraFramesCount[NPCID.Merchant];
@@ -74,7 +76,7 @@ namespace PboneUtils.NPCs.Town
             Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreLeg").Type, 1f);
         }
 
-	public override bool CanTownNPCSpawn(int numTownNPCs, int money) => false;
+	public override bool CanTownNPCSpawn(int numTownNPCs) => false;
         public override bool CanGoToStatue(bool toKingStatue) => false;
         public override List<string> SetNPCNameList() => Names;
 
@@ -91,30 +93,56 @@ namespace PboneUtils.NPCs.Town
             return chats.Get();
         }
 
-        public override void OnChatButtonClicked(bool firstButton, ref bool shop) => shop = true;
+        public override void OnChatButtonClicked(bool firstButton, ref string shop) => shop = Shop1;
         public override void SetChatButtons(ref string button, ref string button2)
         {
             button = Language.GetTextValue("LegacyInterface.28");
         }
 
-        public override void SetupShop(Chest shop, ref int nextSlot)
-        {
-            base.SetupShop(shop, ref nextSlot);
+		public override void AddShops()
+		{
+			base.AddShops();
 
-            try
-            {
-                foreach (int i in PboneWorld.MysteriousTraderShop)
-                {
-                    shop.AddShopItem(i, ref nextSlot);
-                }
-            }
-            catch (NullReferenceException)
-            {
-                PboneUtils.Log.Warn("NullRef when trying to populate mysterious trader shop!");
-            }
-        }
+            NPCShop npcShop = new NPCShop(Type, Shop1);
 
-        public override void TownNPCAttackStrength(ref int damage, ref float knockback)
+            npcShop.Register();
+
+		}
+
+		public override void ModifyActiveShop(string shopName, Item[] items)
+		{
+			base.ModifyActiveShop(shopName, items);
+
+            // Kind of a hacky way to add items to the shop without registering them.
+
+            int i = 0;
+            foreach (Item item in items)
+            {
+				if (item is not null)
+				{
+					continue;
+				}
+
+				try
+				{
+                    if (i < PboneWorld.MysteriousTraderShop.Count)
+                    {
+                        items[i] = new Item(PboneWorld.MysteriousTraderShop[i]);
+                        i++;
+                    }
+                    else
+                    {
+						break;
+                    }
+				}
+				catch (NullReferenceException)
+				{
+					PboneUtils.Log.Warn("NullRef when trying to populate mysterious trader shop!");
+				}
+			}
+		}
+
+		public override void TownNPCAttackStrength(ref int damage, ref float knockback)
         {
             if (NPC.downedMoonlord)
                 damage = 65;

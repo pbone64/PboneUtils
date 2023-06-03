@@ -24,6 +24,8 @@ namespace PboneUtils.NPCs.Town
             "Durin", "Armok", "Tarn", "Asmel", "Doren", "Ber", "Datan"
         };
 
+        private static readonly string Shop1 = "Shop1";
+
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = Main.npcFrameCount[NPCID.Merchant];
@@ -93,7 +95,7 @@ namespace PboneUtils.NPCs.Town
             }
         }
 
-        public override bool CanTownNPCSpawn(int numTownNPCs, int money) => NPC.downedBoss2 && ModContent.GetInstance<PboneUtilsConfig>().Miner;
+        public override bool CanTownNPCSpawn(int numTownNPCs) => NPC.downedBoss2 && ModContent.GetInstance<PboneUtilsConfig>().Miner;
         public override bool CanGoToStatue(bool toKingStatue) => toKingStatue;
         public override ITownNPCProfile TownNPCProfile() => new MinerProfile();
         public override List<string> SetNPCNameList() => Names;
@@ -114,88 +116,48 @@ namespace PboneUtils.NPCs.Town
             return chats;
         }
 
-        public override void OnChatButtonClicked(bool firstButton, ref bool shop) => shop = true;
+        public override void OnChatButtonClicked(bool firstButton, ref string shop) => shop = Shop1;
         public override void SetChatButtons(ref string button, ref string button2)
         {
             button = Language.GetTextValue("LegacyInterface.28");
         }
 
-        public override void SetupShop(Chest shop, ref int nextSlot)
-        {
-            base.SetupShop(shop, ref nextSlot);
+		public override void AddShops()
+		{
+            base.AddShops();
 
-            shop.AddShopItem(ItemID.CopperOre, ref nextSlot);
-            shop.AddShopItem(ItemID.TinOre, ref nextSlot);
-            shop.AddShopItem(ItemID.IronOre, ref nextSlot);
-            shop.AddShopItem(ItemID.LeadOre, ref nextSlot);
-            shop.AddShopItem(ItemID.SilverOre, ref nextSlot);
-            shop.AddShopItem(ItemID.TungstenOre, ref nextSlot);
-            shop.AddShopItem(ItemID.GoldOre, ref nextSlot);
-            shop.AddShopItem(ItemID.PlatinumOre, ref nextSlot);
+            Condition downedMechBossesGreaterThan(int number) => new(Language.GetTextValue("Mods.PboneUils.Conditions.DownedMechBossesGreaterThan", number), () => (NPC.downedBoss1.ToInt() + NPC.downedBoss2.ToInt() + NPC.downedBoss3.ToInt()) > number);
 
-            if (NPC.downedBoss3)
-            {
-                shop.AddShopItem(ItemID.DemoniteOre, ref nextSlot);
-                shop.AddShopItem(ItemID.CrimtaneOre, ref nextSlot);
-            }
-
-            if (Main.hardMode)
-            {
-                //shop.AddShopItem(ItemID.Obsidian, ref nextSlot);
-                shop.item[nextSlot].SetDefaults(ItemID.Obsidian);
-                shop.item[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                shop.AddShopItem(ItemID.Hellstone, ref nextSlot);
-            }
-
-            if (Main.hardMode)
-            {
-                int downedMechBosses = 0;
-                if (NPC.downedMechBoss1) downedMechBosses++;
-                if (NPC.downedMechBoss2) downedMechBosses++;
-                if (NPC.downedMechBoss3) downedMechBosses++;
-
-                if (downedMechBosses > -1)
-                {
-                    shop.AddShopItem(ItemID.CobaltOre, ref nextSlot);
-                    shop.AddShopItem(ItemID.PalladiumOre, ref nextSlot);
-                }
-                if (downedMechBosses > 0)
-                {
-                    shop.AddShopItem(ItemID.MythrilOre, ref nextSlot);
-                    shop.AddShopItem(ItemID.OrichalcumOre, ref nextSlot);
-                }
-                if (downedMechBosses > 1)
-                {
-                    shop.AddShopItem(ItemID.AdamantiteOre, ref nextSlot);
-                    shop.AddShopItem(ItemID.TitaniumOre, ref nextSlot);
-                }
-                if (downedMechBosses > 2)
-                    shop.AddShopItem(ItemID.HallowedBar, ref nextSlot);
-
-                if (NPC.downedPlantBoss)
-                    shop.AddShopItem(ItemID.ChlorophyteOre, ref nextSlot);
-
-                if (NPC.downedGolemBoss)
-                {
-                    shop.AddShopItem(ItemID.ShroomiteBar, ref nextSlot);
-                    shop.AddShopItem(ItemID.SpectreBar, ref nextSlot);
-                }
-            }
-
-            shop.AddShopItem(ItemID.Amethyst, ref nextSlot);
-            shop.AddShopItem(ItemID.Topaz, ref nextSlot);
-            shop.AddShopItem(ItemID.Sapphire, ref nextSlot);
-            shop.AddShopItem(ItemID.Emerald, ref nextSlot);
-
-            if (NPC.downedBoss3)
-            {
-                shop.AddShopItem(ItemID.Ruby, ref nextSlot);
-                shop.AddShopItem(ItemID.Diamond, ref nextSlot);
-            }
-
-            if (Main.hardMode)
-                shop.AddShopItem(ItemID.Amber, ref nextSlot);
+            NPCShop npcShop = new NPCShop(Type, Shop1)
+                .Add(ItemID.CopperOre)
+                .Add(ItemID.TinOre)
+                .Add(ItemID.IronOre)
+                .Add(ItemID.LeadOre)
+                .Add(ItemID.SilverOre)
+                .Add(ItemID.TungstenOre)
+                .Add(ItemID.GoldOre)
+                .Add(ItemID.PlatinumOre)
+                .Add(ItemID.DemoniteOre, Condition.DownedSkeletron)
+                .Add(ItemID.CrimtaneOre, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.Obsidian) { shopCustomPrice = 500 }, Condition.Hardmode)
+                .Add(ItemID.CobaltOre, Condition.Hardmode, downedMechBossesGreaterThan(-1))
+                .Add(ItemID.PalladiumOre, Condition.Hardmode, downedMechBossesGreaterThan(-1))
+                .Add(ItemID.MythrilOre, Condition.Hardmode, downedMechBossesGreaterThan(0))
+                .Add(ItemID.OrichalcumOre, Condition.Hardmode, downedMechBossesGreaterThan(0))
+                .Add(ItemID.AdamantiteOre, Condition.Hardmode, downedMechBossesGreaterThan(1))
+                .Add(ItemID.TitaniumOre, Condition.Hardmode, downedMechBossesGreaterThan(1))
+                .Add(ItemID.HallowedBar, Condition.Hardmode, downedMechBossesGreaterThan(2))
+                .Add(ItemID.ChlorophyteOre, Condition.Hardmode, Condition.DownedPlantera)
+                .Add(ItemID.ShroomiteBar, Condition.Hardmode, Condition.DownedGolem)
+                .Add(ItemID.SpectreBar, Condition.Hardmode, Condition.DownedGolem)
+                .Add(ItemID.Amethyst)
+                .Add(ItemID.Topaz)
+                .Add(ItemID.Sapphire)
+                .Add(ItemID.Emerald)
+                .Add(ItemID.Ruby, Condition.DownedSkeletron)
+                .Add(ItemID.Diamond, Condition.DownedSkeletron)
+                .Add(ItemID.Amber, Condition.Hardmode);
+            npcShop.Register();
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -223,10 +185,11 @@ namespace PboneUtils.NPCs.Town
             itemWidth = itemHeight = 32;
         }
 
-        public override void DrawTownAttackSwing(ref Texture2D item, ref int itemSize, ref float scale, ref Vector2 offset)
-        {
-            base.DrawTownAttackSwing(ref item, ref itemSize, ref scale, ref offset);
-            item = PboneUtils.Textures["MinerAttack"];
+		public override void DrawTownAttackSwing(ref Texture2D item, ref Rectangle itemFrame, ref int itemSize, ref float scale, ref Vector2 offset)
+		{
+            Texture2D attackTexture = PboneUtils.Textures["MinerAttack"];
+			item = attackTexture;
+            itemFrame = attackTexture.Bounds;
             itemSize = 32;
         }
     }

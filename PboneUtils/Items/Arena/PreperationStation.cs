@@ -21,7 +21,7 @@ namespace PboneUtils.Items.Arena
 
         public override void AddRecipes()
         {
-            CreateRecipe(1).AddIngredient(ItemID.SharpeningStation, 5).AddIngredient(ItemID.AmmoBox, 5).AddIngredient(ItemID.CrystalBall, 5).AddIngredient(ItemID.BewitchingTable, 5).Register();
+            CreateRecipe(1).AddIngredient(ItemID.SharpeningStation, 5).AddIngredient(ItemID.AmmoBox, 5).AddIngredient(ItemID.CrystalBall, 5).AddIngredient(ItemID.BewitchingTable, 5).AddIngredient(ItemID.WarTable, 2).Register();
         }
     }
 }

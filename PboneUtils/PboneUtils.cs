@@ -21,7 +21,7 @@ namespace PboneUtils
 {
     public partial class PboneUtils : Mod
     {
-        public override uint ExtraPlayerBuffSlots => (uint)PboneUtilsConfig.Instance.ExtraBuffSlots;
+        //public override uint ExtraPlayerBuffSlots => (uint)PboneUtilsConfig.Instance.ExtraBuffSlots;
 
         public static PboneUtils Instance => ModContent.GetInstance<PboneUtils>();
         public static ILog Log => Instance.Logger;
@@ -63,7 +63,7 @@ namespace PboneUtils
             // Custom loading
             CustomModLoader modLoader = new(this);
 
-            CustomLocalizationLoader localizationLoader = new(LocalizationLoader.AddTranslation);
+            //CustomLocalizationLoader localizationLoader = new(LocalizationLoader.AddTranslation);
 
             CustomContentLoader configLoader = new(new(content => {
                 PConfig config = content.Content as PConfig;

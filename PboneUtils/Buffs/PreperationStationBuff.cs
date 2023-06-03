@@ -9,6 +9,7 @@ namespace PboneUtils.Buffs
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
+            Main.buffNoTimeDisplay[Type] = true;
         }
 
         public override void Update(Player player, ref int buffIndex)
@@ -30,11 +31,15 @@ namespace PboneUtils.Buffs
             // Bewitching Table
             player.maxMinions += 1;
 
+            // War Table
+            player.maxTurrets += 1;
+
             // Disable other buffs
             player.buffImmune[BuffID.Sharpened] = true;
             player.buffImmune[BuffID.AmmoBox] = true;
             player.buffImmune[BuffID.Clairvoyance] = true;
             player.buffImmune[BuffID.Bewitched] = true;
+            player.buffImmune[BuffID.WarTable] = true;
         }
     }
 }

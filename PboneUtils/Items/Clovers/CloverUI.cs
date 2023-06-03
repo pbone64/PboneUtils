@@ -1,4 +1,5 @@
-﻿using PboneLib.CustomLoading.Content.Implementations.Misc;
+﻿using Microsoft.Xna.Framework;
+using PboneLib.CustomLoading.Content.Implementations.Misc;
 using Terraria;
 
 namespace PboneUtils.Items.Clovers
@@ -8,7 +9,7 @@ namespace PboneUtils.Items.Clovers
         public abstract int CloverUIId { get; }
 
         // A custom method is required, because the vanilla luck value just doesn't work
-        public override string DisplayValue() => Main.LocalPlayer.GetModPlayer<CloverPlayer>().CalculateLuck().ToString();
+        public override string DisplayValue(ref Color color) => Main.LocalPlayer.GetModPlayer<CloverPlayer>().CalculateLuck().ToString();
         public override string Texture => "PboneUtils/Items/Clovers/CloverUI_" + CloverUIId;
 
         public override bool Active() => Main.LocalPlayer.GetModPlayer<CloverPlayer>().CloverMode == CloverUIId;

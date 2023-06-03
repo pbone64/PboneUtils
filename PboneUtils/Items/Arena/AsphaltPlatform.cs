@@ -20,7 +20,7 @@ namespace PboneUtils.Items.Arena
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 200;
+			Item.ResearchUnlockCount = 200;
         }
 
         public override void AddRecipes()

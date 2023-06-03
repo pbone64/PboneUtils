@@ -45,9 +45,9 @@ namespace PboneUtils.DataStructures.MysteriousTrader
             const float LegendaryChance = 0.1f;
 
             //int numNonUnique = Main.rand.Next(NonUniqueMin, NonUniqueMax + 1);
-            int numCommon = Main.rand.Next(CommonMin, CommonMax + 1) + (Main.hardMode ? 1 : 0) + (Main.expertMode ? 1 : 0);
-            int numRare = Rare + (Main.hardMode ? 1 : 0);
-            bool legendary = Main.rand.NextFloat() < LegendaryChance;
+            int numCommon = Main.rand.Next(CommonMin, CommonMax + 1) + (Main.hardMode ? 1 : 0) + (Main.expertMode ? 1 : 0) + (NPC.peddlersSatchelWasUsed ? 1 : 0);
+            int numRare = Rare + (Main.hardMode ? 1 : 0) + (NPC.peddlersSatchelWasUsed ? 1 : 0);
+            bool legendary = Main.rand.NextFloat() < (LegendaryChance + (NPC.peddlersSatchelWasUsed ? 0.1f : 0f));
 
             int extraChancesInCaseOfFaliure = 8;
 

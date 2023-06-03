@@ -33,7 +33,7 @@ namespace PboneUtils.Tiles
             };
             TileObjectData.addTile(Type);
 
-            ModTranslation name = CreateMapEntryName();
+            LocalizedText name = CreateMapEntryName();
             AddMapEntry(Color.DarkGray, name);
             DustType = DustID.Stone;
 

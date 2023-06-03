@@ -25,10 +25,13 @@ namespace PboneUtils.Buffs
             Main.SceneMetrics.HasStarInBottle = true;
 
             // Sunflower
-            Main.SceneMetrics.HasSunflower = true;
+            Main.SceneMetrics.HasHeartLantern = true;
 
             // Honey
             player.honey = true;
+
+            // Bast Statue
+            player.statDefense += 5;
 
             // Disable other buffs
             player.buffImmune[BuffID.Campfire] = true;
@@ -36,6 +39,7 @@ namespace PboneUtils.Buffs
             player.buffImmune[BuffID.StarInBottle] = true;
             player.buffImmune[BuffID.Sunflower] = true;
             player.buffImmune[BuffID.Honey] = true;
+            player.buffImmune[BuffID.CatBast] = true;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using PboneLib.CustomLoading.Content.Implementations.Globals;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -11,11 +12,14 @@ namespace PboneUtils.Items.CellPhoneApps
     public partial class AppGlobalItem : PGlobalItem
     {
         public override bool InstancePerEntity => true;
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation) => entity.type == ItemID.CellPhone;
+        public override bool AppliesToEntity(Item entity, bool lateInstantiation) => PhoneItems.Contains(entity.type);
 
         public List<(int item, string appId)> Apps = new List<(int, string)>();
 
-        public override GlobalItem Clone(Item item, Item itemClone)
+        // Shellphone already has right click functionality which changes its destination.
+        public static List<int> PhoneItems = new() { ItemID.CellPhone }; //, ItemID.Shellphone, ItemID.ShellphoneSpawn, ItemID.ShellphoneHell, ItemID.ShellphoneOcean }; // No ShellphoneDummy
+
+		public override GlobalItem Clone(Item item, Item itemClone)
         {
             AppGlobalItem gItem = base.Clone(item, itemClone) as AppGlobalItem;
             gItem.Apps = Apps;
@@ -25,7 +29,7 @@ namespace PboneUtils.Items.CellPhoneApps
 
         public override void SaveData(Item item, TagCompound tag)
         {
-            if (item.type == ItemID.CellPhone)
+            if (PhoneItems.Contains(item.type))
             {
                 tag.Add("AppCount", Apps.Count);
 
@@ -41,7 +45,7 @@ namespace PboneUtils.Items.CellPhoneApps
 
         public override void LoadData(Item item, TagCompound tag)
         {
-            if (item.type == ItemID.CellPhone)
+            if (PhoneItems.Contains(item.type))
             {
                 Apps.Clear();
 
@@ -61,7 +65,7 @@ namespace PboneUtils.Items.CellPhoneApps
 
         public override bool CanRightClick(Item item)
         {
-            if (item.type == ItemID.CellPhone)
+            if (PhoneItems.Contains(item.type))
                 return Main.mouseItem.ModItem is AppItem app && !Apps.Contains((app.BaseID, app.AppName));
 
             return base.CanRightClick(item);
@@ -71,7 +75,7 @@ namespace PboneUtils.Items.CellPhoneApps
         {
             base.RightClick(item, player);
 
-            if (item.type == ItemID.CellPhone)
+            if (PhoneItems.Contains(item.type))
             {
                 if (Main.mouseItem.ModItem is AppItem app)
                 {
@@ -86,7 +90,7 @@ namespace PboneUtils.Items.CellPhoneApps
 
         public override bool ConsumeItem(Item item, Player player)
         {
-            if (item.type == ItemID.CellPhone)
+            if (PhoneItems.Contains(item.type))
                 return false;
 
             return base.ConsumeItem(item, player);
@@ -95,7 +99,7 @@ namespace PboneUtils.Items.CellPhoneApps
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
             base.ModifyTooltips(item, tooltips);
-            if (item.type == ItemID.CellPhone)
+            if (PhoneItems.Contains(item.type))
             {
                 tooltips.Add(new TooltipLine(Mod, "PboneUtils:CellPhoneInfo", Language.GetTextValue("Mods.PboneUtils.Common.CellPhoneInfo")));
 
@@ -110,7 +114,7 @@ namespace PboneUtils.Items.CellPhoneApps
 
         public override bool AltFunctionUse(Item item, Player player)
         {
-            if (item.type == ItemID.CellPhone)
+            if (PhoneItems.Contains(item.type))
                 return Apps.Contains((ItemID.TeleportationPotion, "Teleportation"));
 
             return base.AltFunctionUse(item, player);
@@ -118,7 +122,7 @@ namespace PboneUtils.Items.CellPhoneApps
 
         public override bool? UseItem(Item item, Player player)
         {
-            if (item.type == ItemID.CellPhone && player.altFunctionUse == 2 && Apps.Contains((ItemID.TeleportationPotion, "Teleportation")))
+            if (PhoneItems.Contains(item.type) && player.altFunctionUse == 2 && Apps.Contains((ItemID.TeleportationPotion, "Teleportation")))
             {
                 player.TeleportationPotion();
                 return true;

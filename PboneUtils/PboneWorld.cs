@@ -34,7 +34,7 @@ namespace PboneUtils
             base.PostUpdateWorld();
             if (SuperFastTime)
             {
-                Main.fastForwardTime = true;
+                Main.fastForwardTimeToDawn = true;
 
                 if (Main.netMode == NetmodeID.Server)
                     NetMessage.SendData(MessageID.WorldData);
@@ -123,7 +123,7 @@ namespace PboneUtils
             MysteriousTraderShop = new List<int>();
         }
 
-        public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
+		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
         {
             base.ModifyWorldGenTasks(tasks, ref totalWeight);
             ModWorldGen = new ModWorldgenManager();
