@@ -1,5 +1,4 @@
-﻿using System.Reflection.Metadata;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 
 namespace PboneUtils.Buffs
