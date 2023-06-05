@@ -6,6 +6,7 @@ Version 1.2.17 Changes ---------------------------------------------------------
 - Buff Brazier now includes the Bast Statue.
 - Preparation Station now includes the War Table.
 - Preparation Station buff now lasts until death.
+- The Mysterious Trader will now sell an addition item if the Peddler's Satchel was used.
 
 Version 1.2.16 Changes ------------------------------------------------------------------------------------------
 Bandaid Update

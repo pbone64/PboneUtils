@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using System.Reflection.Metadata;
+using Terraria;
 using Terraria.ID;
 
 namespace PboneUtils.Buffs
@@ -25,13 +26,13 @@ namespace PboneUtils.Buffs
             Main.SceneMetrics.HasStarInBottle = true;
 
             // Sunflower
-            Main.SceneMetrics.HasHeartLantern = true;
+            Main.SceneMetrics.HasSunflower = true;
 
             // Honey
             player.honey = true;
 
             // Bast Statue
-            player.statDefense += 5;
+            Main.SceneMetrics.HasCatBast = true;
 
             // Disable other buffs
             player.buffImmune[BuffID.Campfire] = true;
