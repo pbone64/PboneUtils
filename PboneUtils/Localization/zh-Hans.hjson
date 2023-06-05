@@ -785,7 +785,8 @@ Mods: {
 			}
 		}
 
-		// "Keybind.Terraforming:_Scroll_Mode": Terraforming: Scroll Mode
+		// Keybind.Terraforming._Scroll_Mode.DisplayName: Terraforming: Scroll Mode
+		// "Keybinds.Terraforming: Scroll Mode.DisplayName": Terraforming: Scroll Mode
 
 		Projectiles: {
 			// GreaterStaffOfRegrowthPro.DisplayName: Greater Staff Of Regrowth Pro
@@ -795,8 +796,6 @@ Mods: {
 			// GigaxeHoldout.DisplayName: Gigaxe Holdout
 			// TerraformerBrushPreview.DisplayName: Terraformer Brush Preview
 		}
-
-		// "Keybinds.Terraforming: Scroll Mode.DisplayName": Mods.PboneUtils.Keybinds.Terraforming: Scroll Mode.DisplayName
 
 		# Keys pointing to keys for that extra jank factor. That way I don't have to update the old or Chinese localization.
 		Configs: {
