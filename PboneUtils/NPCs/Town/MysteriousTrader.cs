@@ -20,7 +20,7 @@ namespace PboneUtils.NPCs.Town
             "Verboten", "Thooloo", "Uri", "Sellatron", "Indigo", "Steve"
         };
 
-		private static readonly string Shop1 = "Shop1";
+        private static readonly string Shop1 = "Shop1";
 
 		public override void SetStaticDefaults()
         {
@@ -66,14 +66,17 @@ namespace PboneUtils.NPCs.Town
             });
         }
 
-	public override void OnKill()
-	{
-            Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreHead").Type, 1f);
-            for (int i = 0; i < 2; i++)
+        public override void HitEffect(NPC.HitInfo hit)
+        {
+            if (Main.netMode != NetmodeID.Server && NPC.life <= 0)
             {
-                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreArm").Type, 1f);
+				Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreHead").Type, 1f);
+                for (int i = 0; i < 2; i++)
+                {
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreArm").Type, 1f);
+                }
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreLeg").Type, 1f);
             }
-            Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, ModContent.Find<ModGore>(Mod.Name + "/" + Name + "_GoreLeg").Type, 1f);
         }
 
 	public override bool CanTownNPCSpawn(int numTownNPCs) => false;

@@ -493,7 +493,7 @@ Mods: {
 			}
 		}
 
-		Conditions.DownedMechBossesGreaterThan: After defeating {0} Mechanical Bosses
+		Conditions.DownedMechBosses: After defeating {0} Mechanical Bosses
 
 		TownChat: {
 			MysteriousTrader: {
@@ -713,13 +713,6 @@ Mods: {
 					Enable or disable a simple recipe for the Petrified Safe
 					(By default, Petrified Safes generate in the underworld during world generation)
 					'''
-			}
-		}
-
-		Census: {
-			Description: {
-				Miner: Defeat Eater of Worlds/Brain of Cthulhu
-				MysteriousTrader: Randomly arrives in the morning and leaves at night, after King Slime or Eye of Cthulhu
 			}
 		}
 

@@ -489,7 +489,7 @@ Mods: {
 			}
 		}
 
-		// Conditions.DownedMechBossesGreaterThan: After defeating {0} Mechanical Bosses
+		// Conditions.DownedMechBosses: After defeating {0} Mechanical Bosses
 
 		TownChat: {
 			MysteriousTrader: {
@@ -705,13 +705,6 @@ Mods: {
 					启用或禁用石化保险箱的简易配方
 					(默认情况下, 石化保险箱生成于地下)
 					'''
-			}
-		}
-
-		Census: {
-			Description: {
-				Miner: 击败世界吞噬者或克苏鲁之脑
-				MysteriousTrader: 击败史莱姆王或克苏鲁之眼后, 在随机的某天早上到达并在当天晚上离开
 			}
 		}
 
