@@ -39,7 +39,7 @@ namespace PboneUtils.Items
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+			Item.ResearchUnlockCount = 1;
         }
 
         public override void HoldItem(Player player)

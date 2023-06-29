@@ -19,7 +19,8 @@ namespace PboneUtils.DataStructures
             { "Liquid", new ItemConfig(true, true,
                 ("Water", true),
                 ("Lava", false),
-                ("Honey", false)) },
+                ("Honey", false),
+                ("Shimmer", false)) },
 
             { "Light", new ItemConfig(true, false,
                 ("Red", false),

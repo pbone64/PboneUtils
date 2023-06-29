@@ -61,4 +61,9 @@ namespace PboneUtils.Items.Ammo.Arrows
     {
         public override int BaseAmmo => ItemID.MoonlordArrow;
     }
+
+    public class EndlessShimmerArrow : EndlessAmmoItem
+    {
+        public override int BaseAmmo => ItemID.ShimmerArrow;
+    }
 }

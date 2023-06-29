@@ -8,6 +8,7 @@ using PboneUtils.MiscModsPlayers;
 using Terraria.GameContent.Bestiary;
 using PboneUtils.Items.Clovers;
 using PboneLib.CustomLoading.Content.Implementations.Globals;
+using Terraria.Localization;
 
 namespace PboneUtils.NPCs
 {
@@ -34,31 +35,23 @@ namespace PboneUtils.NPCs
             }
         }
 
-		public override void SetupShop(int type, Chest shop, ref int nextSlot)
-        {
-            switch (type)
+		public override void ModifyShop(NPCShop shop)
+		{
+            if (shop.NpcType == NPCID.ArmsDealer)
             {
-                case NPCID.Wizard:
-                    if (PboneUtilsConfig.Instance.PhilosophersStoneToggle)
-                    {
-                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<PhilosophersStone>());
-                        nextSlot++;
-                    }
-                    break;
-
-                case NPCID.BestiaryGirl:
-                    if (PboneUtilsConfig.Instance.CloversToggle)
-                    {
-                        BestiaryUnlockProgressReport bestiaryProgressReport = Main.GetBestiaryProgressReport();
-
-                        if (bestiaryProgressReport.CompletionPercent >= 0.07f)
-                        {
-                            shop.item[nextSlot].SetDefaults(ModContent.ItemType<FourLeafClover>());
-                            nextSlot++;
-                        }
-                    }
-                    break;
+                if (PboneUtilsConfig.Instance.PhilosophersStoneToggle)
+                {
+                    shop.Add(ModContent.ItemType<PhilosophersStone>());
+                }
             }
+			if (shop.NpcType == NPCID.BestiaryGirl)
+			{
+				if (PboneUtilsConfig.Instance.CloversToggle)
+				{
+					shop.Add(ModContent.ItemType<FourLeafClover>(), new Condition(Language.GetText("Conditions.BestiaryPercentage").WithFormatArgs(7),
+					    () => Main.GetBestiaryProgressReport().CompletionPercent >= 0.07f));
+				}
+			}
         }
 
         public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)

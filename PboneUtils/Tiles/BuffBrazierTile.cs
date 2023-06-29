@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using PboneUtils.Buffs;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
@@ -12,7 +13,8 @@ namespace PboneUtils.Tiles
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            Main.tileFrameImportant[Type] = true;
+			ItemID.Sets.DisableAutomaticPlaceableDrop[Type] = true;
+			Main.tileFrameImportant[Type] = true;
 			Main.tileLighted[Type] = true;
 
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2);

@@ -8,9 +8,9 @@ namespace PboneUtils.Items.Liquid
 {
     public class SuperSweetSponge : PboneUtilsItem
     {
-        public override bool LoadCondition() => PboneUtilsConfig.Instance.LiquidItemsToggle;
-        public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<PboneUtilsConfig>().LiquidItemsToggle;
-        public override bool ShowItemIconWhenInRange => true;
+        public override bool LoadCondition() => false;
+        public override bool IsLoadingEnabled(Mod mod) => false; // Replaced with vanilla item
+		public override bool ShowItemIconWhenInRange => true;
 
         public override void SetDefaults()
         {
@@ -31,7 +31,7 @@ namespace PboneUtils.Items.Liquid
             {
                 if (player.IsTargetTileInItemRange(Item))
                 {
-                    if (LiquidHelper.DrainLiquid(Player.tileTargetX, Player.tileTargetY, LiquidID.Honey))
+                    if (LiquidHelper.DrainLiquid(Player.tileTargetX, Player.tileTargetY, (byte)LiquidID.Honey))
                     {
                         SoundEngine.PlaySound(SoundID.Splash, player.position);
                         return true;

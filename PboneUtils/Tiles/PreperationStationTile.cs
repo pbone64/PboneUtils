@@ -14,7 +14,8 @@ namespace PboneUtils.Tiles
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            Main.tileFrameImportant[Type] = true;
+			ItemID.Sets.DisableAutomaticPlaceableDrop[Type] = true;
+			Main.tileFrameImportant[Type] = true;
 
             TileID.Sets.HasOutlines[Type] = true;
 
@@ -29,7 +30,7 @@ namespace PboneUtils.Tiles
         public override bool RightClick(int i, int j)
         {
             SoundEngine.PlaySound(SoundID.Item45);
-            Main.LocalPlayer.AddBuff(ModContent.BuffType<PreperationStationBuff>(), 1800 * 60); // 30 minutes
+            Main.LocalPlayer.AddBuff(ModContent.BuffType<PreperationStationBuff>(), int.MaxValue);
             return true;
         }
     }

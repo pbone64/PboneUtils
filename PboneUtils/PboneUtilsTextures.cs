@@ -21,6 +21,7 @@ namespace PboneUtils
             ["IconWater"] = GetRadialPath("Water"),
             ["IconLava"] = GetRadialPath("Lava"),
             ["IconHoney"] = GetRadialPath("Honey"),
+            ["IconShimmer"] = GetRadialPath("Shimmer"),
 
             // Light
             ["Light"] = GetRadialPath("Light"),

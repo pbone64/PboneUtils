@@ -22,7 +22,7 @@ namespace PboneUtils.Items.Arena
 
         public override void AddRecipes()
         {
-            CreateRecipe(1).AddIngredient(ItemID.Campfire, 10).AddIngredient(ItemID.HeartLantern, 10).AddIngredient(ItemID.StarinaBottle, 10).AddIngredient(ItemID.Sunflower, 15).AddIngredient(ItemID.BottledHoney, 15).Register();
+            CreateRecipe(1).AddIngredient(ItemID.Campfire, 10).AddIngredient(ItemID.HeartLantern, 10).AddIngredient(ItemID.StarinaBottle, 10).AddIngredient(ItemID.Sunflower, 15).AddIngredient(ItemID.BottledHoney, 15).AddIngredient(ItemID.CatBast, 3).Register();
         }
     }
 }

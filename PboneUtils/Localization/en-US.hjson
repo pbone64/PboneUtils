@@ -1,313 +1,992 @@
 Mods: {
 	PboneUtils: {
-		ItemName: {
-			PetrifiedSafe: "Petrified Safe"
-			DefendersCrystal: "Defender's Crystal"
-			BottomlessHoneyBucket: "Bottomless Honey Bucket"
-			SuperSweetSponge: "Sponge Cake"
-			BottomlessLavaBucket: "Bottomless Lava Bucket"
-			HeatAbsorbantSponge: "Heat Absorbant Sponge"
-			LiquidCombo: "The Master Plan"
-			DeluxeTreasureMagnet: "Deluxe Treasure Magnet"
-			HallowedMagnet: "Hallowed Treasure Magnet"
-			SpectreTreasureMagnet: "Spectre Treasure Magnet" 
-			RunicTreasureMagnet: "Runic Treasure Magnet"
-			MoonLordTreasureMagnet: "Eldritch Treasure Magnet"
-			FluxCapacitor: "Flux Capacitor"
-			AmuletOfRain: "Amulet of Rain"
-			AmuletOfSandstorms: "Amulet of Sandstorms"
-			EndlessFlamingArrow: "Endless Flaming Quiver"
-			EndlessUnholyArrow: "Endless Unholy Quiver"
-			EndlessJesterArrow: "Endless Jester's Quiver"
-			EndlessHellfireArrow: "Endless Hellfire Quiver"
-			EndlessHolyArrow: "Endless Holy Quiver"
-			EndlessCursedArrow: "Endless Cursed Quiver"
-			EndlessFrostburnArrow: "Endless Frostburn Quiver"
-			EndlessChlorophyteArrow: "Endless Chlorophyte Quiver"
-			EndlessIchorArrow: "Endless Ichor Quiver"
-			EndlessVenomArrow: "Endless Venom Quiver"
-			EndlessBoneArrow: "Endless Bone Quiver"
-			EndlessLuminiteArrow: "Endless Luminite Quiver"
-			EndlessMeteorShot: "Endless Meteor Pouch"
-			EndlessSilverBullet: "Endless Silver Pouch"
-			EndlessCrystalBullet: "Endless Crystal Pouch"
-			EndlessCursedBullet: "Endless Cursed Pouch"
-			EndlessChlorophyteBullet: "Endless Chlorophyte Pouch"
-			EndlessHighVelocityBullet: "Endless High Velocity Pouch"
-			EndlessIchorBullet: "Endless Ichor Pouch"
-			EndlessVenomBullet: "Endless Venom Pouch"
-			EndlessPartyBullet: "Endless Party Pouch"
-			EndlessNanoBullet: "Endless Nano Pouch"
-			EndlessExplodingBullet: "Endless Exploding Pouch"
-			EndlessGoldenBullet: "Endless Golden Pouch"
-			EndlessLuminiteBullet: "Endless Luminite Pouch"
-			AsphaltPlatform: "Asphalt Platform"
-			PreperationStation: "Preparation Station"
-			BuffBrazier: "Buff Brazier"
-			WormholeApp: "Wormhole App"
-			TeleportationApp: "Teleporation App"
-			BagOfWorms: "Bag of Worms"
-			Infiniworm: "The Infiniworm"
-			Gigaxe: "Gigaxe"
-			FourLeafClover: "Four Leaf Clover"
-			CorruptedClover: "Corrupticlover"
-			GoldenClover: "Trefaurium"
-			BuildersEmblem: "Builder's Emblem"
-			MinersEmblem: "Miner's Emblem"
-			CreatorsEmblem: "Creator's Emblem"
-			VoidPiggy: "Void Piggy"
-			PhilosophersStone: "Prima Materia"
-			FlameOfBattle: "Flame of Battle"
-			FlameOfPeace: "Flame of Peace"
-			GreaterStaffOfRegrowth: "Green Scheme"
-			ShadowPearl: "Shadow Pearl"
-			InfiniteMana: "Infinite Mana"
-			StarMagnet: "Star Magnet"
-			GreedyChest: "Greedy Chest"
-			MagicLight: "Magic Light"
+		Items: {
+			PetrifiedSafe: {
+				DisplayName: Petrified Safe
+				Tooltip:
+					'''
+					Summons a flying safe to store your items
+					[c/ff0000:pbone Utilities Portable storages items are currently VERY BROKEN.]
+					[c/ff0000:It is HIGHLY RECOMENDED that you do NOT use them.]
+					'''
+			}
+
+			DefendersCrystal: {
+				DisplayName: Defender's Crystal
+				Tooltip:
+					'''
+					Summons a crystal that lets you access your Defender's Forge
+					[c/ff0000:pbone Utilities Portable storages items are currently VERY BROKEN.]
+					[c/ff0000:It is HIGHLY RECOMENDED that you do NOT use them.]
+					'''
+			}
+
+			BottomlessHoneyBucket: {
+				DisplayName: Bottomless Honey Bucket
+				Tooltip:
+					'''
+					Contains an endless amount of honey
+					Can be poured out
+					'''
+			}
+
+			SuperSweetSponge: {
+				DisplayName: Sponge Cake
+				Tooltip: Capable of soaking up an endless amount of honey
+			}
+
+			BottomlessLavaBucket: {
+				DisplayName: Bottomless Lava Bucket
+				Tooltip:
+					'''
+					Contains an endless amount of lava
+					Can be poured out
+					'''
+			}
+
+			HeatAbsorbantSponge: {
+				DisplayName: Heat Absorbant Sponge
+				Tooltip: Capable of soaking up an endless amount of lava
+			}
+
+			LiquidCombo: {
+				DisplayName: The Master Plan
+				Tooltip:
+					'''
+					Allows ultimate control over liquids!
+					Right click while holding to edit settings
+					'''
+			}
+
+			DeluxeTreasureMagnet: {
+				DisplayName: Deluxe Treasure Magnet
+				Tooltip:
+					'''
+					Vastly increases pickup range for items
+					Works in your inventory
+					{$Mods.PboneUtils.Common.CanBeToggled}
+					'''
+			}
+
+			HallowedMagnet.DisplayName: Hallowed Treasure Magnet
+
+			SpectreTreasureMagnet: {
+				DisplayName: Spectre Treasure Magnet
+				Tooltip:
+					'''
+					Teleports nearby items into your inventory
+					Works in your inventory
+					{$Mods.PboneUtils.Common.CanBeToggled}
+					'''
+			}
+
+			RunicTreasureMagnet: {
+				DisplayName: Runic Treasure Magnet
+				Tooltip:
+					'''
+					Quickly teleports nearby items into your inventory
+					Works in your inventory
+					{$Mods.PboneUtils.Common.CanBeToggled}
+					'Won't pull down the moon, probably'
+					'''
+			}
+
+			MoonLordTreasureMagnet: {
+				DisplayName: Eldritch Treasure Magnet
+				Tooltip:
+					'''
+					Teleports nearby items into your inventory at the speed of sound
+					Works in your inventory
+					{$Mods.PboneUtils.Common.CanBeToggled}
+					'Okay, now THIS might pull down the moon'
+					'''
+			}
+
+			FluxCapacitor: {
+				DisplayName: Flux Capacitor
+				Tooltip:
+					'''
+					Switches from night to day
+					Right click to toggle sped up time
+					'It holds 1.21 gigawatts!'
+					'''
+			}
+
+			AmuletOfRain: {
+				DisplayName: Amulet of Rain
+				Tooltip:
+					'''
+					Starts or stops rain
+					'One way ticket to cloud nine'
+					'''
+			}
+
+			AmuletOfSandstorms: {
+				DisplayName: Amulet of Sandstorms
+				Tooltip:
+					'''
+					Starts or stops sandstorms
+					'It's course and rough'
+					'''
+			}
+
+			EndlessFlamingArrow: {
+				DisplayName: Endless Flaming Quiver
+				Tooltip: ""
+			}
+
+			EndlessUnholyArrow: {
+				DisplayName: Endless Unholy Quiver
+				Tooltip: ""
+			}
+
+			EndlessJesterArrow: {
+				DisplayName: Endless Jester's Quiver
+				Tooltip: ""
+			}
+
+			EndlessHellfireArrow: {
+				DisplayName: Endless Hellfire Quiver
+				Tooltip: ""
+			}
+
+			EndlessHolyArrow: {
+				DisplayName: Endless Holy Quiver
+				Tooltip: ""
+			}
+
+			EndlessCursedArrow: {
+				DisplayName: Endless Cursed Quiver
+				Tooltip: ""
+			}
+
+			EndlessFrostburnArrow: {
+				DisplayName: Endless Frostburn Quiver
+				Tooltip: ""
+			}
+
+			EndlessChlorophyteArrow: {
+				DisplayName: Endless Chlorophyte Quiver
+				Tooltip: ""
+			}
+
+			EndlessIchorArrow: {
+				DisplayName: Endless Ichor Quiver
+				Tooltip: ""
+			}
+
+			EndlessVenomArrow: {
+				DisplayName: Endless Venom Quiver
+				Tooltip: ""
+			}
+
+			EndlessBoneArrow: {
+				DisplayName: Endless Bone Quiver
+				Tooltip: ""
+			}
+
+			EndlessLuminiteArrow: {
+				DisplayName: Endless Luminite Quiver
+				Tooltip: ""
+			}
+
+			EndlessShimmerArrow: {
+				DisplayName: Endless Shimmer Quiver
+				Tooltip: ""
+			}
+
+			EndlessMeteorShot: {
+				DisplayName: Endless Meteor Pouch
+				Tooltip: ""
+			}
+
+			EndlessSilverBullet: {
+				DisplayName: Endless Silver Pouch
+				Tooltip: ""
+			}
+
+			EndlessTungstenBullet: {
+				DisplayName: Endless Tungsten Pouch
+				Tooltip: ""
+			}
+
+			EndlessCrystalBullet: {
+				DisplayName: Endless Crystal Pouch
+				Tooltip: ""
+			}
+
+			EndlessCursedBullet: {
+				DisplayName: Endless Cursed Pouch
+				Tooltip: ""
+			}
+
+			EndlessChlorophyteBullet: {
+				DisplayName: Endless Chlorophyte Pouch
+				Tooltip: ""
+			}
+
+			EndlessHighVelocityBullet: {
+				DisplayName: Endless High Velocity Pouch
+				Tooltip: ""
+			}
+
+			EndlessIchorBullet: {
+				DisplayName: Endless Ichor Pouch
+				Tooltip: ""
+			}
+
+			EndlessVenomBullet: {
+				DisplayName: Endless Venom Pouch
+				Tooltip: ""
+			}
+
+			EndlessPartyBullet: {
+				DisplayName: Endless Party Pouch
+				Tooltip: ""
+			}
+
+			EndlessNanoBullet: {
+				DisplayName: Endless Nano Pouch
+				Tooltip: ""
+			}
+
+			EndlessExplodingBullet: {
+				DisplayName: Endless Exploding Pouch
+				Tooltip: ""
+			}
+
+			EndlessGoldenBullet: {
+				DisplayName: Endless Golden Pouch
+				Tooltip: ""
+			}
+
+			EndlessLuminiteBullet: {
+				DisplayName: Endless Luminite Pouch
+				Tooltip: ""
+			}
+
+			AsphaltPlatform: {
+				DisplayName: Asphalt Platform
+				Tooltip: Increases running speed
+			}
+
+			PreperationStation: {
+				DisplayName: Preparation Station
+				Tooltip:
+					'''
+					Right click to increase armor penetration for melee weapons, reduce ammo usage,
+					increase magic powers, have more minions, and have more sentries
+					Isn't consumed upon being placed
+					'Also makes Julienne Fries!'
+					'''
+			}
+
+			BuffBrazier: {
+				DisplayName: Buff Brazier
+				Tooltip:
+					'''
+					Increases your life regen, mana regen, movement speed, defense, and reduces enemy spawnrates when nearby
+					Provides a decent amount of light
+					Isn't consumed upon being placed
+					'''
+			}
+
+			WormholeApp: {
+				DisplayName: Wormhole App
+				Tooltip:
+					'''
+					Provides an infinite wormhole effect when installed in a Cell Phone
+					{$Mods.PboneUtils.Common.AppInfo}
+					'''
+			}
+
+			TeleportationApp: {
+				DisplayName: Teleporation App
+				Tooltip:
+					'''
+					Allows you to teleport by holding the Cell Phone in your hand and right-clicking when installed in a Cell Phone
+					{$Mods.PboneUtils.Common.AppInfo}
+					'''
+			}
+
+			BagOfWorms: {
+				DisplayName: Bag of Worms
+				Tooltip: Not consumed when used as bait
+			}
+
+			Infiniworm: {
+				DisplayName: The Infiniworm
+				Tooltip:
+					'''
+					Not consumed when used as bait
+					'Enlightenment'
+					'''
+			}
+
+			Gigaxe: {
+				DisplayName: Gigaxe
+				Tooltip:
+					'''
+					Click and drag to select an area
+					All trees in the selected area are instantly chopped
+					'''
+			}
+
+			FourLeafClover: {
+				DisplayName: Four Leaf Clover
+				Tooltip:
+					'''
+					Displays your luck
+					'Lucky you!'
+					'''
+			}
+
+			CorruptedClover: {
+				DisplayName: Corrupticlover
+				Tooltip:
+					'''
+					Displays your luck
+					Locks your luck to the default value
+					'Wait, where are the thorns?'
+					'''
+			}
+
+			GoldenClover: {
+				DisplayName: Trefaurium
+				Tooltip:
+					'''
+					Displays your luck
+					Increases your luck
+					'I know gold's a bit gauche, but...'
+					'''
+			}
+
+			BuildersEmblem: {
+				DisplayName: Builder's Emblem
+				Tooltip: 25% increased block and wall placement speed
+			}
+
+			MinersEmblem: {
+				DisplayName: Miner's Emblem
+				Tooltip: 15% increased mining speed
+			}
+
+			CreatorsEmblem: {
+				DisplayName: Creator's Emblem
+				Tooltip:
+					'''
+					25% increased block and wall placement speed
+					25% increased mining speed
+					'''
+			}
+
+			VoidPiggy: {
+				DisplayName: Void Piggy
+				Tooltip:
+					'''
+					When carried, coins are automatically sent to your piggy bank
+					You must have at least one coin in your piggy bank for it to function
+					{$Mods.PboneUtils.Common.CanBeToggled}
+					'An exotic import!'
+					'''
+			}
+
+			PhilosophersStone: {
+				DisplayName: Prima Materia
+				Tooltip:
+					'''
+					When held in your hand and enabled, picked up items are automatically sold
+					{$Mods.PboneUtils.Common.CanBeToggled}
+					'Immortality not included'
+					'''
+			}
+
+			FlameOfBattle: {
+				DisplayName: Flame of Battle
+				Tooltip:
+					'''
+					Greatly increases spawn rates and spawn cap
+					{$Mods.PboneUtils.Common.CanBeToggled}
+					'''
+			}
+
+			FlameOfPeace: {
+				DisplayName: Flame of Peace
+				Tooltip:
+					'''
+					Greatly decreases spawn rates and spawn cap
+					{$Mods.PboneUtils.Common.CanBeToggled}
+					'''
+			}
+
+			GreaterStaffOfRegrowth: {
+				DisplayName: Green Scheme
+				Tooltip: Left click and drag to harvest herbs in an area
+			}
+
+			ShadowPearl: {
+				DisplayName: Shadow Pearl
+				Tooltip: Works as a demon altar for crafting
+			}
+
+			InfiniteMana: {
+				DisplayName: Infinite Mana
+				Tooltip:
+					'''
+					35% decreased damage
+					Sets your minion slots to one
+					Grants infinite mana
+					'''
+			}
+
+			StarMagnet: {
+				DisplayName: Star Magnet
+				Tooltip:
+					'''
+					Greatly increases star fall rate
+					{$Mods.PboneUtils.Common.CanBeToggled}
+					'Watch for shooting stars'
+					'''
+			}
+
+			GreedyChest: {
+				DisplayName: Greedy Chest
+				Tooltip:
+					'''
+					Stops enemies from dropping coins
+					{$Mods.PboneUtils.Common.CanBeToggled}
+					'Om nom nom'
+					'''
+			}
+
+			MagicLight: {
+				DisplayName: Magic Light
+				Tooltip:
+					'''
+					Places infinite, invisible lights
+					Right click to change the light color
+					Lights can be seen while this item is enabled, and seen all the time while held
+
+					{$Mods.PboneUtils.Common.CanBeToggled}
+					'Let there be light!'
+					'''
+			}
+
+			HallowedTreasureMagnet: {
+				DisplayName: Hallowed Treasure Magnet
+				Tooltip:
+					'''
+					Massively increases pickup range for items
+					Works in your inventory
+					{$Mods.PboneUtils.Common.CanBeToggled}
+					'''
+			}
+
+			MountTester: {
+				DisplayName: Mount Tester
+				Tooltip: ""
+			}
+
+			TileTester: {
+				DisplayName: Tile Tester
+				Tooltip: ""
+			}
 		}
-		ItemTooltip: {
-			PetrifiedSafe: "Summons a flying safe to store your items\n[c/ff0000:pbone Utilities Portable storages items are currently VERY BROKEN.]\n[c/ff0000:It is HIGHLY RECOMENDED that you do NOT use them.]"
-			DefendersCrystal: "Summons a crystal that lets you access your Defender's Forge\n[c/ff0000:pbone Utilities Portable storages items are currently VERY BROKEN.]\n[c/ff0000:It is HIGHLY RECOMENDED that you do NOT use them.]"
-			BottomlessHoneyBucket: "Contains an endless amount of honey\nCan be poured out"
-			SuperSweetSponge: "Capable of soaking up an endless amount of honey"
-			BottomlessLavaBucket: "Contains an endless amount of lava\nCan be poured out"
-			HeatAbsorbantSponge: "Capable of soaking up an endless amount of lava"
-			LiquidCombo: "Allows ultimate control over liquids!\nRight click while holding to edit settings"
-			DeluxeTreasureMagnet: "Vastly increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}"
-			HallowedTreasureMagnet: "Massively increases pickup range for items\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}"
-			SpectreTreasureMagnet: "Teleports nearby items into your inventory\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}"
-			RunicTreasureMagnet: "Quickly teleports nearby items into your inventory\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Won't pull down the moon, probably'"
-			MoonLordTreasureMagnet: "Teleports nearby items into your inventory at the speed of sound\nWorks in your inventory\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Okay, now THIS might pull down the moon'"
-			FluxCapacitor: "Switches from night to day\nRight click to toggle sped up time\n'It holds 1.21 gigawatts!'"
-			AmuletOfRain: "Starts or stops rain\n'One way ticket to cloud nine'"
-			AmuletOfSandstorms: "Starts or stops sandstorms\n'It's course and rough'"
-			AsphaltPlatform: "Increases running speed"
-			PreperationStation: "Right click to increase armor penetration for melee weapons, reduce ammo usage,\nincrease magic powers, and have more minions\nIsn't consumed upon being placed\n'Also makes Julienne Fries!'"
-			BuffBrazier: "Increases your life regen, mana regen, movement speed, and reduces enemy spawnrates when nearby\nProvides a decent amount of light\nIsn't consumed upon being placed"
-			WormholeApp: "Provides an infinite wormhole effect when installed in a Cell Phone\n{$Mods.PboneUtils.Common.AppInfo}"
-			TeleportationApp: "Allows you to teleport by holding the Cell Phone in your hand and right-clicking when installed in a Cell Phone\n{$Mods.PboneUtils.Common.AppInfo}"
-			BagOfWorms: "Not consumed when used as bait"
-			Infiniworm: "Not consumed when used as bait\n'Enlightenment'"
-			FourLeafClover: "Displays your luck\n'Lucky you!'"
-			CorruptedClover: "Displays your luck\nLocks your luck to the default value\n'Wait, where are the thorns?'"
-			GoldenClover: "Displays your luck\nIncreases your luck\n'I know gold's a bit gauche, but...'"
-			BuildersEmblem: "25% increased block and wall placement speed"
-			MinersEmblem: "15% increased mining speed"
-			CreatorsEmblem: "25% increased block and wall placement speed\n25% increased mining speed"
-			Gigaxe: "Click and drag to select an area\nAll trees in the selected area are instantly chopped"
-			VoidPiggy: "When carried, coins are automatically sent to your piggy bank\nYou must have at least one coin in your piggy bank for it to function\n{$Mods.PboneUtils.Common.CanBeToggled}\n'An exotic import!'"
-			PhilosophersStone: "When held in your hand and enabled, picked up items are automatically sold\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Immortality not included'"
-			FlameOfBattle: "Greatly increases spawn rates and spawn cap\n{$Mods.PboneUtils.Common.CanBeToggled}"
-			FlameOfPeace: "Greatly decreases spawn rates and spawn cap\n{$Mods.PboneUtils.Common.CanBeToggled}"
-			GreaterStaffOfRegrowth: "Left click and drag to harvest herbs in an area"
-			ShadowPearl: "Works as a demon altar for crafting"
-			InfiniteMana: "35% decreased damage\nSets your minion slots to one\nGrants infinite mana"
-			StarMagnet: "Greatly increases star fall rate\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Watch for shooting stars'"
-			GreedyChest: "Stops enemies from dropping coins\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Om nom nom'"
-			MagicLight: "Places infinite, invisible lights\nRight click to change the light color\nLights can be seen while this item is enabled, and seen all the time while held\n\n{$Mods.PboneUtils.Common.CanBeToggled}\n'Let there be light!'"
-		}
+
+		Conditions.DownedMechBosses: After defeating {0} Mechanical Bosses
+
 		TownChat: {
-			MysteriousTrader.1: "What do you mean, I'm a mutant?"
-			MysteriousTrader.2: "Have you ever seen an angel statue fly? Unfortunately, I have."
-			MysteriousTrader.3: "I walk on a fine line between selling junk and scamming."
-			MysteriousTrader.4: "Say, you don't think I could move in? I'm in a club that won't stop talking about houses."
-			MysteriousTrader.5: "Mum says I should learn about something other than structural supports. She's wrong."
-			MysteriousTrader.6: "I sell wares from my basement. Don't ask."
-			MysteriousTrader.7: "Hurry up and buy something, these robes don't sew themself!"
-			MysteriousTrader.8: "How many cultists does it take to summon Cthulhu? No wait, you didn't hear me say that."
-			MysteriousTrader.9: "I sell many rare items.... of Cthulhu!"
-			Miner.1: "Ooo, shiny!"
-			Miner.2: "Why don't I mine with explosives? It ruins the ore, of course!"
-			Miner.3: "My pickaxe is the oldest and bestest in the land!"
-			Miner.4: "You know, I could just be turning this gold into coins."
-			Miner.5: "Where do I get my ores if I'm never mining? I keep them all in my backpack."
-			Miner.6: "I hear there's a plant made of solid metal you can grow under the right conditions!"
-			Miner.HardmodeOnly: "Check out my cobalt ore; it is extra shiny."
+			MysteriousTrader: {
+				1: What do you mean, I'm a mutant?
+				2: Have you ever seen an angel statue fly? Unfortunately, I have.
+				3: I walk on a fine line between selling junk and scamming.
+				4: Say, you don't think I could move in? I'm in a club that won't stop talking about houses.
+				5: Mum says I should learn about something other than structural supports. She's wrong.
+				6: I sell wares from my basement. Don't ask.
+				7: Hurry up and buy something, these robes don't sew themself!
+				8: How many cultists does it take to summon Cthulhu? No wait, you didn't hear me say that.
+				9: I sell many rare items.... of Cthulhu!
+			}
+
+			Miner: {
+				1: Ooo, shiny!
+				2: Why don't I mine with explosives? It ruins the ore, of course!
+				3: My pickaxe is the oldest and bestest in the land!
+				4: You know, I could just be turning this gold into coins.
+				5: Where do I get my ores if I'm never mining? I keep them all in my backpack.
+				6: I hear there's a plant made of solid metal you can grow under the right conditions!
+				HardmodeOnly: Check out my cobalt ore; it is extra shiny.
+			}
 		}
+
 		TownNPCMood: {
-			MysteriousTrader.Content: "A good day for you to purchase something!"
-			MysteriousTrader.NoHome: "I would like a home."
-			MysteriousTrader.LoveSpace: "I love how there is so much space."
-			MysteriousTrader.FarFromHome: "I am far from my home."
-			MysteriousTrader.DislikeCrowded: "I dislike the crowd."
-			MysteriousTrader.HateCrowded: "I hate the crowd."
-			MysteriousTrader.LikeBiome: "I like {BiomeName}."
-			MysteriousTrader.LoveBiome: "I love {BiomeName}."
-			MysteriousTrader.DislikeBiome: "I dislike {BiomeName}."
-			MysteriousTrader.HateBiome: "I hate {BiomeName}."
-			MysteriousTrader.LikeNPC: "I like {NPCName}."
-			MysteriousTrader.LikeNPC_Princess: "I like {NPCName}."
-			MysteriousTrader.LoveNPC: "I love {NPCName}."
-			MysteriousTrader.DislikeNPC: "I dislike {NPCName}."
-			MysteriousTrader.HateNPC: "I hate {NPCName}."
-			Miner.Content: "I'm feeling good."
-			Miner.NoHome: "I need a place to rest!"
-			Miner.LoveSpace: "So much space to do some mining!"
-			Miner.FarFromHome: "Like being lost in a mine, I would like to return home."
-			Miner.DislikeCrowded: "I don't like how many people are here."
-			Miner.HateCrowded: "I'm feeling claustrophobic with all of these people around!"
-			Miner.LikeBiome: "{BiomeName} is a nice place for mining!"
-			Miner.LoveBiome: "I love {BiomeName}; Plenty of ores down here!"
-			Miner.DislikeBiome: "Trying to mine in {BiomeName} is quite annoying."
-			Miner.HateBiome: "I hate {BiomeName}. This place is no good for me."
-			Miner.LikeNPC: "{NPCName} and I are good associates."
-			Miner.LikeNPC_Princess: "{NPCName} is a great miner, believe it or not!"
-			Miner.LoveNPC: "I love {NPCName}, maybe more than mining."
-			Miner.DislikeNPC: "I don't care for {NPCName}."
-			Miner.HateNPC: "{NPCName} is just the worst!"
+			MysteriousTrader: {
+				Content: A good day for you to purchase something!
+				NoHome: I would like a home.
+				LoveSpace: I love how there is so much space.
+				FarFromHome: I am far from my home.
+				DislikeCrowded: I dislike the crowd.
+				HateCrowded: I hate the crowd.
+				LikeBiome: I like {BiomeName}.
+				LoveBiome: I love {BiomeName}.
+				DislikeBiome: I dislike {BiomeName}.
+				HateBiome: I hate {BiomeName}.
+				LikeNPC: I like {NPCName}.
+				LikeNPC_Princess: I like {NPCName}.
+				LoveNPC: I love {NPCName}.
+				DislikeNPC: I dislike {NPCName}.
+				HateNPC: I hate {NPCName}.
+			}
+
+			Miner: {
+				Content: I'm feeling good.
+				NoHome: I need a place to rest!
+				LoveSpace: So much space to do some mining!
+				FarFromHome: Like being lost in a mine, I would like to return home.
+				DislikeCrowded: I don't like how many people are here.
+				HateCrowded: I'm feeling claustrophobic with all of these people around!
+				LikeBiome: "{BiomeName} is a nice place for mining!"
+				LoveBiome: I love {BiomeName}; Plenty of ores down here!
+				DislikeBiome: Trying to mine in {BiomeName} is quite annoying.
+				HateBiome: I hate {BiomeName}. This place is no good for me.
+				LikeNPC: "{NPCName} and I are good associates."
+				LikeNPC_Princess: "{NPCName} is a great miner, believe it or not!"
+				LoveNPC: I love {NPCName}, maybe more than mining.
+				DislikeNPC: I don't care for {NPCName}.
+				HateNPC: "{NPCName} is just the worst!"
+			}
 		}
+
 		Bestiary: {
-			Miner: "The Miner is happy to sell many different varieties of mined goods."
-			MysteriousTrader: "The Mysterious Trader is a robed figure who seems to belong to some sort of... club. They sell many odds and ends from the corners of the world."
+			Miner: The Miner is happy to sell many different varieties of mined goods.
+			MysteriousTrader: The Mysterious Trader is a robed figure who seems to belong to some sort of... club. They sell many odds and ends from the corners of the world.
 		}
-		BuffName: {
-			PreperationStationBuff: "Prepared"
-			BuffBrazierBuff: "Empowered"
+
+		Buffs: {
+			PreperationStationBuff: {
+				DisplayName: Prepared
+				Description:
+					'''
+					Effects of the Sharpening Station, Ammo Box, Crystal Ball, Bewitching Table, and War Table
+					Disables the individual station buffs
+					'''
+			}
+
+			BuffBrazierBuff: {
+				DisplayName: Empowered
+				Description:
+					'''
+					Effects of Campfire, Heart Lantern, Star in a Bottle, Sunflower, Honey, and Bast Statue
+					Disables the individual buffs
+					'''
+			}
 		}
-		BuffDescription: {
-			PreperationStationBuff: "Effects of the Sharpening Station, Ammo Box, Crystal Ball, and Bewitching Table\nDisables the individual station buffs"
-			BuffBrazierBuff: "Effects of Campfire, Heart Lantern, Star in a Bottle, Sunflower, and Honey\nDisables the individual buffs"
+
+		Tiles: {
+			PetrifiedSafeTile.MapEntry: Petrified Safe
+			AsphaltPlatformTile.MapEntry: Asphalt Platform
+			PreperationStationTile.MapEntry: Preparation Station
+			BuffBrazierTile.MapEntry: Buff Brazier
+			ShadowPearlTile.MapEntry: Shadow Pearl
 		}
-		MapObject: {
-			PetrifiedSafeTile: "Petrified Safe"
-			AsphaltPlatformTile: "Asphalt Platform"
-			PreperationStationTile: "Preparation Station"
-			BuffBrazierTile: "Buff Brazier"
-			ShadowPearlTile: "Shadow Pearl"
+
+		InfoDisplays: {
+			CloverUI1.DisplayName: Luck
+			CloverUI2.DisplayName: Luck
+			CloverUI3.DisplayName: Luck
 		}
-		InfoDisplayName: {
-			CloverUI1: "Luck"
-			CloverUI2: "Luck"
-			CloverUI3: "Luck"
-		}
-		Worldgen: {
-			PetrifiedSafes: "Hiding safes..."
-		}
+
+		Worldgen.PetrifiedSafes: Hiding safes...
+
 		UI: {
-			EndlessBuffTogglerInventoryButton.MouseOver: "Endless Buff Toggler"
-			EndlessBuffToggler.DescriptionPlaceholder: "Click on a buff to see info about it."
-			EndlessBuffToggler.DescriptionName: "Name"
-			EndlessBuffToggler.DescriptionSource: "Source"
-			EndlessBuffToggler.DescriptionDescription: "Tooltip"
-			EndlessBuffToggler.DescriptionHowToDisable: "(right click buff icon while selected to toggle)"
-			EndlessBuffSource.Inventory: "Inventory"
-			EndlessBuffSource.PiggyBank: "Piggy Bank"
-			EndlessBuffSource.Safe: "Safe"
-			EndlessBuffSource.DefendersForge: "Defender's Forge"
+			EndlessBuffTogglerInventoryButton.MouseOver: Endless Buff Toggler
+
+			EndlessBuffToggler: {
+				DescriptionPlaceholder: Click on a buff to see info about it.
+				DescriptionName: Name
+				DescriptionSource: Source
+				DescriptionDescription: Tooltip
+				DescriptionHowToDisable: (right click buff icon while selected to toggle)
+			}
+
+			EndlessBuffSource: {
+				Inventory: Inventory
+				PiggyBank: Piggy Bank
+				Safe: Safe
+				DefendersForge: Defender's Forge
+			}
 		}
+
 		Config: {
-			Header.MiscFeatures: "QoL Features"
-			Header.ItemToggles: "Item Toggles"
-			Header.MiscItemToggles: "Misc Single Item Toggles"
-			Header.ItemSettings: "Item Settings"
-			Header.NPCs: "Helpful NPCs"
-			Header.QolRecipes: "QoL Recipes"
+			Header: {
+				MiscFeatures: QoL Features
+				ItemToggles: Item Toggles
+				MiscItemToggles: Misc Single Item Toggles
+				ItemSettings: Item Settings
+				NPCs: Helpful NPCs
+				QolRecipes: QoL Recipes
+			}
 
-			Label.AverageBossBagsSlider: "Treasure Bag Simulation Attempts"
-			Label.AverageBossBags: "Average Treasure Bag Values"
-			Label.ExtraBuffSlots: "Extra Buff Slots"
-			Label.EndlessPotions: "Infinite Potions"
-			Label.EndlessPotionsSlider: "Infinite Potion Amount"
-			Label.AutoswingOnEverything: "Global Autoswing"
-			Label.AutoswingOnEverythingBlacklist: "Global Autoswing Blacklist"
-			Label.MaxStackIncrease: "Max Stack Size Increases"
-			Label.NoMoreGraves: "No More Graves"
-			Label.FastRespawn: "Fast Respawn"
-			Label.FastRespawnDuringBoss: "Fast Respawn during Bosses"
+			Label: {
+				AverageBossBagsSlider: Treasure Bag Simulation Attempts
+				AverageBossBags: Average Treasure Bag Values
+				ExtraBuffSlots: Extra Buff Slots
+				EndlessPotions: Infinite Potions
+				EndlessPotionsSlider: Infinite Potion Amount
+				AutoswingOnEverything: Global Autoswing
+				AutoswingOnEverythingBlacklist: Global Autoswing Blacklist
+				MaxStackIncrease: Max Stack Size Increases
+				NoMoreGraves: No More Graves
+				FastRespawn: Fast Respawn
+				FastRespawnDuringBoss: Fast Respawn during Bosses
+				StorageItemsToggle: Storage Items
+				LiquidItemsToggle: Liquid Items
+				ArenaItemsToggle: Arena Items
+				MagnetItemsToggle: Magnet Items
+				AmmoItemsToggle: Ammo Items
+				WorldControlItemsToggle: World Control Items
+				CellPhoneAppsToggle: Cell Phone Apps
+				EndlessBaitToggle: Endless Bait
+				CloversToggle: Clovers
+				BuildingItemsToggle: Building Items
+				GoldenCloverLuckSlider: Trefaurium Luck Bonus
+				VoidPiggyToggle: Void Piggy
+				PhilosophersStoneToggle: Prima Materia
+				SpawnRateItemsToggle: Spawn Rate Items
+				GreaterStaffOfRegrowthToggle: Green Scheme
+				ShadowPearlToggle: Shadow Pearl
+				InfiniteManaToggle: Infinite Mana
+				StarMagnetToggle: Star Magnet
+				GreedyChestToggle: Greedy Chest
+				MagicLightToggle: Magic Light
+				MysteriousTrader: Mysterious Trader
+				Miner: Miner
+				RecipeEndlessWater: Endless Water Tool Recipes
+				RecipePetrifiedSafe: Petrified Safe Recipes
+			}
 
-			Label.StorageItemsToggle: "Storage Items"
-			Label.LiquidItemsToggle: "Liquid Items"
-			Label.ArenaItemsToggle: "Arena Items"
-			Label.MagnetItemsToggle: "Magnet Items"
-			Label.AmmoItemsToggle: "Ammo Items"
-			Label.WorldControlItemsToggle: "World Control Items"
-			Label.CellPhoneAppsToggle: "Cell Phone Apps"
-			Label.EndlessBaitToggle: "Endless Bait"
-			Label.CloversToggle: "Clovers"
-			Label.BuildingItemsToggle: "Building Items"
-
-			Label.GoldenCloverLuckSlider: "Trefaurium Luck Bonus"
-
-			Label.VoidPiggyToggle: "Void Piggy"
-			Label.PhilosophersStoneToggle: "Prima Materia"
-			Label.SpawnRateItemsToggle: "Spawn Rate Items"
-			Label.GreaterStaffOfRegrowthToggle: "Green Scheme"
-			Label.ShadowPearlToggle: "Shadow Pearl"
-			Label.InfiniteManaToggle: "Infinite Mana"
-			Label.StarMagnetToggle: "Star Magnet"
-			Label.GreedyChestToggle: "Greedy Chest"
-			Label.MagicLightToggle: "Magic Light"
-
-			Label.MysteriousTrader: "Mysterious Trader"
-			Label.Miner: "Miner"
-
-			Label.RecipeEndlessWater: "Endless Water Tool Recipes"
-			Label.RecipePetrifiedSafe: "Petrified Safe Recipes"
-
-			Tooltip.AverageBossBags: "If enabled, treasure bags will sell for the average of their drops. Note: this may change between reloads because of how it's calculcated"
-			Tooltip.AverageBossBagsSlider: "The amount of bag openings that should be simulated when averaging boss treasure bag values.\nHigher values produce more consistent results, but increase load time"
-			Tooltip.ExtraBuffSlots: "The amount of buff slots to add on to the default 22 (there's 11 buff slots per line)"
-			Tooltip.EndlessPotions: "If enabled, having the specified amount of potions in your inventory or personal storage item will give you the buff infinitely (or, in the case of healing potions, not be consumed)\nNOTE: Only increase above 30 if you have 'Increase Max Stack Size' enabled"
-			Tooltip.EndlessPotionsSlider: "The amount of potions needed for infinite buffs (or healing)"
-			Tooltip.AutoswingOnEverything: "Enable or disable global autoswing (aka autoshoot, autoreusShadoe etc.)"
-			Tooltip.AutoswingOnEverythingBlacklist: "Items to be ignored by Global Autoswing (if enabled)"
-			Tooltip.MaxStackIncrease: "If enabled, most items will have their max stack size increased"
-			Tooltip.NoMoreGraves: "If enabled, prevents graves from spawning"
-			Tooltip.FastRespawn: "If enabled, you respawn much quicker"
-			Tooltip.FastRespawnDuringBoss: "If enabled, you respawn much quicker even during boss fights"
-
-			Tooltip.StorageItemsToggle: "Enable or disable this mod's storage items, which allow you to access personal storages on the go"
-			Tooltip.LiquidItemsToggle: "Enable or disable this mod's liquid items, which let you place and absorb infinite amounts of lava or honey"
-			Tooltip.AmmoItemsToggle: "Enable or disable this mod's endless ammo items"
-			Tooltip.ArenaItemsToggle: "Enable or disable this mod's arena blocks, which enhance and compact your arena"
-			Tooltip.MagnetItemsToggle: "Enable or disable this mod's magnet items, which increase your grab range"
-			Tooltip.WorldControlItemsToggle: "Enable or disable this mod's world control items, which can change the time, weather, and more"
-			Tooltip.CellPhoneAppsToggle: "Enable or disable Cell Phone apps, upgrades to the Cell Phone which provide extra functionality"
-			Tooltip.EndlessBaitToggle: "Enable or disable Endless Bait, which does what you think it does"
-			Tooltip.CloversToggle: "Enable or disable Clovers, which are items that let you see and improve your luck stat"
-			Tooltip.BuildingItemsToggle: "Enable or disable Building Items, which provide building-and-mining-related bonuses"
-
-			Tooltip.GoldenCloverLuckSlider: "The amount of bonus luck the Trefaurium gives, if it's enabled"
-
-			Tooltip.VoidPiggyToggle: "Enable or disable the Void Piggy item, which sends collected coins to your piggy bank"
-			Tooltip.PhilosophersStoneToggle: "Enable or disable the Prima Materia item, which sells picked up items"
-			Tooltip.SpawnRateItemsToggle: "Enable or disable the Flame of Battle and Flame of Peace, items which increase or decrease the spawn rate respectively"
-			Tooltip.GreaterStaffOfRegrowthToggle: "Enable or disable the Green Scheme item, which helps with harvesting plants"
-			Tooltip.ShadowPearlToggle: "Enable or disbale the Shadow Pearl item, which functions as a demon altar crafting station"
-			Tooltip.InfiniteManaToggle: "Enable or disable the Infinite Mana accessory, which gives you infinite mana"
-			Tooltip.StarMagnetToggle: "Enable or disable the Star Magnet item, which increases star fall rate"
-			Tooltip.GreedyChestToggle: "Enable or disable the Greedy Chest item, which stops enemies from dropping coins"
-			Tooltip.MagicLightToggle: "Enable or disable the Magic Light, which places infinite, invisible lights of many colors"
-
-			Tooltip.MysteriousTrader: "Enable or disable the Mysterious Trader, an NPC that will occasionally show up to sell rare items"
-			Tooltip.Miner: "Enable or disable the Miner, an NPC that sells ores and gems"
-
-			Tooltip.RecipeEndlessWater: "Enable or disable Endless Water Bucket and Super Absorbant Sponge recipes"
-			Tooltip.RecipePetrifiedSafe: "Enable or disable a simple recipe for the Petrified Safe\n(By default, Petrified Safes generate in the underworld during world generation)"
+			Tooltip: {
+				AverageBossBags: If enabled, treasure bags will sell for the average of their drops. Note: this may change between reloads because of how it's calculcated
+				AverageBossBagsSlider:
+					'''
+					The amount of bag openings that should be simulated when averaging boss treasure bag values.
+					Higher values produce more consistent results, but increase load time
+					'''
+				ExtraBuffSlots: The amount of buff slots to add on to the default 22 (there's 11 buff slots per line)
+				EndlessPotions:
+					'''
+					If enabled, having the specified amount of potions in your inventory or personal storage item will give you the buff infinitely (or, in the case of healing potions, not be consumed)
+					NOTE: Only increase above 30 if you have 'Increase Max Stack Size' enabled
+					'''
+				EndlessPotionsSlider: The amount of potions needed for infinite buffs (or healing)
+				AutoswingOnEverything: Enable or disable global autoswing (aka autoshoot, autoreusShadoe etc.)
+				AutoswingOnEverythingBlacklist: Items to be ignored by Global Autoswing (if enabled)
+				MaxStackIncrease: If enabled, most items will have their max stack size increased
+				NoMoreGraves: If enabled, prevents graves from spawning
+				FastRespawn: If enabled, you respawn much quicker
+				FastRespawnDuringBoss: If enabled, you respawn much quicker even during boss fights
+				StorageItemsToggle: Enable or disable this mod's storage items, which allow you to access personal storages on the go
+				LiquidItemsToggle: Enable or disable this mod's liquid items, which let you place and absorb infinite amounts of lava or honey
+				AmmoItemsToggle: Enable or disable this mod's endless ammo items
+				ArenaItemsToggle: Enable or disable this mod's arena blocks, which enhance and compact your arena
+				MagnetItemsToggle: Enable or disable this mod's magnet items, which increase your grab range
+				WorldControlItemsToggle: Enable or disable this mod's world control items, which can change the time, weather, and more
+				CellPhoneAppsToggle: Enable or disable Cell Phone apps, upgrades to the Cell Phone which provide extra functionality
+				EndlessBaitToggle: Enable or disable Endless Bait, which does what you think it does
+				CloversToggle: Enable or disable Clovers, which are items that let you see and improve your luck stat
+				BuildingItemsToggle: Enable or disable Building Items, which provide building-and-mining-related bonuses
+				GoldenCloverLuckSlider: The amount of bonus luck the Trefaurium gives, if it's enabled
+				VoidPiggyToggle: Enable or disable the Void Piggy item, which sends collected coins to your piggy bank
+				PhilosophersStoneToggle: Enable or disable the Prima Materia item, which sells picked up items
+				SpawnRateItemsToggle: Enable or disable the Flame of Battle and Flame of Peace, items which increase or decrease the spawn rate respectively
+				GreaterStaffOfRegrowthToggle: Enable or disable the Green Scheme item, which helps with harvesting plants
+				ShadowPearlToggle: Enable or disbale the Shadow Pearl item, which functions as a demon altar crafting station
+				InfiniteManaToggle: Enable or disable the Infinite Mana accessory, which gives you infinite mana
+				StarMagnetToggle: Enable or disable the Star Magnet item, which increases star fall rate
+				GreedyChestToggle: Enable or disable the Greedy Chest item, which stops enemies from dropping coins
+				MagicLightToggle: Enable or disable the Magic Light, which places infinite, invisible lights of many colors
+				MysteriousTrader: Enable or disable the Mysterious Trader, an NPC that will occasionally show up to sell rare items
+				Miner: Enable or disable the Miner, an NPC that sells ores and gems
+				RecipeEndlessWater: Enable or disable Endless Water Bucket and Super Absorbant Sponge recipes
+				RecipePetrifiedSafe:
+					'''
+					Enable or disable a simple recipe for the Petrified Safe
+					(By default, Petrified Safes generate in the underworld during world generation)
+					'''
+			}
 		}
-		Census: {
-			Description.Miner: "Defeat Eater of Worlds/Brain of Cthulhu"
-			Description.MysteriousTrader: "Randomly arrives in the morning and leaves at night, after King Slime or Eye of Cthulhu"
-		}
+
 		Message: {
-			PetrifiedSafeDisabled1: "Storage items have been disabled in the config!"
+			PetrifiedSafeDisabled1: Storage items have been disabled in the config!
 			PetrifiedSafeDisabled2: "If you want a portable safe, enable storage items in the mod "
 		}
+
 		Common: {
-			Enabled.True: "Enabled"
-			Enabled.False: "Disabled"
-			CanBeToggled: "Right click in your inventory to toggle on and off"
-			AppInfo: "Can be installed to a Cell Phone by picking this item up on your mouse and right clicking a Cell Phone in your inventory"
-			CellPhoneInfo: "Apps can be installed by picking this item up on your mouse and right-clicking the Cell Phone in your inventory\nCurrently installed apps:"
-			CellPhone.Wormhole: " [i:2997] Wormhole App: Provides an infinite wormhole effect"
-			CellPhone.Teleportation: " [i:2351] Teleportation App: Allows you to teleport by holding the Cell Phone in your hand and right-clicking"
-			TerraformerScrollInfo: "Hold the Terraforming: Scroll Mode key (Current: [<REPLACEME>]) and scroll up or down on the scroll wheel to increase or decrease brush size"
+			Enabled: {
+				True: Enabled
+				False: Disabled
+			}
+
+			CanBeToggled: Right click in your inventory to toggle on and off
+			AppInfo: Can be installed to a Cell Phone by picking this item up on your mouse and right clicking a Cell Phone in your inventory
+			CellPhoneInfo:
+				'''
+				Apps can be installed by picking this item up on your mouse and right-clicking the Cell Phone in your inventory
+				Currently installed apps:
+				'''
+
+			CellPhone: {
+				Wormhole: " [i:2997] Wormhole App: Provides an infinite wormhole effect"
+				Teleportation: " [i:2351] Teleportation App: Allows you to teleport by holding the Cell Phone in your hand and right-clicking"
+			}
+
+			TerraformerScrollInfo: Hold the Terraforming: Scroll Mode key (Current: [<REPLACEME>]) and scroll up or down on the scroll wheel to increase or decrease brush size
+		}
+
+		NPCs: {
+			Miner: {
+				DisplayName: Miner
+
+				TownNPCMood: {
+					Princess_LovesNPC: "{$TownNPCMood_Princess.LoveNPC_PboneUtils/Miner}"
+					LikeNPC_Princess: "{$Mods.PboneUtils.TownNPCMood.Miner.LikeNPC_Princess}"
+					LikeNPC: "{$Mods.PboneUtils.TownNPCMood.Miner.LikeNPC}"
+					HateBiome: "{$Mods.PboneUtils.TownNPCMood.Miner.HateBiome}"
+					DislikeBiome: "{$Mods.PboneUtils.TownNPCMood.Miner.DislikeBiome}"
+					LikeBiome: "{$Mods.PboneUtils.TownNPCMood.Miner.LikeBiome}"
+					LoveBiome: "{$Mods.PboneUtils.TownNPCMood.Miner.LoveBiome}"
+					HateCrowded: "{$Mods.PboneUtils.TownNPCMood.Miner.HateCrowded}"
+					DislikeCrowded: "{$Mods.PboneUtils.TownNPCMood.Miner.DislikeCrowded}"
+					LoveSpace: "{$Mods.PboneUtils.TownNPCMood.Miner.LoveSpace}"
+					FarFromHome: "{$Mods.PboneUtils.TownNPCMood.Miner.FarFromHome}"
+					NoHome: "{$Mods.PboneUtils.TownNPCMood.Miner.NoHome}"
+					Content: "{$Mods.PboneUtils.TownNPCMood.Miner.Content}"
+				}
+
+				Census_SpawnCondition: "{$Mods.PboneUtils.Miner.Census.SpawnCondition}"
+				Census.SpawnCondition: Defeat Eater of Worlds/Brain of Cthulhu
+			}
+
+			MysteriousTrader: {
+				DisplayName: Mysterious Trader
+
+				TownNPCMood: {
+					Princess_LovesNPC: "{$TownNPCMood_Princess.LoveNPC_PboneUtils/MysteriousTrader}"
+					LikeNPC_Princess: "{$Mods.PboneUtils.TownNPCMood.MysteriousTrader.LikeNPC_Princess}"
+					HateCrowded: "{$Mods.PboneUtils.TownNPCMood.MysteriousTrader.HateCrowded}"
+					DislikeCrowded: "{$Mods.PboneUtils.TownNPCMood.MysteriousTrader.DislikeCrowded}"
+					LoveSpace: "{$Mods.PboneUtils.TownNPCMood.MysteriousTrader.LoveSpace}"
+					FarFromHome: "{$Mods.PboneUtils.TownNPCMood.MysteriousTrader.FarFromHome}"
+					NoHome: "{$Mods.PboneUtils.TownNPCMood.MysteriousTrader.NoHome}"
+					Content: "{$Mods.PboneUtils.TownNPCMood.MysteriousTrader.Content}"
+				}
+
+				Census_SpawnCondition: "{$Mods.PboneUtils.MysteriousTrader.Census.SpawnCondition}"
+				Census.SpawnCondition: Randomly arrives in the morning and leaves at night, after King Slime or Eye of Cthulhu
+			}
+		}
+
+		Keybind.Terraforming._Scroll_Mode.DisplayName: Terraforming: Scroll Mode
+		"Keybinds.Terraforming: Scroll Mode.DisplayName": Terraforming: Scroll Mode
+
+		Projectiles: {
+			GreaterStaffOfRegrowthPro.DisplayName: Greater Staff Of Regrowth Pro
+			LiquidComboPro.DisplayName: Liquid Combo Pro
+			DefendersCrystalProjectile.DisplayName: Defenders Crystal Projectile
+			PetrifiedSafeProjectile.DisplayName: Petrified Safe Projectile
+			GigaxeHoldout.DisplayName: Gigaxe Holdout
+			TerraformerBrushPreview.DisplayName: Terraformer Brush Preview
+		}
+
+		# Keys pointing to keys for that extra jank factor. That way I don't have to update the old or Chinese localization.
+		Configs: {
+			PboneUtilsConfig: {
+				RecipePetrifiedSafe: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.RecipePetrifiedSafe}"
+					Label: "{$Mods.PboneUtils.Config.Label.RecipePetrifiedSafe}"
+				}
+
+				RecipeEndlessWater: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.RecipeEndlessWater}"
+					Label: "{$Mods.PboneUtils.Config.Label.RecipeEndlessWater}"
+				}
+
+				Headers: {
+					QolRecipes: "{$Mods.PboneUtils.Config.Header.QolRecipes}"
+					NPCs: "{$Mods.PboneUtils.Config.Header.NPCs}"
+					MiscItemToggles: "{$Mods.PboneUtils.Config.Header.MiscItemToggles}"
+					ItemSettings: "{$Mods.PboneUtils.Config.Header.ItemSettings}"
+					ItemToggles: "{$Mods.PboneUtils.Config.Header.ItemToggles}"
+					MiscFeatures: "{$Mods.PboneUtils.Config.Header.MiscFeatures}"
+				}
+
+				Miner: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.Miner}"
+					Label: "{$Mods.PboneUtils.Config.Label.Miner}"
+				}
+
+				MysteriousTrader: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.MysteriousTrader}"
+					Label: "{$Mods.PboneUtils.Config.Label.MysteriousTrader}"
+				}
+
+				MagicLightToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.MagicLightToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.MagicLightToggle}"
+				}
+
+				GreedyChestToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.GreedyChestToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.GreedyChestToggle}"
+				}
+
+				StarMagnetToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.StarMagnetToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.StarMagnetToggle}"
+				}
+
+				InfiniteManaToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.InfiniteManaToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.InfiniteManaToggle}"
+				}
+
+				ShadowPearlToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.ShadowPearlToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.ShadowPearlToggle}"
+				}
+
+				GreaterStaffOfRegrowthToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.GreaterStaffOfRegrowthToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.GreaterStaffOfRegrowthToggle}"
+				}
+
+				SpawnRateItemsToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.SpawnRateItemsToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.SpawnRateItemsToggle}"
+				}
+
+				PhilosophersStoneToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.PhilosophersStoneToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.PhilosophersStoneToggle}"
+				}
+
+				VoidPiggyToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.VoidPiggyToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.VoidPiggyToggle}"
+				}
+
+				GoldenCloverLuckSlider: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.GoldenCloverLuckSlider}"
+					Label: "{$Mods.PboneUtils.Config.Label.GoldenCloverLuckSlider}"
+				}
+
+				BuildingItemToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.BuildingItemsToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.BuildingItemsToggle}"
+				}
+
+				CloversToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.CloversToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.CloversToggle}"
+				}
+
+				EndlessBaitToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.EndlessBaitToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.EndlessBaitToggle}"
+				}
+
+				CellPhoneAppsToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.CellPhoneAppsToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.CellPhoneAppsToggle}"
+				}
+
+				WorldControlItemsToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.WorldControlItemsToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.WorldControlItemsToggle}"
+				}
+
+				MagnetItemsToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.MagnetItemsToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.MagnetItemsToggle}"
+				}
+
+				ArenaItemsToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.ArenaItemsToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.ArenaItemsToggle}"
+				}
+
+				AmmoItemsToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.AmmoItemsToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.AmmoItemsToggle}"
+				}
+
+				LiquidItemsToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.LiquidItemsToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.LiquidItemsToggle}"
+				}
+
+				StorageItemsToggle: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.StorageItemsToggle}"
+					Label: "{$Mods.PboneUtils.Config.Label.StorageItemsToggle}"
+				}
+
+				FastRespawnDuringBoss: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.FastRespawnDuringBoss}"
+					Label: "{$Mods.PboneUtils.Config.Label.FastRespawnDuringBoss}"
+				}
+
+				FastRespawn: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.FastRespawn}"
+					Label: "{$Mods.PboneUtils.Config.Label.FastRespawn}"
+				}
+
+				NoMoreGraves: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.NoMoreGraves}"
+					Label: "{$Mods.PboneUtils.Config.Label.NoMoreGraves}"
+				}
+
+				MaxStackIncrease: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.MaxStackIncrease}"
+					Label: "{$Mods.PboneUtils.Config.Label.MaxStackIncrease}"
+				}
+
+				AverageBossBagsSlider: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.AverageBossBagsSlider}"
+					Label: "{$Mods.PboneUtils.Config.Label.AverageBossBagsSlider}"
+				}
+
+				AverageBossBags: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.AverageBossBags}"
+					Label: "{$Mods.PboneUtils.Config.Label.AverageBossBags}"
+				}
+
+				AutoswingOnEverythingBlacklist: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.AutoswingOnEverythingBlacklist}"
+					Label: "{$Mods.PboneUtils.Config.Label.AutoswingOnEverythingBlacklist}"
+				}
+
+				AutoswingOnEverything: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.AutoswingOnEverything}"
+					Label: "{$Mods.PboneUtils.Config.Label.AutoswingOnEverything}"
+				}
+
+				EndlessPotionsSlider: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.EndlessPotionsSlider}"
+					Label: "{$Mods.PboneUtils.Config.Label.EndlessPotionsSlider}"
+				}
+
+				EndlessPotions: {
+					Tooltip: "{$Mods.PboneUtils.Config.Tooltip.EndlessPotions}"
+					Label: "{$Mods.PboneUtils.Config.Label.EndlessPotions}"
+				}
+			}
+
+			"Feature Config.DisplayName": Feature  Config
 		}
 	}
 }
 
 TownNPCMood_Princess: {
-	LoveNPC_PboneUtils/Miner: "I love {NPCName}."
-	LoveNPC_PboneUtils/MysteriousTrader: "I love {NPCName}."
+	LoveNPC_PboneUtils/Miner: I love {NPCName}.
+	LoveNPC_PboneUtils/MysteriousTrader: I love {NPCName}.
 }

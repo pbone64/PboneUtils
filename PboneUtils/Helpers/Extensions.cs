@@ -16,7 +16,7 @@ namespace PboneUtils.Helpers
             {
                 Item query = self.inventory[i];
 
-                if (query.type == ItemID.CellPhone &&
+                if (AppGlobalItem.PhoneItems.Contains(query.type) &&
                     query.GetGlobalItem<AppGlobalItem>().Apps.Contains((instance.BaseID, instance.AppName)))
                 {
                     hasApp = true;

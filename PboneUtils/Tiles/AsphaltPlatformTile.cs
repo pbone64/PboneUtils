@@ -36,7 +36,7 @@ namespace PboneUtils.Tiles
 
             DustType = 109; // DustID.Asphalt, compiling doesn't work with DustID.Asphalt for whatever reason
 
-            ItemDrop = ModContent.ItemType<AsphaltPlatform>();
+            //ItemDrop = ModContent.ItemType<AsphaltPlatform>();
             AdjTiles = new int[] { TileID.Platforms };
         }
 

@@ -30,12 +30,16 @@ namespace PboneUtils.Buffs
             // Honey
             player.honey = true;
 
+            // Bast Statue
+            Main.SceneMetrics.HasCatBast = true;
+
             // Disable other buffs
             player.buffImmune[BuffID.Campfire] = true;
             player.buffImmune[BuffID.HeartLamp] = true;
             player.buffImmune[BuffID.StarInBottle] = true;
             player.buffImmune[BuffID.Sunflower] = true;
             player.buffImmune[BuffID.Honey] = true;
+            player.buffImmune[BuffID.CatBast] = true;
         }
     }
 }

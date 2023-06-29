@@ -21,7 +21,8 @@ namespace PboneUtils.Projectiles.Selection
                 (config.Data["Water"] ? LiquidID.Water :
                 (config.Data["Lava"] ? LiquidID.Lava :
                 (config.Data["Honey"] ? LiquidID.Honey :
-                -1)));
+				(config.Data["Shimmer"] ? LiquidID.Shimmer :
+				-1))));
 
             return LiquidType > -1 && !PboneUtils.UI.GetUIState<RadialMenuContainer>().Internal.IsHovered();
         };

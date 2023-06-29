@@ -24,7 +24,7 @@ namespace PboneUtils
         {
             // TODO fixme
             //IL.Terraria.Player.HandleBeingInChestRange += Player_HandleBeingInChestRange;
-            IL.Terraria.Main.DrawBuffIcon += Main_DrawBuffIcon;
+            Terraria.IL_Main.DrawBuffIcon += Main_DrawBuffIcon;
         }
 
         // Make the chest close sound not play if a portable storage is open

@@ -1,3 +1,13 @@
+Version 1.2.17 Changes ------------------------------------------------------------------------------------------
+1.4.4 Update
+- Removed Sponge Cake and Bottomless Honey Bucket (vanilla has those now).
+- The Master Plan now includes Shimmer. Now requires Bottomless Shimmer Bucket and Ultra Absorbent Sponge.
+- Added Endless Tungsten Pouch and Endless Shimmer Quiver.
+- Buff Brazier now includes the Bast Statue.
+- Preparation Station now includes the War Table.
+- Preparation Station buff now lasts until death.
+- The Mysterious Trader will now sell an addition item if the Peddler's Satchel was used.
+
 Version 1.2.16 Changes ------------------------------------------------------------------------------------------
 Bandaid Update
 Bugs
