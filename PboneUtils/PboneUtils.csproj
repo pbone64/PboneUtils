@@ -17,11 +17,6 @@
     <ProjectReference Include="..\PboneLib\PboneLib.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="MagicStorage">
-      <HintPath>..\..\..\Mod Reader\MagicStorage\MagicStorage.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Items\Building\Tools\" />
   </ItemGroup>
 </Project>

@@ -5,7 +5,6 @@ homepage = https://forums.terraria.org/index.php?threads/pbones-utilities.105537
 buildIgnore = build.txt, bin/*, obj/*, PboneLib/*, Thumbs.db, .*
 modReferences = PboneLib
 sortAfter = Fargowiltas, FargowiltasSouls, ExtensibleInventory, Census
-weakReferences = MagicStorage
 hideCode = false
 hideResources = false
 includeSource = true

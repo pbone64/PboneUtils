@@ -60,18 +60,10 @@ namespace PboneUtils.UI.States.EndlessBuffToggler
                 base.Draw(spriteBatch);
         }
 
-        // This nasty thing is required
-        // When excecuting a method, the clr tries to resolve everything in the method
-        // If it can't find the magic storage assembly it just crashes, even though it's not referenced unless magic storage it loaded
-        // To prevent this, it's in a property which the clr will only run if it needs to (ie, if MagicStorage is loaded)
-        //private bool HackSoRuntimeDoesntCrash => Main.LocalPlayer.GetModPlayer<MagicStorage.StoragePlayer>().ViewingStorage() != new Point16(-1, -1);
         public bool CanShow()
         {
             if (!Main.playerInventory || Main.LocalPlayer.talkNPC != -1)
                 return false;
-
-            //if (PboneUtils.CrossMod.IsModLoaded("MagicStorage") && HackSoRuntimeDoesntCrash)
-            //    return false;
 
             return true;
         }

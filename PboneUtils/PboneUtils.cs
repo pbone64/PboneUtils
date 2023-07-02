@@ -54,7 +54,6 @@ namespace PboneUtils
             crossModManager.RefManager.RegisterCompatibility<FargowiltasSoulsCompatibility>();
             crossModManager.RefManager.RegisterCompatibility<ExtensibleInventoryCompatibility>();
             crossModManager.RefManager.RegisterCompatibility<CensusCompatability>();
-            crossModManager.RefManager.RegisterCompatibility<MagicStorageCompatability>();
 
             // Load MonoMod hooks
             Load_On();
