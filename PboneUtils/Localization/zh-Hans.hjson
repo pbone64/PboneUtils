@@ -745,7 +745,7 @@ Mods: {
 
 		NPCs: {
 			Miner: {
-				DisplayName: Miner
+				DisplayName: 矿工
 
 				TownNPCMood: {
 					Princess_LovesNPC: "{$TownNPCMood_Princess.LoveNPC_PboneUtils/Miner}"
