@@ -91,20 +91,38 @@ namespace PboneUtils
                     {
                         try
                         {
-                            if (item.IsVanilla())
-                            {
-                                dummy.OpenBossBag(item.type);
-                                // ItemLoader.OpenVanillaBag("bossBag", dummy, item.type); // Obsolete
+                            //if (item.IsVanilla())
+                            //{
 
-                                // Note from Rijam:
-                                // dummy.OpenBossBag(item.type) and maybe dummy.DropFromItem(item.type) seems to be the only things that do anything.
-                                // But, for some reason, some of the bags still have no value.
-                                // The ones that do have a value are way too low (a few silver when it should be many gold for example).
-                                // Below are some of the other things that I tried.
+                                // New system. Sort of works correctly.
+                                List<IItemDropRule> dropRules = Main.ItemDropsDB.GetRulesForItemID(i);
+								List<DropRateInfo> list = new();
+                                DropRateInfoChainFeed ratesInfo = new();
+                                ratesInfo.With(1f);
 
-                                dummy.DropFromItem(item.type);
-                                
-                                /*
+								foreach (IItemDropRule rule in dropRules)
+                                {
+                                    rule.ReportDroprates(list, ratesInfo);
+                                }
+                                foreach (DropRateInfo rateInfo in list)
+                                {
+                                    Item dropItem = new();
+                                    dropItem.SetDefaults(rateInfo.itemId);
+                                    TempInfo.RealValues.Add(dropItem.value);
+                                }
+
+								//dummy.OpenBossBag(item.type);
+								// ItemLoader.OpenVanillaBag("bossBag", dummy, item.type); // Obsolete
+
+								// Note from Rijam:
+								// dummy.OpenBossBag(item.type) and maybe dummy.DropFromItem(item.type) seems to be the only things that do anything.
+								// But, for some reason, some of the bags still have no value.
+								// The ones that do have a value are way too low (a few silver when it should be many gold for example).
+								// Below are some of the other things that I tried.
+
+								//dummy.DropFromItem(item.type);
+
+								/*
                                 DropAttemptInfo info = new()
                                 {
                                     player = dummy,
@@ -115,19 +133,19 @@ namespace PboneUtils
                                     rng = Main.rand,
                                 };
                                 */
-                                // Main.ItemDropSolver.TryDropping(info);
-                                // CommonCode.DropItem(info, item.type, 1);
-                                // ItemDropRule.BossBag(item.type);
-                                // ItemLoader.ModifyItemLoot(item, new ItemLoot(item.type, new ItemDropDatabase()));
-                                // item.ModItem.ModifyItemLoot(new ItemLoot(item.type, (ItemDropDatabase)ItemDropRule.BossBag(item.type)));
-                            }
-                            else // Modded
-                            {
+								// Main.ItemDropSolver.TryDropping(info);
+								// CommonCode.DropItem(info, item.type, 1);
+								// ItemDropRule.BossBag(item.type);
+								// ItemLoader.ModifyItemLoot(item, new ItemLoot(item.type, new ItemDropDatabase()));
+								// item.ModItem.ModifyItemLoot(new ItemLoot(item.type, (ItemDropDatabase)ItemDropRule.BossBag(item.type)));
+							//}
+                            //else // Modded
+                            //{
                                 //item.ModItem.OpenBossBag(dummy); // Obsolete
 
-                                dummy.OpenBossBag(item.type);
-                                dummy.DropFromItem(item.type);
-                            }
+                                //dummy.OpenBossBag(item.type);
+                                //dummy.DropFromItem(item.type);
+                            //}
                         }
                         catch (Exception e)
                         {

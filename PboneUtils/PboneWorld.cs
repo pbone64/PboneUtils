@@ -51,7 +51,7 @@ namespace PboneUtils
                 }
             }
             if (ModContent.GetInstance<PboneUtilsConfig>().MysteriousTrader)
-                TravelingNPCHelper.DoTravellingMerchant(ModContent.NPCType<MysteriousTrader>(), 48600, () => (NPC.downedSlimeKing || NPC.downedBoss1) && Main.rand.NextBool(3));
+                TravelingNPCHelper.DoTravellingMerchant(ModContent.NPCType<MysteriousTrader>(), 48600, () => (NPC.downedSlimeKing || NPC.downedBoss1) && Main.rand.NextBool(3) && !NPC.AnyNPCs(ModContent.NPCType<MysteriousTrader>()));
         }
 
         public override void SaveWorldData(TagCompound tag)
