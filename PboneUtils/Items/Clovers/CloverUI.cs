@@ -8,9 +8,9 @@ namespace PboneUtils.Items.Clovers
     {
         public abstract int CloverUIId { get; }
 
-        // A custom method is required, because the vanilla luck value just doesn't work
-        public override string DisplayValue(ref Color color) => Main.LocalPlayer.GetModPlayer<CloverPlayer>().CalculateLuck().ToString();
-        public override string Texture => "PboneUtils/Items/Clovers/CloverUI_" + CloverUIId;
+		// A custom method is required, because the vanilla luck value just doesn't work
+		public override string DisplayValue(ref Color displayColor, ref Color displayShadowColor) => Main.LocalPlayer.GetModPlayer<CloverPlayer>().CalculateLuck().ToString();
+		public override string Texture => "PboneUtils/Items/Clovers/CloverUI_" + CloverUIId;
 
         public override bool Active() => Main.LocalPlayer.GetModPlayer<CloverPlayer>().CloverMode == CloverUIId;
     }

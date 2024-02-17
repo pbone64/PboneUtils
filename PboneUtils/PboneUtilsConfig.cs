@@ -37,7 +37,7 @@ namespace PboneUtils
         [DefaultValue(30)]
         public int EndlessPotionsSlider;
 
-        [DefaultValue(true)]
+        [DefaultValue(false)]
         public bool AutoswingOnEverything;
 
         public List<ItemDefinition> AutoswingOnEverythingBlacklist;

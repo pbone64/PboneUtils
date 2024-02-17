@@ -30,8 +30,8 @@ namespace PboneUtils.MiscModPlayers
             if (StarMagnet && !Main.dayTime)
             {
                 float num139 = (float)Main.maxTilesX / 4200;
-                if (Main.rand.Next(8000) < 10f * num139)
-                {
+                if (Main.rand.Next(5000) < 10f * num139) // Reduced to 5000 from 8000
+				{
                     int num140 = Main.rand.Next(Main.maxTilesX - 50) + 100;
                     num140 *= 16;
                     int num141 = Main.rand.Next((int)((double)Main.maxTilesY * 0.05));

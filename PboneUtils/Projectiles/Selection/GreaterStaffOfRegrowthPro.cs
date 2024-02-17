@@ -1,5 +1,6 @@
 ﻿using System;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace PboneUtils.Projectiles.Selection
@@ -26,8 +27,8 @@ namespace PboneUtils.Projectiles.Selection
                     {
                         // Staff of regrowth herb effect
                         WorldGen.KillTile(i, j, noItem: true);
-                        Item.NewItem(Owner.GetSource_TileInteraction(i, j), i * 16, j * 16, 16, 16, seed, WorldGen.genRand.Next(1, 6));
-                        Item.NewItem(Owner.GetSource_TileInteraction(i, j), i * 16, j * 16, 16, 16, herb, WorldGen.genRand.Next(1, 3));
+                        Owner.QuickSpawnItem(Owner.GetSource_TileInteraction(i, j), seed, WorldGen.genRand.Next(1, 6));
+                        Owner.QuickSpawnItem(Owner.GetSource_TileInteraction(i, j), herb, WorldGen.genRand.Next(1, 3));
 
                         // Replant
                         Item seedItem = new Item();

@@ -95,6 +95,8 @@ namespace PboneUtils
 #pragma warning restore CA1806 // Do not ignore method results
 
             // Temporary Census here until the CensusCompatibility is fixed
+            // Not needed anymore as of 1.4.4 Census. It automatically grabs the text from the localization file.
+            /*
             if (ModLoader.TryGetMod("Census", out Mod censusMod))
 			{
                 if (PboneUtilsConfig.Instance.Miner)
@@ -103,6 +105,7 @@ namespace PboneUtils
                 if (PboneUtilsConfig.Instance.MysteriousTrader)
                     censusMod.Call("TownNPCCondition", ModContent.NPCType<NPCs.Town.MysteriousTrader>(), Language.GetTextValue("Mods.PboneUtils.Census.Description.MysteriousTrader"));
             }
+            */
         }
 
         // TODO improve nulling upon unload

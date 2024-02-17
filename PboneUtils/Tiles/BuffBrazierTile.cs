@@ -23,7 +23,9 @@ namespace PboneUtils.Tiles
             AddMapEntry(Color.Cyan);
         }
 
-        public override void NearbyEffects(int i, int j, bool closer)
+		public override bool CanDrop(int i, int j) => false;
+
+		public override void NearbyEffects(int i, int j, bool closer)
         {
             base.NearbyEffects(i, j, closer);
             // Intentionally not checking for closer to make it stronger :P

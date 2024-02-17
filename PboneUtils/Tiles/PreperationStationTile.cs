@@ -25,7 +25,9 @@ namespace PboneUtils.Tiles
             AddMapEntry(Color.DarkGreen);
         }
 
-        public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
+		public override bool CanDrop(int i, int j) => false;
+
+		public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
 
         public override bool RightClick(int i, int j)
         {

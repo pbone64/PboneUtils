@@ -1,3 +1,10 @@
+Version 1.2.18 Changes ------------------------------------------------------------------------------------------
+- Global Autoswing config is now off by default (just use the vanilla autofire setting).
+- Sort of redid the Treasure Bag calculator to be a little less bad.
+- Slightly increase the spawning odds of Fallen Stars created by the Star Magnet.
+- Green Scheme directly spawns the items in your inventory now, instead of in the world. This fixed it not giving you the items in multiplayer.
+- Fixed Mysterious Trader being able to spawn even if a previous Mysterious Trader had not despawned yet.
+
 Version 1.2.17 Changes ------------------------------------------------------------------------------------------
 1.4.4 Update
 - Removed Sponge Cake and Bottomless Honey Bucket (vanilla has those now).

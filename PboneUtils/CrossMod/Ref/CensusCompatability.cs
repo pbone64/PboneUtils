@@ -16,11 +16,11 @@ namespace PboneUtils.CrossMod.Ref.Content
         {
             // string:"TownNPCCondition" - int:npcid - string:condition
 
-            if (PboneUtilsConfig.Instance.Miner)
-                GetMod().Call("TownNPCCondition", ModContent.NPCType<Miner>(), Language.GetTextValue("Mods.PboneUtils.Census.Description.Miner"));
+            //if (PboneUtilsConfig.Instance.Miner)
+                //GetMod().Call("TownNPCCondition", ModContent.NPCType<Miner>(), Language.GetTextValue("Mods.PboneUtils.Census.Description.Miner"));
 
-            if (PboneUtilsConfig.Instance.MysteriousTrader)
-                GetMod().Call("TownNPCCondition", ModContent.NPCType<MysteriousTrader>(), Language.GetTextValue("Mods.PboneUtils.Census.Description.MysteriousTrader"));
+            //if (PboneUtilsConfig.Instance.MysteriousTrader)
+                //GetMod().Call("TownNPCCondition", ModContent.NPCType<MysteriousTrader>(), Language.GetTextValue("Mods.PboneUtils.Census.Description.MysteriousTrader"));
         }
     }
 }
